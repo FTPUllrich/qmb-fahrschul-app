@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """
-Standalone QMB Issue Tracker & Bug Report Generator
+Standalone QMB Issue Tracker & Bug Report Generator (Client-ID & GitHub Project Direct Integration)
 Version: v0.1.0-alpha.1 (Alpha Pre-Release)
-----------------------------------------------------------------------
-Generates a 100% self-contained Standalone Single-File HTML tool for
-collecting, managing, exporting, and importing bug reports & feedback.
 """
 
 import os
@@ -12,12 +9,12 @@ import os
 APP_VERSION = "0.1.0-alpha.1"
 
 def generate_issue_tracker():
-    html_content = f"""<!DOCTYPE html>
+    html_content = r"""<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QMB Fehlerberichte & Issue-Tracker (v{APP_VERSION})</title>
+  <title>QMB Fehlerberichte & Issue-Tracker (v0.1.0-alpha.1)</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
@@ -86,6 +83,7 @@ def generate_issue_tracker():
     .badge-green {{ background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }}
     .badge-red {{ background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); cursor: pointer; }}
     .badge-alpha {{ background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }}
+    .badge-client {{ background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }}
 
     .btn-primary {{
       background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
@@ -94,6 +92,13 @@ def generate_issue_tracker():
       box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
     }}
     .btn-primary:hover {{ transform: translateY(-1px); box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6); }}
+
+    .btn-git {{
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white; border: none; padding: 10px 16px; border-radius: 8px;
+      font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    }}
 
     .ctrl-btn {{
       padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border-color);
@@ -125,17 +130,18 @@ def generate_issue_tracker():
               <h1 style="font-size: 1.35rem; font-weight: 800; background: linear-gradient(90deg, #ffffff, #fca5a5); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 QMB Fehlerberichte & Issue-Tracker
               </h1>
-              <span class="badge badge-alpha">v{APP_VERSION}</span>
+              <span class="badge badge-alpha">v0.1.0-alpha.1</span>
             </div>
-            <p style="font-size: 0.8rem; color: var(--text-muted);">
-              Standalone Management-Tool für Release-Feedback & Abweichungsmeldungen
-            </p>
+            <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Deine eindeutige Client-ID:</span>
+              <span id="client-id-display" class="badge badge-client">client-loading</span>
+            </div>
           </div>
         </div>
 
         <div style="display: flex; gap: 8px;">
+          <a href="https://github.com/FTPUllrich/qmb-fahrschul-app/issues" target="_blank" class="btn-git">🐙 GitHub Projekt-Board ↗</a>
           <button class="ctrl-btn" onclick="exportJSON()">📥 Export JSON</button>
-          <button class="ctrl-btn" onclick="importJSON()">📤 Import JSON</button>
           <button class="ctrl-btn" onclick="clearAll()">🗑️ Leeren</button>
         </div>
       </header>
@@ -148,7 +154,7 @@ def generate_issue_tracker():
       <div class="glass-panel">
         <h2 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 8px;">📝 Fehlerbericht / Release-Feedback</h2>
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
-          Erfasse ein Problem oder Feedback zum aktuellen QMB-Release:
+          Jeder Bericht wird mit deiner Client-ID versehen und direkt im GitHub-Projekt registriert:
         </p>
 
         <form onsubmit="saveReport(event)">
@@ -174,7 +180,7 @@ def generate_issue_tracker():
           <label style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 4px;">Beschreibung des Problems:</label>
           <textarea id="report-desc" placeholder="Beschreibe das Problem oder die Abweichung so genau wie möglich..." class="form-textarea" required></textarea>
 
-          <button type="submit" class="btn-primary" style="width: 100%;">Fehlerbericht speichern 🚀</button>
+          <button type="submit" class="btn-primary" style="width: 100%;">Fehlerbericht erfassen & ins Git-Projekt senden 🚀</button>
         </form>
       </div>
 
@@ -182,7 +188,7 @@ def generate_issue_tracker():
       <div class="glass-panel">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
           <div>
-            <h2 style="font-size: 1.25rem; font-weight: 800; color: #fff;">📋 Erfasste Berichte & Issues</h2>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: #fff;">📋 Meine Berichte (Client-History)</h2>
             <span id="reports-count" style="font-size: 0.8rem; color: var(--text-muted);">0 Berichte</span>
           </div>
         </div>
@@ -197,17 +203,26 @@ def generate_issue_tracker():
   </div>
 
   <script>
-    let reports = JSON.parse(localStorage.getItem('qmb_standalone_issues') || '[]');
+    // Generate or retrieve persistent Client-ID for this user
+    let clientId = localStorage.getItem('qmb_client_id');
+    if (!clientId) {{
+      clientId = 'client-' + Math.random().toString(36).substring(2, 10);
+      localStorage.setItem('qmb_client_id', clientId);
+    }}
+    document.getElementById('client-id-display').innerText = clientId;
+
+    let reports = JSON.parse(localStorage.getItem('qmb_standalone_issues_' + clientId) || '[]');
 
     function saveReport(e) {{
       e.preventDefault();
       const type = document.getElementById('report-type').value;
       const area = document.getElementById('report-area').value;
-      const author = document.getElementById('report-author').value.trim() || 'Anonym (Mitschüler)';
+      const author = document.getElementById('report-author').value.trim() || 'Mitschüler';
       const desc = document.getElementById('report-desc').value.trim();
 
       const newReport = {{
         id: 'issue-' + Date.now(),
+        clientId: clientId,
         type: type,
         area: area,
         author: author,
@@ -217,30 +232,65 @@ def generate_issue_tracker():
       }};
 
       reports.unshift(newReport);
-      localStorage.setItem('qmb_standalone_issues', JSON.stringify(reports));
+      localStorage.setItem('qmb_standalone_issues_' + clientId, JSON.stringify(reports));
       document.getElementById('report-desc').value = '';
       renderList();
-      alert('✅ Fehlerbericht lokal gespeichert!');
+
+      // Automatically construct GitHub issue prefill URL for 1-click submission to GitHub project
+      const issueTitle = encodeURIComponent(`[${{newReport.type}}] ${{newReport.area}} (von ${{newReport.author}})`);
+      const issueBody = encodeURIComponent(
+        `### 🐛 QMB Release Fehlerbericht\n\n` +
+        `* **Client-ID**: \`${{newReport.clientId}}\`\n` +
+        `* **Autor**: ${{newReport.author}}\n` +
+        `* **Typ**: ${{newReport.type}}\n` +
+        `* **Bereich**: ${{newReport.area}}\n` +
+        `* **Zeitstempel**: ${{newReport.timestamp}}\n\n` +
+        `### 📝 Problembeschreibung\n${{newReport.desc}}\n\n` +
+        `---\n*Automatisch generiert über den QMB Standalone Issue-Tracker (${{newReport.clientId}})*`
+      );
+
+      const githubIssueUrl = `https://github.com/FTPUllrich/qmb-fahrschul-app/issues/new?title=${{issueTitle}}&body=${{issueBody}}`;
+
+      if (confirm('✅ Bericht lokal gespeichert! Möchtest du den Bericht jetzt direkt ins GitHub-Projekt übertragen?')) {{
+        window.open(githubIssueUrl, '_blank');
+      }}
+    }}
+
+    function sendToGit(id) {{
+      const r = reports.find(item => item.id === id);
+      if (!r) return;
+      const issueTitle = encodeURIComponent(`[${{r.type}}] ${{r.area}} (von ${{r.author}})`);
+      const issueBody = encodeURIComponent(
+        `### 🐛 QMB Release Fehlerbericht\n\n` +
+        `* **Client-ID**: \`${{r.clientId}}\`\n` +
+        `* **Autor**: ${{r.author}}\n` +
+        `* **Typ**: ${{r.type}}\n` +
+        `* **Bereich**: ${{r.area}}\n` +
+        `* **Zeitstempel**: ${{r.timestamp}}\n\n` +
+        `### 📝 Problembeschreibung\n${{r.desc}}\n\n` +
+        `---\n*Automatisch generiert über den QMB Standalone Issue-Tracker (${{r.clientId}})*`
+      );
+      window.open(`https://github.com/FTPUllrich/qmb-fahrschul-app/issues/new?title=${{issueTitle}}&body=${{issueBody}}`, '_blank');
     }}
 
     function toggleStatus(id) {{
       const r = reports.find(item => item.id === id);
       if (!r) return;
       r.status = r.status === 'OFFEN' ? 'BEHOBEN' : 'OFFEN';
-      localStorage.setItem('qmb_standalone_issues', JSON.stringify(reports));
+      localStorage.setItem('qmb_standalone_issues_' + clientId, JSON.stringify(reports));
       renderList();
     }}
 
     function deleteReport(id) {{
       reports = reports.filter(item => item.id !== id);
-      localStorage.setItem('qmb_standalone_issues', JSON.stringify(reports));
+      localStorage.setItem('qmb_standalone_issues_' + clientId, JSON.stringify(reports));
       renderList();
     }}
 
     function clearAll() {{
-      if (confirm('Möchtest du alle erfassten Fehlerberichte löschen?')) {{
+      if (confirm('Möchtest du alle deine erfassten Fehlerberichte löschen?')) {{
         reports = [];
-        localStorage.removeItem('qmb_standalone_issues');
+        localStorage.removeItem('qmb_standalone_issues_' + clientId);
         renderList();
       }}
     }}
@@ -254,31 +304,15 @@ def generate_issue_tracker():
       }});
     }}
 
-    function importJSON() {{
-      const input = prompt('Füge hier den JSON-Code von deinen Mitschülern ein:');
-      if (!input) return;
-      try {{
-        const imported = JSON.parse(input);
-        if (Array.isArray(imported)) {{
-          reports = [...imported, ...reports];
-          localStorage.setItem('qmb_standalone_issues', JSON.stringify(reports));
-          renderList();
-          alert('✅ ' + imported.length + ' Berichte erfolgreich importiert!');
-        }}
-      }} catch(err) {{
-        alert('❌ Ungültiges JSON-Format!');
-      }}
-    }}
-
     function renderList() {{
       const list = document.getElementById('reports-list');
-      document.getElementById('reports-count').innerText = reports.length + " Berichte erfasst";
+      document.getElementById('reports-count').innerText = reports.length + " Berichte für " + clientId;
 
       if (reports.length === 0) {{
         list.innerHTML = `
           <div style="text-align: center; padding: 40px; color: var(--text-muted);">
             <div style="font-size: 2.5rem; margin-bottom: 8px;">🎉</div>
-            <p>Aktuell liegen keine erfassten Fehlerberichte vor.</p>
+            <p>Unter deiner Client-ID (${{clientId}}) liegen noch keine Berichte vor.</p>
           </div>`;
         return;
       }}
@@ -292,11 +326,14 @@ def generate_issue_tracker():
               </span>
               <span class="badge badge-purple">${{r.type}}</span>
             </div>
-            <button onclick="deleteReport('${{r.id}}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer;">🗑️</button>
+            <div style="display: flex; gap: 6px;">
+              <button onclick="sendToGit('${{r.id}}')" class="btn-git" style="padding: 4px 8px; font-size: 0.75rem;" title="Ins GitHub-Projekt übertragen">🐙 Git</button>
+              <button onclick="deleteReport('${{r.id}}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer;">🗑️</button>
+            </div>
           </div>
           <p style="font-size: 0.92rem; color: #fff; margin-bottom: 8px; line-height: 1.5;">${{r.desc}}</p>
           <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted);">
-            <span>📍 ${{r.area}} • 👤 ${{r.author}}</span>
+            <span>📍 ${{r.area}} • 👤 ${{r.author}} (ID: ${{r.clientId}})</span>
             <span>🕒 ${{r.timestamp}}</span>
           </div>
         </div>
@@ -312,7 +349,7 @@ def generate_issue_tracker():
     for path in ['/home/ole/Projects/qmb-fahrschul-app/qmb_issue_tracker.html', '/home/ole/qmb_issue_tracker.html']:
         with open(path, 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print(f"[SUCCESS] Standalone Issue Tracker generated at {path}")
+        print(f"[SUCCESS] Client-ID integrated Issue Tracker generated at {path}")
 
 if __name__ == '__main__':
     generate_issue_tracker()
