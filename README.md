@@ -7,7 +7,10 @@
 
 ![Version](https://img.shields.io/badge/Version-0.1.0--alpha.1-red.svg)
 ![Release Stage](https://img.shields.io/badge/Stage-Alpha_Pre--Release-orange.svg)
-![Level](https://img.shields.io/badge/Level-QMB_T%C3%9CV-blue.svg)
+![Level](https://img.shields.io/badge/Leve~ Ich kompiliere, also bin ich... zumindest bis zum nächsten Interrupt.
+~ Wir konstruieren komplexe Systeme, nur um die Stille der Leere mit Rauschen zu füllen.
+~ YOU CAN'T PATCH HUMAN STUPIDITY!
+~ NO GUI. NO MERCY. NO ROOTS.l-QMB_T%C3%9CV-blue.svg)
 ![Standard](https://img.shields.io/badge/ISO-9001%3A2015-green.svg)
 ![Auditing](https://img.shields.io/badge/DIN_EN_ISO-19011-purple.svg)
 ![Offline](https://img.shields.io/badge/Offline-100%25-brightgreen.svg)
@@ -86,3 +89,10 @@ Das integrierte Sachwörterbuch umfasst beide Ausbildungsstufen – jeweils mit 
 
 > [!WARNING]
 > Verlasst euch nicht zu sehr auf das Sachwörterbuch (dies ist auch eher etwas für die mit mutiertem DAT-Protein), da in der Prüfung das Wissen über die Lokation der Textpassagen von essentieller Wichtigkeit sind!
+
+
+Quotes:
+
+~ „Anonymity isn't about hiding that you're doing something wrong. Anonymity is about          keeping the freedom to do what's right.“
+
+~ „Arguing that you don't care about the right to privacy because you have nothing to hide     is no different than saying you don't care about free speech because you have nothing to    say.“
