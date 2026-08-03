@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Full QMB Standalone HTML Generator (Focus: QMB TÜV Prüfungsfragen & QMF+QMB Lexikon)
+Version: v0.1.0-alpha.1 (Alpha Pre-Release)
 --------------------------------------------------------------------------------------
 Generates a 100% self-contained single-file HTML app.
 Focus: Exclusively QMB questions for TÜV exam preparation.
@@ -9,6 +10,8 @@ Glossary: Complete QMF + QMB terminology dictionary with explanations & ISO refe
 
 import os
 import json
+
+APP_VERSION = "0.1.0-alpha.1"
 
 def generate_qmb_app():
     # Questions catalog focused exclusively on QMB (Qualitätsmanagementbeauftragter - TÜV Standard)
@@ -265,7 +268,7 @@ def generate_qmb_app():
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QMB Fahrschul-Trainer (TÜV ISO 9001)</title>
+  <title>QMB Fahrschul-Trainer (v{APP_VERSION})</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
@@ -349,6 +352,7 @@ def generate_qmb_app():
     .badge-purple {{ background: rgba(99, 102, 241, 0.2); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4); }}
     .badge-amber {{ background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }}
     .badge-green {{ background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }}
+    .badge-alpha {{ background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }}
 
     /* Options */
     .option-item {{
@@ -398,11 +402,14 @@ def generate_qmb_app():
         <div class="logo">
           <div class="logo-icon">🚗</div>
           <div>
-            <h1 style="font-size: 1.35rem; font-weight: 800; background: linear-gradient(90deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-              QMB Fahrschul-Trainer (TÜV ISO 9001)
-            </h1>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <h1 style="font-size: 1.35rem; font-weight: 800; background: linear-gradient(90deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                QMB Fahrschul-Trainer (TÜV ISO 9001)
+              </h1>
+              <span class="badge badge-alpha">v{APP_VERSION}</span>
+            </div>
             <p style="font-size: 0.8rem; color: var(--text-muted);">
-              Qualitätsmanagementbeauftragter • Gefühls- & Prüfungstraining für TÜV-Fragen
+              Qualitätsmanagementbeauftragter • Alpha Pre-Release vor v1.0.0
             </p>
           </div>
         </div>

@@ -5,11 +5,18 @@
 
 ---
 
-![Version](https://img.shields.io/badge/Version-1.1.0-blue.svg)
-![Level](https://img.shields.io/badge/Level-QMB_T%C3%9CV-red.svg)
+![Version](https://img.shields.io/badge/Version-0.1.0--alpha.1-red.svg)
+![Release Stage](https://img.shields.io/badge/Stage-Alpha_Pre--Release-orange.svg)
+![Level](https://img.shields.io/badge/Level-QMB_T%C3%9CV-blue.svg)
 ![Standard](https://img.shields.io/badge/ISO-9001%3A2015-green.svg)
 ![Auditing](https://img.shields.io/badge/DIN_EN_ISO-19011-purple.svg)
 ![Offline](https://img.shields.io/badge/Offline-100%25-brightgreen.svg)
+
+---
+
+## 📌 Versionshinweis (`v0.1.0-alpha.1`)
+
+Dies ist eine **Alpha-Entwicklungsversion (Pre-Release)**. Vor dem finalen v1.0.0-Release folgen kleinere Ergänzungen (*Minor Changes*) und Feinschliff anhand des Feedbacks aus der Schulklasse.
 
 ---
 
