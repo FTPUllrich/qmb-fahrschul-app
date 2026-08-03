@@ -74,3 +74,6 @@ Das integrierte Sachwörterbuch umfasst beide Ausbildungsstufen:
 2. Wähle im Menü ein **QMB-Thema** oder den Gesamtkatalog.
 3. Nachschlagen von Begriffen im **Sachwörterbuch**.
 4. Absolviere die **TÜV-Prüfungssimulation**!
+
+> [!WARNING]
+> Verlasst euch nicht zu sehr auf das Sachwörterbuch (dies ist auch eher etwas für die mit mutiertem DAT-Protein), da in der Prüfung das Wissen über die Lokation der Textpassagen von essentieller Wichtigkeit sind!
