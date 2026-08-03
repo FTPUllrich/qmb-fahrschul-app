@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Full QMB Standalone HTML Generator (Focus: QMB TÜV Prüfungsfragen, QMF+QMB Lexikon & ISO-Debatte)
+Full QMB Standalone HTML Generator (Focus: Full QMB TÜV Questions Dataset & QMF+QMB Lexicon)
 Version: v0.1.0-alpha.1 (Alpha Pre-Release)
 """
 
@@ -10,8 +10,9 @@ import json
 APP_VERSION = "0.1.0-alpha.1"
 
 def generate_qmb_app():
-    # Questions catalog with explicit deviation analysis comparing raw image drafts vs ISO conclusions
+    # Exhaustive QMB Questions Catalog parsed from all module documents & images
     qmb_questions = [
+      # MODUL 0 / 2.2: HLS & PDCA & Prozessmanagement
       {
         "id": "qmb-101",
         "question": "Welche Abschnitte der DIN EN ISO 9001:2015 beschreiben die High Level Structure (HLS) bezüglich des PDCA-Zyklus?",
@@ -24,30 +25,32 @@ def generate_qmb_app():
         "multipleChoice": True,
         "category": "High Level Structure & PDCA",
         "isoClause": "ISO 9001:2015 Kap. 0.4 / HLS",
-        "infobox": "Die High Level Structure (HLS) ordnet alle Kapitel der ISO 9001 dem PDCA-Zyklus zu. Plan umfasst Kontext, Führung und Planung. Do umfasst Unterstützung und Betrieb. Check umfasst die Leistungsbewertung. Act umfasst die kontinuierliche Verbesserung.",
-        "isoJustification": "Gemäß ISO 9001:2015 Abschnitt 0.4 (PDCA-Zyklus) basiert die Grundstruktur des Managementsystems auf der Abfolge Plan (Kap. 4,5,6), Do (Kap. 7,8), Check (Kap. 9) und Act (Kap. 10).",
+        "infobox": "Die High Level Structure (HLS) ordnet alle Kapitel der ISO 9001 dem PDCA-Zyklus zu: Plan (Kap. 4,5,6), Do (Kap. 7,8), Check (Kap. 9), Act (Kap. 10).",
+        "isoJustification": "Gemäß ISO 9001:2015 Abschnitt 0.4 basiert die Grundstruktur aller ISO-Managementsysteme auf dem PDCA-Zyklus.",
         "hasDeviation": False,
         "draftAnswer": "Bild-Rohentwurf ordnete HLS und PDCA exakt den Kapiteln 4 bis 10 zu.",
-        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001:2015 Abschnitt 0.4. Keine Abweichung."
+        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001:2015 Abschnitt 0.4."
       },
       {
-        "id": "qmb-102",
-        "question": "Was versteht die DIN EN ISO 9001:2015 unter der 'obersten Leitung' (Top Management) und welche Verantwortung trägt diese?",
+        "id": "qmb-proz-201",
+        "question": "Was versteht die ISO 9001:2015 unter dem 'prozessorientierten Ansatz' (Abschnitt 4.4)?",
         "options": [
-          { "id": "A", "text": "Die oberste Leitung ist eine Person oder Gruppe, die eine Organisation auf oberster Ebene führt und steuert.", "isCorrect": True },
-          { "id": "B", "text": "Sie kann die Rechenschaftspflicht für das QMS komplett an einen Qualitätsmanagementbeauftragten (QMB) abwälzen.", "isCorrect": False },
-          { "id": "C", "text": "Sie muss die Verpflichtung bezüglich des QMS nachweisen und die Qualitätspolitik festlegen.", "isCorrect": True },
-          { "id": "D", "text": "Sie ist verantwortlich für das Bereitstellen der erforderlichen Ressourcen.", "isCorrect": True }
+          { "id": "A", "text": "Systematische Bestimmung und Steuerung von zusammenhängenden Prozessen und deren Wechselwirkungen.", "isCorrect": True },
+          { "id": "B", "text": "Reine Betrachtung von Einzeltätigkeiten ohne Rücksicht auf Schnittstellen.", "isCorrect": False },
+          { "id": "C", "text": "Erfassung von Eingaben (Inputs), erwarteten Ergebnissen (Outputs) sowie Prozesskennzahlen.", "isCorrect": True },
+          { "id": "D", "text": "Zuweisung von Verantwortlichkeiten und Befugnissen für jeden Prozess.", "isCorrect": True }
         ],
         "multipleChoice": True,
-        "category": "Führung & Verantwortung",
-        "isoClause": "ISO 9001:2015 Kap. 5.1 & 5.2",
-        "infobox": "In der ISO 9001:2015 ist die Rechenschaftspflicht direkt bei der obersten Leitung verankert. Der QMB berät und steuert operativ, entbindet die Leitung jedoch nicht von der Gesamtverantwortung.",
-        "isoJustification": "Nach ISO 9001:2015 Abs. 5.1.1 (Führung und Verpflichtung) übernimmt die oberste Leitung die Rechenschaftspflicht für die Wirksamkeit des Qualitätsmanagementsystems.",
-        "hasDeviation": True,
-        "draftAnswer": "📝 Bild-Entwurf: Implizierte, dass der QMB die alleinige Gesamtverantwortung für das QMS vom Chef übernehmen könne.",
-        "isoConclusion": "📜 ISO 9001 Abs. 5.1.1 Klarstellung: Die Rechenschaftspflicht verbleibt unübertragbar bei der obersten Leitung. Der QMB kann die Verantwortung nicht komplett abwälzen."
+        "category": "Prozessmanagement (Kap. 4.4)",
+        "isoClause": "ISO 9001:2015 Kap. 4.4.1",
+        "infobox": "Ein QMS besteht aus vernetzten Prozessen. Das Verstehen und Steuern dieser Wechselwirkungen verbessert die Gesamtleistung der Organisation.",
+        "isoJustification": "ISO 9001:2015 Abs. 4.4.1 verpflichtet zur Ermittlung von Eingaben, Ergebnissen, Abfolgen, Kennzahlen und Ressourcen für alle Prozesse.",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf definierte Prozessorientierung korrekt nach Abs. 4.4.",
+        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001 Abs. 4.4."
       },
+
+      # MODUL 3.2: Dokumentationssysteme (DMS)
       {
         "id": "qmb-dms-301",
         "question": "Wie ist der Begriff 'Dokumentierte Information' gemäß ISO 9001:2015 definiert und was unterscheidet Vorgabe- von Nachweisdokumenten?",
@@ -60,12 +63,32 @@ def generate_qmb_app():
         "multipleChoice": True,
         "category": "Dokumentationssysteme (DMS)",
         "isoClause": "ISO 9001:2015 Kap. 7.5",
-        "infobox": "ISO 9001 unterscheidet das 'Aufrechterhalten' von Vorgabedokumenten (Planung) und das 'Aufbewahren' von Nachweisen (Aufzeichnungen als Beweis für durchgeführte Tätigkeiten).",
+        "infobox": "ISO 9001 unterscheidet das 'Aufrechterhalten' von Vorgabedokumenten (Planung) und das 'Aufbewahren' von Nachweisen (Aufzeichnungen).",
         "isoJustification": "Regelt ISO 9001:2015 Abs. 7.5.1 und Abs. 7.5.3 (Lenkung dokumentierter Informationen). Papierform ist normativ nicht vorgeschrieben.",
         "hasDeviation": True,
         "draftAnswer": "📝 Bild-Entwurf: Veraltete Aufgabenstellung forderte zwingend ein gebundenes QM-Handbuch in Papierform.",
-        "isoConclusion": "📜 ISO 9001 Abs. 7.5 Klarstellung: Begriff 'Handbuch' ist entfallen. Es gilt 'Dokumentierte Information'. Format und Trägermedium (DMS, Wiki, Video) sind frei wählbar."
+        "isoConclusion": "📜 ISO 9001 Abs. 7.5 Klarstellung: Begriff 'Handbuch' ist entfallen. Es gilt 'Dokumentierte Information'. Medium (DMS, Wiki) frei wählbar."
       },
+      {
+        "id": "qmb-dms-302",
+        "question": "Zu welchen der folgenden Themen verlangt die ISO 9001:2015 das AUFRECHTERHALTEN dokumentierter Informationen?",
+        "options": [
+          { "id": "A", "text": "Anwendungsbereich des Managementsystems (Kapitel 4.3)", "isCorrect": True },
+          { "id": "B", "text": "Qualitätspolitik der Organisation (Kapitel 5.2.2)", "isCorrect": True },
+          { "id": "C", "text": "Qualitätsziele und Maßnahmen dazu (Kapitel 6.2.1)", "isCorrect": True },
+          { "id": "D", "text": "Monatlicher Schichtplan in der Kantine", "isCorrect": False }
+        ],
+        "multipleChoice": True,
+        "category": "Dokumentationssysteme (DMS)",
+        "isoClause": "ISO 9001:2015 Kap. 7.5.1",
+        "infobox": "Aufrechterhalten bedeutet, dass Dokumente aktiv gepflegt, aktualisiert und gelenkt werden müssen (Vorgabedokumente).",
+        "isoJustification": "ISO 9001:2015 Abs. 4.3, 5.2.2 und 6.2.1 verlangen explizit das Aufrechterhalten dieser Kernunterlagen.",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf nannte Anwendungsbereich, Politik und Ziele korrekt.",
+        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001 Abs. 7.5."
+      },
+
+      # MODUL 4.1: Fehlermanagement & Reklamation
       {
         "id": "qmb-fehler-401",
         "question": "Welche Normabschnitte der ISO 9001:2015 regeln Maßnahmen zum Umgang mit Fehlern, Abweichungen und Korrekturen?",
@@ -78,11 +101,11 @@ def generate_qmb_app():
         "multipleChoice": True,
         "category": "Fehlermanagement (QMB)",
         "isoClause": "ISO 9001:2015 Kap. 8.7 & 10.2",
-        "infobox": "Fehlerhafte Ergebnisse werden während des Betriebs nach Kap. 8.7 gesperrt und gelenkt. Zur Beseitigung der Ursache greift Kap. 10.2 (Ursachenanalyse und Korrekturmaßnahme).",
-        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 8.7.1 zur Verhinderung unbeabsichtigter Nutzung sowie Abs. 10.2.1 zur systematischen Fehlerursachenanalyse.",
+        "infobox": "Fehlerhafte Ergebnisse werden während des Betriebs nach Kap. 8.7 gesperrt und gelenkt. Zur Beseitigung der Ursache greift Kap. 10.2.",
+        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 8.7.1 zur Verhinderung unbeabsichtigter Nutzung sowie Abs. 10.2.1 zur Fehlerursachenanalyse.",
         "hasDeviation": True,
         "draftAnswer": "📝 Bild-Entwurf: Bezeichnete Fehlerbehebung fälschlicherweise als altes Kapitel 'Vorbeugungsmaßnahmen'.",
-        "isoConclusion": "📜 ISO 9001 Abs. 8.7 & 10.2 Klarstellung: Die Steuerung fehlerhafter Produkte regelt 8.7; Ursachenbeseitigung regelt 10.2. Vorbeugung ist nun in 6.1 integriert."
+        "isoConclusion": "📜 ISO 9001 Abs. 8.7 & 10.2 Klarstellung: Steuerung fehlerhafter Produkte regelt 8.7; Ursachenbeseitigung regelt 10.2."
       },
       {
         "id": "qmb-fehler-402",
@@ -96,12 +119,32 @@ def generate_qmb_app():
         "multipleChoice": True,
         "category": "Fehlermanagement (QMB)",
         "isoClause": "ISO 9001:2015 Kap. 10.2 / 8D-Report",
-        "infobox": "Die 8D-Methode ist ein systematischer Standard im Reklamationsmanagement: D1 Team, D2 Problembeschreibung, D3 Sofortmaßnahmen, D4 Ursachenanalyse, D5/D6 Korrekturmaßnahmen, D7 Vorbeugung, D8 Teamabschluss.",
-        "isoJustification": "Entspricht den normativen Anforderungen aus ISO 9001:2015 Abs. 10.2.1 (Bewertung der Notwendigkeit von Korrekturmaßnahmen).",
+        "infobox": "Die 8D-Methode ist ein systematischer Standard im Reklamationsmanagement: D1 Team, D2 Problem, D3 Sofortmaßnahme, D4 Ursache, D5/D6 Abhilfe, D7 Vorbeugung, D8 Abschluss.",
+        "isoJustification": "Entspricht den normativen Anforderungen aus ISO 9001:2015 Abs. 10.2.1 (Bewertung von Korrekturmaßnahmen).",
         "hasDeviation": True,
-        "draftAnswer": "📝 Bild-Entwurf: Verwechselte Korrektur (Symptombeseitigung) mit Korrekturmaßnahme (Ursachenanalyse).",
-        "isoConclusion": "📜 ISO 9000 Abs. 3.12 Klarstellung: Korrektur beseitigt das Symptom (z.B. Nacharbeit D3). Korrekturmaßnahme beseitigt die Ursache (D4/D5)."
+        "draftAnswer": "📝 Bild-Entwurf: Verwechselte Korrektur (Symptombeseitigung D3) mit Korrekturmaßnahme (Ursachenanalyse D4).",
+        "isoConclusion": "📜 ISO 9000 Abs. 3.12 Klarstellung: Korrektur beseitigt das Symptom (D3). Korrekturmaßnahme beseitigt die Ursache (D4/D5)."
       },
+      {
+        "id": "qmb-fehler-403",
+        "question": "Wie definiert die ISO 9000:2015 den Begriff 'Fehler' im Vergleich zu einer 'Reklamation'?",
+        "options": [
+          { "id": "A", "text": "Ein Fehler ist die Nichterfüllung einer festgelegten Anforderung.", "isCorrect": True },
+          { "id": "B", "text": "Eine Reklamation ist der Ausdruck der Unzufriedenheit über ein Produkt oder eine Dienstleistung.", "isCorrect": True },
+          { "id": "C", "text": "Jeder Fehler führt automatisch zu einer strafrechtlichen Verfolgung.", "isCorrect": False },
+          { "id": "D", "text": "Nicht jede Reklamation beruht zwingend auf einem technischen Produktfehler.", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Fehlermanagement (QMB)",
+        "isoClause": "ISO 9000:2015 Abs. 3.10.3 & 3.12.3",
+        "infobox": "Ein Fehler bezieht sich auf Soll-Toleranzen/Normen. Eine Reklamation betrifft die Kundenzufriedenheit (kann z.B. auch falsche Erwartung sein).",
+        "isoJustification": "Gemäß ISO 9000:2015 Abs. 3.10.3 (Fehler) und Abs. 3.12.3 (Reklamation).",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf definierte Fehler und Reklamation korrekt nach ISO 9000.",
+        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9000."
+      },
+
+      # MODUL 4.2: KVP & Kaizen
       {
         "id": "qmb-kvp-401",
         "question": "Was bedeutet 'Kaizen' im Kontext des Kontinuierlichen Verbesserungsprozesses (KVP)?",
@@ -115,11 +158,33 @@ def generate_qmb_app():
         "category": "KVP & Kaizen",
         "isoClause": "ISO 9001:2015 Kap. 10.1 & 10.3",
         "infobox": "KVP (Kaizen) beruht auf der Philosophie, dass viele kleine, kontinuierliche Verbesserungen im Alltag nachhaltiger sind als seltene Großprojekte.",
-        "isoJustification": "ISO 9001:2015 Abs. 10.3 verpflichtet die Organisation zur fortlaufenden Verbesserung der Eignung, Angemessenheit und Wirksamkeit des QMS.",
+        "isoJustification": "ISO 9001:2015 Abs. 10.3 verpflichtet die Organisation zur fortlaufenden Verbesserung der Wirksamkeit des QMS.",
         "hasDeviation": False,
         "draftAnswer": "Bild-Rohentwurf definierte Kaizen korrekt als kleinschrittige KVP-Philosophie.",
         "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001:2015 Abs. 10.3."
       },
+
+      # MODUL 5.3: Führung & Oberste Leitung
+      {
+        "id": "qmb-fuehr-501",
+        "question": "Was versteht die DIN EN ISO 9001:2015 unter der 'obersten Leitung' (Top Management) und welche Verantwortung trägt diese?",
+        "options": [
+          { "id": "A", "text": "Die oberste Leitung ist eine Person oder Gruppe, die eine Organisation auf oberster Ebene führt und steuert.", "isCorrect": True },
+          { "id": "B", "text": "Sie kann die Rechenschaftspflicht für das QMS komplett an einen Qualitätsmanagementbeauftragten (QMB) abwälzen.", "isCorrect": False },
+          { "id": "C", "text": "Sie muss die Verpflichtung bezüglich des QMS nachweisen und die Qualitätspolitik festlegen.", "isCorrect": True },
+          { "id": "D", "text": "Sie ist verantwortlich für das Bereitstellen der erforderlichen Ressourcen.", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Führung & Verantwortung",
+        "isoClause": "ISO 9001:2015 Kap. 5.1 & 5.2",
+        "infobox": "In der ISO 9001:2015 ist die Rechenschaftspflicht direkt bei der obersten Leitung verankert. Der QMB berät und steuert operativ.",
+        "isoJustification": "Nach ISO 9001:2015 Abs. 5.1.1 übernimmt die oberste Leitung die Rechenschaftspflicht für die Wirksamkeit des QMS.",
+        "hasDeviation": True,
+        "draftAnswer": "📝 Bild-Entwurf: Implizierte, dass der QMB die alleinige Gesamtverantwortung für das QMS vom Chef übernehmen könne.",
+        "isoConclusion": "📜 ISO 9001 Abs. 5.1.1 Klarstellung: Die Rechenschaftspflicht verbleibt unübertragbar bei der obersten Leitung."
+      },
+
+      # MODUL 6.4-6.6: Kundenzufriedenheit & Audits
       {
         "id": "qmb-kunden-601",
         "question": "Welche der folgenden Methoden zählen zu den objektiven Überwachungsmethoden der Kundenzufriedenheit?",
@@ -132,8 +197,8 @@ def generate_qmb_app():
         "multipleChoice": True,
         "category": "Kundenzufriedenheit (Kap. 6.4)",
         "isoClause": "ISO 9001:2015 Kap. 9.1.2",
-        "infobox": "Objektive Methoden basieren auf belegbaren Zahlen, Daten und Fakten. Subjektive Methoden sind z.B. Kundeninterviews oder Ratingportale.",
-        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 9.1.2 (Kundenzufriedenheit). Die Organisation muss Methoden zur Einholung und Überprüfung von Kundenfeedbacks festlegen.",
+        "infobox": "Objektive Methoden basieren auf belegbaren Zahlen, Daten und Fakten. Subjektive Methoden sind z.B. Kundeninterviews.",
+        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 9.1.2 (Kundenzufriedenheit).",
         "hasDeviation": False,
         "draftAnswer": "Bild-Rohentwurf trennte objektive Kennzahlen korrekt von subjektiven Bauchentscheidungen.",
         "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001 Kap. 9.1.2."
@@ -151,11 +216,13 @@ def generate_qmb_app():
         "category": "Audits & DIN EN ISO 19011",
         "isoClause": "DIN EN ISO 19011 Abs. 3.1",
         "infobox": "ISO 19011 teilt Audits in 1st Party (intern), 2nd Party (Lieferant) und 3rd Party (unabhängige Zertifizierung durch z.B. TÜV) ein.",
-        "isoJustification": "Begründet nach DIN EN ISO 19011 Abschnitt 3.1 und ISO 9001:2015 Kap. 9.2. Audits dienen der Konformitätsbewertung, nicht der Bestrafung.",
+        "isoJustification": "Begründet nach DIN EN ISO 19011 Abschnitt 3.1 und ISO 9001:2015 Kap. 9.2.",
         "hasDeviation": False,
         "draftAnswer": "Bild-Rohentwurf definierte 1st, 2nd und 3rd Party Audits ordnungsgemäß.",
         "isoConclusion": "Vollständige Konformität mit DIN EN ISO 19011 Abs. 3.1."
       },
+
+      # MODUL 8.1: Produkthaftung & Recht
       {
         "id": "qmb-haftung-801",
         "question": "Welche Gesetze regeln die Produkthaftung und Produktsicherheit in Deutschland?",
@@ -187,11 +254,31 @@ def generate_qmb_app():
         "category": "Produkthaftung & Recht (Modul 8.1)",
         "isoClause": "ISO 9001:2015 Kap. 8.5.5 / BGB § 823",
         "infobox": "Hersteller müssen Produkte sicher konstruieren, klar instruieren und auch nach dem Verkauf im Markt beobachten. Ein CE-Zeichen befreit nicht von der Haftung.",
-        "isoJustification": "ISO 9001:2015 Abs. 8.5.5 (Tätigkeiten nach der Lieferung) verpflichtet zur Berücksichtigung von Produktrisiken und Marktbeobachtung.",
+        "isoJustification": "ISO 9001:2015 Abs. 8.5.5 (Tätigkeiten nach der Lieferung) verpflichtet zur Berücksichtigung von Produktrisiken.",
         "hasDeviation": True,
         "draftAnswer": "📝 Bild-Entwurf: Unterstellte fälschlicherweise, dass ein CE-Kennzeichen den Hersteller von jeglicher Haftung befreie.",
-        "isoConclusion": "📜 BGB § 823 & ISO Abs. 8.5.5 Klarstellung: Ein CE-Zeichen ist lediglich eine Konformitätserklärung, befreit aber keinesfalls von der zivilrechtlichen Haftung bei Produktfehlern."
+        "isoConclusion": "📜 BGB § 823 & ISO Abs. 8.5.5 Klarstellung: Ein CE-Zeichen ist lediglich eine Konformitätserklärung, befreit aber keinesfalls von der zivilrechtlichen Haftung."
       },
+      {
+        "id": "qmb-haftung-803",
+        "question": "Wer gilt nach dem Produkthaftungsgesetz (ProdHaftG) rechtlich als 'Hersteller'?",
+        "options": [
+          { "id": "A", "text": "Der tatsächliche Hersteller des Endprodukts, eines Teilprodukts oder Rohstoffs.", "isCorrect": True },
+          { "id": "B", "text": "Jeder, der sich durch Anbringen seines Namens oder Warenzeichens als Hersteller ausgibt (Quasi-Hersteller).", "isCorrect": True },
+          { "id": "C", "text": "Wer ein Produkt zum Zweck des Vertriebs in den EWR importiert (EWR-Importeur).", "isCorrect": True },
+          { "id": "D", "text": "Ausschließlich der Endverbraucher.", "isCorrect": False }
+        ],
+        "multipleChoice": True,
+        "category": "Produkthaftung & Recht (Modul 8.1)",
+        "isoClause": "ProdHaftG § 4",
+        "infobox": "Das ProdHaftG schützt den Geschädigten, indem es neben dem Hersteller auch Markenanbringer (Quasi-Hersteller) und Importeure in die Haftung nimmt.",
+        "isoJustification": "Regelt § 4 ProdHaftG (Herstellerbegriff).",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf umfasste Hersteller, Quasi-Hersteller und EWR-Importeure korrekt.",
+        "isoConclusion": "Vollständige Übereinstimmung mit ProdHaftG § 4."
+      },
+
+      # MODUL 9.1: Lieferantenmanagement
       {
         "id": "qmb-lief-901",
         "question": "Was versteht die DIN EN ISO 9000:2015 unter dem Begriff 'externer Anbieter'?",
@@ -211,6 +298,44 @@ def generate_qmb_app():
         "isoConclusion": "Vollständige Konformität mit ISO 9000 Abs. 3.2.5."
       },
       {
+        "id": "qmb-lief-902",
+        "question": "Welche Phasen des PDCA-Zyklus werden im Lieferantenmanagement nach ISO 9001:2015 durchlaufen?",
+        "options": [
+          { "id": "A", "text": "Plan: Analyse des Bedarfs, Risikobewertung & Lieferantenstrategie", "isCorrect": True },
+          { "id": "B", "text": "Do: Operative Lieferantenauswahl, Verträge & Qualitätssicherungsvereinbarung (QSV)", "isCorrect": True },
+          { "id": "C", "text": "Check: Regelmäßige Lieferantenbewertung & Audits", "isCorrect": True },
+          { "id": "D", "text": "Act: Einleitung von Lieferantenentwicklungen oder Sperrung bei Qualitätsmängeln", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Lieferantenmanagement (Modul 9.1)",
+        "isoClause": "ISO 9001:2015 Kap. 8.4.1",
+        "infobox": "Lieferantenmanagement folgt lückenlos dem PDCA-Regelkreis von der Bedarfsplanung bis zur kontinuierlichen Lieferantenentwicklung.",
+        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 8.4.1 (Kriterien für Auswertung, Auswahl, Leistungsüberwachung und Neubeurteilung).",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf ordnete den PDCA-Zyklus dem Lieferantenmanagement exakt zu.",
+        "isoConclusion": "Vollständige Konformität mit ISO 9001 Kap. 8.4.1."
+      },
+      {
+        "id": "qmb-lief-903",
+        "question": "Was ist der Unterschied zwischen Methoden und Kriterien bei der Lieferantenerstbeurteilung?",
+        "options": [
+          { "id": "A", "text": "Ein Audit oder eine Selbstauskunft ist eine Methode zur Beurteilung.", "isCorrect": True },
+          { "id": "B", "text": "Die maximal zulässige Anzahl an Hauptabweichungen im Audit ist ein Kriterium.", "isCorrect": True },
+          { "id": "C", "text": "Methoden und Kriterien sind vollkommen identische Begriffe.", "isCorrect": False },
+          { "id": "D", "text": "Die geforderte ISO 9001 Zertifizierung des Lieferanten ist ein Kriterium.", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Lieferantenmanagement (Modul 9.1)",
+        "isoClause": "ISO 9001:2015 Kap. 8.4.1",
+        "infobox": "Die Methode ist der Weg der Informationsbeschaffung (z.B. Audit). Das Kriterium ist der Messmaßstab zum Bestehen.",
+        "isoJustification": "Regelt ISO 9001:2015 Abs. 8.4.1.",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf trennte Beurteilungsmethoden sauber von Akzeptanzkriterien.",
+        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001 Abs. 8.4.1."
+      },
+
+      # MODUL 10.1 & 10.2: Strategisches QM, Risikomanagement & VUCA
+      {
         "id": "qmb-vuca-1001",
         "question": "Wofür steht das Akronym 'VUCA' im modernen strategischen Qualitätsmanagement?",
         "options": [
@@ -222,7 +347,7 @@ def generate_qmb_app():
         "multipleChoice": True,
         "category": "Strategisches QM & VUCA (Modul 10)",
         "isoClause": "ISO 9001:2015 Kap. 4.1 & 6.1 / VUCA",
-        "infobox": "VUCA beschreibt die veränderlichen Rahmenbedingungen von Organisationen. Das QMS begegnet VUCA mit dem risikobasierten Ansatz und agilen Methoden.",
+        "infobox": "VUCA beschreibt die veränderlichen Rahmenbedingungen von Organisationen. Das QMS begegnet VUCA mit dem risikobasierten Ansatz.",
         "isoJustification": "ISO 9001:2015 Abs. 4.1 verlangt das Verstehen des Unternehmenskontextes im dynamischen VUCA-Umfeld.",
         "hasDeviation": False,
         "draftAnswer": "Bild-Rohentwurf schlüsselte Volatilität, Unsicherheit, Komplexität und Ambiguität korrekt auf.",
@@ -241,10 +366,28 @@ def generate_qmb_app():
         "category": "Strategisches QM & Risikomanagement",
         "isoClause": "ISO 9001:2015 Kap. 6.1.1",
         "infobox": "Risikobasiertes Denken dient dazu, vorbeugend zu agieren und Chancen wahrzunehmen. Eine formelle Risikodokumentations-Methode ist normativ freigestellt.",
-        "isoJustification": "Abschnitt 6.1.1 der ISO 9001:2015 regelt die Ziele von Risikomaßnahmen. Eine bürokratische Überdokumentation wird durch die HLS vermieden.",
+        "isoJustification": "Abschnitt 6.1.1 der ISO 9001:2015 regelt die Ziele von Risikomaßnahmen. Eine bürokratische Überdokumentation wird vermieden.",
         "hasDeviation": True,
         "draftAnswer": "📝 Bild-Entwurf: Befürwortete bürokratische Zwangs-Formblätter für jedes noch so kleine Risiko.",
         "isoConclusion": "📜 ISO 9001 Abs. 6.1 Klarstellung: Die Norm fordert risikobasiertes Denken, schreibt aber KEINE starre Formblatt-Bürokratie vor."
+      },
+      {
+        "id": "qmb-vuca-1003",
+        "question": "Was repräsentiert die unter der Wasseroberfläche liegende Seite des 'agilen Eisbergs' im QM?",
+        "options": [
+          { "id": "A", "text": "Die sichtbaren Stand-up Meetings und Taskboards.", "isCorrect": False },
+          { "id": "B", "text": "Die zugrunde liegenden Werte, Prinzipien und das agile Mindset der Mitarbeiter.", "isCorrect": True },
+          { "id": "C", "text": "Sichtbare Werkzeuge und Formulare.", "isCorrect": False },
+          { "id": "D", "text": "Kultur der kontinuierlichen Anpassung, Transparenz und Eigenverantwortung.", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Strategisches QM & VUCA (Modul 10)",
+        "isoClause": "Agiles QM / Manifest",
+        "infobox": "Der agile Eisberg veranschaulicht, dass Werkzeuge (oben) wertlos sind ohne die gelebte Kultur und das Mindset (unten).",
+        "isoJustification": "Entspricht den Grundsätzen des Qualitätsmanagements (Einbindung von Personen, ISO 9000 Abs. 2.3.3).",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf definierte das agile Mindset korrekt als Unterseite des Eisbergs.",
+        "isoConclusion": "Vollständige Übereinstimmung mit Agilitäts-Grundverändnisses im QM."
       }
     ]
 
@@ -516,7 +659,7 @@ def generate_qmb_app():
           <div>
             <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 8px;">Thema:</span>
             <select id="category-select" onchange="filterCategory()" style="padding: 8px 12px; border-radius: 10px; background: rgba(30, 41, 59, 0.8); color: #fff; border: 1px solid var(--border-color); outline: none;">
-              <option value="ALL">Alle QMB-Themen</option>
+              <!-- Populated dynamically via JS without duplicates -->
             </select>
           </div>
         </div>
@@ -588,12 +731,14 @@ def generate_qmb_app():
     let humorMode = true;
     let activeCategory = 'ALL';
 
-    // Populate category dropdown
+    // Populate category dropdown cleanly without duplicates
     const categories = ['ALL', ...new Set(allQuestionsData.map(q => q.category))];
     const catSelect = document.getElementById('category-select');
+    catSelect.innerHTML = ''; // Clear default HTML options first!
     categories.forEach(c => {{
       const opt = document.createElement('option');
-      opt.value = c; opt.innerText = c === 'ALL' ? 'Alle QMB-Themen' : c;
+      opt.value = c;
+      opt.innerText = c === 'ALL' ? 'Alle QMB-Themen' : c;
       catSelect.appendChild(opt);
     }});
 
@@ -874,7 +1019,7 @@ def generate_qmb_app():
     for path in ['/home/ole/Projects/qmb-fahrschul-app/index.html', '/home/ole/qmb_fahrschul_app.html']:
         with open(path, 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print(f"[SUCCESS] App updated at {path}")
+        print(f"[SUCCESS] Expanded QMB App generated at {path}")
 
 if __name__ == '__main__':
     generate_qmb_app()
