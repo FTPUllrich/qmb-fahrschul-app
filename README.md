@@ -107,3 +107,15 @@ Das integrierte Sachwörterbuch umfasst beide Ausbildungsstufen – jeweils mit 
 
 > [!WARNING]
 > Verlasst euch nicht zu sehr auf das Sachwörterbuch (dies ist auch eher etwas für die mit mutiertem DAT-Protein), da in der Prüfung das Wissen über die Lokation der Textpassagen von essentieller Wichtigkeit sind!
+
+
+
+Quotes:
+
+„Arguing that you don't care about the right to privacy because you have nothing to hide is no different than saying you don't care about free speech because you have nothing to say.“
+
+„Be curious. Read widely. Try new things. What people call intelligence just boils down to curiosity.“
+
+„Privacy is a necessity. Freedom of speech is a necessity. The ability to speak without being watched is a necessity.“
+
+
