@@ -1,6 +1,10 @@
 # 🔄 Sync Issues to Folder (`sync_issues_to_folder.py`)
 
-> **Automatischer Synchronisations-Helper, um alle von Mitschülern auf GitHub eingereichten Fehlerberichte & Issues direkt als lokale Markdown-Dateien in den Ordner `reports/` herunterzuladen.**
+> **Automatischer Synchronisations-Helper (v0.1.0-alpha.1), um alle von Mitschülern auf GitHub eingereichten Fehlerberichte & Issues direkt als lokale Markdown-Dateien in den Ordner `reports/` herunterzuladen.**
+
+---
+
+![Version](https://img.shields.io/badge/Version-0.1.0--alpha.1-red.svg)
 
 ---
 
