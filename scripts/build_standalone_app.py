@@ -6,13 +6,13 @@ Version: v0.1.0-alpha.1 (Alpha Pre-Release)
 
 import os
 import json
-from build_full_dataset import compile_dataset
+from build_full_dataset import harvest_all_sources
 
 APP_VERSION = "0.1.0-alpha.1"
 
 def generate_qmb_app():
-    # Exhaustive QMB Questions Catalog parsed from all module documents & images (44+ questions)
-    qmb_questions = compile_dataset()
+    # Exhaustive QMB Questions Catalog parsed from all module documents & images (49+ questions)
+    qmb_questions = harvest_all_sources()
 
     # Glossary with industrial examples
     glossary = [
