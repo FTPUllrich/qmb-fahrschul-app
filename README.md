@@ -1,7 +1,7 @@
 # 🚗 QMB Fahrschul-Trainer (DIN EN ISO 9001:2015 & ISO 19011)
 
-> **Interaktiver, serverloser Lern-Trainer im Fahrschulapp-Prinzip exklusiv für den Qualitätsmanagementbeauftragten (QMB - TÜV-Standard).**  
-> *Ziel dieser App ist es, ein Gefühl für die Fragen des TÜVs zu bekommen. 100% Standalone Single-File HTML!*
+> **Interaktive, serverlose Werkzeug-Sammlung im Fahrschulapp-Prinzip exklusiv für den Qualitätsmanagementbeauftragten (QMB - TÜV-Standard).**  
+> *Ziel dieser Tools ist es, ein Gefühl für die Fragen des TÜVs zu bekommen und Release-Feedback zu verwalten. 100% Standalone Single-File HTML!*
 
 ---
 
@@ -20,25 +20,27 @@
 
 ---
 
+## 🛠️ Standalone HTML-Werkzeuge im Projekt
+
+Dieses Repository enthält zwei vollkommen eigenständige, doppelklickbare HTML-Dateien:
+
+1. 🚗 **`qmb_fahrschul_app.html`** *(oder `index.html`)*:
+   - Der interaktive QMB Spaced-Repetition Lern-Trainer (Fahrschulapp-Prinzip).
+   - TÜV-Prüfungssimulation (10 Fragen / 10 Min).
+   - Kombiniertes Sachwörterbuch (QMF & QMB) mit Industrie-Beispielen.
+   - Farblicher Abweichungs-Indikator & kondensiertes ISO-Debatten-Modal.
+
+2. 🐛 **`qmb_issue_tracker.html`**:
+   - Eigenständiger **Fehlerberichte- & Release-Feedback-Manager**.
+   - Formular zur Erfassung von Bugs, Tippfehlern & unklaren ISO-Klauseln.
+   - Liste aller eingereichten Berichte mit Status (`🔴 Offen` / `🟢 Behoben`).
+   - JSON-Export & Import-Funktion zum Zusammenführen von Feedback aus der Schulklasse.
+
+---
+
 ## 📌 Versionshinweis (`v0.1.0-alpha.1`)
 
 Dies ist eine **Alpha-Entwicklungsversion (Pre-Release)**. Vor dem finalen v1.0.0-Release folgen kleinere Ergänzungen (*Minor Changes*) und Feinschliff anhand des Feedbacks aus der Schulklasse.
-
----
-
-## 🎯 Zweck der Anwendung
-
-Diese App dient **exklusiv der Vorbereitung auf die TÜV-Prüfung zum Qualitätsmanagementbeauftragten (QMB)**. Sie vermittelt ein authentisches Gefühl für die Fragestellungen, Antwortmuster und Fallen bei den TÜV-Prüfungsfragen. *(Hinweis: Für die QMF-Zertifizierung existiert eine separate App).*
-
----
-
-## 🐛 Fehlerberichte & Feedback-Tool (Issue Manager)
-
-Direkt in der Anwendung ist ein **serverloses Feedback- & Fehlerbericht-Tool** integriert (`Tab: 🐛 Fehlerberichte & Feedback`):
-
-- **📝 Formular zur Problem-Einreichung**: Mitschüler können Korrekturen, Tippfehler, unklare ISO-Klauseln oder Bugs kategorisieren und beschreiben.
-- **📋 Übersichtliche Fehlerberichte-Liste**: Zeigt alle Berichte mit Status (`🔴 Offen` / `🟢 Behoben`), Zeitstempel, Name und betroffener Komponente an.
-- **📥 JSON-Export**: Berichte können per Klick in die Zwischenablage kopiert oder als JSON exportiert und geteilt werden.
 
 ---
 
@@ -98,21 +100,10 @@ Das integrierte Sachwörterbuch umfasst beide Ausbildungsstufen – jeweils mit 
 
 ---
 
-## 🏆 TÜV-Prüfungssimulation
-
-- ❓ **10 zufällig gewählte QMB-Fragen** (1 Minute pro Frage).
-- ⏱️ **10 Minuten Zeitfenster**.
-- 🎯 **75% Bestehensgrenze** (mindestens 8 von 10 richtig).
-- 📋 Ausführliche Auswertung mit ISO 900x Normbegründung nach Abgabe.
-
----
-
 ## 🚀 Schnellstart
 
-1. Öffne **`qmb_fahrschul_app.html`** per Doppelklick in deinem Webbrowser.
-2. Wähle im Menü ein **QMB-Thema** oder den Gesamtkatalog.
-3. Nachschlagen von Begriffen im **Sachwörterbuch**.
-4. Absolviere die **TÜV-Prüfungssimulation**!
+1. Öffne **`qmb_fahrschul_app.html`** per Doppelklick zum Lernen.
+2. Öffne **`qmb_issue_tracker.html`** per Doppelklick zum Melden & Verwalten von Release-Feedback.
 
 > [!WARNING]
 > Verlasst euch nicht zu sehr auf das Sachwörterbuch (dies ist auch eher etwas für die mit mutiertem DAT-Protein), da in der Prüfung das Wissen über die Lokation der Textpassagen von essentieller Wichtigkeit sind!

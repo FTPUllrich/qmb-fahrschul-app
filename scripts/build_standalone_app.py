@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Full QMB Standalone HTML Generator (Focus: QMB TÜV Prüfungsfragen, QMF+QMB Lexikon, ISO-Debatte & Bug-Report-Tool)
+Full QMB Standalone HTML Generator (Focus: QMB TÜV Prüfungsfragen, QMF+QMB Lexikon & ISO-Debatte)
 Version: v0.1.0-alpha.1 (Alpha Pre-Release)
 """
 
@@ -357,7 +357,7 @@ def generate_qmb_app():
       display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
     }}
 
-    nav {{ display: flex; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 6px; border-radius: 14px; border: 1px solid var(--border-color); flex-wrap: wrap; }}
+    nav {{ display: flex; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 6px; border-radius: 14px; border: 1px solid var(--border-color); }}
     .nav-btn {{
       padding: 8px 18px; border-radius: 10px; border: none; background: transparent;
       color: var(--text-muted); font-weight: 500; cursor: pointer; transition: all 0.2s ease; font-size: 0.92rem;
@@ -403,14 +403,6 @@ def generate_qmb_app():
     }}
     .btn-primary:hover {{ transform: translateY(-1px); box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6); }}
 
-    /* Inputs & Form controls */
-    .form-input, .form-select, .form-textarea {{
-      width: 100%; padding: 12px 16px; border-radius: 10px;
-      background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-color);
-      color: #fff; font-family: inherit; font-size: 0.95rem; margin-bottom: 14px; outline: none;
-    }}
-    .form-textarea {{ min-height: 100px; resize: vertical; }}
-
     /* Progress bar */
     .progress-bar-bg {{ width: 100%; height: 10px; border-radius: 5px; background: rgba(15, 23, 42, 0.6); overflow: hidden; display: flex; }}
     .progress-bar-fill {{ height: 100%; background: linear-gradient(90deg, #10b981, #34d399); transition: width 0.4s ease; }}
@@ -421,7 +413,7 @@ def generate_qmb_app():
     .tab-content {{ display: none; }}
     .tab-content.active {{ display: block; }}
 
-    /* Debate & Bug Modals */
+    /* Debate Modal */
     .modal-overlay {{
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
       background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px);
@@ -430,7 +422,6 @@ def generate_qmb_app():
     .modal-box {{
       background: #161d2d; border: 1px solid var(--border-color); border-radius: 16px;
       padding: 28px; max-width: 700px; width: 90%; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-      max-height: 90vh; overflow-y: auto;
     }}
   </style>
 </head>
@@ -490,7 +481,6 @@ def generate_qmb_app():
           <button class="nav-btn active" onclick="switchTab('stack')">🚗 QMB-Stapel</button>
           <button class="nav-btn" onclick="switchTab('exam')">🏆 TÜV-Prüfung</button>
           <button class="nav-btn" onclick="switchTab('glossary')">📖 Sachwörterbuch (QMF & QMB)</button>
-          <button class="nav-btn" onclick="switchTab('bugs')">🐛 Fehlerberichte & Feedback</button>
           <button class="nav-btn" onclick="switchTab('stats')">📊 Statistik</button>
         </nav>
 
@@ -568,71 +558,12 @@ def generate_qmb_app():
         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
           Enthält alle wesentlichen Begriffe und Konzepte aus der Ausbildung zur Qualitätsmanagementfachkraft (QMF) und zum Qualitätsmanagementbeauftragten (QMB) – inklusive anschaulicher Industrie-Beispiele aus der Fertigung & Praxis!
         </p>
-        <input type="text" id="glossary-search" oninput="renderGlossary()" placeholder="Begriff suchen (z.B. Audit, HLS, PDCA, VUCA, ProdHaftG, 8D-Report, FMEA, Poka Yoke, Stakeholder)..." class="form-input" style="margin-bottom: 16px;" />
+        <input type="text" id="glossary-search" oninput="renderGlossary()" placeholder="Begriff suchen (z.B. Audit, HLS, PDCA, VUCA, ProdHaftG, 8D-Report, FMEA, Poka Yoke, Stakeholder)..." style="width: 100%; padding: 12px 16px; border-radius: 10px; background: rgba(15,23,42,0.6); border: 1px solid var(--border-color); color: #fff; margin-bottom: 16px; outline: none;" />
         <div id="glossary-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;"></div>
       </div>
     </div>
 
-    <!-- TAB 4: FEHLERBERICHTE & FEEDBACK TOOL (BUG REPORT MANAGER) -->
-    <div id="tab-bugs" class="tab-content">
-      <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 20px;" class="glass-panel-container">
-        
-        <!-- Form Panel -->
-        <div class="glass-panel">
-          <h2 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 8px;">📝 Fehlerbericht / Feedback einreichen</h2>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
-            Haste einen Tippfehler, eine unklare Antwort oder eine Abweichung entdeckt? Melde es direkt hier!
-          </p>
-
-          <form onsubmit="submitBugReport(event)">
-            <label style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 4px;">Kategorie / Typ:</label>
-            <select id="bug-type" class="form-select">
-              <option value="🐛 Bug / Darstellungsfehler">🐛 Bug / Darstellungsfehler</option>
-              <option value="❓ Unklarheit bei ISO-Klausel">❓ Unklarheit bei ISO-Klausel</option>
-              <option value="📝 Rechtschreibfehler / Text">📝 Rechtschreibfehler / Text</option>
-              <option value="💡 Verbesserungsvorschlag">💡 Verbesserungsvorschlag</option>
-            </select>
-
-            <label style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 4px;">Betroffener Bereich / Frage-ID:</label>
-            <select id="bug-area" class="form-select">
-              <option value="Allgemein / Benutzeroberfläche">Allgemein / Benutzeroberfläche</option>
-              <option value="QMB-Stapel (Fragenkatalog)">QMB-Stapel (Fragenkatalog)</option>
-              <option value="📖 Sachwörterbuch">📖 Sachwörterbuch</option>
-              <option value="🏆 TÜV-Prüfungssimulation">🏆 TÜV-Prüfungssimulation</option>
-            </select>
-
-            <label style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 4px;">Dein Name / Kürzel (optional):</label>
-            <input type="text" id="bug-author" placeholder="z.B. Martin (Schulklasse)" class="form-input" />
-
-            <label style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 4px;">Beschreibung des Problems:</label>
-            <textarea id="bug-desc" placeholder="Beschreibe den Fehler oder deinen Vorschlag so genau wie möglich..." class="form-textarea" required></textarea>
-
-            <button type="submit" class="btn-primary" style="width: 100%;">Fehlerbericht absenden 🚀</button>
-          </form>
-        </div>
-
-        <!-- Reports List Panel -->
-        <div class="glass-panel">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-            <div>
-              <h2 style="font-size: 1.25rem; font-weight: 800; color: #fff;">📋 Fehlerberichte & Issues</h2>
-              <span id="bug-count-badge" style="font-size: 0.8rem; color: var(--text-muted);">0 Berichte erfasst</span>
-            </div>
-            <div style="display: flex; gap: 6px;">
-              <button class="ctrl-btn" onclick="exportBugReportsJSON()" title="Als JSON kopieren/herunterladen">📥 Exportieren</button>
-              <button class="ctrl-btn" onclick="clearAllBugReports()" title="Alle entfernen">🗑️ Leeren</button>
-            </div>
-          </div>
-
-          <div id="bug-reports-list" style="max-height: 480px; overflow-y: auto;">
-            <!-- Rendered by JS -->
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- TAB 5: STATISTIK -->
+    <!-- TAB 4: STATISTIK -->
     <div id="tab-stats" class="tab-content">
       <div class="glass-panel">
         <h2 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 16px;">📊 QMB Lernstatistik & Leistungsübersicht</h2>
@@ -649,7 +580,6 @@ def generate_qmb_app():
 
     let questionsStack = [...allQuestionsData];
     let masteredIds = JSON.parse(localStorage.getItem('qmb_mastered_ids') || '[]');
-    let bugReports = JSON.parse(localStorage.getItem('qmb_bug_reports') || '[]');
     let retryCount = 0;
     let selectedOptions = [];
     let submitted = false;
@@ -726,7 +656,6 @@ def generate_qmb_app():
       document.getElementById('tab-' + tabId).classList.add('active');
       event.target.classList.add('active');
       if (tabId === 'glossary') renderGlossary();
-      if (tabId === 'bugs') renderBugReports();
       if (tabId === 'stats') renderStats();
     }}
 
@@ -738,97 +667,6 @@ def generate_qmb_app():
 
     function closeDebateModal() {{
       document.getElementById('debate-modal').style.display = 'none';
-    }}
-
-    // Bug Report Management
-    function submitBugReport(e) {{
-      e.preventDefault();
-      const type = document.getElementById('bug-type').value;
-      const area = document.getElementById('bug-area').value;
-      const author = document.getElementById('bug-author').value.trim() || 'Anonym (Mitschüler)';
-      const desc = document.getElementById('bug-desc').value.trim();
-      if (!desc) return;
-
-      const newReport = {{
-        id: 'bug-' + Date.now(),
-        type: type,
-        area: area,
-        author: author,
-        desc: desc,
-        status: 'OFFEN',
-        timestamp: new Date().toLocaleString('de-DE')
-      }};
-
-      bugReports.unshift(newReport);
-      localStorage.setItem('qmb_bug_reports', JSON.stringify(bugReports));
-      document.getElementById('bug-desc').value = '';
-      renderBugReports();
-      alert('✅ Fehlerbericht erfolgreich eingereicht! Danke für dein Feedback.');
-    }}
-
-    function toggleBugStatus(id) {{
-      const bug = bugReports.find(b => b.id === id);
-      if (!bug) return;
-      bug.status = bug.status === 'OFFEN' ? 'BEHOBEN' : 'OFFEN';
-      localStorage.setItem('qmb_bug_reports', JSON.stringify(bugReports));
-      renderBugReports();
-    }}
-
-    function deleteBugReport(id) {{
-      bugReports = bugReports.filter(b => b.id !== id);
-      localStorage.setItem('qmb_bug_reports', JSON.stringify(bugReports));
-      renderBugReports();
-    }}
-
-    function clearAllBugReports() {{
-      if (confirm('Möchtest du wirklich alle Fehlerberichte löschen?')) {{
-        bugReports = [];
-        localStorage.removeItem('qmb_bug_reports');
-        renderBugReports();
-      }}
-    }}
-
-    function exportBugReportsJSON() {{
-      const jsonStr = JSON.stringify(bugReports, null, 2);
-      navigator.clipboard.writeText(jsonStr).then(() => {{
-        alert('📋 Alle Fehlerberichte wurden als JSON in deine Zwischenablage kopiert!');
-      }}).catch(() => {{
-        alert(jsonStr);
-      }});
-    }}
-
-    function renderBugReports() {{
-      const list = document.getElementById('bug-reports-list');
-      const badge = document.getElementById('bug-count-badge');
-      badge.innerText = bugReports.length + " Berichte erfasst";
-
-      if (bugReports.length === 0) {{
-        list.innerHTML = `
-          <div style="text-align: center; padding: 30px; color: var(--text-muted);">
-            <div style="font-size: 2rem; margin-bottom: 8px;">🎉</div>
-            <p>Aktuell liegen keine offenen Fehlerberichte vor.</p>
-          </div>`;
-        return;
-      }}
-
-      list.innerHTML = bugReports.map(b => `
-        <div class="glass-card" style="border-left: 4px solid ${{b.status === 'OFFEN' ? '#ef4444' : '#10b981'}};">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
-            <div>
-              <span class="badge ${{b.status === 'OFFEN' ? 'badge-red' : 'badge-green'}}" onclick="toggleBugStatus('${{b.id}}')" style="cursor: pointer;">
-                ${{b.status === 'OFFEN' ? '🔴 Offen (Klicken zum Schließen)' : '🟢 Behoben'}}
-              </span>
-              <span class="badge badge-purple">${{b.type}}</span>
-            </div>
-            <button onclick="deleteBugReport('${{b.id}}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer;">🗑️</button>
-          </div>
-          <p style="font-size: 0.9rem; color: #fff; margin-bottom: 8px;">${{b.desc}}</p>
-          <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted);">
-            <span>📍 ${{b.area}} • 👤 ${{b.author}}</span>
-            <span>🕒 ${{b.timestamp}}</span>
-          </div>
-        </div>
-      `).join('');
     }}
 
     // Render Question Card
@@ -1010,7 +848,6 @@ def generate_qmb_app():
       metrics.innerHTML = `
         <div class="glass-card"><span style="color: var(--text-muted); font-size: 0.8rem;">Gemasterte QMB-Fragen</span><h3 style="font-size: 1.8rem; color: #6ee7b7;">${{masteredIds.length}} / ${{allQuestionsData.length}}</h3></div>
         <div class="glass-card"><span style="color: var(--text-muted); font-size: 0.8rem;">Wiederholungen</span><h3 style="font-size: 1.8rem; color: #fcd34d;">${{retryCount}}</h3></div>
-        <div class="glass-card"><span style="color: var(--text-muted); font-size: 0.8rem;">Erfasste Fehlerberichte</span><h3 style="font-size: 1.8rem; color: #fca5a5;">${{bugReports.length}}</h3></div>
       `;
     }}
 
@@ -1037,7 +874,7 @@ def generate_qmb_app():
     for path in ['/home/ole/Projects/qmb-fahrschul-app/index.html', '/home/ole/qmb_fahrschul_app.html']:
         with open(path, 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print(f"[SUCCESS] App updated with Bug-Report-Tool at {path}")
+        print(f"[SUCCESS] App updated at {path}")
 
 if __name__ == '__main__':
     generate_qmb_app()
