@@ -32,6 +32,16 @@ Diese App dient **exklusiv der Vorbereitung auf die TÜV-Prüfung zum Qualitäts
 
 ---
 
+## 🐛 Fehlerberichte & Feedback-Tool (Issue Manager)
+
+Direkt in der Anwendung ist ein **serverloses Feedback- & Fehlerbericht-Tool** integriert (`Tab: 🐛 Fehlerberichte & Feedback`):
+
+- **📝 Formular zur Problem-Einreichung**: Mitschüler können Korrekturen, Tippfehler, unklare ISO-Klauseln oder Bugs kategorisieren und beschreiben.
+- **📋 Übersichtliche Fehlerberichte-Liste**: Zeigt alle Berichte mit Status (`🔴 Offen` / `🟢 Behoben`), Zeitstempel, Name und betroffener Komponente an.
+- **📥 JSON-Export**: Berichte können per Klick in die Zwischenablage kopiert oder als JSON exportiert und geteilt werden.
+
+---
+
 ## 🎨 Interaktiver Abweichungs-Indikator & ISO-Debatte
 
 Auf jeder Fragenkarte befindet sich ein **farblich codierter Abweichungs-Indikator**:
