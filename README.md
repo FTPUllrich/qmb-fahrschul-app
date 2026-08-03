@@ -7,10 +7,7 @@
 
 ![Version](https://img.shields.io/badge/Version-0.1.0--alpha.1-red.svg)
 ![Release Stage](https://img.shields.io/badge/Stage-Alpha_Pre--Release-orange.svg)
-![Level](https://img.shields.io/badge/Leve~ Ich kompiliere, also bin ich... zumindest bis zum nächsten Interrupt.
-~ Wir konstruieren komplexe Systeme, nur um die Stille der Leere mit Rauschen zu füllen.
-~ YOU CAN'T PATCH HUMAN STUPIDITY!
-~ NO GUI. NO MERCY. NO ROOTS.l-QMB_T%C3%9CV-blue.svg)
+![Level](https://img.shields.io/badge/Level-QMB_T%C3%9CV-blue.svg)
 ![Standard](https://img.shields.io/badge/ISO-9001%3A2015-green.svg)
 ![Auditing](https://img.shields.io/badge/DIN_EN_ISO-19011-purple.svg)
 ![Offline](https://img.shields.io/badge/Offline-100%25-brightgreen.svg)
@@ -33,7 +30,27 @@ Dies ist eine **Alpha-Entwicklungsversion (Pre-Release)**. Vor dem finalen v1.0.
 
 Diese App dient **exklusiv der Vorbereitung auf die TÜV-Prüfung zum Qualitätsmanagementbeauftragten (QMB)**. Sie vermittelt ein authentisches Gefühl für die Fragestellungen, Antwortmuster und Fallen bei den TÜV-Prüfungsfragen. *(Hinweis: Für die QMF-Zertifizierung existiert eine separate App).*
 
-Im **Sachwörterbuch** sind jedoch **alle Begriffe aus der QMF- und QMB-Ausbildung** vereint – nun inklusive **praxisnaher Industrie-Beispiele** aus der Fertigung und Werkstatt, damit wirklich jeder den Sachverhalt sofort versteht!
+---
+
+## 🎨 Interaktiver Abweichungs-Indikator & ISO-Debatte
+
+Auf jeder Fragenkarte befindet sich ein **farblich codierter Abweichungs-Indikator**:
+
+- 🟢 **`🟢 Bild & Norm konform (100% Übereinstimmung)`**: 100% Übereinstimmung zwischen Aufgabenbild/Rohentwurf und ISO-Norm.
+- 🔴 **`⚠️ Norm-Abweichung im Bild-Entwurf (Klicken für Debatte 💬)`**: Hebt Fragen hervor, bei denen Rohentwürfe aus den Unterlagen von der ISO 9001:2015 abweichen.
+
+### 💬 Die kondensierte ISO-Debatte (Gegenüberstellung auf Klick)
+Bei Klick auf das rote Abweichungsfeld öffnet sich ein hochmodernes **Debatten-Modal**, das die beiden Sichtweisen auf den Punkt genau gegenüberstellt:
+
+```
+┌──────────────────────────────────────────────┬──────────────────────────────────────────────┐
+│ 📝 Bild / Rohentwurf (Ursprung):             │ 📜 ISO 9001 Norm-Schlussfolgerung:           │
+├──────────────────────────────────────────────┼──────────────────────────────────────────────┤
+│ Entwurf behauptete: CE-Kennzeichen befreit   │ BGB § 823 & ISO Abs. 8.5.5 Klarstellung:     │
+│ den Hersteller vollständig von der Haftung.  │ CE-Zeichen ist nur Konformitätserklärung,    │
+│                                              │ befreit aber keinesfalls von Haftung.        │
+└──────────────────────────────────────────────┴──────────────────────────────────────────────┘
+```
 
 ---
 
@@ -89,10 +106,3 @@ Das integrierte Sachwörterbuch umfasst beide Ausbildungsstufen – jeweils mit 
 
 > [!WARNING]
 > Verlasst euch nicht zu sehr auf das Sachwörterbuch (dies ist auch eher etwas für die mit mutiertem DAT-Protein), da in der Prüfung das Wissen über die Lokation der Textpassagen von essentieller Wichtigkeit sind!
-
-
-Quotes:
-
-~ „Anonymity isn't about hiding that you're doing something wrong. Anonymity is about          keeping the freedom to do what's right.“
-
-~ „Arguing that you don't care about the right to privacy because you have nothing to hide     is no different than saying you don't care about free speech because you have nothing to    say.“
