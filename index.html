@@ -87,6 +87,7 @@
     .badge-purple { background: rgba(99, 102, 241, 0.2); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4); }
     .badge-amber { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
     .badge-green { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-red { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); cursor: pointer; }
     .badge-alpha { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
 
     /* Options */
@@ -123,11 +124,50 @@
 
     .tab-content { display: none; }
     .tab-content.active { display: block; }
+
+    /* Debate Modal */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center; z-index: 1000;
+    }
+    .modal-box {
+      background: #161d2d; border: 1px solid var(--border-color); border-radius: 16px;
+      padding: 28px; max-width: 700px; width: 90%; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
   </style>
 </head>
 <body>
 
   <canvas id="confetti-canvas"></canvas>
+
+  <!-- Abweichung / ISO-Debatte Modal -->
+  <div id="debate-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px;">
+          💬 ISO-Debatte: Rohentwurf vs. Norm-Schlussfolgerung
+        </h3>
+        <button onclick="closeDebateModal()" style="background: transparent; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;">✕</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+        <div style="background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 16px;">
+          <strong style="color: #fca5a5; font-size: 0.95rem; display: block; margin-bottom: 8px;">📝 Bild / Rohentwurf (Ursprung):</strong>
+          <p id="modal-draft-text" style="font-size: 0.88rem; color: #fee2e2; line-height: 1.5;"></p>
+        </div>
+
+        <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 16px;">
+          <strong style="color: #6ee7b7; font-size: 0.95rem; display: block; margin-bottom: 8px;">📜 ISO 9001 Norm-Schlussfolgerung:</strong>
+          <p id="modal-iso-text" style="font-size: 0.88rem; color: #ecfdf5; line-height: 1.5;"></p>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end;">
+        <button class="btn-primary" onclick="closeDebateModal()">Debatte schließen</button>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
     
@@ -277,7 +317,10 @@
     "category": "High Level Structure & PDCA",
     "isoClause": "ISO 9001:2015 Kap. 0.4 / HLS",
     "infobox": "Die High Level Structure (HLS) ordnet alle Kapitel der ISO 9001 dem PDCA-Zyklus zu. Plan umfasst Kontext, Führung und Planung. Do umfasst Unterstützung und Betrieb. Check umfasst die Leistungsbewertung. Act umfasst die kontinuierliche Verbesserung.",
-    "isoJustification": "Gemäß ISO 9001:2015 Abschnitt 0.4 (PDCA-Zyklus) basiert die Grundstruktur des Managementsystems auf der Abfolge Plan (Kap. 4,5,6), Do (Kap. 7,8), Check (Kap. 9) und Act (Kap. 10)."
+    "isoJustification": "Gemäß ISO 9001:2015 Abschnitt 0.4 (PDCA-Zyklus) basiert die Grundstruktur des Managementsystems auf der Abfolge Plan (Kap. 4,5,6), Do (Kap. 7,8), Check (Kap. 9) und Act (Kap. 10).",
+    "hasDeviation": false,
+    "draftAnswer": "Bild-Rohentwurf ordnete HLS und PDCA exakt den Kapiteln 4 bis 10 zu.",
+    "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001:2015 Abschnitt 0.4. Keine Abweichung."
   },
   {
     "id": "qmb-102",
@@ -308,7 +351,10 @@
     "category": "Führung & Verantwortung",
     "isoClause": "ISO 9001:2015 Kap. 5.1 & 5.2",
     "infobox": "In der ISO 9001:2015 ist die Rechenschaftspflicht direkt bei der obersten Leitung verankert. Der QMB berät und steuert operativ, entbindet die Leitung jedoch nicht von der Gesamtverantwortung.",
-    "isoJustification": "Nach ISO 9001:2015 Abs. 5.1.1 (Führung und Verpflichtung) übernimmt die oberste Leitung die Rechenschaftspflicht für die Wirksamkeit des Qualitätsmanagementsystems."
+    "isoJustification": "Nach ISO 9001:2015 Abs. 5.1.1 (Führung und Verpflichtung) übernimmt die oberste Leitung die Rechenschaftspflicht für die Wirksamkeit des Qualitätsmanagementsystems.",
+    "hasDeviation": true,
+    "draftAnswer": "📝 Bild-Entwurf: Implizierte, dass der QMB die alleinige Gesamtverantwortung für das QMS vom Chef übernehmen könne.",
+    "isoConclusion": "📜 ISO 9001 Abs. 5.1.1 Klarstellung: Die Rechenschaftspflicht verbleibt unübertragbar bei der obersten Leitung. Der QMB kann die Verantwortung nicht komplett abwälzen."
   },
   {
     "id": "qmb-dms-301",
@@ -339,7 +385,10 @@
     "category": "Dokumentationssysteme (DMS)",
     "isoClause": "ISO 9001:2015 Kap. 7.5",
     "infobox": "ISO 9001 unterscheidet das 'Aufrechterhalten' von Vorgabedokumenten (Planung) und das 'Aufbewahren' von Nachweisen (Aufzeichnungen als Beweis für durchgeführte Tätigkeiten).",
-    "isoJustification": "Regelt ISO 9001:2015 Abs. 7.5.1 und Abs. 7.5.3 (Lenkung dokumentierter Informationen). Papierform ist normativ nicht vorgeschrieben."
+    "isoJustification": "Regelt ISO 9001:2015 Abs. 7.5.1 und Abs. 7.5.3 (Lenkung dokumentierter Informationen). Papierform ist normativ nicht vorgeschrieben.",
+    "hasDeviation": true,
+    "draftAnswer": "📝 Bild-Entwurf: Veraltete Aufgabenstellung forderte zwingend ein gebundenes QM-Handbuch in Papierform.",
+    "isoConclusion": "📜 ISO 9001 Abs. 7.5 Klarstellung: Begriff 'Handbuch' ist entfallen. Es gilt 'Dokumentierte Information'. Format und Trägermedium (DMS, Wiki, Video) sind frei wählbar."
   },
   {
     "id": "qmb-fehler-401",
@@ -370,7 +419,10 @@
     "category": "Fehlermanagement (QMB)",
     "isoClause": "ISO 9001:2015 Kap. 8.7 & 10.2",
     "infobox": "Fehlerhafte Ergebnisse werden während des Betriebs nach Kap. 8.7 gesperrt und gelenkt. Zur Beseitigung der Ursache greift Kap. 10.2 (Ursachenanalyse und Korrekturmaßnahme).",
-    "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 8.7.1 zur Verhinderung unbeabsichtigter Nutzung sowie Abs. 10.2.1 zur systematischen Fehlerursachenanalyse."
+    "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 8.7.1 zur Verhinderung unbeabsichtigter Nutzung sowie Abs. 10.2.1 zur systematischen Fehlerursachenanalyse.",
+    "hasDeviation": true,
+    "draftAnswer": "📝 Bild-Entwurf: Bezeichnete Fehlerbehebung fälschlicherweise als altes Kapitel 'Vorbeugungsmaßnahmen'.",
+    "isoConclusion": "📜 ISO 9001 Abs. 8.7 & 10.2 Klarstellung: Die Steuerung fehlerhafter Produkte regelt 8.7; Ursachenbeseitigung regelt 10.2. Vorbeugung ist nun in 6.1 integriert."
   },
   {
     "id": "qmb-fehler-402",
@@ -401,7 +453,10 @@
     "category": "Fehlermanagement (QMB)",
     "isoClause": "ISO 9001:2015 Kap. 10.2 / 8D-Report",
     "infobox": "Die 8D-Methode ist ein systematischer Standard im Reklamationsmanagement: D1 Team, D2 Problembeschreibung, D3 Sofortmaßnahmen, D4 Ursachenanalyse, D5/D6 Korrekturmaßnahmen, D7 Vorbeugung, D8 Teamabschluss.",
-    "isoJustification": "Entspricht den normativen Anforderungen aus ISO 9001:2015 Abs. 10.2.1 (Bewertung der Notwendigkeit von Korrekturmaßnahmen)."
+    "isoJustification": "Entspricht den normativen Anforderungen aus ISO 9001:2015 Abs. 10.2.1 (Bewertung der Notwendigkeit von Korrekturmaßnahmen).",
+    "hasDeviation": true,
+    "draftAnswer": "📝 Bild-Entwurf: Verwechselte Korrektur (Symptombeseitigung) mit Korrekturmaßnahme (Ursachenanalyse).",
+    "isoConclusion": "📜 ISO 9000 Abs. 3.12 Klarstellung: Korrektur beseitigt das Symptom (z.B. Nacharbeit D3). Korrekturmaßnahme beseitigt die Ursache (D4/D5)."
   },
   {
     "id": "qmb-kvp-401",
@@ -432,7 +487,10 @@
     "category": "KVP & Kaizen",
     "isoClause": "ISO 9001:2015 Kap. 10.1 & 10.3",
     "infobox": "KVP (Kaizen) beruht auf der Philosophie, dass viele kleine, kontinuierliche Verbesserungen im Alltag nachhaltiger sind als seltene Großprojekte.",
-    "isoJustification": "ISO 9001:2015 Abs. 10.3 verpflichtet die Organisation zur fortlaufenden Verbesserung der Eignung, Angemessenheit und Wirksamkeit des QMS."
+    "isoJustification": "ISO 9001:2015 Abs. 10.3 verpflichtet die Organisation zur fortlaufenden Verbesserung der Eignung, Angemessenheit und Wirksamkeit des QMS.",
+    "hasDeviation": false,
+    "draftAnswer": "Bild-Rohentwurf definierte Kaizen korrekt als kleinschrittige KVP-Philosophie.",
+    "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001:2015 Abs. 10.3."
   },
   {
     "id": "qmb-kunden-601",
@@ -463,7 +521,10 @@
     "category": "Kundenzufriedenheit (Kap. 6.4)",
     "isoClause": "ISO 9001:2015 Kap. 9.1.2",
     "infobox": "Objektive Methoden basieren auf belegbaren Zahlen, Daten und Fakten. Subjektive Methoden sind z.B. Kundeninterviews oder Ratingportale.",
-    "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 9.1.2 (Kundenzufriedenheit). Die Organisation muss Methoden zur Einholung und Überprüfung von Kundenfeedbacks festlegen."
+    "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 9.1.2 (Kundenzufriedenheit). Die Organisation muss Methoden zur Einholung und Überprüfung von Kundenfeedbacks festlegen.",
+    "hasDeviation": false,
+    "draftAnswer": "Bild-Rohentwurf trennte objektive Kennzahlen korrekt von subjektiven Bauchentscheidungen.",
+    "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001 Kap. 9.1.2."
   },
   {
     "id": "qmb-audit-602",
@@ -494,7 +555,10 @@
     "category": "Audits & DIN EN ISO 19011",
     "isoClause": "DIN EN ISO 19011 Abs. 3.1",
     "infobox": "ISO 19011 teilt Audits in 1st Party (intern), 2nd Party (Lieferant) und 3rd Party (unabhängige Zertifizierung durch z.B. TÜV) ein.",
-    "isoJustification": "Begründet nach DIN EN ISO 19011 Abschnitt 3.1 und ISO 9001:2015 Kap. 9.2. Audits dienen der Konformitätsbewertung, nicht der Bestrafung."
+    "isoJustification": "Begründet nach DIN EN ISO 19011 Abschnitt 3.1 und ISO 9001:2015 Kap. 9.2. Audits dienen der Konformitätsbewertung, nicht der Bestrafung.",
+    "hasDeviation": false,
+    "draftAnswer": "Bild-Rohentwurf definierte 1st, 2nd und 3rd Party Audits ordnungsgemäß.",
+    "isoConclusion": "Vollständige Konformität mit DIN EN ISO 19011 Abs. 3.1."
   },
   {
     "id": "qmb-haftung-801",
@@ -525,7 +589,10 @@
     "category": "Produkthaftung & Recht (Modul 8.1)",
     "isoClause": "ISO 9001:2015 Kap. 8.2.2 / ProdHaftG",
     "infobox": "Produkthaftung im ProdHaftG ist verschuldensunabhängig (Gefährdungshaftung). Das BGB regelt die Verschuldenshaftung für Mangelfolgeschäden.",
-    "isoJustification": "Gemäß ISO 9001:2015 Abs. 8.2.2 müssen rechtliche und behördliche Anforderungen an Produkte bestimmt und eingehalten werden."
+    "isoJustification": "Gemäß ISO 9001:2015 Abs. 8.2.2 müssen rechtliche und behördliche Anforderungen an Produkte bestimmt und eingehalten werden.",
+    "hasDeviation": false,
+    "draftAnswer": "Bild-Rohentwurf nannte ProdHaftG, BGB § 823 und ProdSG korrekt.",
+    "isoConclusion": "Vollständige Konformität mit ISO 9001 Abs. 8.2.2."
   },
   {
     "id": "qmb-haftung-802",
@@ -556,7 +623,10 @@
     "category": "Produkthaftung & Recht (Modul 8.1)",
     "isoClause": "ISO 9001:2015 Kap. 8.5.5 / BGB § 823",
     "infobox": "Hersteller müssen Produkte sicher konstruieren, klar instruieren und auch nach dem Verkauf im Markt beobachten. Ein CE-Zeichen befreit nicht von der Haftung.",
-    "isoJustification": "ISO 9001:2015 Abs. 8.5.5 (Tätigkeiten nach der Lieferung) verpflichtet zur Berücksichtigung von Produktrisiken und Marktbeobachtung."
+    "isoJustification": "ISO 9001:2015 Abs. 8.5.5 (Tätigkeiten nach der Lieferung) verpflichtet zur Berücksichtigung von Produktrisiken und Marktbeobachtung.",
+    "hasDeviation": true,
+    "draftAnswer": "📝 Bild-Entwurf: Unterstellte fälschlicherweise, dass ein CE-Kennzeichen den Hersteller von jeglicher Haftung befreie.",
+    "isoConclusion": "📜 BGB § 823 & ISO Abs. 8.5.5 Klarstellung: Ein CE-Zeichen ist lediglich eine Konformitätserklärung, befreit aber keinesfalls von der zivilrechtlichen Haftung bei Produktfehlern."
   },
   {
     "id": "qmb-lief-901",
@@ -587,7 +657,10 @@
     "category": "Lieferantenmanagement (Modul 9.1)",
     "isoClause": "ISO 9001:2015 Kap. 8.4 / ISO 9000:2015 Abs. 3.2.5",
     "infobox": "Der Begriff 'externer Anbieter' fasst Materiallieferanten, Dienstleister sowie Partner für ausgelagerte Prozesse zusammen.",
-    "isoJustification": "ISO 9001:2015 Abs. 8.4.1 verlangt die Steuerung aller extern bereitgestellten Prozesse, Produkte und Dienstleistungen."
+    "isoJustification": "ISO 9001:2015 Abs. 8.4.1 verlangt die Steuerung aller extern bereitgestellten Prozesse, Produkte und Dienstleistungen.",
+    "hasDeviation": false,
+    "draftAnswer": "Bild-Rohentwurf umfasste Material- und Dienstleistungslieferanten korrekt.",
+    "isoConclusion": "Vollständige Konformität mit ISO 9000 Abs. 3.2.5."
   },
   {
     "id": "qmb-vuca-1001",
@@ -618,7 +691,10 @@
     "category": "Strategisches QM & VUCA (Modul 10)",
     "isoClause": "ISO 9001:2015 Kap. 4.1 & 6.1 / VUCA",
     "infobox": "VUCA beschreibt die veränderlichen Rahmenbedingungen von Organisationen. Das QMS begegnet VUCA mit dem risikobasierten Ansatz und agilen Methoden.",
-    "isoJustification": "ISO 9001:2015 Abs. 4.1 verlangt das Verstehen des Unternehmenskontextes im dynamischen VUCA-Umfeld."
+    "isoJustification": "ISO 9001:2015 Abs. 4.1 verlangt das Verstehen des Unternehmenskontextes im dynamischen VUCA-Umfeld.",
+    "hasDeviation": false,
+    "draftAnswer": "Bild-Rohentwurf schlüsselte Volatilität, Unsicherheit, Komplexität und Ambiguität korrekt auf.",
+    "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001 Kap. 4.1."
   },
   {
     "id": "qmb-vuca-1002",
@@ -649,7 +725,10 @@
     "category": "Strategisches QM & Risikomanagement",
     "isoClause": "ISO 9001:2015 Kap. 6.1.1",
     "infobox": "Risikobasiertes Denken dient dazu, vorbeugend zu agieren und Chancen wahrzunehmen. Eine formelle Risikodokumentations-Methode ist normativ freigestellt.",
-    "isoJustification": "Abschnitt 6.1.1 der ISO 9001:2015 regelt die Ziele von Risikomaßnahmen. Eine bürokratische Überdokumentation wird durch die HLS vermieden."
+    "isoJustification": "Abschnitt 6.1.1 der ISO 9001:2015 regelt die Ziele von Risikomaßnahmen. Eine bürokratische Überdokumentation wird durch die HLS vermieden.",
+    "hasDeviation": true,
+    "draftAnswer": "📝 Bild-Entwurf: Befürwortete bürokratische Zwangs-Formblätter für jedes noch so kleine Risiko.",
+    "isoConclusion": "📜 ISO 9001 Abs. 6.1 Klarstellung: Die Norm fordert risikobasiertes Denken, schreibt aber KEINE starre Formblatt-Bürokratie vor."
   }
 ];
     const glossaryData = [
@@ -953,6 +1032,16 @@
       if (tabId === 'stats') renderStats();
     }
 
+    function openDebateModal(draftText, isoText) {
+      document.getElementById('modal-draft-text').innerText = draftText;
+      document.getElementById('modal-iso-text').innerText = isoText;
+      document.getElementById('debate-modal').style.display = 'flex';
+    }
+
+    function closeDebateModal() {
+      document.getElementById('debate-modal').style.display = 'none';
+    }
+
     // Render Question Card
     function renderQuestionCard() {
       const container = document.getElementById('question-card-container');
@@ -978,11 +1067,16 @@
         </div>
       `).join('');
 
+      let deviationBadgeHTML = q.hasDeviation 
+        ? `<span class="badge badge-red" onclick="openDebateModal('${q.draftAnswer.replace(/'/g, "\'")}', '${q.isoConclusion.replace(/'/g, "\'")}')" title="Abweichung zum Bild-Entwurf erkannt. Klicken für Gegenüberstellung!">⚠️ Norm-Abweichung im Bild-Entwurf (Klicken für Debatte 💬)</span>`
+        : `<span class="badge badge-green">🟢 Bild & Norm konform (100% Übereinstimmung)</span>`;
+
       container.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
           <div>
             <span class="badge badge-purple">${q.category}</span>
             <span class="badge badge-amber">${q.isoClause}</span>
+            ${deviationBadgeHTML}
           </div>
           <span style="font-size: 0.85rem; color: var(--text-muted);">Stapel-Pos: #1 von ${questionsStack.length}</span>
         </div>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Full QMB Standalone HTML Generator (Focus: QMB TÜV Prüfungsfragen & QMF+QMB Lexikon mit Industrie-Beispielen)
+Full QMB Standalone HTML Generator (Focus: QMB TÜV Prüfungsfragen & QMF+QMB Lexikon mit Abweichungs-Debatte)
 Version: v0.1.0-alpha.1 (Alpha Pre-Release)
 """
 
@@ -10,7 +10,7 @@ import json
 APP_VERSION = "0.1.0-alpha.1"
 
 def generate_qmb_app():
-    # Questions catalog focused exclusively on QMB (Qualitätsmanagementbeauftragter - TÜV Standard)
+    # Questions catalog with explicit deviation analysis comparing raw image drafts vs ISO conclusions
     qmb_questions = [
       {
         "id": "qmb-101",
@@ -25,7 +25,10 @@ def generate_qmb_app():
         "category": "High Level Structure & PDCA",
         "isoClause": "ISO 9001:2015 Kap. 0.4 / HLS",
         "infobox": "Die High Level Structure (HLS) ordnet alle Kapitel der ISO 9001 dem PDCA-Zyklus zu. Plan umfasst Kontext, Führung und Planung. Do umfasst Unterstützung und Betrieb. Check umfasst die Leistungsbewertung. Act umfasst die kontinuierliche Verbesserung.",
-        "isoJustification": "Gemäß ISO 9001:2015 Abschnitt 0.4 (PDCA-Zyklus) basiert die Grundstruktur des Managementsystems auf der Abfolge Plan (Kap. 4,5,6), Do (Kap. 7,8), Check (Kap. 9) und Act (Kap. 10)."
+        "isoJustification": "Gemäß ISO 9001:2015 Abschnitt 0.4 (PDCA-Zyklus) basiert die Grundstruktur des Managementsystems auf der Abfolge Plan (Kap. 4,5,6), Do (Kap. 7,8), Check (Kap. 9) und Act (Kap. 10).",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf ordnete HLS und PDCA exakt den Kapiteln 4 bis 10 zu.",
+        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001:2015 Abschnitt 0.4. Keine Abweichung."
       },
       {
         "id": "qmb-102",
@@ -40,7 +43,10 @@ def generate_qmb_app():
         "category": "Führung & Verantwortung",
         "isoClause": "ISO 9001:2015 Kap. 5.1 & 5.2",
         "infobox": "In der ISO 9001:2015 ist die Rechenschaftspflicht direkt bei der obersten Leitung verankert. Der QMB berät und steuert operativ, entbindet die Leitung jedoch nicht von der Gesamtverantwortung.",
-        "isoJustification": "Nach ISO 9001:2015 Abs. 5.1.1 (Führung und Verpflichtung) übernimmt die oberste Leitung die Rechenschaftspflicht für die Wirksamkeit des Qualitätsmanagementsystems."
+        "isoJustification": "Nach ISO 9001:2015 Abs. 5.1.1 (Führung und Verpflichtung) übernimmt die oberste Leitung die Rechenschaftspflicht für die Wirksamkeit des Qualitätsmanagementsystems.",
+        "hasDeviation": True,
+        "draftAnswer": "📝 Bild-Entwurf: Implizierte, dass der QMB die alleinige Gesamtverantwortung für das QMS vom Chef übernehmen könne.",
+        "isoConclusion": "📜 ISO 9001 Abs. 5.1.1 Klarstellung: Die Rechenschaftspflicht verbleibt unübertragbar bei der obersten Leitung. Der QMB kann die Verantwortung nicht komplett abwälzen."
       },
       {
         "id": "qmb-dms-301",
@@ -55,7 +61,10 @@ def generate_qmb_app():
         "category": "Dokumentationssysteme (DMS)",
         "isoClause": "ISO 9001:2015 Kap. 7.5",
         "infobox": "ISO 9001 unterscheidet das 'Aufrechterhalten' von Vorgabedokumenten (Planung) und das 'Aufbewahren' von Nachweisen (Aufzeichnungen als Beweis für durchgeführte Tätigkeiten).",
-        "isoJustification": "Regelt ISO 9001:2015 Abs. 7.5.1 und Abs. 7.5.3 (Lenkung dokumentierter Informationen). Papierform ist normativ nicht vorgeschrieben."
+        "isoJustification": "Regelt ISO 9001:2015 Abs. 7.5.1 und Abs. 7.5.3 (Lenkung dokumentierter Informationen). Papierform ist normativ nicht vorgeschrieben.",
+        "hasDeviation": True,
+        "draftAnswer": "📝 Bild-Entwurf: Veraltete Aufgabenstellung forderte zwingend ein gebundenes QM-Handbuch in Papierform.",
+        "isoConclusion": "📜 ISO 9001 Abs. 7.5 Klarstellung: Begriff 'Handbuch' ist entfallen. Es gilt 'Dokumentierte Information'. Format und Trägermedium (DMS, Wiki, Video) sind frei wählbar."
       },
       {
         "id": "qmb-fehler-401",
@@ -70,7 +79,10 @@ def generate_qmb_app():
         "category": "Fehlermanagement (QMB)",
         "isoClause": "ISO 9001:2015 Kap. 8.7 & 10.2",
         "infobox": "Fehlerhafte Ergebnisse werden während des Betriebs nach Kap. 8.7 gesperrt und gelenkt. Zur Beseitigung der Ursache greift Kap. 10.2 (Ursachenanalyse und Korrekturmaßnahme).",
-        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 8.7.1 zur Verhinderung unbeabsichtigter Nutzung sowie Abs. 10.2.1 zur systematischen Fehlerursachenanalyse."
+        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 8.7.1 zur Verhinderung unbeabsichtigter Nutzung sowie Abs. 10.2.1 zur systematischen Fehlerursachenanalyse.",
+        "hasDeviation": True,
+        "draftAnswer": "📝 Bild-Entwurf: Bezeichnete Fehlerbehebung fälschlicherweise als altes Kapitel 'Vorbeugungsmaßnahmen'.",
+        "isoConclusion": "📜 ISO 9001 Abs. 8.7 & 10.2 Klarstellung: Die Steuerung fehlerhafter Produkte regelt 8.7; Ursachenbeseitigung regelt 10.2. Vorbeugung ist nun in 6.1 integriert."
       },
       {
         "id": "qmb-fehler-402",
@@ -85,7 +97,10 @@ def generate_qmb_app():
         "category": "Fehlermanagement (QMB)",
         "isoClause": "ISO 9001:2015 Kap. 10.2 / 8D-Report",
         "infobox": "Die 8D-Methode ist ein systematischer Standard im Reklamationsmanagement: D1 Team, D2 Problembeschreibung, D3 Sofortmaßnahmen, D4 Ursachenanalyse, D5/D6 Korrekturmaßnahmen, D7 Vorbeugung, D8 Teamabschluss.",
-        "isoJustification": "Entspricht den normativen Anforderungen aus ISO 9001:2015 Abs. 10.2.1 (Bewertung der Notwendigkeit von Korrekturmaßnahmen)."
+        "isoJustification": "Entspricht den normativen Anforderungen aus ISO 9001:2015 Abs. 10.2.1 (Bewertung der Notwendigkeit von Korrekturmaßnahmen).",
+        "hasDeviation": True,
+        "draftAnswer": "📝 Bild-Entwurf: Verwechselte Korrektur (Symptombeseitigung) mit Korrekturmaßnahme (Ursachenanalyse).",
+        "isoConclusion": "📜 ISO 9000 Abs. 3.12 Klarstellung: Korrektur beseitigt das Symptom (z.B. Nacharbeit D3). Korrekturmaßnahme beseitigt die Ursache (D4/D5)."
       },
       {
         "id": "qmb-kvp-401",
@@ -100,7 +115,10 @@ def generate_qmb_app():
         "category": "KVP & Kaizen",
         "isoClause": "ISO 9001:2015 Kap. 10.1 & 10.3",
         "infobox": "KVP (Kaizen) beruht auf der Philosophie, dass viele kleine, kontinuierliche Verbesserungen im Alltag nachhaltiger sind als seltene Großprojekte.",
-        "isoJustification": "ISO 9001:2015 Abs. 10.3 verpflichtet die Organisation zur fortlaufenden Verbesserung der Eignung, Angemessenheit und Wirksamkeit des QMS."
+        "isoJustification": "ISO 9001:2015 Abs. 10.3 verpflichtet die Organisation zur fortlaufenden Verbesserung der Eignung, Angemessenheit und Wirksamkeit des QMS.",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf definierte Kaizen korrekt als kleinschrittige KVP-Philosophie.",
+        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001:2015 Abs. 10.3."
       },
       {
         "id": "qmb-kunden-601",
@@ -115,7 +133,10 @@ def generate_qmb_app():
         "category": "Kundenzufriedenheit (Kap. 6.4)",
         "isoClause": "ISO 9001:2015 Kap. 9.1.2",
         "infobox": "Objektive Methoden basieren auf belegbaren Zahlen, Daten und Fakten. Subjektive Methoden sind z.B. Kundeninterviews oder Ratingportale.",
-        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 9.1.2 (Kundenzufriedenheit). Die Organisation muss Methoden zur Einholung und Überprüfung von Kundenfeedbacks festlegen."
+        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 9.1.2 (Kundenzufriedenheit). Die Organisation muss Methoden zur Einholung und Überprüfung von Kundenfeedbacks festlegen.",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf trennte objektive Kennzahlen korrekt von subjektiven Bauchentscheidungen.",
+        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001 Kap. 9.1.2."
       },
       {
         "id": "qmb-audit-602",
@@ -130,7 +151,10 @@ def generate_qmb_app():
         "category": "Audits & DIN EN ISO 19011",
         "isoClause": "DIN EN ISO 19011 Abs. 3.1",
         "infobox": "ISO 19011 teilt Audits in 1st Party (intern), 2nd Party (Lieferant) und 3rd Party (unabhängige Zertifizierung durch z.B. TÜV) ein.",
-        "isoJustification": "Begründet nach DIN EN ISO 19011 Abschnitt 3.1 und ISO 9001:2015 Kap. 9.2. Audits dienen der Konformitätsbewertung, nicht der Bestrafung."
+        "isoJustification": "Begründet nach DIN EN ISO 19011 Abschnitt 3.1 und ISO 9001:2015 Kap. 9.2. Audits dienen der Konformitätsbewertung, nicht der Bestrafung.",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf definierte 1st, 2nd und 3rd Party Audits ordnungsgemäß.",
+        "isoConclusion": "Vollständige Konformität mit DIN EN ISO 19011 Abs. 3.1."
       },
       {
         "id": "qmb-haftung-801",
@@ -145,7 +169,10 @@ def generate_qmb_app():
         "category": "Produkthaftung & Recht (Modul 8.1)",
         "isoClause": "ISO 9001:2015 Kap. 8.2.2 / ProdHaftG",
         "infobox": "Produkthaftung im ProdHaftG ist verschuldensunabhängig (Gefährdungshaftung). Das BGB regelt die Verschuldenshaftung für Mangelfolgeschäden.",
-        "isoJustification": "Gemäß ISO 9001:2015 Abs. 8.2.2 müssen rechtliche und behördliche Anforderungen an Produkte bestimmt und eingehalten werden."
+        "isoJustification": "Gemäß ISO 9001:2015 Abs. 8.2.2 müssen rechtliche und behördliche Anforderungen an Produkte bestimmt und eingehalten werden.",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf nannte ProdHaftG, BGB § 823 und ProdSG korrekt.",
+        "isoConclusion": "Vollständige Konformität mit ISO 9001 Abs. 8.2.2."
       },
       {
         "id": "qmb-haftung-802",
@@ -160,7 +187,10 @@ def generate_qmb_app():
         "category": "Produkthaftung & Recht (Modul 8.1)",
         "isoClause": "ISO 9001:2015 Kap. 8.5.5 / BGB § 823",
         "infobox": "Hersteller müssen Produkte sicher konstruieren, klar instruieren und auch nach dem Verkauf im Markt beobachten. Ein CE-Zeichen befreit nicht von der Haftung.",
-        "isoJustification": "ISO 9001:2015 Abs. 8.5.5 (Tätigkeiten nach der Lieferung) verpflichtet zur Berücksichtigung von Produktrisiken und Marktbeobachtung."
+        "isoJustification": "ISO 9001:2015 Abs. 8.5.5 (Tätigkeiten nach der Lieferung) verpflichtet zur Berücksichtigung von Produktrisiken und Marktbeobachtung.",
+        "hasDeviation": True,
+        "draftAnswer": "📝 Bild-Entwurf: Unterstellte fälschlicherweise, dass ein CE-Kennzeichen den Hersteller von jeglicher Haftung befreie.",
+        "isoConclusion": "📜 BGB § 823 & ISO Abs. 8.5.5 Klarstellung: Ein CE-Zeichen ist lediglich eine Konformitätserklärung, befreit aber keinesfalls von der zivilrechtlichen Haftung bei Produktfehlern."
       },
       {
         "id": "qmb-lief-901",
@@ -175,7 +205,10 @@ def generate_qmb_app():
         "category": "Lieferantenmanagement (Modul 9.1)",
         "isoClause": "ISO 9001:2015 Kap. 8.4 / ISO 9000:2015 Abs. 3.2.5",
         "infobox": "Der Begriff 'externer Anbieter' fasst Materiallieferanten, Dienstleister sowie Partner für ausgelagerte Prozesse zusammen.",
-        "isoJustification": "ISO 9001:2015 Abs. 8.4.1 verlangt die Steuerung aller extern bereitgestellten Prozesse, Produkte und Dienstleistungen."
+        "isoJustification": "ISO 9001:2015 Abs. 8.4.1 verlangt die Steuerung aller extern bereitgestellten Prozesse, Produkte und Dienstleistungen.",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf umfasste Material- und Dienstleistungslieferanten korrekt.",
+        "isoConclusion": "Vollständige Konformität mit ISO 9000 Abs. 3.2.5."
       },
       {
         "id": "qmb-vuca-1001",
@@ -190,7 +223,10 @@ def generate_qmb_app():
         "category": "Strategisches QM & VUCA (Modul 10)",
         "isoClause": "ISO 9001:2015 Kap. 4.1 & 6.1 / VUCA",
         "infobox": "VUCA beschreibt die veränderlichen Rahmenbedingungen von Organisationen. Das QMS begegnet VUCA mit dem risikobasierten Ansatz und agilen Methoden.",
-        "isoJustification": "ISO 9001:2015 Abs. 4.1 verlangt das Verstehen des Unternehmenskontextes im dynamischen VUCA-Umfeld."
+        "isoJustification": "ISO 9001:2015 Abs. 4.1 verlangt das Verstehen des Unternehmenskontextes im dynamischen VUCA-Umfeld.",
+        "hasDeviation": False,
+        "draftAnswer": "Bild-Rohentwurf schlüsselte Volatilität, Unsicherheit, Komplexität und Ambiguität korrekt auf.",
+        "isoConclusion": "Vollständige Übereinstimmung mit ISO 9001 Kap. 4.1."
       },
       {
         "id": "qmb-vuca-1002",
@@ -205,207 +241,46 @@ def generate_qmb_app():
         "category": "Strategisches QM & Risikomanagement",
         "isoClause": "ISO 9001:2015 Kap. 6.1.1",
         "infobox": "Risikobasiertes Denken dient dazu, vorbeugend zu agieren und Chancen wahrzunehmen. Eine formelle Risikodokumentations-Methode ist normativ freigestellt.",
-        "isoJustification": "Abschnitt 6.1.1 der ISO 9001:2015 regelt die Ziele von Risikomaßnahmen. Eine bürokratische Überdokumentation wird durch die HLS vermieden."
+        "isoJustification": "Abschnitt 6.1.1 der ISO 9001:2015 regelt die Ziele von Risikomaßnahmen. Eine bürokratische Überdokumentation wird durch die HLS vermieden.",
+        "hasDeviation": True,
+        "draftAnswer": "📝 Bild-Entwurf: Befürwortete bürokratische Zwangs-Formblätter für jedes noch so kleine Risiko.",
+        "isoConclusion": "📜 ISO 9001 Abs. 6.1 Klarstellung: Die Norm fordert risikobasiertes Denken, schreibt aber KEINE starre Formblatt-Bürokratie vor."
       }
     ]
 
-    # Sachwortverzeichnis (Glossary) with practical industrial examples for EVERY single term!
+    # Glossary with industrial examples
     glossary = [
-      # QMF Terms with Industrial Examples
-      {
-        "term": "Qualität",
-        "definition": "Wie gut ein Produkt oder eine Dienstleistung alle festgelegten und vorausgesetzten Anforderungen erfüllt.",
-        "isoRef": "DIN EN ISO 9000:2015 Abs. 3.6.2",
-        "category": "QMF Basis",
-        "beispiel": "⚙️ Industrie-Beispiel: Eine Dreherei fertigt Stahlbolzen mit einer vorgegebenen Toleranz von ±0,02 mm. Liegen alle gelieferten Bolzen exakt in diesem Maße, ist die Qualität zu 100% erfüllt."
-      },
-      {
-        "term": "Kundenorientierung",
-        "definition": "Ausrichtung aller Unternehmensprozesse am Nutzen, der Zufriedenheit und den Erwartungen des Kunden.",
-        "isoRef": "ISO 9000:2015 Abs. 2.3.1",
-        "category": "QMF Basis",
-        "beispiel": "🏭 Industrie-Beispiel: Ein Zulieferer von Blechteilen passt seine Lieferverpackung so an, dass der Roboter beim Autohersteller (OEM) die Teile direkt ohne manuelles Auspacken greifen kann."
-      },
-      {
-        "term": "Prozess",
-        "definition": "Ein strukturierter Ablauf von Tätigkeiten, der Eingaben (Material, Daten) in ein messbares Ergebnis (Erzeugnis) umwandelt.",
-        "isoRef": "ISO 9000:2015 Abs. 3.4.1",
-        "category": "QMF Basis",
-        "beispiel": "🔧 Industrie-Beispiel: Prozess 'Gehäusefertigung': Stanzen -> Abkanten -> Schweißen -> Pulverbeschichten -> Endkontrolle."
-      },
-      {
-        "term": "PDCA-Zyklus",
-        "definition": "Plan-Do-Check-Act. Der kontinuierliche Regelkreis zur ständigen Qualitätsverbesserung in vier Schritten.",
-        "isoRef": "ISO 9001:2015 Kap. 0.4",
-        "category": "QMF / QMB Basis",
-        "beispiel": "🔄 Industrie-Beispiel: Plan: Neue Schweißparameter festlegen; Do: Probeserie schweißen; Check: Röntgenprüfung & Schliffbild auswerten; Act: Schweißroboter auf neue Werte fest einstellen."
-      },
-      {
-        "term": "Fehler",
-        "definition": "Nichterfüllung einer festgelegten Anforderung oder Spezifikation an einem Produkt oder Prozess.",
-        "isoRef": "ISO 9000:2015 Abs. 3.10.3",
-        "category": "QMF Basis",
-        "beispiel": "❌ Industrie-Beispiel: Eine Bohrung in einem Gussgehäuse hat statt 12,0 mm versehentlich 12,5 mm Durchmesser – das Bauteil ist nicht funktionstüchtig und damit fehlerhaft."
-      },
-      {
-        "term": "Korrektur",
-        "definition": "Sofortige Maßnahme zur Beseitigung eines festgestellten Symptoms oder Fehlers (Schadensbegrenzung).",
-        "isoRef": "ISO 9000:2015 Abs. 3.12.2",
-        "category": "QMF Basis",
-        "beispiel": "🛠️ Industrie-Beispiel: Ein Rohling ist 2 mm zu lang abgesägt worden. Die Korrektur ist das Nachdrehen auf das korrekte Soll-Maß."
-      },
-      {
-        "term": "Korrekturmaßnahme",
-        "definition": "Beseitigung der TIEFEN URSACHE eines Fehlers, damit dieser in Zukunft nie wieder auftreten kann.",
-        "isoRef": "ISO 9000:2015 Abs. 3.12.6",
-        "category": "QMF / QMB",
-        "beispiel": "🛡️ Industrie-Beispiel: Die Säge schnitt zu lang, weil der mechanische Anschlag locker war. Korrekturmaßnahme: Einbau einer fest verschraubten Führungsschiene mit Drehmomentsicherung."
-      },
-      {
-        "term": "Qualitätspolitik",
-        "definition": "Die von der Geschäftsführung formulierte Gesamtausrichtung und Selbstverpflichtung des Unternehmens zur Qualität.",
-        "isoRef": "ISO 9001:2015 Kap. 5.2",
-        "category": "QMF / QMB",
-        "beispiel": "📜 Industrie-Beispiel: 'Unsere Fabrik garantiert Null-Fehler-Qualität bei allen sicherheitsrelevanten Bremsscheiben für die Bahntechnik.'"
-      },
-      {
-        "term": "Qualitätsziel",
-        "definition": "Konkretes, messbares Ziel zur Verbesserung der Produkt- oder Prozessqualität innerhalb eines Zeitraums.",
-        "isoRef": "ISO 9001:2015 Kap. 6.2",
-        "category": "QMF / QMB",
-        "beispiel": "🎯 Industrie-Beispiel: 'Reduzierung der Ausschussquote in der Gießerei von aktuell 3,5% auf unter 1,2% bis zum Ende des 4. Quartals.'"
-      },
-      {
-        "term": "5S-Methode",
-        "definition": "Standard zur Arbeitsplatzorganisation: Selektieren, Sortieren, Säubern, Standardisieren, Selbstdisziplin.",
-        "isoRef": "QM-Methodik / Lean",
-        "category": "QMF Werkzeuge",
-        "beispiel": "🧹 Industrie-Beispiel: Werkzeug-Schattenwände an der Mütze der Fräsmaschine: Jeder Mechaniker sieht sofort, wenn der 13er-Schlüssel fehlt."
-      },
-      {
-        "term": "Poka Yoke",
-        "definition": "Technisches Prinzip zur Verhinderung menschlicher Fehlhandlungen durch konstruktive Kniffe.",
-        "isoRef": "QM-Methodik",
-        "category": "QMF Werkzeuge",
-        "beispiel": "🔌 Industrie-Beispiel: Ein Kabelstecker im Schaltschrank besitzt eine Führungsnase, sodass er physikalisch nicht verkehrt herum eingesteckt werden kann."
-      },
-      {
-        "term": "Pareto-Prinzip (80/20-Regel)",
-        "definition": "Statistisches Phänomen: 80% der Auswirkungen (z.B. Fehlerkosten) beruhen auf nur 20% der Ursachen.",
-        "isoRef": "7 QC-Tools", "category": "QMF Werkzeuge",
-        "beispiel": "📊 Industrie-Beispiel: Von 100 Ausschussteilen in der Schicht sind 82 Stück auf eine einzige verschlissene Stanzform zurückzuführen."
-      },
-      {
-        "term": "Ishikawa-Diagramm (Ursachen-Wirkung)", "definition": "Problem-Ursachen-Diagramm (Fischgräte) nach den 6 Ms: Mensch, Maschine, Material, Methode, Messung, Mitwelt.",
-        "isoRef": "7 QC-Tools", "category": "QMF Werkzeuge",
-        "beispiel": "🐟 Industrie-Beispiel: Warum brennt die Schweißnaht durch? Überprüfung von Gasdruck (Material), Roboter-Vorschub (Maschine) und Raumtemperatur (Mitwelt)."
-      },
-      {
-        "term": "Kontrollkarte / SPC", "definition": "Statistische Prozessregelung mit grafischen Ober- und Untergrenzen zur Überwachung laufender Fertigungen.",
-        "isoRef": "7 QC-Tools / ISO 7870", "category": "QMF Werkzeuge",
-        "beispiel": "📈 Industrie-Beispiel: Der Dreher misst alle 30 Minuten den Durchmesser und trägt den Wert in die SPC-Karte ein. Droht die Drift, stellt er nach."
-      },
-      {
-        "term": "FMEA (Fehlermöglichkeits- & Einflussanalyse)", "definition": "Präventive Risikoanalyse vor Serienstart zur Ermittlung potenzieller Schwachstellen und Berechnung der Risikose认真zahl (RPZ).",
-        "isoRef": "VDA / AIAG FMEA", "category": "QMF / QMB Werkzeuge",
-        "beispiel": "⚠️ Industrie-Beispiel: Bevor eine neue Montagelinie für E-Motoren anläuft, überlegt das QM-Team, wo Schrauben vertauscht werden könnten, und plant Sensoren ein."
-      },
-      {
-        "term": "8D-Report", "definition": "Standardisierter 8-Schritte-Bericht zur Bearbeitung von Kundenreklamationen und systematischen Fehlerursachen.",
-        "isoRef": "VDA Standard / ISO 9001 Kap. 10.2", "category": "QMF / QMB Werkzeuge",
-        "beispiel": "📑 Industrie-Beispiel: Der Kunde meldet undichte Ventile. Der Zulieferer schickt innerhalb von 24 Std. Sofortmaßnahmen (D3) und nach 10 Tagen die Ursachenanalyse (D4)."
-      },
-      {
-        "term": "Turtle-Modell", "definition": "Schildkröten-Diagramm zur vollständigen Beschreibung eines Prozesses (Input, Output, Womit, Wer, Wie, Kennzahlen).",
-        "isoRef": "ISO 9001 Kap. 4.4", "category": "QMF / QMB Prozess",
-        "beispiel": "🐢 Industrie-Beispiel: Prozess 'Härten': Input = Weiche Wellen; Output = Gehärtete Wellen; Womit = Härteofen; Wer = Härtemeister; Kennzahl = Ausschußquote < 0,5%."
-      },
-
-      # QMB Terms with Industrial Examples
-      {
-        "term": "High Level Structure (HLS)",
-        "definition": "Einheitliche Grundstruktur für alle ISO-Managementsystemnormen mit identischen Kernkapiteln (Kapitel 1 bis 10).",
-        "isoRef": "ISO Directives Annex SL", "category": "QMB Spezial",
-        "beispiel": "🏢 Industrie-Beispiel: ISO 9001 (Qualität), ISO 14001 (Umwelt) und ISO 45001 (Arbeitsschutz) nutzen in unserer Fabrik exakt denselben Kapitelaufbau."
-      },
-      {
-        "term": "Kontext der Organisation",
-        "definition": "Analyse aller internen und externen Faktoren, die die Erreichung der Qualitätsziele des Betriebs beeinflussen.",
-        "isoRef": "ISO 9001:2015 Kap. 4.1", "category": "QMB Spezial",
-        "beispiel": "🌍 Industrie-Beispiel: Hohe Strompreise, Lieferengpässe bei Halbleitern und verschärfte Umweltgesetze verpflichten das Werk zur strategischen Anpassung."
-      },
-      {
-        "term": "Interessierte Parteien (Stakeholder)",
-        "definition": "Alle Gruppen oder Personen, die Anforderungen an das Unternehmen stellen oder von dessen Handeln betroffen sind.",
-        "isoRef": "ISO 9001:2015 Kap. 4.2", "category": "QMB Spezial",
-        "beispiel": "🤝 Industrie-Beispiel: Kunden verlangen Pünktlichkeit, die Gewerbeaufsicht verlangt Lärmschutz, Belegschaft verlangt Arbeitssicherheit."
-      },
-      {
-        "term": "Oberste Leitung (Top Management)",
-        "definition": "Geschäftsführung / Werksleitung. Trägt die finale Verantwortung und Rechenschaftspflicht für das Qualitätsmanagementsystem.",
-        "isoRef": "ISO 9001:2015 Kap. 5.1", "category": "QMB Spezial",
-        "beispiel": "👔 Industrie-Beispiel: Der Geschäftsführer muss im TÜV-Audit nachweisen, dass er ausreichend Budget für Kalibrierungen und Personalschulungen bereitstellt."
-      },
-      {
-        "term": "Risikobasierter Ansatz",
-        "definition": "Vorausschauendes Denken zur Identifizierung von Risiken und Chancen in allen Betriebsprozessen.",
-        "isoRef": "ISO 9001:2015 Kap. 6.1", "category": "QMB Spezial",
-        "beispiel": "🔮 Industrie-Beispiel: Vor dem Winter wird die Heizung der Lackierhalle gewartet, um einen Produktionsstillstand durch Frostschäden zu verhindern."
-      },
-      {
-        "term": "Dokumentierte Information",
-        "definition": "Sammelbegriff für Lenkungsunterlagen. Vorgabedokumente werden aufrechterhalten, Nachweisdokumente (Aufzeichnungen) werden aufbewahrt.",
-        "isoRef": "ISO 9001:2015 Kap. 7.5", "category": "QMB Spezial",
-        "beispiel": "💾 Industrie-Beispiel: Der CAD-Schaltplan (Vorgabe) und das digital unterschriebene Erstmusterprüfprotokoll im ERP-System (Nachweis)."
-      },
-      {
-        "term": "Extern bereitgestellte Prozesse (Lieferanten)",
-        "definition": "Qualitative Überwachung und Beurteilung aller Zulieferer und Dienstleister für ausgelagerte Fertigungsschritte.",
-        "isoRef": "ISO 9001:2015 Kap. 8.4", "category": "QMB Spezial",
-        "beispiel": "🚛 Industrie-Beispiel: Das Verzinken von Stahlbauteilen wird an eine externe Lohngalvanik vergeben – der QMB führt dort regelmäßig ein Lieferantenaudit durch."
-      },
-      {
-        "term": "Produkthaftung (ProdHaftG)",
-        "definition": "Verschuldensunabhängige Haftung des Herstellers für Personen- und Sachschäden, die durch ein fehlerhaftes Produkt entstehen.",
-        "isoRef": "ProdHaftG / BGB § 823", "category": "QMB Recht",
-        "beispiel": "⚖️ Industrie-Beispiel: Ein brennender Akku beschädigt eine Lagerhalle. Der Akkuhersteller haftet für den Schaden – auch ohne dass ihm Vorsatz nachgewiesen werden muss."
-      },
-      {
-        "term": "Verkehrssicherungspflichten",
-        "definition": "Rechtliche Pflichten des Herstellers: Konstruktions-, Fabrikations-, Instruktions- und Produktbeobachtungspflicht.",
-        "isoRef": "BGB § 823 / ProdHaftG", "category": "QMB Recht",
-        "beispiel": "🚦 Industrie-Beispiel: Ein Maschinenbauer muss Schutzabdeckungen anbringen, klare Warnaufkleber anbringen und Unfälle im Feld auswerten."
-      },
-      {
-        "term": "Internes Audit (First-Party Audit)",
-        "definition": "Systematische, interne Überprüfung durch eigene QM-Mitarbeiter zur Beurteilung der Normkonformität der Fertigung.",
-        "isoRef": "DIN EN ISO 19011 / ISO 9001 Kap. 9.2", "category": "QMB Auditing",
-        "beispiel": "🔍 Industrie-Beispiel: Der interne Auditor prüft in der Schweißerei, ob alle Schweißer gültige Prüfbescheinigungen besitzen und nach aktuellen Plänen arbeiten."
-      },
-      {
-        "term": "Managementbewertung (Management Review)",
-        "definition": "Die durch die Geschäftsführung in geplanten Abständen durchgeführte Prüfung der Wirksamkeit und Eignung des QMS.",
-        "isoRef": "ISO 9001:2015 Kap. 9.3", "category": "QMB Spezial",
-        "beispiel": "📊 Industrie-Beispiel: Einmal jährlich wertet die Geschäftsführung Reklamationsquoten, Auditergebnisse und Kennzahlen aus und beschließt Qualitätsziele."
-      },
-      {
-        "term": "VUCA-Welt",
-        "definition": "Akronym für Volatilität, Unsicherheit, Komplexität und Ambiguität. Beschreibung moderner, dynamischer Marktbedingungen.",
-        "isoRef": "ISO 9001 Kap. 4.1 / Strategie", "category": "QMB Strategie",
-        "beispiel": "🌊 Industrie-Beispiel: Ein spontaner Ausfall der Frachtschiffroute erfordert innerhalb von 3 Stunden die Umstellung der Logistikkette auf Luftfracht."
-      },
-      {
-        "term": "Qualitätssicherungsvereinbarung (QSV)",
-        "definition": "Verbindlicher Vertrag zwischen Kunde und Lieferant über spezifische Qualitäts-, Prüf- und Dokumentationsstandards.",
-        "isoRef": "ISO 9001:2015 Kap. 8.4", "category": "QMB Lieferanten",
-        "beispiel": "📝 Industrie-Beispiel: Der Motorenhersteller verpflichtet den Gießerei-Zulieferer per QSV, mit jeder Charge ein 3.1-Abnahmeprüfzeugnis mitzuliefern."
-      },
-      {
-        "term": "Akkreditierung vs. Zertifizierung",
-        "definition": "Akkreditierung (durch staatliche Stelle wie DAkkS) ist die Zulassung von Zertifizierungsstellen (z.B. TÜV). Zertifizierung ist die Prüfung unserer Fabrik.",
-        "isoRef": "ISO/IEC 17021", "category": "QMB System",
-        "beispiel": "🏛️ Industrie-Beispiel: Die DAkkS prüft den TÜV. Der TÜV kommt anschließend zu uns ins Werk und stellt das ISO 9001 Zertifikat aus."
-      }
+      { "term": "Qualität", "definition": "Wie gut ein Produkt oder eine Dienstleistung alle festgelegten und vorausgesetzten Anforderungen erfüllt.", "isoRef": "DIN EN ISO 9000:2015 Abs. 3.6.2", "category": "QMF Basis", "beispiel": "⚙️ Industrie-Beispiel: Eine Dreherei fertigt Stahlbolzen mit einer vorgegebenen Toleranz von ±0,02 mm. Liegen alle gelieferten Bolzen exakt in diesem Maße, ist die Qualität zu 100% erfüllt." },
+      { "term": "Kundenorientierung", "definition": "Ausrichtung aller Unternehmensprozesse am Nutzen, der Zufriedenheit und den Erwartungen des Kunden.", "isoRef": "ISO 9000:2015 Abs. 2.3.1", "category": "QMF Basis", "beispiel": "🏭 Industrie-Beispiel: Ein Zulieferer von Blechteilen passt seine Lieferverpackung so an, dass der Roboter beim Autohersteller (OEM) die Teile direkt ohne manuelles Auspacken greifen kann." },
+      { "term": "Prozess", "definition": "Ein strukturierter Ablauf von Tätigkeiten, der Eingaben (Material, Daten) in ein messbares Ergebnis (Erzeugnis) umwandelt.", "isoRef": "ISO 9000:2015 Abs. 3.4.1", "category": "QMF Basis", "beispiel": "🔧 Industrie-Beispiel: Prozess 'Gehäusefertigung': Stanzen -> Abkanten -> Schweißen -> Pulverbeschichten -> Endkontrolle." },
+      { "term": "PDCA-Zyklus", "definition": "Plan-Do-Check-Act. Der kontinuierliche Regelkreis zur ständigen Qualitätsverbesserung in vier Schritten.", "isoRef": "ISO 9001:2015 Kap. 0.4", "category": "QMF / QMB Basis", "beispiel": "🔄 Industrie-Beispiel: Plan: Neue Schweißparameter festlegen; Do: Probeserie schweißen; Check: Röntgenprüfung & Schliffbild auswerten; Act: Schweißroboter auf neue Werte fest einstellen." },
+      { "term": "Fehler", "definition": "Nichterfüllung einer festgelegten Anforderung oder Spezifikation an einem Produkt oder Prozess.", "isoRef": "ISO 9000:2015 Abs. 3.10.3", "category": "QMF Basis", "beispiel": "❌ Industrie-Beispiel: Eine Bohrung in einem Gussgehäuse hat statt 12,0 mm versehentlich 12,5 mm Durchmesser – das Bauteil ist nicht funktionstüchtig und damit fehlerhaft." },
+      { "term": "Korrektur", "definition": "Sofortige Maßnahme zur Beseitigung eines festgestellten Symptoms oder Fehlers (Schadensbegrenzung).", "isoRef": "ISO 9000:2015 Abs. 3.12.2", "category": "QMF Basis", "beispiel": "🛠️ Industrie-Beispiel: Ein Rohling ist 2 mm zu lang abgesägt worden. Die Korrektur ist das Nachdrehen auf das korrekte Soll-Maß." },
+      { "term": "Korrekturmaßnahme", "definition": "Beseitigung der TIEFEN URSACHE eines Fehlers, damit dieser in Zukunft nie wieder auftreten kann.", "isoRef": "ISO 9000:2015 Abs. 3.12.6", "category": "QMF / QMB", "beispiel": "🛡️ Industrie-Beispiel: Die Säge schnitt zu lang, weil der mechanische Anschlag locker war. Korrekturmaßnahme: Einbau einer fest verschraubten Führungsschiene mit Drehmomentsicherung." },
+      { "term": "Qualitätspolitik", "definition": "Die von der Geschäftsführung formulierte Gesamtausrichtung und Selbstverpflichtung des Unternehmens zur Qualität.", "isoRef": "ISO 9001:2015 Kap. 5.2", "category": "QMF / QMB", "beispiel": "📜 Industrie-Beispiel: 'Unsere Fabrik garantiert Null-Fehler-Qualität bei allen sicherheitsrelevanten Bremsscheiben für die Bahntechnik.'" },
+      { "term": "Qualitätsziel", "definition": "Konkretes, messbares Ziel zur Verbesserung der Produkt- oder Prozessqualität innerhalb eines Zeitraums.", "isoRef": "ISO 9001:2015 Kap. 6.2", "category": "QMF / QMB", "beispiel": "🎯 Industrie-Beispiel: 'Reduzierung der Ausschussquote in der Gießerei von aktuell 3,5% auf unter 1,2% bis zum Ende des 4. Quartals.'" },
+      { "term": "5S-Methode", "definition": "Standard zur Arbeitsplatzorganisation: Selektieren, Sortieren, Säubern, Standardisieren, Selbstdisziplin.", "isoRef": "QM-Methodik / Lean", "category": "QMF Werkzeuge", "beispiel": "🧹 Industrie-Beispiel: Werkzeug-Schattenwände an der Mütze der Fräsmaschine: Jeder Mechaniker sieht sofort, wenn der 13er-Schlüssel fehlt." },
+      { "term": "Poka Yoke", "definition": "Technisches Prinzip zur Verhinderung menschlicher Fehlhandlungen durch konstruktive Kniffe.", "isoRef": "QM-Methodik", "category": "QMF Werkzeuge", "beispiel": "🔌 Industrie-Beispiel: Ein Kabelstecker im Schaltschrank besitzt eine Führungsnase, sodass er physikalisch nicht verkehrt herum eingesteckt werden kann." },
+      { "term": "Pareto-Prinzip (80/20-Regel)", "definition": "Statistisches Phänomen: 80% der Auswirkungen (z.B. Fehlerkosten) beruhen auf nur 20% der Ursachen.", "isoRef": "7 QC-Tools", "category": "QMF Werkzeuge", "beispiel": "📊 Industrie-Beispiel: Von 100 Ausschussteilen in der Schicht sind 82 Stück auf eine einzige verschlissene Stanzform zurückzuführen." },
+      { "term": "Ishikawa-Diagramm (Ursachen-Wirkung)", "definition": "Problem-Ursachen-Diagramm (Fischgräte) nach den 6 Ms: Mensch, Maschine, Material, Methode, Messung, Mitwelt.", "isoRef": "7 QC-Tools", "category": "QMF Werkzeuge", "beispiel": "🐟 Industrie-Beispiel: Warum brennt die Schweißnaht durch? Überprüfung von Gasdruck (Material), Roboter-Vorschub (Maschine) und Raumtemperatur (Mitwelt)." },
+      { "term": "Kontrollkarte / SPC", "definition": "Statistische Prozessregelung mit grafischen Ober- und Untergrenzen zur Überwachung laufender Fertigungen.", "isoRef": "7 QC-Tools / ISO 7870", "category": "QMF Werkzeuge", "beispiel": "📈 Industrie-Beispiel: Der Dreher misst alle 30 Minuten den Durchmesser und trägt den Wert in die SPC-Karte ein. Droht die Drift, stellt er nach." },
+      { "term": "FMEA (Fehlermöglichkeits- & Einflussanalyse)", "definition": "Präventive Risikoanalyse vor Serienstart zur Ermittlung potenzieller Schwachstellen und Berechnung der Risikose认真zahl (RPZ).", "isoRef": "VDA / AIAG FMEA", "category": "QMF / QMB Werkzeuge", "beispiel": "⚠️ Industrie-Beispiel: Bevor eine neue Montagelinie für E-Motoren anläuft, überlegt das QM-Team, wo Schrauben vertauscht werden könnten, und plant Sensoren ein." },
+      { "term": "8D-Report", "definition": "Standardisierter 8-Schritte-Bericht zur Bearbeitung von Kundenreklamationen und systematischen Fehlerursachen.", "isoRef": "VDA Standard / ISO 9001 Kap. 10.2", "category": "QMF / QMB Werkzeuge", "beispiel": "📑 Industrie-Beispiel: Der Kunde meldet undichte Ventile. Der Zulieferer schickt innerhalb von 24 Std. Sofortmaßnahmen (D3) und nach 10 Tagen die Ursachenanalyse (D4)." },
+      { "term": "Turtle-Modell", "definition": "Schildkröten-Diagramm zur vollständigen Beschreibung eines Prozesses (Input, Output, Womit, Wer, Wie, Kennzahlen).", "isoRef": "ISO 9001 Kap. 4.4", "category": "QMF / QMB Prozess", "beispiel": "🐢 Industrie-Beispiel: Prozess 'Härten': Input = Weiche Wellen; Output = Gehärtete Wellen; Womit = Härteofen; Wer = Härtemeister; Kennzahl = Ausschußquote < 0,5%." },
+      { "term": "High Level Structure (HLS)", "definition": "Einheitliche Grundstruktur für alle ISO-Managementsystemnormen mit identischen Kernkapiteln (Kapitel 1 bis 10).", "isoRef": "ISO Directives Annex SL", "category": "QMB Spezial", "beispiel": "🏢 Industrie-Beispiel: ISO 9001 (Qualität), ISO 14001 (Umwelt) und ISO 45001 (Arbeitsschutz) nutzen in unserer Fabrik exakt denselben Kapitelaufbau." },
+      { "term": "Kontext der Organisation", "definition": "Analyse aller internen und externen Faktoren, die die Erreichung der Qualitätsziele des Betriebs beeinflussen.", "isoRef": "ISO 9001:2015 Kap. 4.1", "category": "QMB Spezial", "beispiel": "🌍 Industrie-Beispiel: Hohe Strompreise, Lieferengpässe bei Halbleitern und verschärfte Umweltgesetze verpflichten das Werk zur strategischen Anpassung." },
+      { "term": "Interessierte Parteien (Stakeholder)", "definition": "Alle Gruppen oder Personen, die Anforderungen an das Unternehmen stellen oder von dessen Handeln betroffen sind.", "isoRef": "ISO 9001:2015 Kap. 4.2", "category": "QMB Spezial", "beispiel": "🤝 Industrie-Beispiel: Kunden verlangen Pünktlichkeit, die Gewerbeaufsicht verlangt Lärmschutz, Belegschaft verlangt Arbeitssicherheit." },
+      { "term": "Oberste Leitung (Top Management)", "definition": "Geschäftsführung / Werksleitung. Trägt die finale Verantwortung und Rechenschaftspflicht für das Qualitätsmanagementsystem.", "isoRef": "ISO 9001:2015 Kap. 5.1", "category": "QMB Spezial", "beispiel": "👔 Industrie-Beispiel: Der Geschäftsführer muss im TÜV-Audit nachweisen, dass er ausreichend Budget für Kalibrierungen und Personalschulungen bereitstellt." },
+      { "term": "Risikobasierter Ansatz", "definition": "Vorausschauendes Denken zur Identifizierung von Risiken und Chancen in allen Betriebsprozessen.", "isoRef": "ISO 9001:2015 Kap. 6.1", "category": "QMB Spezial", "beispiel": "🔮 Industrie-Beispiel: Vor dem Winter wird die Heizung der Lackierhalle gewartet, um einen Produktionsstillstand durch Frostschäden zu verhindern." },
+      { "term": "Dokumentierte Information", "definition": "Sammelbegriff für Lenkungsunterlagen. Vorgabedokumente werden aufrechterhalten, Nachweisdokumente (Aufzeichnungen) werden aufbewahrt.", "isoRef": "ISO 9001:2015 Kap. 7.5", "category": "QMB Spezial", "beispiel": "💾 Industrie-Beispiel: Der CAD-Schaltplan (Vorgabe) und das digital unterschriebene Erstmusterprüfprotokoll im ERP-System (Nachweis)." },
+      { "term": "Extern bereitgestellte Prozesse (Lieferanten)", "definition": "Qualitative Überwachung und Beurteilung aller Zulieferer und Dienstleister für ausgelagerte Fertigungsschritte.", "isoRef": "ISO 9001:2015 Kap. 8.4", "category": "QMB Spezial", "beispiel": "🚛 Industrie-Beispiel: Das Verzinken von Stahlbauteilen wird an eine externe Lohngalvanik vergeben – der QMB führt dort regelmäßig ein Lieferantenaudit durch." },
+      { "term": "Produkthaftung (ProdHaftG)", "definition": "Verschuldensunabhängige Haftung des Herstellers für Personen- und Sachschäden, die durch ein fehlerhaftes Produkt entstehen.", "isoRef": "ProdHaftG / BGB § 823", "category": "QMB Recht", "beispiel": "⚖️ Industrie-Beispiel: Ein brennender Akku beschädigt eine Lagerhalle. Der Akkuhersteller haftet für den Schaden – auch ohne dass ihm Vorsatz nachgewiesen werden muss." },
+      { "term": "Verkehrssicherungspflichten", "definition": "Rechtliche Pflichten des Herstellers: Konstruktions-, Fabrikations-, Instruktions- und Produktbeobachtungspflicht.", "isoRef": "BGB § 823 / ProdHaftG", "category": "QMB Recht", "beispiel": "🚦 Industrie-Beispiel: Ein Maschinenbauer muss Schutzabdeckungen anbringen, klare Warnaufkleber anbringen und Unfälle im Feld auswerten." },
+      { "term": "Internes Audit (First-Party Audit)", "definition": "Systematische, interne Überprüfung durch eigene QM-Mitarbeiter zur Beurteilung der Normkonformität der Fertigung.", "isoRef": "DIN EN ISO 19011 / ISO 9001 Kap. 9.2", "category": "QMB Auditing", "beispiel": "🔍 Industrie-Beispiel: Der interne Auditor prüft in der Schweißerei, ob alle Schweißer gültige Prüfbescheinigungen besitzen und nach aktuellen Plänen arbeiten." },
+      { "term": "Managementbewertung (Management Review)", "definition": "Die durch die Geschäftsführung in geplanten Abständen durchgeführte Prüfung der Wirksamkeit und Eignung des QMS.", "isoRef": "ISO 9001:2015 Kap. 9.3", "category": "QMB Spezial", "beispiel": "📊 Industrie-Beispiel: Einmal jährlich wertet die Geschäftsführung Reklamationsquoten, Auditergebnisse und Kennzahlen aus und beschließt Qualitätsziele." },
+      { "term": "VUCA-Welt", "definition": "Akronym für Volatilität, Unsicherheit, Komplexität und Ambiguität. Beschreibung moderner, dynamischer Marktbedingungen.", "isoRef": "ISO 9001 Kap. 4.1 / Strategie", "category": "QMB Strategie", "beispiel": "🌊 Industrie-Beispiel: Ein spontaner Ausfall der Frachtschiffroute erfordert innerhalb von 3 Stunden die Umstellung der Logistikkette auf Luftfracht." },
+      { "term": "Qualitätssicherungsvereinbarung (QSV)", "definition": "Verbindlicher Vertrag zwischen Kunde und Lieferant über spezifische Qualitäts-, Prüf- und Dokumentationsstandards.", "isoRef": "ISO 9001:2015 Kap. 8.4", "category": "QMB Lieferanten", "beispiel": "📝 Industrie-Beispiel: Der Motorenhersteller verpflichtet den Gießerei-Zulieferer per QSV, mit jeder Charge ein 3.1-Abnahmeprüfzeugnis mitzuliefern." },
+      { "term": "Akkreditierung vs. Zertifizierung", "definition": "Akkreditierung (durch staatliche Stelle wie DAkkS) ist die Zulassung von Zertifizierungsstellen (z.B. TÜV). Zertifizierung ist die Prüfung unserer Fabrik.", "isoRef": "ISO/IEC 17021", "category": "QMB System", "beispiel": "🏛️ Industrie-Beispiel: Die DAkkS prüft den TÜV. Der TÜV kommt anschließend zu uns ins Werk und stellt das ISO 9001 Zertifikat aus." }
     ]
 
     questions_json = json.dumps(qmb_questions, ensure_ascii=False, indent=2)
@@ -500,6 +375,7 @@ def generate_qmb_app():
     .badge-purple {{ background: rgba(99, 102, 241, 0.2); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4); }}
     .badge-amber {{ background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }}
     .badge-green {{ background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }}
+    .badge-red {{ background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); cursor: pointer; }}
     .badge-alpha {{ background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }}
 
     /* Options */
@@ -536,11 +412,50 @@ def generate_qmb_app():
 
     .tab-content {{ display: none; }}
     .tab-content.active {{ display: block; }}
+
+    /* Debate Modal */
+    .modal-overlay {{
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center; z-index: 1000;
+    }}
+    .modal-box {{
+      background: #161d2d; border: 1px solid var(--border-color); border-radius: 16px;
+      padding: 28px; max-width: 700px; width: 90%; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }}
   </style>
 </head>
 <body>
 
   <canvas id="confetti-canvas"></canvas>
+
+  <!-- Abweichung / ISO-Debatte Modal -->
+  <div id="debate-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px;">
+          💬 ISO-Debatte: Rohentwurf vs. Norm-Schlussfolgerung
+        </h3>
+        <button onclick="closeDebateModal()" style="background: transparent; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;">✕</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+        <div style="background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 16px;">
+          <strong style="color: #fca5a5; font-size: 0.95rem; display: block; margin-bottom: 8px;">📝 Bild / Rohentwurf (Ursprung):</strong>
+          <p id="modal-draft-text" style="font-size: 0.88rem; color: #fee2e2; line-height: 1.5;"></p>
+        </div>
+
+        <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 16px;">
+          <strong style="color: #6ee7b7; font-size: 0.95rem; display: block; margin-bottom: 8px;">📜 ISO 9001 Norm-Schlussfolgerung:</strong>
+          <p id="modal-iso-text" style="font-size: 0.88rem; color: #ecfdf5; line-height: 1.5;"></p>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end;">
+        <button class="btn-primary" onclick="closeDebateModal()">Debatte schließen</button>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
     
@@ -744,6 +659,16 @@ def generate_qmb_app():
       if (tabId === 'stats') renderStats();
     }}
 
+    function openDebateModal(draftText, isoText) {{
+      document.getElementById('modal-draft-text').innerText = draftText;
+      document.getElementById('modal-iso-text').innerText = isoText;
+      document.getElementById('debate-modal').style.display = 'flex';
+    }}
+
+    function closeDebateModal() {{
+      document.getElementById('debate-modal').style.display = 'none';
+    }}
+
     // Render Question Card
     function renderQuestionCard() {{
       const container = document.getElementById('question-card-container');
@@ -769,11 +694,16 @@ def generate_qmb_app():
         </div>
       `).join('');
 
+      let deviationBadgeHTML = q.hasDeviation 
+        ? `<span class="badge badge-red" onclick="openDebateModal('${{q.draftAnswer.replace(/'/g, "\\'")}}', '${{q.isoConclusion.replace(/'/g, "\\'")}}')" title="Abweichung zum Bild-Entwurf erkannt. Klicken für Gegenüberstellung!">⚠️ Norm-Abweichung im Bild-Entwurf (Klicken für Debatte 💬)</span>`
+        : `<span class="badge badge-green">🟢 Bild & Norm konform (100% Übereinstimmung)</span>`;
+
       container.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
           <div>
             <span class="badge badge-purple">${{q.category}}</span>
             <span class="badge badge-amber">${{q.isoClause}}</span>
+            ${{deviationBadgeHTML}}
           </div>
           <span style="font-size: 0.85rem; color: var(--text-muted);">Stapel-Pos: #1 von ${{questionsStack.length}}</span>
         </div>
@@ -944,7 +874,7 @@ def generate_qmb_app():
     for path in ['/home/ole/Projects/qmb-fahrschul-app/index.html', '/home/ole/qmb_fahrschul_app.html']:
         with open(path, 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print(f"[SUCCESS] App updated with industrial examples at {path}")
+        print(f"[SUCCESS] App updated with interactive debate modal at {path}")
 
 if __name__ == '__main__':
     generate_qmb_app()
