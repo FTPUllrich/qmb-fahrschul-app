@@ -14,6 +14,11 @@
 
 ---
 
+> 📢 **Rick Ross QM-Boss Move**:
+> *"Every day I'm hustlin'... aber in der ISO 9001 wird JEDER Prozess auditiert! M-M-M-Maybach Quality! 🕶️ HUFF!"*
+
+---
+
 ## 📌 Versionshinweis (`v0.1.0-alpha.1`)
 
 Dies ist eine **Alpha-Entwicklungsversion (Pre-Release)**. Vor dem finalen v1.0.0-Release folgen kleinere Ergänzungen (*Minor Changes*) und Feinschliff anhand des Feedbacks aus der Schulklasse.
@@ -24,7 +29,7 @@ Dies ist eine **Alpha-Entwicklungsversion (Pre-Release)**. Vor dem finalen v1.0.
 
 Diese App dient **exklusiv der Vorbereitung auf die TÜV-Prüfung zum Qualitätsmanagementbeauftragten (QMB)**. Sie vermittelt ein authentisches Gefühl für die Fragestellungen, Antwortmuster und Fallen bei den TÜV-Prüfungsfragen. *(Hinweis: Für die QMF-Zertifizierung existiert eine separate App).*
 
-Im **Sachwörterbuch** sind jedoch **alle Begriffe aus der QMF- und QMB-Ausbildung** vereint, um ein vollständiges Nachschlagewerk während des gesamten Lehrgangs zu bieten.
+Im **Sachwörterbuch** sind jedoch **alle Begriffe aus der QMF- und QMB-Ausbildung** vereint – nun inklusive **praxisnaher Industrie-Beispiele** aus der Fertigung und Werkstatt, damit wirklich jeder den Sachverhalt sofort versteht!
 
 ---
 
@@ -50,12 +55,15 @@ Das System nutzt einen intelligenten Stapel-Algorithmus zur optimalen Prüfungsv
 
 ---
 
-## 📖 Sachwörterbuch (QMF & QMB Begriffssammlung)
+## 📖 Sachwörterbuch (QMF & QMB Begriffssammlung + Industrie-Beispiele)
 
-Das integrierte Sachwörterbuch umfasst beide Ausbildungsstufen:
+Das integrierte Sachwörterbuch umfasst beide Ausbildungsstufen – jeweils mit anschaulichen Beispielen aus der Fertigung:
 
-- **QMF-Begriffe**: *Qualität, Kundenorientierung, Prozess, PDCA, Fehler, Korrektur, Korrekturmaßnahme, Qualitätspolitik, Qualitätsziel, 5S, Poka Yoke, Pareto-Prinzip (80/20), Ishikawa, Kontrollkarte/SPC, FMEA, 8D-Report, Turtle-Modell*.
-- **QMB-Begriffe**: *High Level Structure (HLS), Kontext der Organisation (Kap. 4.1), Interessierte Parteien (Kap. 4.2), Oberste Leitung & Rechenschaftspflicht (Kap. 5.1), Risikobasierter Ansatz (Kap. 6.1), Dokumentierte Information (Kap. 7.5), Extern bereitgestellte Prozesse & Lieferantenbewertung (Kap. 8.4), Produkthaftung & Verkehrssicherungspflichten (ProdHaftG / BGB § 823), Internes Audit (DIN EN ISO 19011 / Kap. 9.2), Managementbewertung (Kap. 9.3), VUCA-Welt, QSV, Akkreditierung vs. Zertifizierung*.
+- **⚙️ Qualität**: *Beispiel*: Drehen eines Stahlbolzens mit Toleranz ±0,02 mm.
+- **🔌 Poka Yoke**: *Beispiel*: Führungsnase am Schaltschrank-Stecker (physikalisch unmöglich falsch einzustecken).
+- **🛠️ Korrektur vs. Korrekturmaßnahme**: *Beispiel*: Rohr nachdrehen (Korrektur) vs. Führungsschiene mit Drehmomentsicherung verbauen (Korrekturmaßnahme).
+- **🚛 Extern bereitgestellte Prozesse**: *Beispiel*: Lohngalvanik für Verzinken auditieren.
+- **⚖️ Produkthaftung**: *Beispiel*: Akkubrand beschädigt Lagerhalle – Gefährdungshaftung nach ProdHaftG.
 
 ---
 
