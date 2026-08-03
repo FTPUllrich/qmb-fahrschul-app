@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """
-Full QMB & QMF Standalone HTML Generator
------------------------------------------
-Compiles all extracted QMB questions (Modul 2.2 bis 10.2), embeds CSS, JS, sound synth,
-dog rewards, humor feedback, and produces a 100% self-contained index.html (no server needed!).
+Full QMB Standalone HTML Generator (Focus: QMB TÜV Prüfungsfragen & QMF+QMB Lexikon)
+--------------------------------------------------------------------------------------
+Generates a 100% self-contained single-file HTML app.
+Focus: Exclusively QMB questions for TÜV exam preparation.
+Glossary: Complete QMF + QMB terminology dictionary with explanations & ISO references.
 """
 
 import os
 import json
 
-def generate_full_standalone_app():
-    # Exhaustive QMB/QMF TÜV question catalog extracted from all modules in QMB - Fragenkataloge.zip
-    questions = [
+def generate_qmb_app():
+    # Questions catalog focused exclusively on QMB (Qualitätsmanagementbeauftragter - TÜV Standard)
+    qmb_questions = [
       # Modul 0: High Level Structure & PDCA
       {
         "id": "qmb-101",
@@ -28,22 +29,22 @@ def generate_full_standalone_app():
         "infobox": "Die High Level Structure (HLS) ordnet alle Kapitel der ISO 9001 dem PDCA-Zyklus zu. Plan umfasst Kontext, Führung und Planung. Do umfasst Unterstützung und Betrieb. Check umfasst die Leistungsbewertung. Act umfasst die kontinuierliche Verbesserung.",
         "isoJustification": "Gemäß ISO 9001:2015 Abschnitt 0.4 (PDCA-Zyklus) basiert die Grundstruktur des Managementsystems auf der Abfolge Plan (Kap. 4,5,6), Do (Kap. 7,8), Check (Kap. 9) und Act (Kap. 10)."
       },
+      # Modul 5: Führung & Verantwortung
       {
         "id": "qmb-102",
         "question": "Was versteht die DIN EN ISO 9001:2015 unter der 'obersten Leitung' (Top Management) und welche Verantwortung trägt diese?",
         "options": [
           { "id": "A", "text": "Die oberste Leitung ist eine Person oder Gruppe, die eine Organisation auf oberster Ebene führt und steuert.", "isCorrect": True },
-          { "id": "B", "text": "Sie kann die Gesamtverantwortung für das QMS komplett an einen Qualitätsmanagementbeauftragten (QMB) abwälzen.", "isCorrect": False },
+          { "id": "B", "text": "Sie kann die Rechenschaftspflicht für das QMS komplett an einen Qualitätsmanagementbeauftragten (QMB) abwälzen.", "isCorrect": False },
           { "id": "C", "text": "Sie muss die Verpflichtung bezüglich des QMS nachweisen und die Qualitätspolitik festlegen.", "isCorrect": True },
           { "id": "D", "text": "Sie ist verantwortlich für das Bereitstellen der erforderlichen Ressourcen.", "isCorrect": True }
         ],
         "multipleChoice": True,
         "category": "Führung & Verantwortung",
         "isoClause": "ISO 9001:2015 Kap. 5.1 & 5.2",
-        "infobox": "In der ISO 9001:2015 ist die Rechenschaftspflicht direkt bei der obersten Leitung verankert. Eine vollständige Entbindung der Verantwortung ist normativ unzulässig.",
+        "infobox": "In der ISO 9001:2015 ist die Rechenschaftspflicht direkt bei der obersten Leitung verankert. Der QMB berät und steuert operativ, entbindet die Leitung jedoch nicht von der Gesamtverantwortung.",
         "isoJustification": "Nach ISO 9001:2015 Abs. 5.1.1 (Führung und Verpflichtung) übernimmt die oberste Leitung die Rechenschaftspflicht für die Wirksamkeit des Qualitätsmanagementsystems."
       },
-
       # Modul 3.2: Dokumentationssysteme (DMS)
       {
         "id": "qmb-dms-301",
@@ -55,12 +56,11 @@ def generate_full_standalone_app():
           { "id": "D", "text": "Ein digitales Dokumentenmanagementsystem (DMS) erfüllt die Anforderungen an die Lenkung vollwertig.", "isCorrect": True }
         ],
         "multipleChoice": True,
-        "category": "Dokumentationssysteme (Kap. 3.2)",
+        "category": "Dokumentationssysteme (DMS)",
         "isoClause": "ISO 9001:2015 Kap. 7.5",
         "infobox": "ISO 9001 unterscheidet das 'Aufrechterhalten' von Vorgabedokumenten (Planung) und das 'Aufbewahren' von Nachweisen (Aufzeichnungen als Beweis für durchgeführte Tätigkeiten).",
         "isoJustification": "Regelt ISO 9001:2015 Abs. 7.5.1 und Abs. 7.5.3 (Lenkung dokumentierter Informationen). Papierform ist normativ nicht vorgeschrieben."
       },
-
       # Modul 4.1: Fehlermanagement & Reklamationsprozess
       {
         "id": "qmb-fehler-401",
@@ -72,7 +72,7 @@ def generate_full_standalone_app():
           { "id": "D", "text": "Abschnitt 7.2 und 9.1", "isCorrect": False }
         ],
         "multipleChoice": True,
-        "category": "Fehlermanagement (Kap. 4.1)",
+        "category": "Fehlermanagement (QMB)",
         "isoClause": "ISO 9001:2015 Kap. 8.7 & 10.2",
         "infobox": "Fehlerhafte Ergebnisse werden während des Betriebs nach Kap. 8.7 gesperrt und gelenkt. Zur Beseitigung der Ursache greift Kap. 10.2 (Ursachenanalyse und Korrekturmaßnahme).",
         "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 8.7.1 zur Verhinderung unbeabsichtigter Nutzung sowie Abs. 10.2.1 zur systematischen Fehlerursachenanalyse."
@@ -87,12 +87,11 @@ def generate_full_standalone_app():
           { "id": "D", "text": "Die Ursachenanalyse (D4) ermittelt das eigentliche Grundproblem (z.B. mit 5-Why).", "isCorrect": True }
         ],
         "multipleChoice": True,
-        "category": "Fehlermanagement (Kap. 4.1)",
+        "category": "Fehlermanagement (QMB)",
         "isoClause": "ISO 9001:2015 Kap. 10.2 / 8D-Report",
         "infobox": "Die 8D-Methode ist ein systematischer Standard im Reklamationsmanagement: D1 Team, D2 Problembeschreibung, D3 Sofortmaßnahmen, D4 Ursachenanalyse, D5/D6 Korrekturmaßnahmen, D7 Vorbeugung, D8 Teamabschluss.",
         "isoJustification": "Entspricht den normativen Anforderungen aus ISO 9001:2015 Abs. 10.2.1 (Bewertung der Notwendigkeit von Korrekturmaßnahmen)."
       },
-
       # Modul 4.2: Kontinuierlicher Verbesserungsprozess (KVP)
       {
         "id": "qmb-kvp-401",
@@ -104,12 +103,11 @@ def generate_full_standalone_app():
           { "id": "D", "text": "Der PDCA-Zyklus ist der zentrale Motor des KVP.", "isCorrect": True }
         ],
         "multipleChoice": True,
-        "category": "KVP & Kaizen (Kap. 4.2)",
+        "category": "KVP & Kaizen",
         "isoClause": "ISO 9001:2015 Kap. 10.1 & 10.3",
         "infobox": "KVP (Kaizen) beruht auf der Philosophie, dass viele kleine, kontinuierliche Verbesserungen im Alltag nachhaltiger sind als seltene Großprojekte.",
         "isoJustification": "ISO 9001:2015 Abs. 10.3 verpflichtet die Organisation zur fortlaufenden Verbesserung der Eignung, Angemessenheit und Wirksamkeit des QMS."
       },
-
       # Modul 6.4 - 6.6: Kundenzufriedenheit & Audits
       {
         "id": "qmb-kunden-601",
@@ -141,7 +139,6 @@ def generate_full_standalone_app():
         "infobox": "ISO 19011 teilt Audits in 1st Party (intern), 2nd Party (Lieferant) und 3rd Party (unabhängige Zertifizierung durch z.B. TÜV) ein.",
         "isoJustification": "Begründet nach DIN EN ISO 19011 Abschnitt 3.1 und ISO 9001:2015 Kap. 9.2. Audits dienen der Konformitätsbewertung, nicht der Bestrafung."
       },
-
       # Modul 8.1: Produkthaftung & Produktsicherheit
       {
         "id": "qmb-haftung-801",
@@ -173,7 +170,6 @@ def generate_full_standalone_app():
         "infobox": "Hersteller müssen Produkte sicher konstruieren, klar instruieren und auch nach dem Verkauf im Markt beobachten. Ein CE-Zeichen befreit nicht von der Haftung.",
         "isoJustification": "ISO 9001:2015 Abs. 8.5.5 (Tätigkeiten nach der Lieferung) verpflichtet zur Berücksichtigung von Produktrisiken und Marktbeobachtung."
       },
-
       # Modul 9.1: Lieferantenmanagement
       {
         "id": "qmb-lief-901",
@@ -181,7 +177,7 @@ def generate_full_standalone_app():
         "options": [
           { "id": "A", "text": "Jede Partei außerhalb der Organisation, die Produkte, Dienstleistungen oder Prozesse bereitstellt.", "isCorrect": True },
           { "id": "B", "text": "Ausschließlich Rohstofflieferanten.", "isCorrect": False },
-          { "id": "C", "text": "Ausschließlich Dienstleister.", "isCorrect": False },
+          { "id": "C", "text": "Ausschließlich externe Berater.", "isCorrect": False },
           { "id": "D", "text": "Auch Partner für ausgelagerte Prozesse (Outsourcing).", "isCorrect": True }
         ],
         "multipleChoice": True,
@@ -190,7 +186,6 @@ def generate_full_standalone_app():
         "infobox": "Der Begriff 'externer Anbieter' fasst Materiallieferanten, Dienstleister sowie Partner für ausgelagerte Prozesse zusammen.",
         "isoJustification": "ISO 9001:2015 Abs. 8.4.1 verlangt die Steuerung aller extern bereitgestellten Prozesse, Produkte und Dienstleistungen."
       },
-
       # Modul 10.1 & 10.2: Strategisches QM, Risikomanagement & VUCA
       {
         "id": "qmb-vuca-1001",
@@ -224,19 +219,45 @@ def generate_full_standalone_app():
       }
     ]
 
+    # Exhaustive Sachwortverzeichnis (Glossary) containing BOTH QMF & QMB Terminology
     glossary = [
-      { "term": "Audit", "definition": "Systematischer, unabhängiger und dokumentierter Prozess zur Erlangung objektiver Nachweise.", "isoRef": "DIN EN ISO 19011 / ISO 9000:2015", "category": "Auditing" },
-      { "term": "High Level Structure (HLS)", "definition": "Einheitliche Grundstruktur aller ISO-Managementsystemnormen mit identischen Hauptkapiteln.", "isoRef": "ISO Directives Annex SL", "category": "Normung" },
-      { "term": "PDCA-Zyklus", "definition": "Plan-Do-Check-Act. Der kontinuierliche Regelkreis zur ständigen Qualitätsverbesserung.", "isoRef": "ISO 9001:2015 Kap. 0.4", "category": "QM-Grundlagen" },
-      { "term": "Dokumentierte Information", "definition": "Information, die von einer Organisation gelenkt und aufrechterhalten werden muss (Vorgaben & Nachweise).", "isoRef": "ISO 9001:2015 Kap. 7.5", "category": "Dokumentation" },
-      { "term": "Risikobasierter Ansatz", "definition": "Systematische Berücksichtigung von Risiken und Chancen bereits in der Prozessplanung.", "isoRef": "ISO 9001:2015 Kap. 6.1", "category": "Risikomanagement" },
-      { "term": "KVP (Kaizen)", "definition": "Stetige, kleinschrittige Perfektionierung von Prozessen durch Einbeziehung aller Mitarbeiter.", "isoRef": "ISO 9001:2015 Kap. 10.1", "category": "Verbesserung" },
-      { "term": "VUCA", "definition": "Volatilität, Unsicherheit, Komplexität, Ambiguität. Beschreibung moderner Marktdynamiken.", "isoRef": "ISO 9001:2015 Kap. 4.1", "category": "Strategisches QM" },
-      { "term": "Produkthaftung (ProdHaftG)", "definition": "Verschuldensunabhängige Haftung des Herstellers für Folgeschäden durch fehlerhafte Produkte.", "isoRef": "ProdHaftG / BGB § 823", "category": "Recht & Sicherheit" },
-      { "term": "8D-Report", "definition": "Systematischer 8-Stufen-Leitfaden zur Bearbeitung von Reklamationen und Fehlerursachen.", "isoRef": "ISO 9001:2015 Kap. 10.2", "category": "Fehlermanagement" }
+      # QMF Terms
+      { "term": "Qualität", "definition": "Grad, in dem ein Satz inhärenter Merkmale eines Objekts Anforderungen erfüllt.", "isoRef": "DIN EN ISO 9000:2015 Abs. 3.6.2", "category": "QMF Basis" },
+      { "term": "Kundenorientierung", "definition": "Erster Grundsatz des Qualitätsmanagements: Erfüllung und Übertreffen von Kundenerwartungen.", "isoRef": "ISO 9000:2015 Abs. 2.3.1", "category": "QMF Basis" },
+      { "term": "Prozess", "definition": "Satz von sich gegenseitig beeinflussenden Tätigkeiten, der Eingaben in Ergebnisse umwandelt.", "isoRef": "ISO 9000:2015 Abs. 3.4.1", "category": "QMF Basis" },
+      { "term": "PDCA-Zyklus", "definition": "Plan-Do-Check-Act. Der kontinuierliche Regelkreis zur ständigen Qualitätsverbesserung.", "isoRef": "ISO 9001:2015 Kap. 0.4", "category": "QMF / QMB Basis" },
+      { "term": "Fehler", "definition": "Nichterfüllung einer Anforderung in Bezug auf einen beabsichtigten oder festgelegten Gebrauch.", "isoRef": "ISO 9000:2015 Abs. 3.10.3", "category": "QMF Basis" },
+      { "term": "Korrektur", "definition": "Maßnahme zur Beseitigung einer festgestellten Nichtkonformität (z.B. Nacharbeit eines fehlerhaften Teils).", "isoRef": "ISO 9000:2015 Abs. 3.12.2", "category": "QMF Basis" },
+      { "term": "Korrekturmaßnahme", "definition": "Maßnahme zur Beseitigung der URSACHE einer Nichtkonformität, um das Wiederauftreten zu verhindern.", "isoRef": "ISO 9000:2015 Abs. 3.12.6", "category": "QMF / QMB" },
+      { "term": "Qualitätspolitik", "definition": "Gesamte Absichten und Ausrichtung einer Organisation zur Qualität, wie von der obersten Leitung formell ausgedrückt.", "isoRef": "ISO 9001:2015 Kap. 5.2", "category": "QMF / QMB" },
+      { "term": "Qualitätsziel", "definition": "In Bezug auf Qualität angestrebtes Ergebnis. Muss messbar, realistisch und mit der Qualitätspolitik vereinbar sein.", "isoRef": "ISO 9001:2015 Kap. 6.2", "category": "QMF / QMB" },
+      { "term": "5S-Methode", "definition": "Systematische Werkstatt- und Arbeitsplatzorganisation: Sortieren, Systematisieren, Sauberhalten, Standardisieren, Selbstdisziplin.", "isoRef": "QM-Methodik / Lean", "category": "QMF Werkzeuge" },
+      { "term": "Poka Yoke", "definition": "Japanisches Prinzip zur technischen Vermeidung unbeabsichtigter Fehler durch narrensichere Konstruktion.", "isoRef": "QM-Methodik", "category": "QMF Werkzeuge" },
+      { "term": "Pareto-Prinzip (80/20-Regel)", "definition": "Analysewerkzeug: 80% der Auswirkungen (Fehler) lassen sich meist auf 20% der Ursachen zurückführen.", "isoRef": "7 QC-Tools", "category": "QMF Werkzeuge" },
+      { "term": "Ishikawa-Diagramm (Ursachen-Wirkung)", "definition": "Fischgrätendiagramm zur Problemursachenanalyse nach den 6 Ms (Mensch, Maschine, Material, Methode, Messung, Mitwelt).", "isoRef": "7 QC-Tools", "category": "QMF Werkzeuge" },
+      { "term": "Kontrollkarte / SPC", "definition": "Statistische Prozessregelung zur grafischen Überwachung von Prozessstreuungen anhand von Eingriffsgrenzen.", "isoRef": "7 QC-Tools / ISO 7870", "category": "QMF Werkzeuge" },
+      { "term": "FMEA (Fehlermöglichkeits- & Einflussanalyse)", "definition": "Analytische Methode zur präventiven Erkennung von potenziellen Produkt- oder Prozessfehlern und Risikobewertung (RPZ).", "isoRef": "VDA / AIAG FMEA", "category": "QMF / QMB Werkzeuge" },
+      { "term": "8D-Report", "definition": "Standardisierter 8-Stufen-Bericht im Reklamationsmanagement zur systematischen Fehler- und Ursachenbehebung.", "isoRef": "VDA Standard / ISO 9001 Kap. 10.2", "category": "QMF / QMB Werkzeuge" },
+      { "term": "Turtle-Modell", "definition": "Grafisches Modell zur vollständigen Prozessanalyse: Input, Output, Womit (Mittel), Wer (Personal), Wie (Verfahren), Kennzahlen.", "isoRef": "ISO 9001 Kap. 4.4", "category": "QMF / QMB Prozess" },
+
+      # QMB Terms
+      { "term": "High Level Structure (HLS)", "definition": "Einheitliche Kapitel- und Begriffsstruktur aller ISO-Managementsystemnormen zur einfachen Integration.", "isoRef": "ISO Directives Annex SL", "category": "QMB Spezial" },
+      { "term": "Kontext der Organisation", "definition": "Bestimmung der internen und externen Themen, die für den Zweck und die strategische Ausrichtung der Organisation relevant sind.", "isoRef": "ISO 9001:2015 Kap. 4.1", "category": "QMB Spezial" },
+      { "term": "Interessierte Parteien (Stakeholder)", "definition": "Personen oder Organisationen, die eine Entscheidung oder Tätigkeit beeinflussen können oder sich beeinflusst fühlen.", "isoRef": "ISO 9001:2015 Kap. 4.2", "category": "QMB Spezial" },
+      { "term": "Oberste Leitung (Top Management)", "definition": "Person oder Gruppe, die eine Organisation führt. Trägt die finale Rechenschaftspflicht für die Wirksamkeit des QMS.", "isoRef": "ISO 9001:2015 Kap. 5.1", "category": "QMB Spezial" },
+      { "term": "Risikobasierter Ansatz", "definition": "Systematische Identifikation und Bewertung von Risiken und Chancen in allen Prozessphasen zur Vorbeugung.", "isoRef": "ISO 9001:2015 Kap. 6.1", "category": "QMB Spezial" },
+      { "term": "Dokumentierte Information", "definition": "Information, die gelenkt werden muss (Vorgabedokumente zum Aufrechterhalten & Nachweisdokumente zum Aufbewahren).", "isoRef": "ISO 9001:2015 Kap. 7.5", "category": "QMB Spezial" },
+      { "term": "Extern bereitgestellte Prozesse (Lieferanten)", "definition": "Steuerung aller extern bezogenen Produkte, Dienstleistungen und ausgelagerten Prozesse (Outsourcing).", "isoRef": "ISO 9001:2015 Kap. 8.4", "category": "QMB Spezial" },
+      { "term": "Produkthaftung (ProdHaftG)", "definition": "Verschuldensunabhängige Haftung des Herstellers für Folgeschäden durch fehlerhafte Produkte an Personen oder Sachen.", "isoRef": "ProdHaftG / BGB § 823", "category": "QMB Recht" },
+      { "term": "Verkehrssicherungspflichten", "definition": "Pflichten des Herstellers: Konstruktions-, Fabrikations-, Instruktions- und Produktbeobachtungspflicht.", "isoRef": "BGB § 823 / ProdHaftG", "category": "QMB Recht" },
+      { "term": "Internes Audit (First-Party Audit)", "definition": "Systematischer Prozess zur unabhängigen Überprüfung der Konformität und Wirksamkeit des eigenen QMS.", "isoRef": "DIN EN ISO 19011 / ISO 9001 Kap. 9.2", "category": "QMB Auditing" },
+      { "term": "Managementbewertung (Management Review)", "definition": "Bewertung des QMS durch die oberste Leitung in geplanten Abständen bezüglich Eignung, Angemessenheit und Wirksamkeit.", "isoRef": "ISO 9001:2015 Kap. 9.3", "category": "QMB Spezial" },
+      { "term": "VUCA-Welt", "definition": "Akronym für Volatilität, Unsicherheit, Komplexität und Ambiguität. Rahmenbedingungen moderner Märkte.", "isoRef": "ISO 9001 Kap. 4.1 / Strategie", "category": "QMB Strategie" },
+      { "term": "Qualitätssicherungsvereinbarung (QSV)", "definition": "Vertragliche Vereinbarung zwischen Kunde und Lieferant zur Festlegung konkreter Qualitäts- und Prüfstandards.", "isoRef": "ISO 9001:2015 Kap. 8.4", "category": "QMB Lieferanten" },
+      { "term": "Akkreditierung vs. Zertifizierung", "definition": "Akkreditierung (durch DAkkS) ist die behördliche Bestätigung der Kompetenz einer Zertifizierungsstelle (z.B. TÜV).", "isoRef": "ISO/IEC 17021", "category": "QMB System" }
     ]
 
-    questions_json = json.dumps(questions, ensure_ascii=False, indent=2)
+    questions_json = json.dumps(qmb_questions, ensure_ascii=False, indent=2)
     glossary_json = json.dumps(glossary, ensure_ascii=False, indent=2)
 
     html_content = f"""<!DOCTYPE html>
@@ -244,7 +265,7 @@ def generate_full_standalone_app():
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QMB & QMF Fahrschul-Trainer (100% Standalone ISO 9001)</title>
+  <title>QMB Fahrschul-Trainer (TÜV ISO 9001)</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
@@ -371,25 +392,25 @@ def generate_full_standalone_app():
 
   <div class="container">
     
-    <!-- Header & Navigation (4 Main Tabs) -->
+    <!-- Header & Navigation -->
     <div class="glass-panel">
       <header>
         <div class="logo">
           <div class="logo-icon">🚗</div>
           <div>
             <h1 style="font-size: 1.35rem; font-weight: 800; background: linear-gradient(90deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-              QMB & QMF Fahrschul-Trainer (Standalone ISO 9001)
+              QMB Fahrschul-Trainer (TÜV ISO 9001)
             </h1>
             <p style="font-size: 0.8rem; color: var(--text-muted);">
-              Interaktives Stapelsystem • 100% Offline Single-File HTML
+              Qualitätsmanagementbeauftragter • Gefühls- & Prüfungstraining für TÜV-Fragen
             </p>
           </div>
         </div>
 
         <nav>
-          <button class="nav-btn active" onclick="switchTab('stack')">🚗 Fahrschul-Stapel</button>
+          <button class="nav-btn active" onclick="switchTab('stack')">🚗 QMB-Stapel</button>
           <button class="nav-btn" onclick="switchTab('exam')">🏆 TÜV-Prüfung</button>
-          <button class="nav-btn" onclick="switchTab('glossary')">📖 QM-Sachbegriffe</button>
+          <button class="nav-btn" onclick="switchTab('glossary')">📖 Sachwörterbuch (QMF & QMB)</button>
           <button class="nav-btn" onclick="switchTab('stats')">📊 Statistik</button>
         </nav>
 
@@ -401,7 +422,7 @@ def generate_full_standalone_app():
       </header>
     </div>
 
-    <!-- TAB 1: FAHRSCHUL-STAPEL -->
+    <!-- TAB 1: FAHRSCHUL-STAPEL (QMB FOCUS) -->
     <div id="tab-stack" class="tab-content active">
       
       <!-- Metrics Bar -->
@@ -409,7 +430,7 @@ def generate_full_standalone_app():
         <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 14px;">
           <div style="display: flex; gap: 24px; align-items: center;">
             <div>
-              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Aktueller Stapel</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Aktueller QMB-Stapel</span>
               <div id="stack-remaining" style="font-size: 1.25rem; font-weight: 700; color: #fff;">0 Fragen</div>
             </div>
             <div>
@@ -425,7 +446,7 @@ def generate_full_standalone_app():
           <div>
             <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 8px;">Thema:</span>
             <select id="category-select" onchange="filterCategory()" style="padding: 8px 12px; border-radius: 10px; background: rgba(30, 41, 59, 0.8); color: #fff; border: 1px solid var(--border-color); outline: none;">
-              <option value="ALL">Alle QM-Themen</option>
+              <option value="ALL">Alle QMB-Themen</option>
             </select>
           </div>
         </div>
@@ -453,18 +474,21 @@ def generate_full_standalone_app():
       <div class="glass-panel" style="text-align: center; padding: 40px;">
         <h2 style="font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 12px;">🏆 TÜV QMB Prüfungs-Simulation</h2>
         <p style="color: var(--text-muted); margin-bottom: 24px;">
-          Teste dein Wissen unter realistischen Bedingungen: 10 Minuten Zeitlimit • 75% Bestehensgrenze
+          Teste dein Wissen unter realistischen TÜV-Bedingungen: 10 zufällige Fragen • 10 Minuten Zeitlimit • 75% Bestehensgrenze
         </p>
         <button class="btn-primary" onclick="startExam()">Prüfungssimulation starten</button>
       </div>
       <div id="exam-active-container" style="display: none;"></div>
     </div>
 
-    <!-- TAB 3: QM SACHBEGRIFFE (GLOSSARY) -->
+    <!-- TAB 3: QM SACHWORTERZEICHNIS (QMF + QMB) -->
     <div id="tab-glossary" class="tab-content">
       <div class="glass-panel">
-        <h2 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 12px;">📖 QMF & QMB Sachbegriffe-Sammlung</h2>
-        <input type="text" id="glossary-search" oninput="renderGlossary()" placeholder="Sachbegriff suchen (z.B. Audit, HLS, PDCA, VUCA, ProdHaftG, 8D-Report)..." style="width: 100%; padding: 12px 16px; border-radius: 10px; background: rgba(15,23,42,0.6); border: 1px solid var(--border-color); color: #fff; margin-bottom: 16px; outline: none;" />
+        <h2 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 12px;">📖 Vollständiges Sachwörterbuch (QMF & QMB)</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+          Enthält alle wesentlichen Begriffe und Konzepte aus der Ausbildung zur Qualitätsmanagementfachkraft (QMF) und zum Qualitätsmanagementbeauftragten (QMB).
+        </p>
+        <input type="text" id="glossary-search" oninput="renderGlossary()" placeholder="Begriff suchen (z.B. Audit, HLS, PDCA, VUCA, ProdHaftG, 8D-Report, FMEA, Poka Yoke, Stakeholder)..." style="width: 100%; padding: 12px 16px; border-radius: 10px; background: rgba(15,23,42,0.6); border: 1px solid var(--border-color); color: #fff; margin-bottom: 16px; outline: none;" />
         <div id="glossary-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;"></div>
       </div>
     </div>
@@ -472,7 +496,7 @@ def generate_full_standalone_app():
     <!-- TAB 4: STATISTIK -->
     <div id="tab-stats" class="tab-content">
       <div class="glass-panel">
-        <h2 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 16px;">📊 Lernstatistik & Leistungsübersicht</h2>
+        <h2 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 16px;">📊 QMB Lernstatistik & Leistungsübersicht</h2>
         <div id="stats-metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;"></div>
         <button class="ctrl-btn" onclick="resetStats()">Statistik zurücksetzen</button>
       </div>
@@ -499,7 +523,7 @@ def generate_full_standalone_app():
     const catSelect = document.getElementById('category-select');
     categories.forEach(c => {{
       const opt = document.createElement('option');
-      opt.value = c; opt.innerText = c === 'ALL' ? 'Alle QM-Themen' : c;
+      opt.value = c; opt.innerText = c === 'ALL' ? 'Alle QMB-Themen' : c;
       catSelect.appendChild(opt);
     }});
 
@@ -572,8 +596,8 @@ def generate_full_standalone_app():
         container.innerHTML = `
           <div style="text-align: center; padding: 40px;">
             <div style="font-size: 3rem; margin-bottom: 12px;">🎉</div>
-            <h2 style="color: #6ee7b7; font-size: 1.5rem; margin-bottom: 8px;">Herzlichen Glückwunsch! Stapel komplett gemastert!</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Du hast alle Fragen erfolgreich nach unten einsortiert.</p>
+            <h2 style="color: #6ee7b7; font-size: 1.5rem; margin-bottom: 8px;">Herzlichen Glückwunsch! QMB-Stapel komplett gemastert!</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Du hast alle TÜV-QMB Fragen erfolgreich nach unten einsortiert.</p>
             <button class="btn-primary" onclick="restartStack()">Stapel zurücksetzen & erneut lernen</button>
           </div>`;
         return;
@@ -722,7 +746,7 @@ def generate_full_standalone_app():
     function renderGlossary() {{
       const query = document.getElementById('glossary-search').value.toLowerCase();
       const grid = document.getElementById('glossary-grid');
-      const filtered = glossaryData.filter(g => g.term.toLowerCase().includes(query) || g.definition.toLowerCase().includes(query));
+      const filtered = glossaryData.filter(g => g.term.toLowerCase().includes(query) || g.definition.toLowerCase().includes(query) || g.category.toLowerCase().includes(query));
       grid.innerHTML = filtered.map(g => `
         <div class="glass-card">
           <span class="badge badge-purple" style="float: right;">${{g.category}}</span>
@@ -736,7 +760,7 @@ def generate_full_standalone_app():
     function renderStats() {{
       const metrics = document.getElementById('stats-metrics');
       metrics.innerHTML = `
-        <div class="glass-card"><span style="color: var(--text-muted); font-size: 0.8rem;">Gemasterte Fragen</span><h3 style="font-size: 1.8rem; color: #6ee7b7;">${{masteredIds.length}} / ${{allQuestionsData.length}}</h3></div>
+        <div class="glass-card"><span style="color: var(--text-muted); font-size: 0.8rem;">Gemasterte QMB-Fragen</span><h3 style="font-size: 1.8rem; color: #6ee7b7;">${{masteredIds.length}} / ${{allQuestionsData.length}}</h3></div>
         <div class="glass-card"><span style="color: var(--text-muted); font-size: 0.8rem;">Wiederholungen</span><h3 style="font-size: 1.8rem; color: #fcd34d;">${{retryCount}}</h3></div>
       `;
     }}
@@ -764,7 +788,7 @@ def generate_full_standalone_app():
     for path in ['/home/ole/Projects/qmb-fahrschul-app/index.html', '/home/ole/qmb_fahrschul_app.html']:
         with open(path, 'w', encoding='utf-8') as f:
             f.write(html_content)
-        print(f"[SUCCESS] App updated at {path}")
+        print(f"[SUCCESS] Refactored QMB App updated at {path}")
 
 if __name__ == '__main__':
-    generate_full_standalone_app()
+    generate_qmb_app()
