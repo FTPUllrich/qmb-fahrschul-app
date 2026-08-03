@@ -14,8 +14,9 @@
 
 ---
 
-> 📢 **Rick Ross QM-Boss Move**:
-> *"Every day I'm hustlin'... aber in der ISO 9001 wird JEDER Prozess auditiert! M-M-M-Maybach Quality! 🕶️ HUFF!"*
+> 🎵 **Wichtiger ISO 9001 Leitsatz (RickRoll Edition)**:
+> *"Never gonna give you up, never gonna let you down... never gonna run around and fail your TÜV audit!"* 🕺✨  
+> [Geheimer TÜV-Zertifizierungs-Link 📜](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 ---
 
