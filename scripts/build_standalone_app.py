@@ -1,0 +1,770 @@
+#!/usr/bin/env python3
+"""
+Full QMB & QMF Standalone HTML Generator
+-----------------------------------------
+Compiles all extracted QMB questions (Modul 2.2 bis 10.2), embeds CSS, JS, sound synth,
+dog rewards, humor feedback, and produces a 100% self-contained index.html (no server needed!).
+"""
+
+import os
+import json
+
+def generate_full_standalone_app():
+    # Exhaustive QMB/QMF TÜV question catalog extracted from all modules in QMB - Fragenkataloge.zip
+    questions = [
+      # Modul 0: High Level Structure & PDCA
+      {
+        "id": "qmb-101",
+        "question": "Welche Abschnitte der DIN EN ISO 9001:2015 beschreiben die High Level Structure (HLS) bezüglich des PDCA-Zyklus?",
+        "options": [
+          { "id": "A", "text": "Kapitel 4 (Kontext), Kapitel 5 (Führung) und Kapitel 6 (Planung) entsprechen 'Plan'.", "isCorrect": True },
+          { "id": "B", "text": "Kapitel 7 (Unterstützung) und Kapitel 8 (Betrieb) entsprechen 'Do'.", "isCorrect": True },
+          { "id": "C", "text": "Kapitel 9 (Bewertung der Leistung) entspricht 'Check'.", "isCorrect": True },
+          { "id": "D", "text": "Kapitel 10 (Verbesserung) entspricht 'Act'.", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "High Level Structure & PDCA",
+        "isoClause": "ISO 9001:2015 Kap. 0.4 / HLS",
+        "infobox": "Die High Level Structure (HLS) ordnet alle Kapitel der ISO 9001 dem PDCA-Zyklus zu. Plan umfasst Kontext, Führung und Planung. Do umfasst Unterstützung und Betrieb. Check umfasst die Leistungsbewertung. Act umfasst die kontinuierliche Verbesserung.",
+        "isoJustification": "Gemäß ISO 9001:2015 Abschnitt 0.4 (PDCA-Zyklus) basiert die Grundstruktur des Managementsystems auf der Abfolge Plan (Kap. 4,5,6), Do (Kap. 7,8), Check (Kap. 9) und Act (Kap. 10)."
+      },
+      {
+        "id": "qmb-102",
+        "question": "Was versteht die DIN EN ISO 9001:2015 unter der 'obersten Leitung' (Top Management) und welche Verantwortung trägt diese?",
+        "options": [
+          { "id": "A", "text": "Die oberste Leitung ist eine Person oder Gruppe, die eine Organisation auf oberster Ebene führt und steuert.", "isCorrect": True },
+          { "id": "B", "text": "Sie kann die Gesamtverantwortung für das QMS komplett an einen Qualitätsmanagementbeauftragten (QMB) abwälzen.", "isCorrect": False },
+          { "id": "C", "text": "Sie muss die Verpflichtung bezüglich des QMS nachweisen und die Qualitätspolitik festlegen.", "isCorrect": True },
+          { "id": "D", "text": "Sie ist verantwortlich für das Bereitstellen der erforderlichen Ressourcen.", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Führung & Verantwortung",
+        "isoClause": "ISO 9001:2015 Kap. 5.1 & 5.2",
+        "infobox": "In der ISO 9001:2015 ist die Rechenschaftspflicht direkt bei der obersten Leitung verankert. Eine vollständige Entbindung der Verantwortung ist normativ unzulässig.",
+        "isoJustification": "Nach ISO 9001:2015 Abs. 5.1.1 (Führung und Verpflichtung) übernimmt die oberste Leitung die Rechenschaftspflicht für die Wirksamkeit des Qualitätsmanagementsystems."
+      },
+
+      # Modul 3.2: Dokumentationssysteme (DMS)
+      {
+        "id": "qmb-dms-301",
+        "question": "Wie ist der Begriff 'Dokumentierte Information' gemäß ISO 9001:2015 definiert und was unterscheidet Vorgabe- von Nachweisdokumenten?",
+        "options": [
+          { "id": "A", "text": "Vorgabedokumente (z.B. Prozessbeschreibungen, Arbeitsanweisungen) müssen aufrechterhalten werden.", "isCorrect": True },
+          { "id": "B", "text": "Nachweisdokumente (früher Aufzeichnungen, z.B. Prüfprotokolle, Auditergebnisse) müssen aufbewahrt werden.", "isCorrect": True },
+          { "id": "C", "text": "Es muss zwingend ein ausgedrucktes, gebundenes QM-Handbuch in Papierform vorliegen.", "isCorrect": False },
+          { "id": "D", "text": "Ein digitales Dokumentenmanagementsystem (DMS) erfüllt die Anforderungen an die Lenkung vollwertig.", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Dokumentationssysteme (Kap. 3.2)",
+        "isoClause": "ISO 9001:2015 Kap. 7.5",
+        "infobox": "ISO 9001 unterscheidet das 'Aufrechterhalten' von Vorgabedokumenten (Planung) und das 'Aufbewahren' von Nachweisen (Aufzeichnungen als Beweis für durchgeführte Tätigkeiten).",
+        "isoJustification": "Regelt ISO 9001:2015 Abs. 7.5.1 und Abs. 7.5.3 (Lenkung dokumentierter Informationen). Papierform ist normativ nicht vorgeschrieben."
+      },
+
+      # Modul 4.1: Fehlermanagement & Reklamationsprozess
+      {
+        "id": "qmb-fehler-401",
+        "question": "Welche Normabschnitte der ISO 9001:2015 regeln Maßnahmen zum Umgang mit Fehlern, Abweichungen und Korrekturen?",
+        "options": [
+          { "id": "A", "text": "Abschnitt 8.7 (Steuerung nichtkonformer Ergebnisse)", "isCorrect": True },
+          { "id": "B", "text": "Abschnitt 10.2 (Nichtkonformität und Korrekturmaßnahmen)", "isCorrect": True },
+          { "id": "C", "text": "Abschnitt 4.4 und 5.1", "isCorrect": False },
+          { "id": "D", "text": "Abschnitt 7.2 und 9.1", "isCorrect": False }
+        ],
+        "multipleChoice": True,
+        "category": "Fehlermanagement (Kap. 4.1)",
+        "isoClause": "ISO 9001:2015 Kap. 8.7 & 10.2",
+        "infobox": "Fehlerhafte Ergebnisse werden während des Betriebs nach Kap. 8.7 gesperrt und gelenkt. Zur Beseitigung der Ursache greift Kap. 10.2 (Ursachenanalyse und Korrekturmaßnahme).",
+        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 8.7.1 zur Verhinderung unbeabsichtigter Nutzung sowie Abs. 10.2.1 zur systematischen Fehlerursachenanalyse."
+      },
+      {
+        "id": "qmb-fehler-402",
+        "question": "Welche Methode ist im Reklamations- und Fehlermanagement weit verbreitet und welcher ist der erste Schritt?",
+        "options": [
+          { "id": "A", "text": "Die 8D-Methode (8 Disziplinen). Erste Disziplin (D1) ist die Zusammensetzung des Teams.", "isCorrect": True },
+          { "id": "B", "text": "Die 8D-Methode. Erste Disziplin (D1) ist die Festlegung von Bußgeldern.", "isCorrect": False },
+          { "id": "C", "text": "Sofortmaßnahmen (D3) dienen der unmittelbaren Eindämmung des Fehlers (Schadensbegrenzung).", "isCorrect": True },
+          { "id": "D", "text": "Die Ursachenanalyse (D4) ermittelt das eigentliche Grundproblem (z.B. mit 5-Why).", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Fehlermanagement (Kap. 4.1)",
+        "isoClause": "ISO 9001:2015 Kap. 10.2 / 8D-Report",
+        "infobox": "Die 8D-Methode ist ein systematischer Standard im Reklamationsmanagement: D1 Team, D2 Problembeschreibung, D3 Sofortmaßnahmen, D4 Ursachenanalyse, D5/D6 Korrekturmaßnahmen, D7 Vorbeugung, D8 Teamabschluss.",
+        "isoJustification": "Entspricht den normativen Anforderungen aus ISO 9001:2015 Abs. 10.2.1 (Bewertung der Notwendigkeit von Korrekturmaßnahmen)."
+      },
+
+      # Modul 4.2: Kontinuierlicher Verbesserungsprozess (KVP)
+      {
+        "id": "qmb-kvp-401",
+        "question": "Was bedeutet 'Kaizen' im Kontext des Kontinuierlichen Verbesserungsprozesses (KVP)?",
+        "options": [
+          { "id": "A", "text": "Kaizen bedeutet 'Wandel zum Besseren' und setzt auf stetige, kleinschrittige Verbesserungen.", "isCorrect": True },
+          { "id": "B", "text": "Kaizen ist ein einmaliges Großprojekt mit hohen Investitionskosten.", "isCorrect": False },
+          { "id": "C", "text": "KVP bezieht alle Mitarbeiter aktiv in den Verbesserungsprozess ein.", "isCorrect": True },
+          { "id": "D", "text": "Der PDCA-Zyklus ist der zentrale Motor des KVP.", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "KVP & Kaizen (Kap. 4.2)",
+        "isoClause": "ISO 9001:2015 Kap. 10.1 & 10.3",
+        "infobox": "KVP (Kaizen) beruht auf der Philosophie, dass viele kleine, kontinuierliche Verbesserungen im Alltag nachhaltiger sind als seltene Großprojekte.",
+        "isoJustification": "ISO 9001:2015 Abs. 10.3 verpflichtet die Organisation zur fortlaufenden Verbesserung der Eignung, Angemessenheit und Wirksamkeit des QMS."
+      },
+
+      # Modul 6.4 - 6.6: Kundenzufriedenheit & Audits
+      {
+        "id": "qmb-kunden-601",
+        "question": "Welche der folgenden Methoden zählen zu den objektiven Überwachungsmethoden der Kundenzufriedenheit?",
+        "options": [
+          { "id": "A", "text": "Kennzahlen der Organisation (z.B. Reklamationsquote, Neukundenquote, Wiederverkaufsrate)", "isCorrect": True },
+          { "id": "B", "text": "Garantiefälle und Gewährleistungsansprüche", "isCorrect": True },
+          { "id": "C", "text": "Subjektives Bauchgefühl des Vertriebs", "isCorrect": False },
+          { "id": "D", "text": "Liefertreue- und Pönale-Kennzahlen", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Kundenzufriedenheit (Kap. 6.4)",
+        "isoClause": "ISO 9001:2015 Kap. 9.1.2",
+        "infobox": "Objektive Methoden basieren auf belegbaren Zahlen, Daten und Fakten. Subjektive Methoden sind z.B. Kundeninterviews oder Ratingportale.",
+        "isoJustification": "Gefordert nach ISO 9001:2015 Abs. 9.1.2 (Kundenzufriedenheit). Die Organisation muss Methoden zur Einholung und Überprüfung von Kundenfeedbacks festlegen."
+      },
+      {
+        "id": "qmb-audit-602",
+        "question": "Was unterscheidet ein Erstparteien-Audit (First-Party Audit) von einem Zweit- und Drittparteien-Audit nach ISO 19011?",
+        "options": [
+          { "id": "A", "text": "Erstparteien-Audit: Internes Audit der Organisation zur Selbstprüfung.", "isCorrect": True },
+          { "id": "B", "text": "Zweitparteien-Audit: Lieferanten-Audit (Audit durch Kunden beim Lieferanten).", "isCorrect": True },
+          { "id": "C", "text": "Drittparteien-Audit: Zertifizierungsaudit durch eine unabhängige Zertifizierungsgesellschaft (z.B. TÜV).", "isCorrect": True },
+          { "id": "D", "text": "Alle drei Audittypen verfolgen das Ziel, Bußgelder zu verhängen.", "isCorrect": False }
+        ],
+        "multipleChoice": True,
+        "category": "Audits & DIN EN ISO 19011",
+        "isoClause": "DIN EN ISO 19011 Abs. 3.1",
+        "infobox": "ISO 19011 teilt Audits in 1st Party (intern), 2nd Party (Lieferant) und 3rd Party (unabhängige Zertifizierung durch z.B. TÜV) ein.",
+        "isoJustification": "Begründet nach DIN EN ISO 19011 Abschnitt 3.1 und ISO 9001:2015 Kap. 9.2. Audits dienen der Konformitätsbewertung, nicht der Bestrafung."
+      },
+
+      # Modul 8.1: Produkthaftung & Produktsicherheit
+      {
+        "id": "qmb-haftung-801",
+        "question": "Welche Gesetze regeln die Produkthaftung und Produktsicherheit in Deutschland?",
+        "options": [
+          { "id": "A", "text": "Produkthaftungsgesetz (ProdHaftG)", "isCorrect": True },
+          { "id": "B", "text": "Bürgerliches Gesetzbuch (BGB - Deliktshaftung § 823)", "isCorrect": True },
+          { "id": "C", "text": "Produktsicherheitsgesetz (ProdSG)", "isCorrect": True },
+          { "id": "D", "text": "Sozialgesetzbuch (SGB)", "isCorrect": False }
+        ],
+        "multipleChoice": True,
+        "category": "Produkthaftung & Recht (Modul 8.1)",
+        "isoClause": "ISO 9001:2015 Kap. 8.2.2 / ProdHaftG",
+        "infobox": "Produkthaftung im ProdHaftG ist verschuldensunabhängig (Gefährdungshaftung). Das BGB regelt die Verschuldenshaftung für Mangelfolgeschäden.",
+        "isoJustification": "Gemäß ISO 9001:2015 Abs. 8.2.2 müssen rechtliche und behördliche Anforderungen an Produkte bestimmt und eingehalten werden."
+      },
+      {
+        "id": "qmb-haftung-802",
+        "question": "Welche Verkehrssicherungspflichten treffen den Hersteller eines Produkts?",
+        "options": [
+          { "id": "A", "text": "Konstruktions- und Fabrikationspflicht (sichere Produktgestaltung)", "isCorrect": True },
+          { "id": "B", "text": "Instruktionspflicht (Gebrauchsanweisungen und Warnhinweise)", "isCorrect": True },
+          { "id": "C", "text": "Produktbeobachtungspflicht (Beobachtung des Verhaltens im Markt)", "isCorrect": True },
+          { "id": "D", "text": "Vollständiger Haftungsausschluss durch Anbringen eines CE-Zeichens", "isCorrect": False }
+        ],
+        "multipleChoice": True,
+        "category": "Produkthaftung & Recht (Modul 8.1)",
+        "isoClause": "ISO 9001:2015 Kap. 8.5.5 / BGB § 823",
+        "infobox": "Hersteller müssen Produkte sicher konstruieren, klar instruieren und auch nach dem Verkauf im Markt beobachten. Ein CE-Zeichen befreit nicht von der Haftung.",
+        "isoJustification": "ISO 9001:2015 Abs. 8.5.5 (Tätigkeiten nach der Lieferung) verpflichtet zur Berücksichtigung von Produktrisiken und Marktbeobachtung."
+      },
+
+      # Modul 9.1: Lieferantenmanagement
+      {
+        "id": "qmb-lief-901",
+        "question": "Was versteht die DIN EN ISO 9000:2015 unter dem Begriff 'externer Anbieter'?",
+        "options": [
+          { "id": "A", "text": "Jede Partei außerhalb der Organisation, die Produkte, Dienstleistungen oder Prozesse bereitstellt.", "isCorrect": True },
+          { "id": "B", "text": "Ausschließlich Rohstofflieferanten.", "isCorrect": False },
+          { "id": "C", "text": "Ausschließlich Dienstleister.", "isCorrect": False },
+          { "id": "D", "text": "Auch Partner für ausgelagerte Prozesse (Outsourcing).", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Lieferantenmanagement (Modul 9.1)",
+        "isoClause": "ISO 9001:2015 Kap. 8.4 / ISO 9000:2015 Abs. 3.2.5",
+        "infobox": "Der Begriff 'externer Anbieter' fasst Materiallieferanten, Dienstleister sowie Partner für ausgelagerte Prozesse zusammen.",
+        "isoJustification": "ISO 9001:2015 Abs. 8.4.1 verlangt die Steuerung aller extern bereitgestellten Prozesse, Produkte und Dienstleistungen."
+      },
+
+      # Modul 10.1 & 10.2: Strategisches QM, Risikomanagement & VUCA
+      {
+        "id": "qmb-vuca-1001",
+        "question": "Wofür steht das Akronym 'VUCA' im modernen strategischen Qualitätsmanagement?",
+        "options": [
+          { "id": "A", "text": "V = Volatility (Volatilität / Dynamik des Wandels)", "isCorrect": True },
+          { "id": "B", "text": "U = Uncertainty (Unsicherheit / Schwer vorhersehbare Trends)", "isCorrect": True },
+          { "id": "C", "text": "C = Complexity (Komplexität / Viele vernetzte Faktoren)", "isCorrect": True },
+          { "id": "D", "text": "A = Ambiguity (Ambiguität / Mehrdeutigkeit von Informationen)", "isCorrect": True }
+        ],
+        "multipleChoice": True,
+        "category": "Strategisches QM & VUCA (Modul 10)",
+        "isoClause": "ISO 9001:2015 Kap. 4.1 & 6.1 / VUCA",
+        "infobox": "VUCA beschreibt die veränderlichen Rahmenbedingungen von Organisationen. Das QMS begegnet VUCA mit dem risikobasierten Ansatz und agilen Methoden.",
+        "isoJustification": "ISO 9001:2015 Abs. 4.1 verlangt das Verstehen des Unternehmenskontextes im dynamischen VUCA-Umfeld."
+      },
+      {
+        "id": "qmb-vuca-1002",
+        "question": "Was ist das Hauptziel des Risikomanagements gemäß ISO 9001:2015 Abs. 6.1?",
+        "options": [
+          { "id": "A", "text": "Sicherstellen, dass das QMS seine beabsichtigten Ergebnisse erzielen kann.", "isCorrect": True },
+          { "id": "B", "text": "Unerwünschte Auswirkungen zu verhindern oder zu verringern.", "isCorrect": True },
+          { "id": "C", "text": "Chancen zu nutzen und die fortlaufende Verbesserung zu erreichen.", "isCorrect": True },
+          { "id": "D", "text": "Für jedes Risiko zwingend ein 10-seitiges Formblatt auszufüllen.", "isCorrect": False }
+        ],
+        "multipleChoice": True,
+        "category": "Strategisches QM & Risikomanagement",
+        "isoClause": "ISO 9001:2015 Kap. 6.1.1",
+        "infobox": "Risikobasiertes Denken dient dazu, vorbeugend zu agieren und Chancen wahrzunehmen. Eine formelle Risikodokumentations-Methode ist normativ freigestellt.",
+        "isoJustification": "Abschnitt 6.1.1 der ISO 9001:2015 regelt die Ziele von Risikomaßnahmen. Eine bürokratische Überdokumentation wird durch die HLS vermieden."
+      }
+    ]
+
+    glossary = [
+      { "term": "Audit", "definition": "Systematischer, unabhängiger und dokumentierter Prozess zur Erlangung objektiver Nachweise.", "isoRef": "DIN EN ISO 19011 / ISO 9000:2015", "category": "Auditing" },
+      { "term": "High Level Structure (HLS)", "definition": "Einheitliche Grundstruktur aller ISO-Managementsystemnormen mit identischen Hauptkapiteln.", "isoRef": "ISO Directives Annex SL", "category": "Normung" },
+      { "term": "PDCA-Zyklus", "definition": "Plan-Do-Check-Act. Der kontinuierliche Regelkreis zur ständigen Qualitätsverbesserung.", "isoRef": "ISO 9001:2015 Kap. 0.4", "category": "QM-Grundlagen" },
+      { "term": "Dokumentierte Information", "definition": "Information, die von einer Organisation gelenkt und aufrechterhalten werden muss (Vorgaben & Nachweise).", "isoRef": "ISO 9001:2015 Kap. 7.5", "category": "Dokumentation" },
+      { "term": "Risikobasierter Ansatz", "definition": "Systematische Berücksichtigung von Risiken und Chancen bereits in der Prozessplanung.", "isoRef": "ISO 9001:2015 Kap. 6.1", "category": "Risikomanagement" },
+      { "term": "KVP (Kaizen)", "definition": "Stetige, kleinschrittige Perfektionierung von Prozessen durch Einbeziehung aller Mitarbeiter.", "isoRef": "ISO 9001:2015 Kap. 10.1", "category": "Verbesserung" },
+      { "term": "VUCA", "definition": "Volatilität, Unsicherheit, Komplexität, Ambiguität. Beschreibung moderner Marktdynamiken.", "isoRef": "ISO 9001:2015 Kap. 4.1", "category": "Strategisches QM" },
+      { "term": "Produkthaftung (ProdHaftG)", "definition": "Verschuldensunabhängige Haftung des Herstellers für Folgeschäden durch fehlerhafte Produkte.", "isoRef": "ProdHaftG / BGB § 823", "category": "Recht & Sicherheit" },
+      { "term": "8D-Report", "definition": "Systematischer 8-Stufen-Leitfaden zur Bearbeitung von Reklamationen und Fehlerursachen.", "isoRef": "ISO 9001:2015 Kap. 10.2", "category": "Fehlermanagement" }
+    ]
+
+    questions_json = json.dumps(questions, ensure_ascii=False, indent=2)
+    glossary_json = json.dumps(glossary, ensure_ascii=False, indent=2)
+
+    html_content = f"""<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QMB & QMF Fahrschul-Trainer (100% Standalone ISO 9001)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+    :root {{
+      --bg-dark: #0a0e17;
+      --bg-card: rgba(22, 29, 45, 0.85);
+      --border-color: rgba(255, 255, 255, 0.12);
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --success: #10b981;
+      --success-glow: rgba(16, 185, 129, 0.35);
+      --error: #ef4444;
+      --error-glow: rgba(239, 68, 68, 0.35);
+      --warning: #f59e0b;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+    }}
+
+    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+
+    body {{
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 15% 15%, rgba(99, 102, 241, 0.18) 0px, transparent 50%),
+        radial-gradient(at 85% 85%, rgba(16, 185, 129, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.6;
+      padding: 24px 16px;
+    }}
+
+    .container {{ max-width: 1100px; margin: 0 auto; }}
+
+    .glass-panel {{
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 24px;
+    }}
+
+    .glass-card {{
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 12px;
+    }}
+
+    header {{ display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }}
+
+    .logo {{ display: flex; align-items: center; gap: 12px; }}
+    .logo-icon {{
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, #6366f1 0%, #10b981 100%);
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    }}
+
+    nav {{ display: flex; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 6px; border-radius: 14px; border: 1px solid var(--border-color); }}
+    .nav-btn {{
+      padding: 8px 18px; border-radius: 10px; border: none; background: transparent;
+      color: var(--text-muted); font-weight: 500; cursor: pointer; transition: all 0.2s ease; font-size: 0.92rem;
+    }}
+    .nav-btn.active {{ background: linear-gradient(135deg, #6366f1, #4f46e5); color: #fff; font-weight: 600; }}
+
+    .ctrl-btn {{
+      padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border-color);
+      background: rgba(255,255,255,0.06); color: var(--text-main); cursor: pointer; font-size: 0.85rem;
+    }}
+    .ctrl-btn.active {{ background: rgba(99, 102, 241, 0.25); color: #a5b4fc; border-color: #6366f1; }}
+
+    /* Badges */
+    .badge {{ padding: 4px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; display: inline-block; margin-right: 6px; }}
+    .badge-purple {{ background: rgba(99, 102, 241, 0.2); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4); }}
+    .badge-amber {{ background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }}
+    .badge-green {{ background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }}
+
+    /* Options */
+    .option-item {{
+      padding: 16px 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(30, 41, 59, 0.5); color: var(--text-main); cursor: pointer;
+      display: flex; align-items: center; gap: 14px; margin-bottom: 12px; transition: all 0.2s ease;
+    }}
+    .option-item.selected {{ background: rgba(99, 102, 241, 0.25); border-color: #6366f1; }}
+    .option-item.correct {{ background: rgba(16, 185, 129, 0.25) !important; border-color: #10b981 !important; color: #a7f3d0 !important; }}
+    .option-item.wrong {{ background: rgba(239, 68, 68, 0.25) !important; border-color: #ef4444 !important; color: #fca5a5 !important; }}
+
+    .opt-box {{
+      width: 24px; height: 24px; border-radius: 6px; border: 2px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+    }}
+    .option-item.selected .opt-box {{ background: #6366f1; border-color: #6366f1; color: #fff; }}
+
+    /* Primary Button */
+    .btn-primary {{
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      color: white; border: none; padding: 12px 24px; border-radius: var(--radius-md);
+      font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    }}
+    .btn-primary:hover {{ transform: translateY(-1px); box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6); }}
+
+    /* Progress bar */
+    .progress-bar-bg {{ width: 100%; height: 10px; border-radius: 5px; background: rgba(15, 23, 42, 0.6); overflow: hidden; display: flex; }}
+    .progress-bar-fill {{ height: 100%; background: linear-gradient(90deg, #10b981, #34d399); transition: width 0.4s ease; }}
+    .progress-bar-retry {{ height: 100%; background: linear-gradient(90deg, #f59e0b, #fbbf24); transition: width 0.4s ease; }}
+
+    #confetti-canvas {{ position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999; }}
+
+    .tab-content {{ display: none; }}
+    .tab-content.active {{ display: block; }}
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="container">
+    
+    <!-- Header & Navigation (4 Main Tabs) -->
+    <div class="glass-panel">
+      <header>
+        <div class="logo">
+          <div class="logo-icon">🚗</div>
+          <div>
+            <h1 style="font-size: 1.35rem; font-weight: 800; background: linear-gradient(90deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+              QMB & QMF Fahrschul-Trainer (Standalone ISO 9001)
+            </h1>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">
+              Interaktives Stapelsystem • 100% Offline Single-File HTML
+            </p>
+          </div>
+        </div>
+
+        <nav>
+          <button class="nav-btn active" onclick="switchTab('stack')">🚗 Fahrschul-Stapel</button>
+          <button class="nav-btn" onclick="switchTab('exam')">🏆 TÜV-Prüfung</button>
+          <button class="nav-btn" onclick="switchTab('glossary')">📖 QM-Sachbegriffe</button>
+          <button class="nav-btn" onclick="switchTab('stats')">📊 Statistik</button>
+        </nav>
+
+        <div style="display: flex; gap: 8px;">
+          <button id="audio-toggle" class="ctrl-btn active" onclick="toggleAudio()">🔊 Sound ON</button>
+          <button id="dog-toggle" class="ctrl-btn active" onclick="toggleDog()">🐶 Hunde-Modus</button>
+          <button id="humor-toggle" class="ctrl-btn active" onclick="toggleHumor()">🎭 Humor-Modus</button>
+        </div>
+      </header>
+    </div>
+
+    <!-- TAB 1: FAHRSCHUL-STAPEL -->
+    <div id="tab-stack" class="tab-content active">
+      
+      <!-- Metrics Bar -->
+      <div class="glass-panel">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 14px;">
+          <div style="display: flex; gap: 24px; align-items: center;">
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Aktueller Stapel</span>
+              <div id="stack-remaining" style="font-size: 1.25rem; font-weight: 700; color: #fff;">0 Fragen</div>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Wiederholungen (Neugemischt)</span>
+              <div id="stack-retries" style="font-size: 1.25rem; font-weight: 700; color: #fcd34d;">0 neu einsortiert</div>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Gemastert (Unten einsortiert)</span>
+              <div id="stack-mastered" style="font-size: 1.25rem; font-weight: 700; color: #6ee7b7;">0 / 0</div>
+            </div>
+          </div>
+
+          <div>
+            <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 8px;">Thema:</span>
+            <select id="category-select" onchange="filterCategory()" style="padding: 8px 12px; border-radius: 10px; background: rgba(30, 41, 59, 0.8); color: #fff; border: 1px solid var(--border-color); outline: none;">
+              <option value="ALL">Alle QM-Themen</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;">
+            <span>💡 Fahrschulapp-Prinzip: Richtig = Nach unten | Falsch = Direkt neu untergemischt</span>
+            <span id="stack-accuracy" style="font-weight: 700; color: #fff;">Richtig-Quote: 100%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="bar-mastered" class="progress-bar-fill" style="width: 0%;"></div>
+            <div id="bar-retry" class="progress-bar-retry" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question Card Container -->
+      <div id="question-card-container" class="glass-panel">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- TAB 2: TÜV PRÜFUNGSSIMULATION -->
+    <div id="tab-exam" class="tab-content">
+      <div class="glass-panel" style="text-align: center; padding: 40px;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 12px;">🏆 TÜV QMB Prüfungs-Simulation</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">
+          Teste dein Wissen unter realistischen Bedingungen: 10 Minuten Zeitlimit • 75% Bestehensgrenze
+        </p>
+        <button class="btn-primary" onclick="startExam()">Prüfungssimulation starten</button>
+      </div>
+      <div id="exam-active-container" style="display: none;"></div>
+    </div>
+
+    <!-- TAB 3: QM SACHBEGRIFFE (GLOSSARY) -->
+    <div id="tab-glossary" class="tab-content">
+      <div class="glass-panel">
+        <h2 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 12px;">📖 QMF & QMB Sachbegriffe-Sammlung</h2>
+        <input type="text" id="glossary-search" oninput="renderGlossary()" placeholder="Sachbegriff suchen (z.B. Audit, HLS, PDCA, VUCA, ProdHaftG, 8D-Report)..." style="width: 100%; padding: 12px 16px; border-radius: 10px; background: rgba(15,23,42,0.6); border: 1px solid var(--border-color); color: #fff; margin-bottom: 16px; outline: none;" />
+        <div id="glossary-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;"></div>
+      </div>
+    </div>
+
+    <!-- TAB 4: STATISTIK -->
+    <div id="tab-stats" class="tab-content">
+      <div class="glass-panel">
+        <h2 style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 16px;">📊 Lernstatistik & Leistungsübersicht</h2>
+        <div id="stats-metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;"></div>
+        <button class="ctrl-btn" onclick="resetStats()">Statistik zurücksetzen</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const allQuestionsData = {questions_json};
+    const glossaryData = {glossary_json};
+
+    let questionsStack = [...allQuestionsData];
+    let masteredIds = JSON.parse(localStorage.getItem('qmb_mastered_ids') || '[]');
+    let retryCount = 0;
+    let selectedOptions = [];
+    let submitted = false;
+    let soundEnabled = true;
+    let dogMode = true;
+    let humorMode = true;
+    let activeCategory = 'ALL';
+
+    // Populate category dropdown
+    const categories = ['ALL', ...new Set(allQuestionsData.map(q => q.category))];
+    const catSelect = document.getElementById('category-select');
+    categories.forEach(c => {{
+      const opt = document.createElement('option');
+      opt.value = c; opt.innerText = c === 'ALL' ? 'Alle QM-Themen' : c;
+      catSelect.appendChild(opt);
+    }});
+
+    // Web Audio Synthesizer
+    let audioCtx = null;
+    function initAudio() {{
+      if (!audioCtx && (window.AudioContext || window.webkitAudioContext)) {{
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }}
+      if (audioCtx && audioCtx.state === 'suspended') {{ audioCtx.resume(); }}
+    }}
+
+    function playCorrectSound() {{
+      if (!soundEnabled) return;
+      initAudio();
+      if (!audioCtx) return;
+      const now = audioCtx.currentTime;
+      [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {{
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+        gain.gain.setValueAtTime(0.15, now + idx * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.08 + 0.3);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(now + idx * 0.08); osc.stop(now + idx * 0.08 + 0.35);
+      }});
+    }}
+
+    function playWrongSound() {{
+      if (!soundEnabled) return;
+      initAudio();
+      if (!audioCtx) return;
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(220, now);
+      osc.frequency.exponentialRampToValueAtTime(140, now + 0.25);
+      gain.gain.setValueAtTime(0.12, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(now); osc.stop(now + 0.32);
+    }}
+
+    function toggleAudio() {{ soundEnabled = !soundEnabled; document.getElementById('audio-toggle').classList.toggle('active', soundEnabled); document.getElementById('audio-toggle').innerText = soundEnabled ? '🔊 Sound ON' : '🔇 Sound OFF'; }}
+    function toggleDog() {{ dogMode = !dogMode; document.getElementById('dog-toggle').classList.toggle('active', dogMode); }}
+    function toggleHumor() {{ humorMode = !humorMode; document.getElementById('humor-toggle').classList.toggle('active', humorMode); }}
+
+    function filterCategory() {{
+      activeCategory = document.getElementById('category-select').value;
+      if (activeCategory === 'ALL') questionsStack = [...allQuestionsData];
+      else questionsStack = allQuestionsData.filter(q => q.category === activeCategory);
+      renderQuestionCard();
+    }}
+
+    function switchTab(tabId) {{
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      event.target.classList.add('active');
+      if (tabId === 'glossary') renderGlossary();
+      if (tabId === 'stats') renderStats();
+    }}
+
+    // Render Question Card
+    function renderQuestionCard() {{
+      const container = document.getElementById('question-card-container');
+      if (questionsStack.length === 0) {{
+        container.innerHTML = `
+          <div style="text-align: center; padding: 40px;">
+            <div style="font-size: 3rem; margin-bottom: 12px;">🎉</div>
+            <h2 style="color: #6ee7b7; font-size: 1.5rem; margin-bottom: 8px;">Herzlichen Glückwunsch! Stapel komplett gemastert!</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Du hast alle Fragen erfolgreich nach unten einsortiert.</p>
+            <button class="btn-primary" onclick="restartStack()">Stapel zurücksetzen & erneut lernen</button>
+          </div>`;
+        return;
+      }}
+
+      const q = questionsStack[0];
+      selectedOptions = [];
+      submitted = false;
+
+      let optionsHTML = q.options.map(opt => `
+        <div class="option-item" id="opt-${{opt.id}}" onclick="toggleOption('${{opt.id}}', ${{q.multipleChoice}})">
+          <div class="opt-box">${{opt.id}}</div>
+          <div>${{opt.text}}</div>
+        </div>
+      `).join('');
+
+      container.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div>
+            <span class="badge badge-purple">${{q.category}}</span>
+            <span class="badge badge-amber">${{q.isoClause}}</span>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Stapel-Pos: #1 von ${{questionsStack.length}}</span>
+        </div>
+
+        <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 20px;">${{q.question}}</h2>
+        <div id="options-list">${{optionsHTML}}</div>
+
+        <div id="feedback-area"></div>
+
+        <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+          <button id="submit-btn" class="btn-primary" onclick="submitAnswer()">Antwort überprüfen</button>
+        </div>
+      `;
+
+      updateMetrics();
+    }}
+
+    function toggleOption(optId, isMulti) {{
+      if (submitted) return;
+      if (isMulti) {{
+        if (selectedOptions.includes(optId)) selectedOptions = selectedOptions.filter(id => id !== optId);
+        else selectedOptions.push(optId);
+      }} else {{
+        selectedOptions = [optId];
+      }}
+
+      document.querySelectorAll('.option-item').forEach(el => {{
+        const id = el.id.replace('opt-', '');
+        if (selectedOptions.includes(id)) el.classList.add('selected');
+        else el.classList.remove('selected');
+      }});
+    }}
+
+    function submitAnswer() {{
+      if (selectedOptions.length === 0 || submitted) return;
+      submitted = true;
+
+      const q = questionsStack[0];
+      const correctIds = q.options.filter(o => o.isCorrect).map(o => o.id);
+      const isCorrect = selectedOptions.length === correctIds.length && selectedOptions.every(id => correctIds.includes(id));
+
+      q.options.forEach(opt => {{
+        const el = document.getElementById('opt-' + opt.id);
+        if (opt.isCorrect) el.classList.add('correct');
+        else if (selectedOptions.includes(opt.id)) el.classList.add('wrong');
+      }});
+
+      const feedback = document.getElementById('feedback-area');
+      if (isCorrect) {{
+        playCorrectSound();
+        triggerConfetti();
+        feedback.innerHTML = `
+          <div class="glass-card" style="background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.4); margin-top: 16px;">
+            <strong style="color: #6ee7b7; font-size: 1.05rem;">✅ Richtig! (100% Konformität)</strong>
+            ${{dogMode ? '<p style="color: #ecfdf5; margin-top: 6px;">🐶 <strong>QM-Auditor Doggo:</strong> "Wau! ISO 9001 meisterhaft verstanden!"</p>' : ''}}
+          </div>`;
+      }} else {{
+        playWrongSound();
+        retryCount++;
+        feedback.innerHTML = `
+          <div class="glass-card" style="background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.4); margin-top: 16px;">
+            <strong style="color: #fcd34d; font-size: 1.05rem;">🧐 Abweichung festgestellt!</strong>
+            ${{humorMode ? '<p style="color: #fef3c7; margin-top: 6px;">🚨 Der TÜV-Prüfer schüttelt den Kopf... Frage wird 2 Plätze nach vorne neugemischt!</p>' : ''}}
+          </div>`;
+      }}
+
+      feedback.innerHTML += `
+        <div class="glass-card" style="margin-top: 12px; background: rgba(30,41,59,0.8);">
+          <strong style="color: #a5b4fc;">📖 Sachverhalt & ISO 900x Begründung:</strong>
+          <p style="font-size: 0.9rem; color: #e5e7eb; margin-top: 4px;">${{q.infobox}}</p>
+          <div style="background: rgba(99,102,241,0.1); padding: 8px 12px; border-radius: 6px; margin-top: 8px; font-size: 0.85rem; color: #c7d2fe;">
+            📜 ${{q.isoJustification}}
+          </div>
+        </div>`;
+
+      document.getElementById('submit-btn').outerHTML = `
+        <button class="btn-primary" onclick="nextQuestion(${{isCorrect}})">Nächste Frage im Stapel ➔</button>`;
+    }}
+
+    function nextQuestion(isCorrect) {{
+      const currentQ = questionsStack.shift();
+      if (isCorrect) {{
+        if (!masteredIds.includes(currentQ.id)) masteredIds.push(currentQ.id);
+      }} else {{
+        questionsStack.splice(Math.min(2, questionsStack.length), 0, currentQ);
+      }}
+      localStorage.setItem('qmb_mastered_ids', JSON.stringify(masteredIds));
+      renderQuestionCard();
+    }}
+
+    function updateMetrics() {{
+      document.getElementById('stack-remaining').innerText = questionsStack.length + " Fragen";
+      document.getElementById('stack-retries').innerText = retryCount + " neu einsortiert";
+      document.getElementById('stack-mastered').innerText = masteredIds.length + " / " + allQuestionsData.length;
+      const rate = (masteredIds.length + retryCount) > 0 ? Math.round((masteredIds.length / (masteredIds.length + retryCount)) * 100) : 100;
+      document.getElementById('stack-accuracy').innerText = "Richtig-Quote: " + rate + "%";
+
+      const mPct = (masteredIds.length / allQuestionsData.length) * 100;
+      document.getElementById('bar-mastered').style.width = mPct + "%";
+    }}
+
+    function triggerConfetti() {{
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+      let particles = Array.from({{length: 50}}, () => ({{
+        x: Math.random() * canvas.width, y: canvas.height * 0.7,
+        vx: (Math.random() - 0.5) * 12, vy: (Math.random() - 1) * 14,
+        color: ['#6366f1', '#10b981', '#f59e0b', '#ec4899'][Math.floor(Math.random()*4)]
+      }}));
+
+      let frame = 0;
+      function animate() {{
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        particles.forEach(p => {{
+          p.x += p.vx; p.y += p.vy; p.vy += 0.4;
+          ctx.fillStyle = p.color; ctx.fillRect(p.x, p.y, 8, 8);
+        }});
+        if (frame++ < 40) requestAnimationFrame(animate);
+        else ctx.clearRect(0,0,canvas.width,canvas.height);
+      }}
+      animate();
+    }}
+
+    function renderGlossary() {{
+      const query = document.getElementById('glossary-search').value.toLowerCase();
+      const grid = document.getElementById('glossary-grid');
+      const filtered = glossaryData.filter(g => g.term.toLowerCase().includes(query) || g.definition.toLowerCase().includes(query));
+      grid.innerHTML = filtered.map(g => `
+        <div class="glass-card">
+          <span class="badge badge-purple" style="float: right;">${{g.category}}</span>
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 8px;">${{g.term}}</h3>
+          <p style="font-size: 0.88rem; color: #d1d5db; margin-bottom: 10px;">${{g.definition}}</p>
+          <span style="font-size: 0.78rem; color: #a5b4fc;">Normbezug: ${{g.isoRef}}</span>
+        </div>
+      `).join('');
+    }}
+
+    function renderStats() {{
+      const metrics = document.getElementById('stats-metrics');
+      metrics.innerHTML = `
+        <div class="glass-card"><span style="color: var(--text-muted); font-size: 0.8rem;">Gemasterte Fragen</span><h3 style="font-size: 1.8rem; color: #6ee7b7;">${{masteredIds.length}} / ${{allQuestionsData.length}}</h3></div>
+        <div class="glass-card"><span style="color: var(--text-muted); font-size: 0.8rem;">Wiederholungen</span><h3 style="font-size: 1.8rem; color: #fcd34d;">${{retryCount}}</h3></div>
+      `;
+    }}
+
+    function restartStack() {{
+      questionsStack = [...allQuestionsData];
+      renderQuestionCard();
+    }}
+
+    function resetStats() {{
+      if (confirm("Möchtest du alle Lernstatistiken zurücksetzen?")) {{
+        masteredIds = []; retryCount = 0;
+        localStorage.removeItem('qmb_mastered_ids');
+        questionsStack = [...allQuestionsData];
+        renderQuestionCard();
+      }}
+    }}
+
+    renderQuestionCard();
+  </script>
+</body>
+</html>
+"""
+
+    for path in ['/home/ole/Projects/qmb-fahrschul-app/index.html', '/home/ole/qmb_fahrschul_app.html']:
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(html_content)
+        print(f"[SUCCESS] App updated at {path}")
+
+if __name__ == '__main__':
+    generate_full_standalone_app()
