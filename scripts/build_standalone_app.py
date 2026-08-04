@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
 Full QMB Standalone HTML Generator (Focus: Full QMB TÜV Questions Dataset & QMF+QMB Lexicon)
-Version: v0.1.0-alpha.1 (Alpha Pre-Release)
+Version: v0.1.0-alpha.2 (Alpha Pre-Release)
 """
 
 import os
 import json
 from build_full_dataset import harvest_all_sources
 
-APP_VERSION = "0.1.0-alpha.1"
+APP_VERSION = "0.1.0-alpha.2"
 
 def generate_qmb_app():
     # Exhaustive QMB Questions Catalog parsed from all module documents & images (49+ questions)

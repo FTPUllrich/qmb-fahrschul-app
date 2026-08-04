@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 Standalone QMB Issue Tracker & Bug Report Generator (Client-ID & GitHub Project Direct Integration)
-Version: v0.1.0-alpha.1 (Alpha Pre-Release)
+Version: v0.1.0-alpha.2 (Alpha Pre-Release)
 """
 
 import os
 
-APP_VERSION = "0.1.0-alpha.1"
+APP_VERSION = "0.1.0-alpha.2"
 
 def generate_issue_tracker():
     html_content = r"""<!DOCTYPE html>
@@ -14,7 +14,7 @@ def generate_issue_tracker():
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QMB Fehlerberichte & Issue-Tracker (v0.1.0-alpha.1)</title>
+  <title>QMB Fehlerberichte & Issue-Tracker (v0.1.0-alpha.2)</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
@@ -130,7 +130,7 @@ def generate_issue_tracker():
               <h1 style="font-size: 1.35rem; font-weight: 800; background: linear-gradient(90deg, #ffffff, #fca5a5); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 QMB Fehlerberichte & Issue-Tracker
               </h1>
-              <span class="badge badge-alpha">v0.1.0-alpha.1</span>
+              <span class="badge badge-alpha">v0.1.0-alpha.2</span>
             </div>
             <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px;">
               <span style="font-size: 0.8rem; color: var(--text-muted);">Deine eindeutige Client-ID:</span>

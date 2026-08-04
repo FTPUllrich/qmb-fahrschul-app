@@ -38,7 +38,7 @@ Dieses Repository enthält zwei vollkommen eigenständige, doppelklickbare HTML-
 
 ---
 
-## 📌 Versionshinweis (`v0.1.0-alpha.1`)
+## 📌 Versionshinweis (`v0.1.0-alpha.2`)
 
 Dies ist eine **Alpha-Entwicklungsversion (Pre-Release)**. Vor dem finalen v1.0.0-Release folgen kleinere Ergänzungen (*Minor Changes*) und Feinschliff anhand des Feedbacks aus der Schulklasse.
 
