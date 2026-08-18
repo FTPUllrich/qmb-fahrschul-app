@@ -62,14 +62,9 @@ export default function ExamModeView({ questions }) {
   const handleSelectOption = (optId) => {
     if (finished || !currentQ) return;
     const currentSel = userAnswers[currentQ.id] || [];
-    let updated;
-    if (currentQ.multipleChoice) {
-      updated = currentSel.includes(optId)
-        ? currentSel.filter(id => id !== optId)
-        : [...currentSel, optId];
-    } else {
-      updated = [optId];
-    }
+    const updated = currentSel.includes(optId)
+      ? currentSel.filter(id => id !== optId)
+      : [...currentSel, optId];
     setUserAnswers({ ...userAnswers, [currentQ.id]: updated });
   };
 
@@ -391,15 +386,6 @@ export default function ExamModeView({ questions }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
           <span className="badge badge-purple">Frage {currentIndex + 1} von {totalExamQuestions}</span>
           <span className="badge badge-amber">{currentQ.isoClause}</span>
-          {currentQ.multipleChoice ? (
-            <span className="badge" style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#93c5fd', border: '1px solid rgba(59, 130, 246, 0.4)' }}>
-              Mehrfachauswahl
-            </span>
-          ) : (
-            <span className="badge" style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#d8b4fe', border: '1px solid rgba(168, 85, 247, 0.4)' }}>
-              Einzelauswahl
-            </span>
-          )}
         </div>
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '10px', background: timeLeft < 300 ? 'rgba(239, 68, 68, 0.25)' : 'rgba(30, 41, 59, 0.7)', border: timeLeft < 300 ? '1px solid #ef4444' : '1px solid var(--glass-border)', color: timeLeft < 300 ? '#fca5a5' : '#ffffff', fontWeight: 700, fontSize: '1rem' }}>
@@ -443,7 +429,7 @@ export default function ExamModeView({ questions }) {
               <div style={{
                 width: '24px',
                 height: '24px',
-                borderRadius: currentQ.multipleChoice ? '6px' : '50%',
+                borderRadius: '6px',
                 border: isSel ? '2px solid #6366f1' : '2px solid rgba(255, 255, 255, 0.3)',
                 background: isSel ? '#6366f1' : 'transparent',
                 display: 'flex',

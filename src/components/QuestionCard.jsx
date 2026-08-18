@@ -53,14 +53,10 @@ export default function QuestionCard({
 
   const handleOptionToggle = (optionId) => {
     if (submitted) return;
-    if (question.multipleChoice) {
-      if (selectedOptions.includes(optionId)) {
-        setSelectedOptions(selectedOptions.filter(id => id !== optionId));
-      } else {
-        setSelectedOptions([...selectedOptions, optionId]);
-      }
+    if (selectedOptions.includes(optionId)) {
+      setSelectedOptions(selectedOptions.filter(id => id !== optionId));
     } else {
-      setSelectedOptions([optionId]);
+      setSelectedOptions([...selectedOptions, optionId]);
     }
   };
 
@@ -103,18 +99,14 @@ export default function QuestionCard({
         transition: 'all 0.3s ease'
       }}
     >
-      {/* Category & Badge header */}
+      {/* Category & Badge header (No spoilers before answer!) */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
           <span className="badge badge-purple">{question.category}</span>
           <span className="badge badge-amber">{question.isoClause}</span>
-          {question.multipleChoice ? (
-            <span className="badge" style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#93c5fd', border: '1px solid rgba(59, 130, 246, 0.4)' }}>
-              Mehrfachauswahl (Multiple Choice)
-            </span>
-          ) : (
-            <span className="badge" style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#d8b4fe', border: '1px solid rgba(168, 85, 247, 0.4)' }}>
-              Einzelauswahl (Single Choice)
+          {submitted && (
+            <span className="badge" style={{ background: question.multipleChoice ? 'rgba(59, 130, 246, 0.2)' : 'rgba(168, 85, 247, 0.2)', color: question.multipleChoice ? '#93c5fd' : '#d8b4fe', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
+              {question.multipleChoice ? 'Mehrfachauswahl' : 'Einzelauswahl'}
             </span>
           )}
         </div>

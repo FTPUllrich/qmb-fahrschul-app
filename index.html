@@ -12417,15 +12417,11 @@
       submitted = false;
 
       let optionsHTML = q.options.map(opt => `
-        <div class="option-item" id="opt-${opt.id}" onclick="toggleOption('${opt.id}', ${q.multipleChoice})">
+        <div class="option-item" id="opt-${opt.id}" onclick="toggleOption('${opt.id}')">
           <div class="opt-box">${opt.id}</div>
           <div>${opt.text}</div>
         </div>
       `).join('');
-
-      let choiceTypeBadge = q.multipleChoice
-        ? '<span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4);">Mehrfachauswahl</span>'
-        : '<span class="badge" style="background: rgba(168, 85, 247, 0.2); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.4);">Einzelauswahl</span>';
 
       let deviationBadgeHTML = q.hasDeviation 
         ? '<span class="badge badge-amber" title="Fachlich geprüfte und nach ISO 9001 begründete Frage">⚠️ Geprüfte ISO-Korrektur</span>'
@@ -12436,7 +12432,6 @@
           <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
             <span class="badge badge-purple">${q.category}</span>
             <span class="badge badge-amber">${q.isoClause}</span>
-            ${choiceTypeBadge}
             ${deviationBadgeHTML}
           </div>
           <span style="font-size: 0.85rem; color: var(--text-muted);">Stapel-Pos: #1 von ${questionsStack.length}</span>
@@ -12455,13 +12450,12 @@
       updateMetrics();
     }
 
-    function toggleOption(optId, isMulti) {
+    function toggleOption(optId) {
       if (submitted) return;
-      if (isMulti) {
-        if (selectedOptions.includes(optId)) selectedOptions = selectedOptions.filter(id => id !== optId);
-        else selectedOptions.push(optId);
+      if (selectedOptions.includes(optId)) {
+        selectedOptions = selectedOptions.filter(id => id !== optId);
       } else {
-        selectedOptions = [optId];
+        selectedOptions.push(optId);
       }
 
       document.querySelectorAll('.option-item').forEach(el => {
@@ -12485,13 +12479,18 @@
         else if (selectedOptions.includes(opt.id)) el.classList.add('wrong');
       });
 
+      const typeBadge = `<span class="badge" style="background: ${q.multipleChoice ? 'rgba(59, 130, 246, 0.2)' : 'rgba(168, 85, 247, 0.2)'}; color: ${q.multipleChoice ? '#93c5fd' : '#d8b4fe'}; border: 1px solid rgba(255, 255, 255, 0.2);">${q.multipleChoice ? 'Mehrfachauswahl (' + correctIds.length + ' richtige Optionen: ' + correctIds.join(', ') + ')' : 'Einzelauswahl (1 richtige Option: ' + correctIds[0] + ')'}</span>`;
+
       const feedback = document.getElementById('feedback-area');
       if (isCorrect) {
         playCorrectSound();
         triggerConfetti();
         feedback.innerHTML = `
           <div class="glass-card" style="background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.4); margin-top: 16px;">
-            <strong style="color: #6ee7b7; font-size: 1.05rem;">✅ Richtig! (100% Konformität)</strong>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px;">
+              <strong style="color: #6ee7b7; font-size: 1.05rem;">✅ Richtig! (100% Konformität)</strong>
+              ${typeBadge}
+            </div>
             ${dogMode ? '<p style="color: #ecfdf5; margin-top: 6px;">🐶 <strong>QM-Auditor Doggo:</strong> "Wau! ISO 9001 meisterhaft verstanden!"</p>' : ''}
           </div>`;
       } else {
@@ -12499,7 +12498,10 @@
         retryCount++;
         feedback.innerHTML = `
           <div class="glass-card" style="background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.4); margin-top: 16px;">
-            <strong style="color: #fcd34d; font-size: 1.05rem;">🧐 Abweichung festgestellt!</strong>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px;">
+              <strong style="color: #fcd34d; font-size: 1.05rem;">🧐 Abweichung festgestellt!</strong>
+              ${typeBadge}
+            </div>
             ${humorMode ? '<p style="color: #fef3c7; margin-top: 6px;">🚨 Der TÜV-Prüfer schüttelt den Kopf... Frage wird 2 Plätze nach vorne neugemischt!</p>' : ''}
           </div>`;
       }
