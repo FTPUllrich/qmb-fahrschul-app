@@ -12423,15 +12423,20 @@
         </div>
       `).join('');
 
+      let choiceTypeBadge = q.multipleChoice
+        ? '<span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4);">Mehrfachauswahl</span>'
+        : '<span class="badge" style="background: rgba(168, 85, 247, 0.2); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.4);">Einzelauswahl</span>';
+
       let deviationBadgeHTML = q.hasDeviation 
-        ? `<span class="badge badge-red" onclick="openDebateModal('${q.draftAnswer.replace(/'/g, "\'")}', '${q.isoConclusion.replace(/'/g, "\'")}')" title="Abweichung zum Bild-Entwurf erkannt. Klicken für Gegenüberstellung!">⚠️ Norm-Abweichung im Bild-Entwurf (Klicken für Debatte 💬)</span>`
-        : `<span class="badge badge-green">🟢 Bild & Norm konform (100% Übereinstimmung)</span>`;
+        ? '<span class="badge badge-amber" title="Fachlich geprüfte und nach ISO 9001 begründete Frage">⚠️ Geprüfte ISO-Korrektur</span>'
+        : '<span class="badge badge-green">🟢 100% ISO-konform</span>';
 
       container.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
-          <div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
             <span class="badge badge-purple">${q.category}</span>
             <span class="badge badge-amber">${q.isoClause}</span>
+            ${choiceTypeBadge}
             ${deviationBadgeHTML}
           </div>
           <span style="font-size: 0.85rem; color: var(--text-muted);">Stapel-Pos: #1 von ${questionsStack.length}</span>
