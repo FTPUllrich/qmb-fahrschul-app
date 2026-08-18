@@ -1,0 +1,178 @@
+[
+  {
+    "imageFile": "7_1.PNG",
+    "question": "Welche Aspekte müssen überwacht werden?",
+    "options": [
+      {"id": "A", "text": "Bedarf an Fehlern des QMS", "isCorrect": false},
+      {"id": "B", "text": "Wirksame Umsetzung der Planung", "isCorrect": true},
+      {"id": "C", "text": "Leistung der Kunden", "isCorrect": false},
+      {"id": "D", "text": "Konformität der Produkte bzw. Dienstleistungen", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "ISO 9001:2015 Kap. 9.1",
+    "isoJustification": "Gemäß ISO 9001:2015 Kap. 9.1.1 und 9.1.3 muss die Organisation Aspekte wie die Konformität von Produkten/Dienstleistungen und die wirksame Umsetzung der Planung überwachen und messen. 'Bedarf an Fehlern' ist fachlicher Unsinn, und es wird die Kundenzufriedenheit überwacht, nicht die 'Leistung der Kunden'.",
+    "infobox": "Die Leistungsbewertung eines QMS fordert u. a. die Messung der Zielerreichung (Umsetzung der Planung) und der Produktkonformität.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_2.PNG",
+    "question": "Die Organisationen müssen laut DIN EN ISO 9001 die entsprechenden Daten und Informationen, die sich aus der Überwachung und Messung ergeben, analysieren und bewerten. Wozu dienen der Organisation diese Datenanalysen?",
+    "options": [
+      {"id": "A", "text": "Zur Beurteilung der Leistung externer Anbieter", "isCorrect": true},
+      {"id": "B", "text": "Zur Feststellung der Marktanteile der Organisation", "isCorrect": false},
+      {"id": "C", "text": "Zur Bewertung der Konformität der Produkte und Dienstleistungen", "isCorrect": true},
+      {"id": "D", "text": "Zur Bewertung der Kundenzufriedenheit", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "ISO 9001:2015 Kap. 9.1.3",
+    "isoJustification": "ISO 9001:2015 Kap. 9.1.3 (Analyse und Beurteilung) listet explizit auf, wofür die analysierten Daten verwendet werden müssen: u. a. Konformität von Produkten (a), Kundenzufriedenheit (b) und Leistung externer Anbieter (f). Marktanteile können zwar im Rahmen der Kundenzufriedenheit betrachtet werden, sind aber primär kein normativ geforderter direkter Zweck der QM-Datenanalyse in diesem Sinne (bzw. nicht als solcher in 9.1.3 gelistet).",
+    "infobox": "Nach Kap. 9.1.3 muss die Datenanalyse genutzt werden, um Leistung externer Anbieter, Produktkonformität und Kundenzufriedenheit zu beurteilen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_3.PNG",
+    "question": "Welche Qualitätswerkzeuge werden zur Fehleranalyse herangezogen?",
+    "options": [
+      {"id": "A", "text": "Qualitätsregelrkarten", "isCorrect": true},
+      {"id": "B", "text": "Ursache-Wirkungsdiagramm", "isCorrect": true},
+      {"id": "C", "text": "Histogramme", "isCorrect": true},
+      {"id": "D", "text": "Steuungsdiagramm", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "Q7 Qualitätswerkzeuge",
+    "isoJustification": "Alle genannten Werkzeuge gehören zu den klassischen 7 Qualitätswerkzeugen (Q7), die zur Fehlererfassung, Fehleranalyse und Qualitätslenkung genutzt werden. (Hinweis: 'Qualitätsregelrkarten' und 'Steuungsdiagramm' enthalten im Bild Tippfehler).",
+    "infobox": "Die Q7 (Seven Tools of Quality) umfassen unter anderem Histogramme, Pareto-Diagramme, Ishikawa-Diagramme (Ursache-Wirkung), Korrelationsdiagramme (Streuung) und Qualitätsregelkarten. Sie dienen alle der Identifikation und Analyse von Fehlern und Prozessabweichungen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_4.PNG",
+    "question": "Welche Inhalte müssen Bestandteil der Managementbewertung sein?",
+    "options": [
+      {"id": "A", "text": "Leistung externer Anbieter", "isCorrect": true},
+      {"id": "B", "text": "Überprüfung der Geschäftsführung", "isCorrect": false},
+      {"id": "C", "text": "Auswertung der Mitarbeiterbeurteilungen", "isCorrect": false},
+      {"id": "D", "text": "Erfüllung der Qualitätsziele", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "ISO 9001:2015 Kap. 9.3.2",
+    "isoJustification": "Kapitel 9.3.2 (Managementbewertung - Eingaben) nennt explizit die 'Erfüllung der Qualitätsziele' (c.2) und die 'Leistung externer Anbieter' (c.7) als zwingende Eingaben für das Management-Review. Mitarbeiterbeurteilungen oder die 'Überprüfung der Geschäftsführung' sind dort nicht gefordert.",
+    "infobox": "Das Management-Review bewertet das QMS anhand festgelegter Eingaben (Inputs) wie Zielerreichung, Auditergebnisse, Kundenzufriedenheit und Lieferantenbewertungen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_5.PNG",
+    "question": "Welche Aussagen zum Kano-Modell sind korrekt?",
+    "options": [
+      {"id": "A", "text": "Es ist ein Modell zur Erläuterung des Zusammenhangs zwischen Erfüllung von Kundenanforderung und Kundenzufriedenheit.", "isCorrect": true},
+      {"id": "B", "text": "Leistungsfaktoren sind Anforderungen des Kunden, mit deren Erfüllung der Grad der Zufriedenheit steigt.", "isCorrect": true},
+      {"id": "C", "text": "Basisfaktoren sind vorausgesetzte Erwartungen des Kunden.", "isCorrect": true},
+      {"id": "D", "text": "Begeisternde Faktoren sind erwartete Anforderungen des Kunden, die Unzufriedenheit vorbeugen.", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "Qualitätsmanagement-Grundlagen",
+    "isoJustification": "Das Kano-Modell beschreibt den Zusammenhang zwischen Anforderungserfüllung und Zufriedenheit (A). Leistungsfaktoren (B) steigern bei Erfüllung die Zufriedenheit proportional. Basisfaktoren (C) sind implizit vorausgesetzt; ihre Nichterfüllung führt zu Unzufriedenheit. Begeisterungsfaktoren (D) sind hingegen unerwartet; sie beugen nicht Unzufriedenheit vor, sondern erzeugen überproportionale Zufriedenheit.",
+    "infobox": "Das Kano-Modell unterteilt Kundenanforderungen in Basis-, Leistungs- und Begeisterungsanforderungen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_6.PNG",
+    "question": "Aus welchen Informationsquellen sammelt eine Organisation Kundenrückmeldungen zu ihren Produkten bzw. Dienstleistungen?",
+    "options": [
+      {"id": "A", "text": "Kundenbefragungen", "isCorrect": true},
+      {"id": "B", "text": "Berichte von Verbraucherorganisationen", "isCorrect": true},
+      {"id": "C", "text": "Wissenschaftlichen Publikationen", "isCorrect": false},
+      {"id": "D", "text": "Flyern", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "ISO 9001:2015 Kap. 9.1.2",
+    "isoJustification": "Typische und empfohlene Methoden zur Einholung von Kundenrückmeldungen sind direkte Befragungen (A) sowie indirekte Rückmeldungen aus dem Markt wie Berichte von Verbraucherorganisationen (B). Wissenschaftliche Publikationen und Werbeflyer der eigenen Organisation sind keine direkten Quellen für individuelles Kundenfeedback.",
+    "infobox": "Kundenfeedback kann direkt (z. B. durch Umfragen, Reklamationen) oder indirekt (z. B. über Marktstudien, Verbraucherportale) eingeholt werden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_7.PNG",
+    "question": "Die Kundenzufriedenheit kann gemessen werden durch:",
+    "options": [
+      {"id": "A", "text": "Analyse der Marktanteile", "isCorrect": true},
+      {"id": "B", "text": "Kundenbeschwerden", "isCorrect": true},
+      {"id": "C", "text": "Vermutungen von Mitarbeitern", "isCorrect": false},
+      {"id": "D", "text": "Kundengespräche", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "ISO 9001:2015 Kap. 9.1.2",
+    "isoJustification": "In der Anmerkung zu ISO 9001:2015 Kap. 9.1.2 (Kundenzufriedenheit) werden Marktanteilsanalysen (A), Kundenrückmeldungen/-reklamationen (B) und Treffen/Gespräche mit Kunden (D) explizit als Beispiele zur Überwachung der Kundenwahrnehmung genannt. Bloße Vermutungen von Mitarbeitern (C) sind nicht evidenzbasiert.",
+    "infobox": "Indikatoren für Kundenzufriedenheit sind neben direkten Befragungen auch Reklamationsquoten, Kundenbindungsraten und Marktanteile.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_8.PNG",
+    "question": "Welche Aussagen bzgl. Überwachung und Messung sind korrekt?",
+    "options": [
+      {"id": "A", "text": "Der Analyseprozess wird bedarfsorientiert durchgeführt.", "isCorrect": false},
+      {"id": "B", "text": "Die Messtätigkeiten müssen entsprechend der Festlegungen umgesetzt werden.", "isCorrect": true},
+      {"id": "C", "text": "Die Organisation muss festlegen, wie häufig und in welchem Umfang die Prüftätigkeiten durchgeführt werden.", "isCorrect": true},
+      {"id": "D", "text": "Die Ergebnisse aus der Überwachung und Messung müssen monatlich dokumentiert werden.", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "ISO 9001:2015 Kap. 9.1.1",
+    "isoJustification": "Die Norm fordert in Kap. 9.1.1, dass die Organisation bestimmen muss, 'wann die Überwachung und Messung durchzuführen ist' und 'wann die Ergebnisse [...] zu analysieren sind' (C). Dies erfordert eine geplante Umsetzung der Prüftätigkeiten (B), nicht nur eine rein 'bedarfsorientierte' (A). Einen festen Rhythmus wie 'monatlich' (D) schreibt die Norm nicht vor.",
+    "infobox": "Überwachungs- und Messprozesse müssen geplant stattfinden. Die Norm schreibt keine konkreten Frequenzen (wie z. B. monatlich) vor, dies obliegt der Organisation.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_9.PNG",
+    "question": "Zu den Q7 Qualitätswerkzeugen gehören...",
+    "options": [
+      {"id": "A", "text": "Fehlersammelliste", "isCorrect": true},
+      {"id": "B", "text": "Qualitätsregelkarte", "isCorrect": true},
+      {"id": "C", "text": "Managementbewertung", "isCorrect": false},
+      {"id": "D", "text": "Ursachen-Wirkungsdiagramm", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "Qualitätsmanagement-Methoden (Q7)",
+    "isoJustification": "Zu den 7 grundlegenden Qualitätswerkzeugen (Q7 nach Ishikawa) gehören die Fehlersammelliste (A), die Qualitätsregelkarte (B) und das Ursache-Wirkungs-Diagramm (D). Die Managementbewertung (C) ist ein normativer QM-Prozess, aber kein Q7-Werkzeug.",
+    "infobox": "Die Q7 Werkzeuge sind: Fehlersammelliste, Histogramm, Qualitätsregelkarte, Pareto-Diagramm, Ishikawa-Diagramm, Streudiagramm und Flussdiagramm.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_10.PNG",
+    "question": "Wann wird laut DIN EN ISO 9001 eine Managementbewertung durchgeführt?",
+    "options": [
+      {"id": "A", "text": "Einmal jährlich", "isCorrect": false},
+      {"id": "B", "text": "Die Norm gibt keinen Zeitpunkt vor.", "isCorrect": true},
+      {"id": "C", "text": "Immer vor dem externen Zertifizierungsaudit", "isCorrect": false},
+      {"id": "D", "text": "Jedes Quartal", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "ISO 9001:2015 Kap. 9.3.1",
+    "isoJustification": "Kapitel 9.3.1 der ISO 9001 fordert, dass die oberste Leitung das QMS 'in geplanten Abständen' bewerten muss. Es gibt jedoch keine feste Vorgabe in der Norm (wie z. B. jährlich, quartalsweise oder vor Audits), wann genau dies zu geschehen hat. Die Organisation legt das Intervall selbst fest.",
+    "infobox": "Die ISO 9001 fordert die Managementbewertung 'in geplanten Abständen'. Die meisten Unternehmen führen sie jährlich durch, dies ist jedoch normativ nicht als strikter Zeitpunkt vorgeschrieben.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "7_11.PNG",
+    "question": "Zu welchem Zeitpunkt werden die Messmethoden und -kriterien festgelegt?",
+    "options": [
+      {"id": "A", "text": "Freigabe von Produkten und Dienstleistungen", "isCorrect": false},
+      {"id": "B", "text": "Entwicklung neuer Produkte und Dienstleistungen", "isCorrect": true},
+      {"id": "C", "text": "Planung der Produktrealisierung", "isCorrect": true},
+      {"id": "D", "text": "Überwachung von Änderungen", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Internes Audit / Qualitätsaudits",
+    "isoClause": "ISO 9001:2015 Kap. 8.1 / 8.3",
+    "isoJustification": "Bereits in der Phase der 'betrieblichen Planung und Steuerung' (früher: Planung der Produktrealisierung, 8.1) sowie in der 'Entwicklung von Produkten und Dienstleistungen' (8.3) müssen die Kriterien für die Annahme und die dazu erforderlichen Prüf- und Messmethoden festgelegt werden. Bei der reinen 'Freigabe' (A) werden diese bereits angewendet.",
+    "infobox": "Prüfmerkmale und Messmethoden müssen zwingend vor Beginn der Produktion definiert werden, idealerweise schon in der Entwicklungs- und Planungsphase (Kap. 8.1).",
+    "isBroken": false
+  }
+]

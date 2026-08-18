@@ -1,0 +1,258 @@
+[
+  {
+    "imageFile": "9_1.PNG",
+    "question": "Was versteht man unter einem Second-Party-Audit?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ein Zertifizierungsaudit",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Ein Prozessaudit",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Ein internes Audit",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Ein Lieferantenaudit",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "KVP / Verbesserungsmanagement",
+    "isoClause": "ISO 19011:2018 Kap. 4",
+    "isoJustification": "Ein Second-Party-Audit (Zweitparteien-Audit) wird von Parteien durchgeführt, die ein Interesse an der Organisation haben, wie z.B. Kunden. Das klassische Beispiel hierfür ist das Lieferantenaudit. Zertifizierungsaudits sind Third-Party-Audits, interne Audits sind First-Party-Audits.",
+    "infobox": "First-Party = Internes Audit\nSecond-Party = Lieferantenaudit (Kunde auditiert Lieferant)\nThird-Party = Zertifizierungsaudit (durch unabhängige Stelle wie TÜV)",
+    "isBroken": false
+  },
+  {
+    "imageFile": "9_2.PNG",
+    "question": "Was möchte man unmittelbar mit der Auditierung eines QM-Systems erreichen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Den Nachweis über ein wirksames QM-System",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Verbesserung der Arbeitsabläufe",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Steigenden Umsatz",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Senkung von Qualitätskosten",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "KVP / Verbesserungsmanagement",
+    "isoClause": "ISO 9001:2015 Kap. 9.2",
+    "isoJustification": "Gemäß ISO 9001 Kap. 9.2 dienen interne Audits dazu, Informationen darüber zu erhalten, ob das QM-System die Anforderungen erfüllt und wirksam umgesetzt ist (A). Ebenso zielen Audits auf die Identifikation von Verbesserungspotenzialen ab (B). Steigender Umsatz oder Kostensenkung können langfristige Folgen sein, sind aber keine unmittelbaren Auditziele.",
+    "infobox": "Audits prüfen auf Konformität und Wirksamkeit und decken Verbesserungspotenziale auf. Finanzielle Kennzahlen stehen nicht im unmittelbaren Fokus des Audits.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "9_3.PNG",
+    "question": "Welche Fragetechniken sollten in einem Audit verwendet werden?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Rhetorische Fragen",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Geschlossene Fragen",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Alphanummerische Fragen",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Offene Fragen",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "KVP / Verbesserungsmanagement",
+    "isoClause": "ISO 19011:2018",
+    "isoJustification": "In der Auditpraxis werden primär offene Fragen (W-Fragen) genutzt, um den Auditierten zum Sprechen zu bringen und Informationen zu sammeln. Geschlossene Fragen werden gezielt eingesetzt, um Fakten zu bestätigen (Ja/Nein). Rhetorische Fragen sind ungeeignet, alphanumerische Fragen ergeben in diesem Kontext keinen Sinn.",
+    "infobox": "Offene Fragen = Informationsgewinnung ('Wie machen Sie das?')\nGeschlossene Fragen = Bestätigung ('Haben Sie das Protokoll unterschrieben?')",
+    "isBroken": false
+  },
+  {
+    "imageFile": "9_4.PNG",
+    "question": "Welche Aussagen bzgl. interner Audits sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Der Auditor erstellt eine Checkliste, an die er sich im Audit strikt halten muss.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Vor dem eigentlichen Audit werden das Auditziel und die Auditteilnehmer festgelegt.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Das Audit ist abgeschlossen, wenn die Auditfolgemaßnahmen umgesetzt und ihre Wirksamkeit nachgewiesen ist.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Der Auditbericht wird im Nachgang des Audits ausschließlich an die verantwortliche Führungskraft verschickt.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "KVP / Verbesserungsmanagement",
+    "isoClause": "ISO 19011:2018 Kap. 6.6 & 6.7",
+    "isoJustification": "Vor dem Audit müssen Auditziele und Teilnehmer festgelegt werden (B). Checklisten sind Leitfäden, an die man sich nicht strikt halten muss (A ist falsch). Ein Audit ist abgeschlossen, wenn alle geplanten Auditaktivitäten durchgeführt wurden; Folgemaßnahmen finden nach Abschluss des Audits statt (C ist falsch). Der Bericht geht an alle relevanten interessierten Parteien, nicht nur an die Führungskraft (D ist falsch).",
+    "infobox": "Auditabschluss ≠ Abschluss der Korrekturmaßnahmen! Das Audit endet in der Regel mit dem Abschlussgespräch und der Berichtsausgabe.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "9_5.PNG",
+    "question": "Eine Management-Zertifizierung...",
+    "options": [
+      {
+        "id": "A",
+        "text": "dokumentiert, dass das Managementsystem eines Unternehmens die Anforderungen der entsprechenden Nachweisnorm erfüllt.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "weist nach, dass die Produkte des Unternehmens qualitativ hochwertig sind.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "stellt fest, dass ein Total Quality Management System vorliegt.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "erfolgt durch eine unabhängige Institution.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "KVP / Verbesserungsmanagement",
+    "isoClause": "ISO/IEC 17021",
+    "isoJustification": "Eine Zertifizierung des Managementsystems bestätigt durch eine unabhängige dritte Partei (Zertifizierungsstelle), dass das System konform zur Norm ist (A und D). Sie ist kein direktes Produktzertifikat (B falsch) und bestätigt auch kein TQM (C falsch).",
+    "infobox": "Systemzertifizierung ≠ Produktzertifizierung! Ein nach ISO 9001 zertifiziertes Unternehmen kann auch minderwertige Produkte herstellen, solange das QM-System den Normvorgaben entspricht und Prozesse kontrolliert ablaufen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "9_6.PNG",
+    "question": "Welche Unterlagen sehen Sie sich als Auditor zur Vorbereitung eines Audits an?",
+    "options": [
+      {
+        "id": "A",
+        "text": "QM-Handbuch (wenn vorhanden), Arbeitsanweisungen, technische Spezifikationen",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Allgemeine Produktinformationen, Organigramm, Stellenbeschreibungen",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Werbebroschüren, Prüfmittelkatalog, Trainingsunterlagen",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Bedienungsanleitungen, Mitarbeitergesprächsprotokolle, IT-Lastenheft",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "KVP / Verbesserungsmanagement",
+    "isoClause": "ISO 19011:2018 Kap. 6.3.1",
+    "isoJustification": "Zur Vorbereitung (Dokumentenprüfung) sichtet der Auditor die grundlegenden Systemdokumente wie Organigramme, Stellenbeschreibungen, Arbeitsanweisungen und das (sofern vorhandene) QM-Handbuch, um sich einen Überblick über das System zu verschaffen. Spezifische operative Aufzeichnungen (C, D) werden meist erst während des eigentlichen Audits vor Ort geprüft.",
+    "infobox": "Vorbereitung = Systemverständnis (Strukturen, Prozesse, Zuständigkeiten).\nDurchführung = Überprüfung der tatsächlichen Umsetzung (Protokolle, Kataloge, spezifische Nachweise).",
+    "isBroken": false
+  },
+  {
+    "imageFile": "9_7.PNG",
+    "question": "Welche Aussagen zum Zertifizierungsrhythmus sind richtig?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Alle 3 Jahre findet die Re-Zertifizierung statt, dazwischen gibt es Überwachungsaudits.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Ein Unternehmen muss sich jährlich re-zertifizieren lassen.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Das Zertifikat hat eine maximale Gültigkeitsdauer von 3 Jahren.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Das Zertifikat hat eine maximale Gültigkeitsdauer von 5 Jahren.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "KVP / Verbesserungsmanagement",
+    "isoClause": "ISO/IEC 17021",
+    "isoJustification": "Der klassische Zertifizierungszyklus nach ISO 9001 beträgt 3 Jahre. Ein Zertifikat ist somit maximal 3 Jahre gültig (C). Nach der Erstzertifizierung erfolgen in den zwei darauffolgenden Jahren Überwachungsaudits, bevor im dritten Jahr das Re-Zertifizierungsaudit stattfindet (A).",
+    "infobox": "Zertifizierungszyklus: Erstzertifizierung -> 1. Überwachungsaudit -> 2. Überwachungsaudit -> Re-Zertifizierung (Erneuerung für weitere 3 Jahre).",
+    "isBroken": false
+  },
+  {
+    "imageFile": "9_8.PNG",
+    "question": "Was ist das Ziel eines internen Audits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ermittlung, inwieweit der auditierte Bereich mit den Wünschen der verantwortlichen Führungskraft übereinstimmt",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Aufzeigen von Möglichkeiten zur Verbesserung des Managementsystems",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Beurteilung der Wirksamkeit des Managementsystems in Bezug auf die Erreichung der Ziele",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Beurteilung der Fähigkeit des Managementsystems, die Erfüllung der sozialen Anforderungen sicherzustellen",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "KVP / Verbesserungsmanagement",
+    "isoClause": "ISO 9001:2015 Kap. 9.2",
+    "isoJustification": "Ein internes Audit zielt darauf ab, die Wirksamkeit des Systems (Erreichung der Qualitätsziele) zu beurteilen (C) und Verbesserungsmöglichkeiten aufzuzeigen (B). Es geht nicht um die subjektiven 'Wünsche' einer Führungskraft (A) oder primär um soziale Anforderungen (D, dafür wäre z.B. SA8000 relevant).",
+    "infobox": "Das interne Audit liefert objektive Nachweise zur Systemwirksamkeit und ist ein zentrales Werkzeug für den Kontinuierlichen Verbesserungsprozess (KVP).",
+    "isBroken": false
+  }
+]

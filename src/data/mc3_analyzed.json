@@ -1,0 +1,322 @@
+[
+  {
+    "imageFile": "3_1.PNG",
+    "question": "Welche Anforderungen hat die DIN EN ISO 9001 an die Qualitätspolitik?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Qualitätsziele können aus der Qualitätspolitik abgeleitet werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Die Qualitätspolitik ist dem Kontext der Organisation angemessen.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Die Qualitätspolitik beinhaltet eine Verpflichtung zur fortlaufenden Verbesserung.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Die Anforderungen aller interessierter Parteien müssen darin berücksichtigt werden.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "5.2.1",
+    "isoJustification": "ISO 9001 fordert, dass die Qualitätspolitik angemessen ist (5.2.1 a), einen Rahmen für Qualitätsziele bietet (5.2.1 b) und eine Verpflichtung zur fortlaufenden Verbesserung enthält (5.2.1 d). Es müssen nicht alle, sondern nur die relevanten Anforderungen interessierter Parteien berücksichtigt werden.",
+    "infobox": "Die Qualitätspolitik ist das oberste Leitmotiv und gibt den Rahmen für die Qualitätsziele vor. Sie muss dokumentiert und vermittelt werden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "3_2.PNG",
+    "question": "Welche Aussagen in Bezug auf Kundenorientierung sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Erhöhung der Kundenzufriedenheit steht im Fokus des Unternehmens.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Es müssen aktuelle und zukünftige Kundenanforderungen ermittelt werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Das Unternehmen sollte danach streben die Kundenanforderungen zu übertreffen.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Neben den vom Kunden festgelegten Anforderungen müssen auch die vom Kunden vorausgesetzten Anforderungen ermittelt werden.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "5.1.2 / 8.2.2 / ISO 9000",
+    "isoJustification": "Nach ISO 9001 (5.1.2) steht die Erhöhung der Kundenzufriedenheit im Fokus. ISO 9000 betont das Ermitteln gegenwärtiger und künftiger Erfordernisse sowie das Streben, Erwartungen zu übertreffen. Zudem müssen gemäß 8.2.2/8.2.3.1 auch unausgesprochene (vorausgesetzte) Anforderungen ermittelt werden.",
+    "infobox": "Kundenorientierung bedeutet, die Erwartungen der Kunden nicht nur zu erfüllen, sondern nach Möglichkeit zu übertreffen, auch wenn diese Erwartungen nicht explizit formuliert wurden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "3_3.PNG",
+    "question": "Die oberste Leitung ist verantwortlich für das QMS einer Organisation. Was sind ihre konkreten Aufgaben?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sie teilt persönlich die erforderlichen Ressourcen ein.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Sie fördert das Qualitätsbewusstsein.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Sie stellt sicher, dass die Qualitätspolitik und die Qualitätsziele festgelegt werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Sie steuert die Organisation auf der untersten Ebene.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "5.1.1",
+    "isoJustification": "Gemäß ISO 9001 Abschnitt 5.1.1 muss die oberste Leitung sicherstellen, dass Politik und Ziele festgelegt werden (b) und das prozessorientierte Bewusstsein gefördert wird (h). Ressourcen müssen bereitgestellt (e), aber nicht zwingend persönlich eingeteilt werden.",
+    "infobox": "Die oberste Leitung kann Aufgaben delegieren, bleibt aber in der Rechenschaftspflicht (Accountability) für die Wirksamkeit des QMS.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "3_4.PNG",
+    "question": "Welche Aufgaben werden im Rahmen von Verantwortlichkeiten und Befugnisse zugewiesen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sicherstellung, dass alles Wissen der Firma dokumentiert wird",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Sicherstellung, dass das QM-System die Anforderungen der DIN EN ISO 9001 erfüllt",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Sicherstellung, dass der obersten Leitung über das QM-System berichtet wird",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Sicherstellung, dass die Prozesse laufen",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "5.3",
+    "isoJustification": "Nach ISO 9001 Abschnitt 5.3 a) und c) gehören die Sicherstellung der Normkonformität und die Berichterstattung an die oberste Leitung zu den zuzuweisenden Verantwortlichkeiten. Nicht *alles* Wissen muss dokumentiert werden, und Prozesse müssen 'beabsichtigte Ergebnisse liefern', nicht nur umgangssprachlich 'laufen'.",
+    "infobox": "Abschnitt 5.3 regelt die klassischen Aufgaben, die früher explizit dem 'QMB' zugewiesen waren. Diese Rollen müssen nach wie vor im Unternehmen verteilt werden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "3_5.PNG",
+    "question": "Was versteht die DIN EN ISO 9001 unter Kundenorientierung?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Risiken und Chancen haben keinen Einfluss auf die Kundenzufriedenheit.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Kundenanforderungen beinhalten auch gesetzliche und behördliche Anforderungen.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Die Organisation muss die Kundenerwartung ermitteln und deren Erfüllung bewerten.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Der Kunde orientiert sich am Unternehmen.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "5.1.2 / 9.1.2",
+    "isoJustification": "ISO 9001 (5.1.2 a) fordert, dass gesetzliche/behördliche Anforderungen zusammen mit Kundenanforderungen bestimmt werden. Nach 9.1.2 muss die Kundenwahrnehmung bzgl. der Erfüllung ihrer Erwartungen überwacht werden. Risiken haben durchaus Einfluss (5.1.2 b).",
+    "infobox": "Kundenorientierung ist ein bidirektionaler Prozess: Das Unternehmen ermittelt die Anforderungen und bewertet im Nachgang, ob der Kunde die Erfüllung dieser Anforderungen auch positiv wahrnimmt.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "3_6.PNG",
+    "question": "Welche der nachfolgenden Aussagen der Qualitätspolitik einer mittelständischen Regional-Bank sind normenkonform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Wir nehmen unsere gesellschaftliche Verantwortung für die Region wahr und fördern Infrastrukturprogramme.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Unsere Mitarbeiter sind unser bestes Kapitel. Daher werden wir auch zukünftig in sie investieren.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Wir sind die größte Bank in der Region. Daher sind keine weiteren Aktivitäten notwendig.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Wir legen Wert auf eine stetige Verbesserung unseres Angebots mit dem Ziel unsere Kundenzufriedenheit zu steigern.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "5.2.1",
+    "isoJustification": "Aussagen A, B und D sind normenkonform, da sie den Kontext widerspiegeln, Ziele unterstützen und die Forderung nach fortlaufender Verbesserung erfüllen. Aussage C widerspricht explizit dem Grundsatz der fortlaufenden Verbesserung (5.2.1 d).",
+    "infobox": "Eine Qualitätspolitik darf sehr individuell und kontextspezifisch formuliert sein (z.B. soziales Engagement), solange sie die normativen Kernforderungen (insbesondere die Pflicht zur stetigen Verbesserung) nicht verletzt.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "3_7.PNG",
+    "question": "Welche Aussagen bzgl. des QMB sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Der QMB ist eine in der DIN EN ISO 9001 geforderte Rolle.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Der QMB muss die Ausbildung zum \"Qualitätsbeauftragten\" erfolgreich absolviert haben.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Der Einsatz eines QMB obliegt der obersten Leitung.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Der QMB ist eine Beauftragtenfunktion.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "5.3",
+    "isoJustification": "Seit der Revision 2015 wird der formelle 'QMB' in der ISO 9001 nicht mehr gefordert (A ist falsch). Es werden auch keine spezifischen Titel/Ausbildungen gefordert, nur Kompetenz (B ist falsch). Die Aufgaben müssen von der obersten Leitung zugewiesen werden, daher obliegt ihr die Entscheidung für einen QMB (C). Wenn er eingesetzt wird, handelt er im Auftrag der Leitung (D).",
+    "infobox": "Der Titel 'Qualitätsmanagementbeauftragter' (QMB) ist in der Praxis weiterhin sehr verbreitet, normative Pflicht ist jedoch nur noch die Zuweisung der dahinterstehenden Aufgaben und Verantwortlichkeiten.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "3_8.PNG",
+    "question": "Welche Rollen werden in der DIN EN ISO 9001 im Rahmen von Verantwortlichkeiten und Befugnisse vorgeschrieben?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Oberste Leitung",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Qualitätsmanagementbeauftragter",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Betriebsrat",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Anti-Diskriminierungs-Beauftragter",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "5.1 / 5.3",
+    "isoJustification": "Die einzige in der Norm namentlich und explizit mit Pflichten belegte Rolle ist die 'oberste Leitung'. Der QMB wurde 2015 gestrichen. Betriebsrat und andere Beauftragte sind gesetzlich oder kontextuell relevant, aber keine ISO 9001 Vorgabe.",
+    "infobox": "Die oberste Leitung (Top-Management) hat nach ISO 9001:2015 die volle Rechenschaftspflicht und kann diese nicht mehr pauschal an einen QMB delegieren.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "3_9.PNG",
+    "question": "Welche Tätigkeiten zum Lenken und Leiten einer Organisation bezüglich Qualität müssen aufeinander abgestimmt sein?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Festlegen der Qualitätspolitik",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Qualitätsplanung",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Qualitätssicherung",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Qualitätsverbesserung",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "ISO 9000:2015",
+    "isoJustification": "Nach ISO 9000:2015 umfasst 'Qualitätsmanagement' die aufeinander abgestimmten Tätigkeiten zum Leiten und Lenken einer Organisation bezüglich Qualität. Dazu gehören Politik, Ziele, Planung, Lenkung, Sicherung und Verbesserung.",
+    "infobox": "Qualitätsmanagement ist ein ganzheitlicher Ansatz, bei dem Planung (Plan), Sicherung (Do/Check) und Verbesserung (Act) eng miteinander verzahnt sind.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "3_10.PNG",
+    "question": "Die oberste Leitung der Organisation hat die Verantwortung für ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "die Regelungen zu den Verantwortlichkeiten.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "die Verbesserung einzelnen Prozesse.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "die Wirksamkeit des QM Systems.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "die Sicherstellung der Kundenorientierung.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Prozessmanagement",
+    "isoClause": "5.1 / 5.3",
+    "isoJustification": "Gemäß Abschnitt 5.1.1 a) ist die oberste Leitung rechenschaftspflichtig für die Wirksamkeit des QMS. Nach 5.3 muss sie Verantwortlichkeiten regeln und nach 5.1.2 die Kundenorientierung sicherstellen. Die operative Verbesserung einzelner Prozesse wird delegiert.",
+    "infobox": "Verantwortung für das Gesamtsystem (Wirksamkeit) liegt immer bei der obersten Leitung. Detailaufgaben in einzelnen Prozessen können und sollen in die Fachbereiche delegiert werden.",
+    "isBroken": false
+  }
+]

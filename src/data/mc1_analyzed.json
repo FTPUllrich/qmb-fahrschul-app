@@ -1,0 +1,258 @@
+[
+  {
+    "imageFile": "1_1.PNG",
+    "question": "Was steht im Anhang der DIN EN ISO 9001?",
+    "options": [
+      {"id": "A", "text": "Erläuterungen zu Terminologie-Unterschiede zwischen der ISO 9001:2008 und ISO 9001:2015", "isCorrect": true},
+      {"id": "B", "text": "Grundlagen und Begriffe der ISO 9001", "isCorrect": false},
+      {"id": "C", "text": "Inhaltliche Änderungen gegenüber der ISO 9001:2008", "isCorrect": false},
+      {"id": "D", "text": "Checkliste mit den Anforderungen der ISO 9001", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9001:2015 Anhang A",
+    "isoJustification": "Anhang A der ISO 9001:2015 liefert Erläuterungen zur neuen Struktur, Terminologie und zu neuen Konzepten im Vergleich zur Vorgängerversion 2008.",
+    "infobox": "Der Anhang A ist informativ und enthält keine zusätzlichen Anforderungen, sondern dient dem besseren Verständnis der Änderungen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_2.PNG",
+    "question": "In welchen Bereichen einer Organisation sollte QM eingeführt werden?",
+    "options": [
+      {"id": "A", "text": "Bei den Lieferanten", "isCorrect": false},
+      {"id": "B", "text": "Nur in der Produktion", "isCorrect": false},
+      {"id": "C", "text": "Nur in der Geschäftsführung", "isCorrect": false},
+      {"id": "D", "text": "In allen Bereichen", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9000:2015 Abs. 2.2.3",
+    "isoJustification": "Qualitätsmanagement ist ein ganzheitlicher Ansatz. Die Norm fordert die Einbeziehung aller relevanten Prozesse und Ebenen einer Organisation, um die Qualitätspolitik und -ziele zu erreichen.",
+    "infobox": "Ein QMS darf nicht auf eine einzelne Abteilung (z.B. Produktion) isoliert werden, da die Prozesse im gesamten Unternehmen ineinandergreifen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_3.PNG",
+    "question": "Was können Sie der Normenbezeichnung \"DIN EN ISO 9001:2015\" entnehmen?",
+    "options": [
+      {"id": "A", "text": "Die Norm stammt aus der Normen-Familie des Energiemanagements.", "isCorrect": false},
+      {"id": "B", "text": "Es handelt sich um eine internationale Norm, die in eine europäische und eine deutsche Norm übernommen wurde.", "isCorrect": true},
+      {"id": "C", "text": "Die Norm wurde im Jahr 2015 verabschiedet.", "isCorrect": true},
+      {"id": "D", "text": "Die Norm ist ab dem Jahr 2015 ohne Übergangsfrist anzuwenden.", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "Allgemeines Normungswesen",
+    "isoJustification": "DIN (Deutsches Institut für Normung), EN (Europäische Norm), ISO (International Organization for Standardization). ':2015' gibt das Jahr der Verabschiedung/Ausgabe an. Übergangsfristen (meist 3 Jahre) sind bei Normrevisionen üblich.",
+    "infobox": "Energiemanagement wäre ISO 50001. Revisionen von Managementnormen haben in der Regel eine dreijährige Übergangsfrist für Zertifizierungen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_4.PNG",
+    "question": "Wie wird Qualität nach DIN EN ISO 9000 definiert?",
+    "options": [
+      {"id": "A", "text": "Qualität ist die Differenz aus Konformitäten und Nichtkonformitäten.", "isCorrect": false},
+      {"id": "B", "text": "Qualität ist ein Managementsystem.", "isCorrect": false},
+      {"id": "C", "text": "Qualität ist ein Satz Merkmale, an die Anforderungen gestellt werden.", "isCorrect": false},
+      {"id": "D", "text": "Qualität ist der Grad, in dem ein Satz inhärenter Merkmale (Kunden-) Anforderungen entspricht.", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9000:2015 Abs. 3.6.2",
+    "isoJustification": "Dies ist die wörtliche Definition von 'Qualität' gemäß ISO 9000:2015: 'Grad, in dem ein Satz inhärenter Merkmale eines Objekts Anforderungen erfüllt'.",
+    "infobox": "'Inhärent' bedeutet 'innewohnend', also die dauerhaften, einem Produkt oder einer Dienstleistung eigenen Merkmale im Gegensatz zu zugeordneten Merkmalen (wie dem Preis).",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_5.PNG",
+    "question": "Die DIN EN ISO 9000 definiert ein QM-System als...",
+    "options": [
+      {"id": "A", "text": "Eine Managementaufgabe in einem arbeitsteiligem System zur Qualitätssicherung.", "isCorrect": false},
+      {"id": "B", "text": "Ein Steuerungssystem für Qualitätspolitik in einem Unternehmen.", "isCorrect": false},
+      {"id": "C", "text": "Eine Systematik zur Prozessverbesserung", "isCorrect": false},
+      {"id": "D", "text": "Ein Managementsystem zum Lenken und Leiten einer Organisation bezüglich der Qualität.", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9000:2015 Abs. 3.5.4",
+    "isoJustification": "Ein Qualitätsmanagementsystem ist definiert als ein 'Managementsystem zum Leiten und Lenken einer Organisation bezüglich der Qualität'.",
+    "infobox": "Ein QMS dient nicht nur der Qualitätssicherung oder Prozessverbesserung allein, sondern umfasst die gesamte Steuerung (Leiten und Lenken) der Organisation in Bezug auf Qualität.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_6.PNG",
+    "question": "Was ist das EFQM-Modell?",
+    "options": [
+      {"id": "A", "text": "EFQM zielt auf Ergebnisqualität im Managementbereich ab.", "isCorrect": false},
+      {"id": "B", "text": "Institution, die gegen Bezahlung Bewertungen nach Befähiger- und Unfähigerkriterien vergibt.", "isCorrect": false},
+      {"id": "C", "text": "Normenreihe des deutschen Instituts für Normung", "isCorrect": false},
+      {"id": "D", "text": "Konzept zur umfassenden Beurteilung der Unternehmensleistung in Kriteriengruppen", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "TQM/EFQM-Grundlagen",
+    "isoJustification": "Das EFQM-Modell (European Foundation for Quality Management) ist ein Total-Quality-Management-Rahmenwerk zur Bewertung der gesamten Unternehmensleistung anhand spezifischer Kriterien (Befähiger und Ergebnisse).",
+    "infobox": "Das EFQM-Modell ist keine Norm wie die ISO 9001, sondern ein Reifegradmodell, mit dem sich Organisationen selbst bewerten oder für Auszeichnungen bewerben können.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_7.PNG",
+    "question": "Welche Gründe gibt es für die Einführung eines QMS?",
+    "options": [
+      {"id": "A", "text": "Bessere Kontrolle der Mitarbeiter", "isCorrect": false},
+      {"id": "B", "text": "Verbesserung der bestehenden Abläufe", "isCorrect": true},
+      {"id": "C", "text": "Erreichung einer hohen Kunden- und Mitarbeiterzufriedenheit", "isCorrect": true},
+      {"id": "D", "text": "Verbesserung der Qualität von Produkten und Dienstleistungen", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9000:2015 Abs. 1 & 2.2",
+    "isoJustification": "Ein QMS zielt auf Prozessverbesserung, Kundenzufriedenheit, Vertrauensbildung und die konsistente Bereitstellung fehlerfreier Produkte/Dienstleistungen ab. Mitarbeiterkontrolle ist kein Zweck eines QMS.",
+    "infobox": "Ein QMS dient der System- und Prozesssteuerung, nicht der Disziplinierung oder Überwachung einzelner Mitarbeiter.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_8.PNG",
+    "question": "Das QMS ist das schriftlich fixierte Ordnungssystem des Unternehmens. Welche Grundelemente enthält es?",
+    "options": [
+      {"id": "A", "text": "Verantwortlichkeiten und Befugnisse sind in der Aufbauorganisation klar geregelt.", "isCorrect": true},
+      {"id": "B", "text": "Die Ausführung von Tätigkeiten wird in der Ablauforganisation intuitiv festgelegt.", "isCorrect": false},
+      {"id": "C", "text": "Der Einsatz von Mitarbeitern, Anlagen, Maschinen, Einrichtungen, Methoden, etc. ist im QMS geregelt.", "isCorrect": true},
+      {"id": "D", "text": "Aus der Qualitätspolitik werden die Qualitätsziele abgeleitet.", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9001:2015 Kap. 5.2, 5.3, 6.2, 7.1",
+    "isoJustification": "Ein QMS regelt Verantwortlichkeiten (5.3), Ressourcen (7.1) und leitet Ziele aus der Politik ab (6.2). Abläufe (Prozesse) werden nicht 'intuitiv', sondern systematisch festgelegt und gelenkt (4.4).",
+    "infobox": "'Intuitiv' ist das Gegenteil von 'schriftlich fixiert' oder 'systematisch festgelegt'. Prozesse müssen geplant, umgesetzt und gesteuert werden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_9.PNG",
+    "question": "Was gehört zu den Grundsätzen des QM?",
+    "options": [
+      {"id": "A", "text": "Verbesserung", "isCorrect": true},
+      {"id": "B", "text": "Produktorientierung", "isCorrect": false},
+      {"id": "C", "text": "Beziehungsmanagement", "isCorrect": true},
+      {"id": "D", "text": "Führung", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9000:2015 Abs. 2.3",
+    "isoJustification": "Die 7 QM-Grundsätze sind: Kundenorientierung, Führung, Einbeziehung von Personen, Prozessorientierter Ansatz, Verbesserung, Faktengestützte Entscheidungsfindung, Beziehungsmanagement.",
+    "infobox": "Ein reiner Produktfokus (Produktorientierung) greift zu kurz; die Norm fordert ausdrücklich Kundenorientierung und Prozessorientierung.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_10.PNG",
+    "question": "Was beinhaltet ein Total Quality Management System?",
+    "options": [
+      {"id": "A", "text": "Null-Fehler-Toleranz bei Abweichungen", "isCorrect": false},
+      {"id": "B", "text": "Ganzheitlicher Qualitätsansatz als Unternehmensstrategie", "isCorrect": true},
+      {"id": "C", "text": "Branchenspezifisches Management des QMS", "isCorrect": false},
+      {"id": "D", "text": "Integration unterschiedlicher Managementsysteme", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "TQM-Grundlagen",
+    "isoJustification": "TQM ist ein umfassender (totaler), unternehmensweiter Ansatz, der Qualität in allen Aspekten als strategisches Ziel verfolgt und oft die Integration verschiedener Managementsysteme (Umwelt, Arbeitsschutz etc.) mit sich bringt.",
+    "infobox": "Null-Fehler-Toleranz ist kein inhärenter Grundsatz des TQM; TQM setzt auf ständige Verbesserung und eine gelebte Fehlerkultur.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_11.PNG",
+    "question": "Was sind die Inhalte der DIN EN ISO 9000?",
+    "options": [
+      {"id": "A", "text": "Grundsätze des QM", "isCorrect": true},
+      {"id": "B", "text": "Mindestanforderungen an ein QM-System", "isCorrect": false},
+      {"id": "C", "text": "Richtlinien zum Lenken und Leiten eines TQM", "isCorrect": false},
+      {"id": "D", "text": "Begriffe und Definitionen", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9000:2015 Vorwort/Einleitung",
+    "isoJustification": "Die ISO 9000 enthält die Grundlagen und das Vokabular (Begriffe und Definitionen) für Qualitätsmanagementsysteme, einschließlich der 7 QM-Grundsätze. Anforderungen sind in der ISO 9001 formuliert.",
+    "infobox": "Merke: ISO 9000 = Grundlagen & Begriffe. ISO 9001 = Zertifizierbare Anforderungen. ISO 9004 = Leitfaden für nachhaltigen Erfolg.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_12.PNG",
+    "question": "Welches ist die ISO Normenreihe für Qualitätsmanagementsysteme?",
+    "options": [
+      {"id": "A", "text": "DIN EN ISO 50000 ff.", "isCorrect": false},
+      {"id": "B", "text": "ISO 26000", "isCorrect": false},
+      {"id": "C", "text": "DIN EN ISO 9000 ff.", "isCorrect": true},
+      {"id": "D", "text": "DIN EN ISO 14000 ff.", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "Allgemeines Normenwissen",
+    "isoJustification": "Die ISO 9000-Reihe befasst sich mit Qualitätsmanagement. Die ISO 14000er Reihe behandelt Umweltmanagement, die ISO 50000er Reihe Energiemanagement, und die ISO 26000 betrifft gesellschaftliche Verantwortung (CSR).",
+    "infobox": "Das 'ff.' steht für 'fortfolgende', da die Normenfamilie mehrere Normen (9000, 9001, 9004 etc.) umfasst.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_13.PNG",
+    "question": "Welcher Nutzen eines Unternehmens rechtfertigt den Aufwand, den ein QMS verursacht?",
+    "options": [
+      {"id": "A", "text": "Sicherung der Marktposition", "isCorrect": true},
+      {"id": "B", "text": "Reduzierung der Kundenbeschwerden", "isCorrect": true},
+      {"id": "C", "text": "Erhöhung der Lieferantenzahl", "isCorrect": false},
+      {"id": "D", "text": "Steigerung der Preise", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "Wirtschaftlichkeit des QM",
+    "isoJustification": "Ein QMS soll durch bessere Prozesse Fehler und Beschwerden reduzieren und langfristig die Marktposition sichern. Das bloße Erhöhen der Lieferantenzahl oder der Preise ist kein primärer QM-Nutzen.",
+    "infobox": "Ein QMS kann durch höhere Qualität evtl. höhere Preise rechtfertigen, aber das ist keine Garantie. Lieferanten werden im QM eher nach Qualität selektiert (und teils reduziert).",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_14.PNG",
+    "question": "Zentrale Orientierungen im Qualitätsmanagement sind...",
+    "options": [
+      {"id": "A", "text": "Profitorientierung", "isCorrect": false},
+      {"id": "B", "text": "Kundenorientierung", "isCorrect": true},
+      {"id": "C", "text": "Protokollorientierung", "isCorrect": false},
+      {"id": "D", "text": "Prozessorientierung", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9000:2015 Abs. 2.3",
+    "isoJustification": "Kundenorientierung und der prozessorientierte Ansatz sind zentrale Grundsätze nach ISO 9000. Profitorientierung und bloße 'Protokollorientierung' sind keine normativen Grundsätze.",
+    "infobox": "Qualitätsmanagement fokussiert sich auf Prozesse und Kunden; eine höhere Rentabilität ist oft das Resultat einer erfolgreichen Umsetzung, aber nicht das primäre Leitprinzip.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_15.PNG",
+    "question": "Was muss ein Unternehmen zur Realisierung eines QMS tun?",
+    "options": [
+      {"id": "A", "text": "Das Unternehmen muss neue Mitarbeiter einstellen.", "isCorrect": false},
+      {"id": "B", "text": "Das Unternehmen muss die für das QMS notwendigen Prozesse kennen.", "isCorrect": true},
+      {"id": "C", "text": "Das Unternehmen muss alle Kunden und Lieferanten informieren.", "isCorrect": false},
+      {"id": "D", "text": "Das Unternehmen muss die für das QMS relevanten Prozesse messen, überwachen und analysieren.", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9001:2015 Kap. 4.4",
+    "isoJustification": "Nach Abschnitt 4.4 der ISO 9001 muss eine Organisation die benötigten Prozesse bestimmen (kennen) sowie deren Kriterien festlegen, um sie wirksam durchzuführen und zu steuern (messen/überwachen/analysieren).",
+    "infobox": "Eine Informationspflicht an alle Kunden existiert normativ nicht zwingend, und ein QMS kann auch mit dem bestehenden Personalstamm realisiert werden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "1_16.PNG",
+    "question": "Wie spielen ISO 9001 und ISO 9004 zusammen?",
+    "options": [
+      {"id": "A", "text": "Die ISO 9004 ist eine Ergänzung zur ISO 9001, wobei sich Struktur, Konzepte und Terminologie unterscheiden.", "isCorrect": false},
+      {"id": "B", "text": "Die ISO 9004 ist eine Ergänzung der ISO 9001 und richtet sich an Organisationen, die über ein funktionierendes QMS verfügen.", "isCorrect": true},
+      {"id": "C", "text": "Die ISO 9004 ist die Vorgänger-Version der ISO 9001. Sie wurde Anfang der 2000-Jahre durch die ISO 9001 abgelöst.", "isCorrect": false},
+      {"id": "D", "text": "Die ISO 9004 und ISO 9001 spielen nicht zusammen. Organisationen müssen sich für eine der beiden Normen entscheiden.", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Grundlagen des Qualitätsmanagements",
+    "isoClause": "ISO 9000 Familie",
+    "isoJustification": "Die ISO 9004 (Qualitätsmanagement - Qualität einer Organisation - Anleitung zum Erreichen nachhaltigen Erfolgs) dient als Leitfaden für Organisationen, die über die Anforderungen der ISO 9001 hinausgehen und ihre Gesamtleistung kontinuierlich verbessern wollen. Sie verwenden dieselbe Terminologie.",
+    "infobox": "Die ISO 9004 ist nicht zertifizierungsfähig, sondern als Instrument zur Selbstbewertung und Leistungssteigerung eines bestehenden QMS konzipiert.",
+    "isBroken": false
+  }
+]

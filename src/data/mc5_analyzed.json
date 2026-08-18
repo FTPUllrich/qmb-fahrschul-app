@@ -1,0 +1,610 @@
+[
+  {
+    "imageFile": "5_1.PNG",
+    "question": "Was muss laut DIN EN ISO 9001 bei der Kommunikationsplanung berücksichtigt werden?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mit wem kommuniziert wird",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Wer kommuniziert",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Wann kommuniziert wird",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Wie kommuniziert wird",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.4",
+    "isoJustification": "Gemäß ISO 9001:2015 Kapitel 7.4 muss die Organisation bestimmen: worüber, wann, mit wem, wie und wer kommuniziert.",
+    "infobox": "Die Kommunikationsplanung nach ISO 9001 umfasst alle 5 W-Fragen der Kommunikation (Worüber, Wann, Wer, Mit wem, Wie).",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_2.PNG",
+    "question": "Was sind alles Messmittel im Sinne der DIN EN ISO 9001?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Referenzmaterial",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Software",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Messnormalen",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Protokolle",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "ISO 9000:2015 3.11.6",
+    "isoJustification": "Gemäß ISO 9000:2015 ist ein Messmittel ein Messgerät, Software, Messnormal, Referenzmaterial oder Hilfsapparat, das für die Ausführung eines Messprozesses erforderlich ist.",
+    "infobox": "Protokolle sind Aufzeichnungen/dokumentierte Informationen über Messergebnisse, aber keine Messmittel an sich.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_3.PNG",
+    "question": "Welche Arten von Dokumentationssystemen gibt es?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Wissensdatenbanken",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Prozessmodulationssoftware",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Social Media",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Mitarbeiter",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.5",
+    "isoJustification": "In der Praxis des Qualitätsmanagements werden zur Dokumentenlenkung und Prozessdarstellung Wissensdatenbanken und Prozessmodellierungs- (oder modulations-) software genutzt. Social Media und Mitarbeiter sind keine Dokumentationssysteme.",
+    "infobox": "Hinweis: 'Prozessmodulationssoftware' ist wahrscheinlich ein Tippfehler in der App für 'Prozessmodellierungssoftware'.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_4.PNG",
+    "question": "Welche Unterlagen müssen nach DIN EN ISO 9001 als dokumentierte Information vorliegen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ergebnisse der Beurteilungen externer Dienstleister",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Qualitätsmanagementhandbuch",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Auswertung der Aus- und Weiterbildungsmaßnahmen von Mitarbeitern",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Nachweis für die Eignung der Ressourcen zur Überwachung und Messung",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.1.5, 7.2, 8.4.1",
+    "isoJustification": "ISO 9001:2015 fordert dokumentierte Informationen als Nachweis für Kompetenz (7.2), Eignung von Messressourcen (7.1.5.1) und Beurteilung externer Anbieter (8.4.1). Ein Qualitätsmanagementhandbuch ist seit der Revision 2015 nicht mehr explizit vorgeschrieben.",
+    "infobox": "Seit ISO 9001:2015 gibt es keine formelle Pflicht mehr, ein explizites 'QM-Handbuch' zu führen, auch wenn viele Organisationen es beibehalten.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_5.PNG",
+    "question": "Welche Phasen gehören zur Dokumentenlenkung?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Erstellung/Aktualisierung",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Wirksamkeitsmessung",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Prüfung/Freigabe",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Zurückziehen/Archivierung",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.5.2, 7.5.3",
+    "isoJustification": "Nach ISO 9001 (7.5.2 und 7.5.3) müssen dokumentierte Informationen erstellt, aktualisiert, angemessen überprüft und genehmigt werden. Zudem muss die Lenkung Phasen wie Speicherung, Erhaltung, Überwachung von Änderungen sowie Aufbewahrung und Verfügung (Archivierung/Zurückziehen) umfassen. Wirksamkeitsmessung bezieht sich primär auf Prozesse und Maßnahmen (z.B. Schulungen, Korrekturmaßnahmen).",
+    "infobox": "Dokumentenlenkung ist ein Lebenszyklus: Erstellung -> Prüfung/Freigabe -> Verteilung/Nutzung -> Aktualisierung -> Rückzug/Archivierung.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_6.PNG",
+    "question": "Was muss beim Erstellen und Aktualisieren von Dokumenten beachtet werden?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Angemessenes Format (Sprache, Softwareversion, Grafiken)",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Angemessene Überprüfung und Genehmigung im Hinblick auf die Eignung und Angemessenheit",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Wiedergabe aller Details (Softwareversion, Mitarbeiternamen, Lieferantenergebnisse)",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Angemessene Kennzeichnung und Beschreibung (Titel, Autor, Referenznummer)",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.5.2",
+    "isoJustification": "Gemäß ISO 9001:2015 Kapitel 7.5.2 muss bei Erstellung und Aktualisierung auf angemessene Kennzeichnung (a), Format/Medium (b) und Überprüfung/Genehmigung (c) geachtet werden. Eine pauschale 'Wiedergabe aller Details' ist nicht gefordert; der Detailgrad muss der Organisation angemessen sein.",
+    "infobox": "Nicht jedes Detail muss in Dokumenten festgehalten werden – Dokumentation muss nützlich und handhabbar sein (Grundsatz der Angemessenheit).",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_7.PNG",
+    "question": "Welche Aussagen in Bezug auf Infrastruktur sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Infrastruktur wird jährlich überprüft.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Gesetzliche Anforderungen dürfen nicht außer Acht gelassen werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Die Investitionspläne werden mit dem Qualitätsbeauftragten besprochen.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Über die Aktivität zur Festlegung und Aufrechterhaltung der Infrastruktur werden Nachweise geführt.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.1.3",
+    "isoJustification": "Nach ISO 9001:2015 Kapitel 7.1.3 muss die Organisation die notwendige Infrastruktur bestimmen, bereitstellen und aufrechterhalten. Es gibt aber keine explizite Vorgabe, dies zwingend 'jährlich' zu prüfen oder Nachweise dafür als Pflicht-dokumentierte Information zu führen. Gesetzliche Vorgaben sind im Rahmen des Qualitätsmanagementsystems (z.B. Arbeitsschutz bei Anlagen) jedoch zwingend zu beachten.",
+    "infobox": "Nicht jede Normforderung verlangt automatisch 'dokumentierte Information'. Bei Infrastruktur fordert die ISO 9001 keine expliziten Dokumente.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_8.PNG",
+    "question": "Was sind interne Quellen für Wissen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Erfahrungen der Experten der Organisation",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Wissen von Lieferanten",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Erfahrungen aus erfolgreichen Projekten",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Lernen aus Fehlern",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.1.6",
+    "isoJustification": "ISO 9001:2015 Kapitel 7.1.6 Anmerkung 2 nennt als interne Quellen: geistiges Eigentum, Erfahrungen, Lernen aus Fehlern und erfolgreichen Projekten, Erfassung un-dokumentierten Wissens. Lieferanten sind externe Quellen.",
+    "infobox": "Wissen der Organisation ('Wissensmanagement') unterscheidet sich in interne (z.B. eigene Erfahrungen) und externe (z.B. Normen, Hochschulen, Lieferanten) Quellen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_9.PNG",
+    "question": "Welche Aussagen in Bezug auf Kompetenz sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Falls notwendig erfolgt eine Evaluierung der Aus- und Weiterbildungsmaßnahmen",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Die Einstellung eines neuen Mitarbeiters ist eine mögliche Maßnahme zur Schließung einer Kompetenzlücke.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Für jede Tätigkeit in der Organisation muss eine Stellenbeschreibung vorliegen.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Durch Maßnahmen wie z.B. Trainings werden Mitarbeiter entsprechend des Qualifikationsbedarfs aus- und weitergebildet.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.2",
+    "isoJustification": "ISO 9001:2015 Kapitel 7.2 b) und c) fordern die Durchführung von Maßnahmen zum Erwerb der notwendigen Kompetenz (z.B. Schulung, Einstellung) sowie die Bewertung deren Wirksamkeit. Eine formelle Stellenbeschreibung für jede einzelne Tätigkeit ist keine explizite Normforderung.",
+    "infobox": "Die Norm schreibt vor, Kompetenzen sicherzustellen, schreibt aber nicht das spezifische Format wie 'Stellenbeschreibungen' vor.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_10.PNG",
+    "question": "Welche Aussagen in Bezug auf Messmittel sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Messmittel werden verifiziert und/oder kalibriert.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Wenn Messmittel ungeeignet oder fehlerhaft ist, muss ermittelt werden, ob ältere Messergebnisse eventuell ungültig sind.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Die Ergebnisse der Messmittelüberwachung werden dokumentiert.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Wenn sich in der Kalibrierung eine Abweichung ergibt, muss diese durch Reparatur oder Justierung beseitigt werden.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.1.5",
+    "isoJustification": "Nach ISO 9001:2015 (7.1.5.2) müssen Messmittel kalibriert/verifiziert und Ergebnisse dokumentiert werden. Die Gültigkeit früherer Messungen muss bewertet werden. Reparatur ist nicht zwingend vorgeschrieben; manchmal genügt auch die Aussonderung, Neuklassifizierung oder rechnerische Korrektur einer Abweichung.",
+    "infobox": "Nicht jedes abweichende Messmittel muss zwingend repariert werden – es kann auch gesperrt oder für weniger anspruchsvolle Messungen freigegeben werden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_11.PNG",
+    "question": "Was muss bei der Messmittel-Planung in jedem Fall beachtet werden?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die benötigte Messgenauigkeit muss festgelegt werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Die Messmittelplanung ist monatlich zu überprüfen.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Die Umgebungsbedingungen müssen berücksichtigt werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Nur technische Messmittel gehören zu den Messmitteln im Sinne der Norm.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.1.5",
+    "isoJustification": "Es muss klar sein, welche Genauigkeit erforderlich ist, und Umgebungsbedingungen (z.B. Temperatur) müssen bei Messungen berücksichtigt werden. Eine monatliche Überprüfung ist normativ nicht gefordert (Intervalle sind angemessen festzulegen). Messmittel können auch Software oder Referenzmaterialien sein, nicht nur technische Geräte.",
+    "infobox": "Die Prüfintervalle für Messmittel werden basierend auf Risiko, Einsatzhäufigkeit und Stabilität festgelegt, nicht pauschal monatlich.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_12.PNG",
+    "question": "Welche Anforderungen aus Sicht der DIN EN ISO 9001 gibt es an die Mitarbeiter eines Unternehmens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kompetenz",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Durchschnittsalter",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Mindestgröße",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Staatszugehörigkeit",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.2",
+    "isoJustification": "Die ISO 9001 fordert im Kapitel 7.2 ausschließlich die notwendige Kompetenz (basierend auf Ausbildung, Schulung oder Erfahrung). Alter, Größe oder Herkunft sind für die Norm irrelevant (und oft diskriminierend).",
+    "infobox": "Im Fokus der Norm steht immer die Fähigkeit, Prozesse effektiv durchzuführen und Konformität von Produkten/Dienstleistungen sicherzustellen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_13.PNG",
+    "question": "Worauf muss eine Organisation bei der Prozessumgebung achten?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Einhaltung der Arbeitsschutzvorschriften",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Sicherheitskontrollen der Anlagen",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Geschultes Personal",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Ergonomie der Arbeitsplätze",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.1.4",
+    "isoJustification": "ISO 9001:2015 Kapitel 7.1.4 (Umgebung zur Durchführung von Prozessen) umfasst menschliche und physikalische Faktoren, wie z.B. soziale, psychologische (Stressvermeidung) und physikalische Faktoren (wie Temperatur, Hygiene, Lärm, Ergonomie). Arbeitsschutz gehört implizit zur Prozessumgebung. Personal ist unter 'Kompetenz' (7.2) geregelt, Anlagen primär unter 'Infrastruktur' (7.1.3).",
+    "infobox": "Die 'Umgebung' betrifft die Arbeitsbedingungen: Faktoren wie Licht, Lärm, Temperatur, Ergonomie, aber auch ein angstfreies soziales Umfeld.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_14.PNG",
+    "question": "Mitarbeiter sind qualitätsbewusst, wenn sie …",
+    "options": [
+      {
+        "id": "A",
+        "text": "sich über ihrem Beitrag zum QMS bewusst sind.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "die negative Auswirkung ihrer Fehler auf das QMS einschätzen können.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "alle Prozesse des Unternehmens kennen.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "die Qualitätspolitik und Qualitätsziele kennen.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.3",
+    "isoJustification": "ISO 9001:2015 Kapitel 7.3 (Bewusstsein) fordert, dass Personen sich der Qualitätspolitik, der relevanten Qualitätsziele, ihres Beitrags zur Wirksamkeit des QMS sowie der Folgen der Nichterfüllung von QMS-Anforderungen (Fehler) bewusst sind. Es ist nicht nötig, alle Prozesse des Unternehmens zu kennen.",
+    "infobox": "Qualitätsbewusstsein bedeutet nicht Allwissenheit, sondern das Verständnis für die Wichtigkeit der eigenen Arbeit im großen Ganzen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_15.PNG",
+    "question": "Wer darf Qualitätsdokumente erstellen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Nur der Prozesseigner darf Dokumente nach schriftlichem Auftrag durch die Geschäftsführung erstellen.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Jeder qualifizierte Mitarbeiter entsprechend dem definierten und gelebten Prozess zur Dokumentenlenkung.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Jeder qualifizierte Mitarbeiter, sobald er die Notwendigkeit sieht. Neue Dokumente sollten per Mail an alle versendet werden.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Da es sich um täglich auszufüllende Formulare handelt, darf das jeder Mitarbeiter. Sonst könnte keiner seine Arbeit verrichten.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.5",
+    "isoJustification": "Die Norm schreibt nicht vor, wer genau Dokumente erstellen darf, sondern fordert geregelte Prozesse zur Erstellung, Aktualisierung und Freigabe (7.5.2). Ergo darf jeder qualifizierte Mitarbeiter Dokumente erstellen, solange dies im Einklang mit dem festgelegten Lenkungsprozess der Organisation geschieht.",
+    "infobox": "Dokumentenlenkung erfordert Regeln, um Wildwuchs (z.B. per Mail versendete Inoffiziell-Dokumente) zu verhindern.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_16.PNG",
+    "question": "Welche Ressourcenarten unterscheidet die DIN EN ISO 9001?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Personen",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Infrastruktur",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Geld",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Wissen",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.1",
+    "isoJustification": "ISO 9001:2015 Kapitel 7.1 differenziert Ressourcen in: Personen (7.1.2), Infrastruktur (7.1.3), Umgebung (7.1.4), Ressourcen zur Überwachung und Messung (7.1.5) sowie Wissen der Organisation (7.1.6). Finanzen (Geld) werden in der ISO 9004 behandelt, nicht aber explizit als eigene Unterkategorie in 7.1 der ISO 9001.",
+    "infobox": "In der ISO 9001 sind finanzielle Ressourcen zwar wichtig für die Aufrechterhaltung, stellen aber kein eigenes Normkapitel dar.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_17.PNG",
+    "question": "Der Umfang der dokumentierten Informationen ist variabel. Nach welchen Anforderungen sollte der Umgang festgelegt werden?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Größe der Organisation",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Kompetenz der Personen",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Art der Tätigkeit und Komplexität der Prozesse",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Speicherkapazität des Dokumentenmanagementsystems",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.5.1",
+    "isoJustification": "Nach ISO 9001:2015 Kapitel 7.5.1 Anmerkung kann der Umfang an dokumentierter Information variieren aufgrund der Größe der Organisation, der Art der Tätigkeiten/Prozesse und der Kompetenz der Personen. Speicherkapazität ist kein normatives Kriterium für die Systemgestaltung.",
+    "infobox": "Ein kleines Unternehmen mit hoch qualifizierten Fachkräften benötigt oft weniger detaillierte Dokumentation als ein Großkonzern.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_18.PNG",
+    "question": "Welche Aussagen in Bezug auf Wissen sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Wissen wird im Allgemeinen durch Erfahrung erlangt",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Informationen, die für die Organisation organisationsspezifisch sind",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Informationen, die im Hinblick auf das Erreichen der Ziele der Organisation angewendet und ausgetauscht werden",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Wissen kann auf internen und externen Quellen basieren",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.1.6",
+    "isoJustification": "Diese Aussagen decken sich mit ISO 9001:2015 Kapitel 7.1.6 (Wissen der Organisation) und den zugehörigen Anmerkungen 1 und 2, welche Wissen als erfahrungsbasiert, organisationsspezifisch, zielorientiert und aus diversen Quellen stammend beschreiben.",
+    "infobox": "Wissen ist eine entscheidende Ressource, um sicherzustellen, dass Prozesse dauerhaft verlässlich ablaufen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "5_19.PNG",
+    "question": "Welche Arten der Wissensbereitstellung gibt es?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Trainings",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Arbeitsanweisungen",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Wissensdatenbanken",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Personalbogen",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Produktrealisierung / Qualitätswerkzeuge",
+    "isoClause": "7.1.6",
+    "isoJustification": "Trainings, Arbeitsanweisungen und Wissensdatenbanken sind gängige und in der Praxis anerkannte Methoden, um Wissen im Unternehmen bereitzustellen und zu sichern. Ein Personalbogen erfasst administrative Daten, dient aber nicht der Wissensbereitstellung.",
+    "infobox": "Die Form der Bereitstellung ist nicht streng vorgegeben; sie muss aber sicherstellen, dass das Wissen dort verfügbar ist, wo es gebraucht wird.",
+    "isBroken": false
+  }
+]

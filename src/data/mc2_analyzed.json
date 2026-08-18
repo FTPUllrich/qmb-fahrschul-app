@@ -1,0 +1,418 @@
+[
+  {
+    "imageFile": "2_1.PNG",
+    "question": "Welche Anforderungen stellt die DIN EN ISO 9001 an Prozessmanagement einer Organisation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Für die Verbesserung der Prozesse müssen Qualitätszirkel durchgeführt werden.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Es muss eine einheitliche Anzahl an Prozessschritten pro Prozess definiert werden.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Die Reihenfolge und das Zusammenwirken der Prozesse muss festgelegt werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Die Bewertung der Prozessleistung erfolgt an den jeweiligen Schnittstellen der Prozesse.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "DIN EN ISO 9001:2015, Kapitel 4.4.1 b)",
+    "isoJustification": "Die Norm fordert explizit, dass die Organisation die Abfolge und das Zusammenwirken dieser Prozesse bestimmen muss. Spezifische Methoden wie Qualitätszirkel oder eine einheitliche Anzahl an Schritten werden nicht vorgeschrieben.",
+    "infobox": "Die ISO 9001 lässt der Organisation viel Freiraum, WIE Prozesse gestaltet und verbessert werden. Obligatorisch ist jedoch die Festlegung der Reihenfolge und Wechselwirkungen (Zusammenwirken) der Prozesse.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_2.PNG",
+    "question": "Welche Aussagen bzgl. des Anwendungsbereichs des QMS einer Organisation ist laut DIN EN ISO 9001 korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Es können nur Anforderungen aus dem Kapitel Entwicklung ausgeschlossen werden.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Innerhalb des definierten Anwendungsbereichs müssen alle Anforderungen der DIN EN ISO 9001 umgesetzt werden.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Der Anwendungsbereich der DIN EN ISO 9001 gilt für alle Arten von Organisationen, die Produkte bzw. Dienstleistungen für Kunden liefert.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Anforderungen der DIN EN ISO 9001, die auf eine Organisation nicht zutreffen, dürfen ausgeschlossen werden.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "DIN EN ISO 9001:2015, Kapitel 4.3 und 1",
+    "isoJustification": "Die Norm ist generisch und für alle Organisationen anwendbar (Kap. 1). Kapitel 4.3 besagt, dass eine Organisation Anforderungen als 'nicht zutreffend' (früher 'Ausschluss') deklarieren darf, sofern dies gerechtfertigt ist und die Fähigkeit zur Produkt-/Dienstleistungskonformität nicht beeinträchtigt. Alle anwendbaren Anforderungen müssen umgesetzt werden, nicht pauschal alle.",
+    "infobox": "In der ISO 9001:2015 spricht man nicht mehr explizit von 'Ausschlüssen', sondern von der Bestimmung der Anwendbarkeit. Jede Anforderung, die nicht angewendet werden kann, muss als solche mit Begründung deklariert werden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_3.PNG",
+    "question": "Welche Aussagen bzgl. der interessierten Parteien sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Zu den interessierten Parteien zählen Unternehmensinterne und -externe Gruppen.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Alle interessierten Parteien müssen identifiziert werden.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Das Kapitel interessierte Parteien kann im Teil Anwendungsbereich des QMS ausgeschlossen werden.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Die Anforderungen aller interessierter Parteien sind zu berücksichtigen.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "DIN EN ISO 9001:2015, Kapitel 4.2",
+    "isoJustification": "Die Norm fordert die Bestimmung der für das QMS RELEVANTEN interessierten Parteien und deren RELEVANTER Anforderungen. Es müssen also nicht alle Parteien und nicht alle Anforderungen berücksichtigt werden, sondern nur die, die für das QMS relevant sind. Interessierte Parteien können intern (Mitarbeiter) oder extern (Kunden, Behörden) sein.",
+    "infobox": "Relevanz ist hier das Schlüsselwort! Nicht jede Person oder Gruppe, die Interesse zeigt, ist normativ 'relevant'. Relevant sind nur jene, die Auswirkungen auf die Fähigkeit der Organisation haben, kontinuierlich Produkte/Dienstleistungen bereitzustellen, die Kunden- und gesetzliche Anforderungen erfüllen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_4.PNG",
+    "question": "Welche Möglichkeiten zur Darstellung von Prozessen gibt es?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Meilensteinplan",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Ablaufdiagramme bzw. Flussdiagramme",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "FMEA",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Textform",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "DIN EN ISO 9001:2015, Kapitel 4.4.2",
+    "isoJustification": "Die Norm schreibt keine spezifische Form zur dokumentierten Information von Prozessen vor. In der Praxis etabliert sind Flussdiagramme, Ablaufdiagramme und die Textform (z.B. als Prozessbeschreibung). Ein Meilensteinplan ist ein Projektmanagement-Tool. Die FMEA ist eine Methode zur Fehlervermeidung/Risikoanalyse.",
+    "infobox": "Die Form der Prozessdokumentation ist der Organisation freigestellt. Sie sollte so gewählt werden, dass sie von den betroffenen Mitarbeitern verstanden und im Arbeitsalltag genutzt werden kann.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_5.PNG",
+    "question": "Wie lautet die Definition von Prozess laut DIN EN ISO 9000?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Satz zusammenhängender oder sich gegenseitig beeinflussender Tätigkeiten, der Eingaben zum Erzielen eines vorgesehenen Ergebnisses verwendet.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Loser Zusammenschluss an Tätigkeiten, die Eingaben zum Erzielen eines vorgesehenen Ergebnisses verwenden.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Satz zusammenhängender oder sich gegenseitig beeinflussender Tätigkeiten, der Ergebnisse zum Erzielen vorgesehen Eingaben verwendet.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Satz zusammenhängender oder sich gegenseitig beeinflussender Methoden, der Eingaben zum Erzielen eines vorgesehenen Ergebnisses verwendet.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "DIN EN ISO 9000:2015, Kapitel 3.4.1",
+    "isoJustification": "Der Begriff 'Prozess' wird in der ISO 9000:2015 exakt so definiert: 'Satz zusammenhängender und sich gegenseitig beeinflussender Tätigkeiten, der Eingaben zum Erzielen eines vorgesehenen Ergebnisses verwendet.'",
+    "infobox": "Achtung bei genauen Definitionen: Ein Prozess verwandelt immer Eingaben (Inputs) durch Tätigkeiten in Ergebnisse (Outputs). Option C verdreht dies unsinnig.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_6.PNG",
+    "question": "Welche internen Themen müssen im QMS einer Organisation berücksichtigt werden?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Changeprozesse",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Social Media (Facebook, Twitter, etc.)",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Motivation der Mitarbeiter",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Demografischer Wandel im Unternehmen",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "DIN EN ISO 9001:2015, Kapitel 4.1",
+    "isoJustification": "Die Norm fordert die Bestimmung interner und externer Themen. Interne Themen beziehen sich auf Werte, Kultur, Wissen und Leistung der Organisation. Die Mitarbeitermotivation und der demografische Wandel innerhalb der Belegschaft sind klassische interne Kontextthemen. Social Media ist vorrangig extern (oder ein Tool). Changeprozesse sind Prozesse des QMS, nicht primär Kontext-Themen.",
+    "infobox": "Um interne Themen zu identifizieren, kann man sich an Merkmalen wie Unternehmenskultur, Kompetenz, Ressourcen und Betriebsstruktur orientieren.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_7.PNG",
+    "question": "Welche Themenstellungen sind für einen regionalen* Lebensmittelhersteller auf Island relevant? *Warenbezug und Verkauf ausschließlich aus und in Island",
+    "options": [
+      {
+        "id": "A",
+        "text": "EU-Verordnungen",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Vulkanische Aktivitäten",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Arbeitsmarktentwicklung auf Island",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Zollgebühren",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "DIN EN ISO 9001:2015, Kapitel 4.1",
+    "isoJustification": "Da der Hersteller ausschließlich lokal agiert, sind EU-Verordnungen (es sei denn explizit über EWR adaptiert, aber hier grenzt die Frage auf rein lokales ab) und Zollgebühren für Im-/Export nicht primär relevant. Geografische Eigenheiten wie vulkanische Aktivitäten (Naturgewalten, Lieferkettenrisiko) und der lokale Arbeitsmarkt (Ressourcenverfügbarkeit) sind stark relevante interne/externe Kontextthemen.",
+    "infobox": "Bei der Kontextanalyse muss die Organisation ihre spezifische Situation berücksichtigen. Ein lokaler Betrieb muss sich auf lokale Gegebenheiten (Wetter, lokaler Arbeitsmarkt) fokussieren, nicht auf globale Handelshemnisse.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_8.PNG",
+    "question": "Was sind mögliche interessierte Parteien für eine Organisation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Partner",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Eigentümer",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Internet",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Behörden",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "DIN EN ISO 9000:2015, Kapitel 3.2.3",
+    "isoJustification": "Interessierte Parteien sind Personen oder Organisationen, die eine Entscheidung oder Tätigkeit beeinflussen können. Dazu zählen Eigentümer, Partner, Behörden, Kunden, Lieferanten etc. Das 'Internet' ist ein Medium bzw. eine Technologie, keine Partei.",
+    "infobox": "Eine Partei ist stets eine Entität (Person, Gruppe, Organisation), die Interessen haben und äußern kann.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_9.PNG",
+    "question": "Stell dir folgende Situation vor: Bei einer Prozessanalyse findest du einen Prozessschritt, der notwendig für das Prozessergebnis aus Sicht des Unternehmens ist, aber keine Kundenanforderung darstellt. Welche Aussagen sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Es handelt sich in jedem Fall um Verschwendung. Der Schritt kann entfallen.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Wenn der Schritt eine unterstützende Tätigkeit darstellt, ist er nicht wertschöpfend, aber notwendig.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Ohne weitere Analysen mittels FMEA kann nicht über das Schicksal des Prozesssschrittes entschieden werden.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Wenn der Schritt keine unterstützende Tätigkeit darstellt, handelt es sich um Verschwendung. Dieser Schritt kann entfallen.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "Lean Management / Prozessmanagement-Grundlagen",
+    "isoJustification": "Prozessschritte, die keine direkte Wertschöpfung für den Kunden bringen, aber für den Betriebsablauf oder aus rechtlichen Gründen notwendig sind (z. B. Buchhaltung, Instandhaltung, Dokumentation), bezeichnet man als notwendige nicht-wertschöpfende Tätigkeiten (Unterstützung). Sie sind keine reine Verschwendung (Muda), die einfach entfallen kann.",
+    "infobox": "Im Prozessmanagement unterscheidet man 3 Kategorien: Wertschöpfend (Kunde ist bereit dafür zu zahlen), Nicht wertschöpfend aber notwendig (z.B. gesetzliche Doku), und reine Verschwendung (kann komplett wegfallen).",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_10.PNG",
+    "question": "Welche Prozessarten gibt es?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Führungsprozesse",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Personalprozesse",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Kernprozesse",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Unterstützende Prozesse",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "Prozessmanagement-Standardmodell",
+    "isoJustification": "In der üblichen Gliederung von Prozesslandschaften unterscheidet man drei Hauptarten von Prozessen: Führungsprozesse (Managementprozesse), Kernprozesse (Wertschöpfungsprozesse) und Unterstützende Prozesse (Supportprozesse). 'Personalprozesse' sind keine eigene Hauptkategorie, sondern fallen unter die unterstützenden Prozesse.",
+    "infobox": "Das St. Galler Management-Modell oder gängige QM-Praxis teilt Prozesse stets in diese drei Makro-Ebenen ein: Führen, Leisten (Kern) und Unterstützen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_11.PNG",
+    "question": "Welche der folgenden Prozessarten wird nicht in einer Prozesslandkarte dargestellt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Strafprozesse",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Unterstützungsprozesse",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Führungsprozess",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Kernprozesse",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "Allgemeines Prozessmanagement",
+    "isoJustification": "Eine Prozesslandkarte stellt das betriebliche Zusammenwirken von Führungsprozessen, Kernprozessen und Unterstützungsprozessen dar. 'Strafprozesse' gehören in das juristische Umfeld vor Gericht und sind keine betrieblichen Abläufe im Sinne eines QMS.",
+    "infobox": "Die Prozesslandkarte ist die oberste Ebene der Prozessarchitektur eines Unternehmens.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_12.PNG",
+    "question": "Welche der folgenden Aussagen zum Prozessmanagement sind falsch?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Unterstützungsprozesse gewährleisten die Funktionsfähigkeit der Kernprozesse, sie haben einen eigenen Beitrag zur Wertschöpfung.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Kernprozesse sind für die Wertschöpfungskette im Unternehmen von entscheidender Bedeutung.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Unterstützungsprozesse gewährleisten die Funktionsfähigkeit der Kernprozesse, sie haben einen indirekten Beitrag zur Wertschöpfung",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Führungsprozesse beinhalten immer Unternehmensführung, Entwicklung und Unternehmenssteuerung.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "Allgemeines Prozessmanagement",
+    "isoJustification": "Gefragt ist nach den FALSCHEN Aussagen. Aussage A ist falsch, da Unterstützungsprozesse keinen direkten EIGENEN Beitrag zur Wertschöpfung (im Sinne der Kundenanforderung) haben, sondern einen indirekten (wie in C richtig beschrieben). Aussage D ist falsch, da die 'Entwicklung' (von Produkten) in der Regel ein Kernprozess und kein Führungsprozess ist.",
+    "infobox": "Achtung bei Negativfragen ('Welche ... sind falsch?'). Unterstützungsprozesse schaffen den Rahmen, damit Wertschöpfung stattfinden kann. Produktentwicklung ist fast immer ein wertschöpfender Kernprozess.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "2_13.PNG",
+    "question": "Was versteht die DIN EN ISO 9001 unter \"Prozessorientierter Ansatz\"?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Organisation muss ihre Prozesse jährlich evaluieren und ggf. anpassen.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Die Organisation muss alle ausgeführten Tätigkeiten in einer Prozessmodulationssoftware dokumentieren.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Die Organisation muss die Wechselbeziehungen zwischen den Prozessen verstehen.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Die Organisation muss alle relevanten Prozesse lenken und leiten.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "QM-Systeme und Normen",
+    "isoClause": "DIN EN ISO 9001:2015, Kapitel 0.3 und 4.4",
+    "isoJustification": "Der prozessorientierte Ansatz beinhaltet das systematische Erkennen, Leiten und Lenken von Prozessen sowie deren Wechselwirkungen (Kapitel 0.3.1). Eine jährliche Frist ist nicht explizit vorgegeben (nur fortlaufend) und der Einsatz einer speziellen Modellierungssoftware wird von der Norm keinesfalls gefordert.",
+    "infobox": "Der prozessorientierte Ansatz (PDCA-Zyklus auf Prozessebene) ermöglicht es der Organisation, die Wechselbeziehungen und Abhängigkeiten zwischen den Prozessen des Systems zu steuern, sodass die Gesamtleistung der Organisation verbessert werden kann.",
+    "isBroken": false
+  }
+]

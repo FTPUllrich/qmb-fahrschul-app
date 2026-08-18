@@ -1,0 +1,290 @@
+[
+  {
+    "imageFile": "4_1.PNG",
+    "question": "Welche Formen von Chancen sind nach DIN EN ISO 9001 gemeint?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Neukundengewinnung",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Markteinführung neuer Produkte",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Risikovermeidung",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Einsatz neuer Techniken",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Dokumentation und Dokumentenlenkung",
+    "isoClause": "ISO 9001:2015 Kapitel 6.1.2 Anmerkung 2",
+    "isoJustification": "Gemäß ISO 9001:2015 Kap. 6.1.2 Anmerkung 2 können Chancen zur Neukundengewinnung, Markteinführung neuer Produkte und Einsatz neuer Techniken führen. Risikovermeidung ist eine Strategie zum Umgang mit Risiken (Anmerkung 1), keine Chance.",
+    "infobox": "Chancen (Opportunities) sind positive Möglichkeiten, die es zu nutzen gilt, um die Ergebnisse des QMS zu verbessern.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "4_2.PNG",
+    "question": "An welchen Stellen in der DIN EN ISO 9001 wird auf das Thema Planung von Änderungen eingegangen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Beim Thema Infrastruktur.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Beim Thema Betriebliche Steuerung.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Beim Thema Qualitätsziele.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Beim Thema Interne Audits.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Dokumentation und Dokumentenlenkung",
+    "isoClause": "ISO 9001:2015 Kapitel 6.3 und 8.1",
+    "isoJustification": "Das Thema Planung von Änderungen wird u.a. in Kapitel 6.3 (Planung von Änderungen am QMS) und explizit in Kapitel 8.1 (Betriebliche Planung und Steuerung) behandelt ('Die Organisation muss geplante Änderungen überwachen').",
+    "infobox": "Die ISO 9001 fordert einen systematischen Umgang mit Änderungen (Change Management), insbesondere bei der betrieblichen Planung und Steuerung sowie am QMS selbst.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "4_3.PNG",
+    "question": "Welche Aussagen in Bezug auf Qualitätsziele sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Zielerreichung der Qualitätsziele wird überwacht und dokumentiert.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Es gibt Qualitätsziele, die nicht gemessen werden können.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Sie werden den betroffenen Unternehmensbereichen und Mitarbeitern vermittelt.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Qualitätsziele dürfen unterjährig nicht geändert werden.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Dokumentation und Dokumentenlenkung",
+    "isoClause": "ISO 9001:2015 Kapitel 6.2.1",
+    "isoJustification": "Qualitätsziele müssen messbar sein (6.2.1 b), überwacht werden (6.2.1 e), vermittelt werden (6.2.1 d) und bei Bedarf aktualisiert werden können (6.2.1 f). Die Aufrechterhaltung dokumentierter Information ist erforderlich.",
+    "infobox": "Qualitätsziele müssen immer SMART (Spezifisch, Messbar, Attraktiv, Realistisch, Terminierbar) sein. Sie sind ein zentrales Führungsinstrument.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "4_4.PNG",
+    "question": "Welche Aussagen in Bezug auf den Umgang mit Risiken und Chancen sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Das Risikomanagement ist zu dokumentieren.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Das Unternehmen kann selber entscheiden, welcher Ansatz zum risikobasierten Denken umgesetzt werden soll.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Das Chancenmanagement ist getrennt von Risikomanagement zu betrachten.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Die FMEA ist die Methode der ISO 9001 zum Umgang mit Risiken.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Dokumentation und Dokumentenlenkung",
+    "isoClause": "ISO 9001:2015 Anhang A.4",
+    "isoJustification": "Gemäß ISO 9001 Anhang A.4 gibt es keine Anforderung an formelle Methoden für das Risikomanagement oder einen dokumentierten Risikomanagementprozess. Die Organisation kann die Methode (z.B. FMEA, SWOT) selbst wählen.",
+    "infobox": "Die ISO 9001 fordert risikobasiertes Denken, schreibt aber kein formelles, umfassendes Risikomanagementsystem nach ISO 31000 vor.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "4_5.PNG",
+    "question": "Welche Strategien zum Umgang mit Risiken gibt es?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Risiken können von einer Organisation vernachlässigt werden, wenn Sie keine Kundenauswirkung haben.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Risiken können von einer Organisation auf eine andere Organisation verlagert werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Ausgewählte Risiken können von der Organisation ohne weitere Vorbeugungsmaßnahmen akzeptiert werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Risiken können durch entsprechende Maßnahmen vermindert oder vermieden werden.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Dokumentation und Dokumentenlenkung",
+    "isoClause": "ISO 9001:2015 Kapitel 6.1.2 Anmerkung 1",
+    "isoJustification": "Strategien zum Umgang mit Risiken umfassen Vermeidung von Risiken (D), Risikoteilung/-verlagerung (B) und die Beibehaltung von Risiken durch fundierte Entscheidung (C). Ein pauschales Vernachlässigen (A) ist nicht zulässig.",
+    "infobox": "Die klassischen Strategien im Risikomanagement sind: Vermeiden, Vermindern, Überwälzen/Teilen und Akzeptieren.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "4_6.PNG",
+    "question": "Die Abkürzung SMART steht für ...",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sachorientiert, Messbar, Attraktiv, Realistisch, Terminierbar",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Spezifisch, Medienunabhängig, Attraktiv, Realistisch, Terminierbar",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Spezifisch, Messbar, Attraktiv, Realistisch, Terminierbar",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Spezifisch, Messbar, Attraktiv, Realistisch, Transparent",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Dokumentation und Dokumentenlenkung",
+    "isoClause": "Allgemeines Qualitätswissen / ISO 9001:2015 Kap. 6.2",
+    "isoJustification": "SMART ist ein Akronym aus dem Projekt- und Qualitätsmanagement für die Zielformulierung: Spezifisch, Messbar, Attraktiv (oder Akzeptiert), Realistisch, Terminierbar. Dies unterstützt die Forderung aus 6.2.1, dass Ziele messbar sein müssen.",
+    "infobox": "Ziele müssen immer so formuliert sein, dass im Nachhinein zweifelsfrei festgestellt werden kann, ob sie erreicht wurden (Messbarkeit und Terminierung).",
+    "isBroken": false
+  },
+  {
+    "imageFile": "4_7.PNG",
+    "question": "Was muss eine Organisation im Umgang mit Risiken und Chancen beachten?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Maßnahmen zum Umgang mit Risiken und Chancen müssen geplant werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Maßnahmen zum Umgang mit Risiken und Chancen müssen angemessen sein.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Die Wirksamkeit der Maßnahmen müssen überprüft werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Maßnahmen zum Umgang mit Risiken und Chancen müssen Teil des QMS und seiner Prozesse sein.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Dokumentation und Dokumentenlenkung",
+    "isoClause": "ISO 9001:2015 Kapitel 6.1.2",
+    "isoJustification": "Nach Kapitel 6.1.2 muss die Organisation Maßnahmen planen (A), diese in die QMS-Prozesse integrieren (D) und deren Wirksamkeit bewerten (C). Die Maßnahmen müssen zudem proportional (angemessen) zu den möglichen Auswirkungen sein (B).",
+    "infobox": "Alle vier Aussagen spiegeln exakt die Forderungen aus Kapitel 6.1.2 der ISO 9001 wider.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "4_8.PNG",
+    "question": "Warum ist es sinnvoll sich mit Risiken und Chancen zu beschäftigen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Um Verbesserungspotenziale zu nutzen",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Für eine bessere Übersicht der Prozesse",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Um Fehler zu vermeiden",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Um sicherzustellen, dass das QMS seinen Zweck erfüllt",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Dokumentation und Dokumentenlenkung",
+    "isoClause": "ISO 9001:2015 Kapitel 6.1.1",
+    "isoJustification": "Laut 6.1.1 müssen Risiken und Chancen bestimmt werden, um zuzusichern, dass das QMS seine beabsichtigten Ergebnisse erzielen kann (D), erwünschte Auswirkungen zu verstärken, unerwünschte Auswirkungen zu verhindern (C) und fortlaufende Verbesserung zu erreichen (A).",
+    "infobox": "Risikobasiertes Denken dient präventiv der Zielerreichung und der fortlaufenden Verbesserung, weniger der reinen Prozessübersicht.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "4_9.PNG",
+    "question": "Wie sieht der Zusammenhang zwischen Qualitätspolitik und Qualitätsziele aus?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Qualitätspolitik und die Qualitätsziele werden jährlich überprüft.",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Die Qualitätsziele werden aus der Qualitätspolitik abgeleitet.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Bei Änderung der Qualitätsziele wird die Qualitätspolitik angepasst.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Die Qualitätsziele und die Qualitätspolitik stehen im Einklang miteinander.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Dokumentation und Dokumentenlenkung",
+    "isoClause": "ISO 9001:2015 Kapitel 6.2.1 a)",
+    "isoJustification": "Gemäß Kap. 6.2.1 a) müssen die Qualitätsziele im Einklang mit der Qualitätspolitik stehen. Sie werden konzeptionell aus der Politik abgeleitet. Ein starrer jährlicher Zyklus wird von der Norm nicht explizit gefordert, ebenso wird die übergeordnete Politik nicht wegen einzelner Zielanpassungen geändert.",
+    "infobox": "Die Qualitätspolitik gibt den Rahmen und die grobe Richtung vor. Die Qualitätsziele brechen diese strategischen Vorgaben in messbare, operative Ziele herunter.",
+    "isBroken": false
+  }
+]

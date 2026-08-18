@@ -1,0 +1,226 @@
+[
+  {
+    "imageFile": "6_1.PNG",
+    "question": "Welche Anforderungen sind für die Produkte bzw. Dienstleistungen einer Organisation relevant?",
+    "options": [
+      {"id": "A", "text": "Behördliche und gesetzliche Anforderungen", "isCorrect": true},
+      {"id": "B", "text": "Anforderungen aller interessierter Parteien", "isCorrect": false},
+      {"id": "C", "text": "Anforderungen, die das Unternehmen an sich selbst stellt", "isCorrect": true},
+      {"id": "D", "text": "Ausschließlich die Anforderungen des Kunden", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.2.2 a)",
+    "isoJustification": "Nach ISO 9001:2015 Kap. 8.2.2 müssen bei der Bestimmung von Anforderungen an Produkte und Dienstleistungen jegliche anwendbare gesetzliche und behördliche Anforderungen sowie jene, die von der Organisation als notwendig erachtet werden (eigene Anforderungen), berücksichtigt werden. Die Anforderungen aller interessierten Parteien sind nicht per se relevant (nur die relevanten Anforderungen relevanter Parteien nach 4.2).",
+    "infobox": "Neben den Kundenanforderungen müssen auch gesetzliche und unternehmenseigene Anforderungen erfüllt werden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_2.PNG",
+    "question": "Wann liegen beherrschte Bedingungen bei der Durchführung eines Prozesses vor?",
+    "options": [
+      {"id": "A", "text": "Beim Einsatz kompetenter Personen.", "isCorrect": true},
+      {"id": "B", "text": "Bei der Nutzung und Steuerung einer geeigneten Infrastruktur.", "isCorrect": true},
+      {"id": "C", "text": "Bei dem Einsatz von Überwachungs- und Messtätigkeit.", "isCorrect": true},
+      {"id": "D", "text": "Bei der Einführung von Maßnahmen zur Verhinderung von menschlichen Fehlern.", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.5.1 c, d, e, g",
+    "isoJustification": "Gemäß ISO 9001:2015 Kapitel 8.5.1 (Steuerung der Produktion und der Dienstleistungserbringung) umfassen beherrschte Bedingungen unter anderem die Umsetzung von Überwachungs- und Messtätigkeiten (c), die Nutzung einer geeigneten Infrastruktur (d), die Benennung kompetenter Personen (e) und Maßnahmen zur Verhinderung menschlicher Fehler (g).",
+    "infobox": "Beherrschte Bedingungen (controlled conditions) stellen sicher, dass Prozesse wie geplant und reproduzierbar ablaufen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_3.PNG",
+    "question": "Wofür braucht eine Organisation beherrschte Prozesse?",
+    "options": [
+      {"id": "A", "text": "Fehler vermeiden", "isCorrect": true},
+      {"id": "B", "text": "Prozesse verbessern", "isCorrect": true},
+      {"id": "C", "text": "Kosten reduzieren", "isCorrect": true},
+      {"id": "D", "text": "Ressourcen schonen", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "Allgemeines QM-Wissen / 8.5.1",
+    "isoJustification": "Beherrschte Prozesse sind die Grundvoraussetzung, um reproduzierbare Qualität zu erzeugen, Fehler zu vermeiden, Kosteneffizienz (Ausschussminimierung) zu gewährleisten, Ressourcen effizient einzusetzen und eine Basis für kontinuierliche Verbesserung (KVP) zu schaffen.",
+    "infobox": "Ein stabiler, beherrschter Prozess ist das Fundament eines funktionierenden QMS und Voraussetzung für Effizienz und Verbesserung.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_4.PNG",
+    "question": "Wofür müssen bei der betrieblichen Planung und Steuerung Anforderungen festgelegt werden?",
+    "options": [
+      {"id": "A", "text": "Festlegung der Kriterien für die Annahme von Produkten und Dienstleistungen", "isCorrect": true},
+      {"id": "B", "text": "Steuerung der Prozesse in Übereinstimmung mit den Kriterien", "isCorrect": true},
+      {"id": "C", "text": "Bestimmung der notwendigen Ressourcen", "isCorrect": true},
+      {"id": "D", "text": "Überwachung der geplanten Änderungen", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.1",
+    "isoJustification": "Nach Kapitel 8.1 muss die Organisation Prozesse planen und steuern, indem sie Kriterien für Prozesse und Annahme festlegt (A), Ressourcen bestimmt (C) und die Steuerung der Prozesse in Übereinstimmung mit diesen Kriterien (B) umsetzt. Die Überwachung von Änderungen (D) ist zwar Teil von 8.1, beantwortet aber nicht direkt die Frage nach den Planungskriterien/Anforderungen für den originären Prozessablauf.",
+    "infobox": "Die betriebliche Planung und Steuerung schafft die Vorgaben für den Prozessablauf, um Anforderungen erfüllen zu können.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_5.PNG",
+    "question": "Was muss beim Umgang mit dem Eigentum des Kunden laut DIN EN ISO 9001 beachtet werden?",
+    "options": [
+      {"id": "A", "text": "Es müssen keine dokumentierte Information bei Verlust vorliegen.", "isCorrect": false},
+      {"id": "B", "text": "Das Eigentum des Kunden muss geschützt, verifiziert, gekennzeichnet und gesichert werden.", "isCorrect": true},
+      {"id": "C", "text": "Der Kunde muss sorgfältig mit seinem Eigentum umgehen.", "isCorrect": false},
+      {"id": "D", "text": "Zum Eigentum des Kunden zählt auch geistiges Eigentum.", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.5.3",
+    "isoJustification": "Nach ISO 9001:2015 Kap. 8.5.3 muss die Organisation das Eigentum der Kunden kennzeichnen, verifizieren, schützen und sichern. Wenn es verloren geht, muss dokumentierte Information aufbewahrt werden (daher A falsch). Laut Anmerkung in 8.5.3 kann Kundeneigentum auch geistiges Eigentum und personenbezogene Daten umfassen (daher D richtig).",
+    "infobox": "Die Organisation trägt die Sorgfaltspflicht für das Eigentum des Kunden oder externer Anbieter, solange es sich in ihrer Obhut befindet.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_6.png",
+    "question": "Welche Phasen gehören zur Entwicklung?",
+    "options": [
+      {"id": "A", "text": "Entwicklungsänderung", "isCorrect": true},
+      {"id": "B", "text": "Entwicklungsergebnisse", "isCorrect": true},
+      {"id": "C", "text": "Entwicklungsprüfung", "isCorrect": true},
+      {"id": "D", "text": "Entwicklungseingaben", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.3",
+    "isoJustification": "Kapitel 8.3 gliedert sich in Entwicklungseingaben (8.3.3), Steuerungsmaßnahmen wie Entwicklungsprüfung (8.3.4), Entwicklungsergebnisse (8.3.5) und Entwicklungsänderungen (8.3.6).",
+    "infobox": "Der Entwicklungsprozess nach ISO 9001 ist klar strukturiert von der Planung über Eingaben und Steuerungsmaßnahmen (Verifizierung/Validierung) bis zu den Ergebnissen und deren Änderungen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_7.PNG",
+    "question": "Wenn externe Prozesse, Produkte und Dienstleistungen in Anspruch genommen werden, dann...",
+    "options": [
+      {"id": "A", "text": "können die externen bereits gestellten Prozesse, Produkte und Dienstleistungen den festgelegten Anforderungen entsprechen.", "isCorrect": false},
+      {"id": "B", "text": "darf die Kundenzufriedenheit durch den externen Dienstleister nicht negativ beeinflusst werden.", "isCorrect": true},
+      {"id": "C", "text": "muss Art und Umfang der Kontrolle des externen Anbieters festgelegt werden.", "isCorrect": true},
+      {"id": "D", "text": "ist ausschließlich der Dienstleister verantwortlich für die Qualität der Produkte und Dienstleistungen.", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.4",
+    "isoJustification": "Nach Kap. 8.4 MÜSSEN (nicht können) sie den Anforderungen entsprechen. Die Organisation bleibt selbst gegenüber ihrem Kunden verantwortlich, daher ist D falsch und B richtig (8.4.2). Art und Umfang der Steuerung/Kontrolle müssen festgelegt werden (8.4.2).",
+    "infobox": "Die Auslagerung von Prozessen entbindet die Organisation nicht von ihrer Verantwortung gegenüber dem eigenen Kunden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_8.PNG",
+    "question": "Die Freigabe von Produkten und Dienstleistungen erfolgt ...",
+    "options": [
+      {"id": "A", "text": "ohne Nachweis über die Konformität mit den Annahmekriterien.", "isCorrect": false},
+      {"id": "B", "text": "durch Unterschrift der zur Freigabe autorisierten Personen.", "isCorrect": true},
+      {"id": "C", "text": "nur am Ende des Produktions- bzw. Dienstleistungsprozesses.", "isCorrect": false},
+      {"id": "D", "text": "nach Vollendung aller Verifizierungstätigkeiten - unabhängig vom Ergebnis.", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.6",
+    "isoJustification": "Nach 8.6 muss die Freigabe auf geeigneten Stufen (nicht nur am Ende) und nach zufriedenstellendem Ergebnis der Prüfungen (nicht unabhängig vom Ergebnis) erfolgen. Der Nachweis der Konformität muss vorliegen (daher A falsch). Die Rückverfolgbarkeit zur autorisierenden Person muss gegeben sein, was in der Praxis klassischerweise durch eine Unterschrift oder ein digitales Äquivalent geschieht.",
+    "infobox": "Freigaben stellen sicher, dass Produkte erst zum Kunden gelangen, wenn alle festgelegten Anforderungen (Annahmekriterien) nachweislich erfüllt sind.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_9.PNG",
+    "question": "Was ist der Zweck der Kennzeichnung von Produkten und Dienstleistungen?",
+    "options": [
+      {"id": "A", "text": "Sicherstellung, dass der Produktionsstandort eines Produkts bzw. Dienstleistung zurückverfolgt werden kann.", "isCorrect": false},
+      {"id": "B", "text": "Sicherstellung, dass ein Produkt die Kundenanforderung erfüllt.", "isCorrect": false},
+      {"id": "C", "text": "Nachweis der Eignung, Angemessenheit und Wirksamkeit der Produkt- bzw. Dienstleistungskonformität.", "isCorrect": false},
+      {"id": "D", "text": "Die Kennzeichnung von Produkten ist seit 2005 gesetzlich vorgeschrieben.", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.5.2",
+    "isoJustification": "Die Optionen dieser Frage sind unglücklich formuliert. Zweck der Kennzeichnung nach 8.5.2 ist die Identifizierung der Ergebnisse zur Sicherstellung der Konformität sowie die Kennzeichnung des Status bzgl. Überwachungs- und Messanforderungen. Eine Rückverfolgbarkeit des Produktionsstandorts kann ein Aspekt sein, wenn es gefordert ist. Keine der Antworten entspricht exakt dem Normtext; am ehesten zielt die Frage wohl auf die Fehlervermeidung und Statuskenntnis ab. (Diese Frage wurde als 'broken' bewertet, im Zweifel keine Option ankreuzen oder fachspezifisch A als Teil der Rückverfolgbarkeit werten.)",
+    "infobox": "Achtung: Dies ist eine sehr schlecht gestellte Frage. Kennzeichnung und Rückverfolgbarkeit (8.5.2) dient vor allem dazu, den Prüfstatus und die Identität von Teilen jederzeit zu kennen.",
+    "isBroken": true
+  },
+  {
+    "imageFile": "6_10.PNG",
+    "question": "Was ist laut DIN EN ISO 9001 nicht Teil der Kommunikation mit dem Kunden?",
+    "options": [
+      {"id": "A", "text": "Anfragen, Verträge oder Aufträge", "isCorrect": false},
+      {"id": "B", "text": "Produkt- bzw. Dienstleistungsinformation", "isCorrect": false},
+      {"id": "C", "text": "Art und Weise der Kommunikationsführung", "isCorrect": true},
+      {"id": "D", "text": "Anforderung an Notfallmaßnahmen", "isCorrect": false}
+    ],
+    "multipleChoice": false,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.2.1",
+    "isoJustification": "Kapitel 8.2.1 fordert explizit die Kommunikation zu Informationen über Produkte (B), Behandlung von Anfragen/Verträgen (A) sowie spezifischen Anforderungen für Notfallmaßnahmen (D). Die 'Art und Weise' (C) der Kommunikationsführung ist als solche in der Liste von 8.2.1 nicht explizit aufgeführt.",
+    "infobox": "Die Norm fordert, WAS kommuniziert werden muss. Das WIE (Art und Weise) obliegt weitgehend der Organisation.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_11.PNG",
+    "question": "Welche Methoden stehen einem Unternehmen zur Auswahl seiner Lieferanten zur Verfügung?",
+    "options": [
+      {"id": "A", "text": "Vor-Ort-Begehung", "isCorrect": true},
+      {"id": "B", "text": "Nur das Angebot des Lieferanten", "isCorrect": false},
+      {"id": "C", "text": "Arbeitsproben", "isCorrect": true},
+      {"id": "D", "text": "Zertifikate", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.4.1",
+    "isoJustification": "Zur Beurteilung und Auswahl von Lieferanten (8.4.1) stehen vielfältige Methoden zur Verfügung, darunter Lieferantenaudits (Vor-Ort-Begehung), Erstmusterprüfung (Arbeitsproben) und die Einsicht von Zertifikaten. Eine Beurteilung 'nur' anhand eines Angebots greift als alleiniges Kriterium meist zu kurz.",
+    "infobox": "Lieferantenbewertung erfordert fundierte Kriterien. Zertifikate, Probeaufträge und Audits sind gängige und empfohlene Methoden.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_12.PNG",
+    "question": "Welche Nachweise zur Produkt- bzw. Dienstleistungsfreigabe müssen aufbewahrt werden?",
+    "options": [
+      {"id": "A", "text": "Nachweis der Personen, welche die Freigabe der Produkte autorisiert haben", "isCorrect": true},
+      {"id": "B", "text": "Nachweis der Konformität mit den Annahmekriterien", "isCorrect": true},
+      {"id": "C", "text": "Übereinstimmung mit den Gewährleistungskriterien", "isCorrect": false},
+      {"id": "D", "text": "Freigabeprotokoll des Qualitätsbeauftragten", "isCorrect": false}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.6 a, b",
+    "isoJustification": "Nach ISO 9001:2015 Kapitel 8.6 muss die dokumentierte Information zur Freigabe den Nachweis der Konformität mit den Annahmekriterien (a) und die Rückverfolgbarkeit zu den Personen, die die Freigabe autorisiert haben (b), umfassen. Ein spezielles Protokoll des QMB wird nicht von der Norm gefordert.",
+    "infobox": "Wer hat was aufgrund welcher Ergebnisse freigegeben? Das sind die Kernfragen, die dokumentiert sein müssen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_13.PNG",
+    "question": "Wie kann mit nicht-konformen Produkte und Dienstleistungen laut DIN EN ISO 9001 umgegangen werden?",
+    "options": [
+      {"id": "A", "text": "Versand an Entwicklungsländer", "isCorrect": false},
+      {"id": "B", "text": "Korrektur des Fehlers und erneute Verifizierung", "isCorrect": true},
+      {"id": "C", "text": "Aussonderung und Vernichtung", "isCorrect": true},
+      {"id": "D", "text": "Bereitstellung nach Sonderfreigabe durch den Kunden", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.7.1",
+    "isoJustification": "Gemäß Kap. 8.7.1 umfassen die Möglichkeiten unter anderem die Korrektur (B), Aussonderung (C) und Einholung einer Autorisierung zur Annahme unter Sonderfreigabe (D). Ein wissentlicher Versand von fehlerhaften Produkten an andere (Entwicklungs-)Länder ohne Autorisierung ist nicht normkonform und unethisch.",
+    "infobox": "Fehlerhafte Produkte dürfen nicht unwissend an Kunden gelangen. Sie müssen gesperrt, korrigiert oder verschrottet werden, es sei denn, der Kunde erteilt eine explizite Sonderfreigabe.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "6_14.PNG",
+    "question": "Welche Aussagen in Bezug auf Validierung und Verifizierung sind korrekt?",
+    "options": [
+      {"id": "A", "text": "Die Validierung ist der Abgleich der Anforderungen mit den tatsächlichen Ergebnissen, während die Verifizierung der Praxistest für das entwickelte Produkt ist.", "isCorrect": false},
+      {"id": "B", "text": "In der Entwicklungsphase werden die Entwicklungsergebnisse verifiziert und beim Abschluss der Produktionsphase validiert.", "isCorrect": false},
+      {"id": "C", "text": "Die Verifizierung und die Validierung dienen der Überprüfung eines Produktes.", "isCorrect": true},
+      {"id": "D", "text": "Die Validierung von Prozessen ist immer dann erforderlich, wenn das Prozessergebnis nicht verifiziert werden kann.", "isCorrect": true}
+    ],
+    "multipleChoice": true,
+    "category": "Kundenzufriedenheit und Lieferantenmanagement",
+    "isoClause": "8.3.4 / 8.5.1 f",
+    "isoJustification": "A vertauscht die Begriffe (Verifizierung = Abgleich Anforderungen; Validierung = Praxistest). B ist falsch, da Validierungen auch an Prototypen in der Entwicklung stattfinden können. C ist richtig, beide dienen der Überprüfung. D ist richtig gem. 8.5.1 f (Validierung von speziellen Prozessen, deren Ergebnis nicht unmittelbar verifiziert werden kann, z.B. Schweißen).",
+    "infobox": "Eselsbrücke: Verifizierung = Wurde das Produkt richtig gemacht? (nach Plan). Validierung = Wurde das richtige Produkt gemacht? (für den echten Einsatz).",
+    "isBroken": false
+  }
+]

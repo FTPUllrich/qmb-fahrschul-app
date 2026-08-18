@@ -1,0 +1,290 @@
+[
+  {
+    "imageFile": "8_1.PNG",
+    "question": "Warum sollte man Abweichungen schriftlich festhalten?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Um die Abweichung nachzuweisen.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Zur Feststellung des Schuldigen.",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Zur Vermeidung von Versäumnissen.",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Zur Vermeidung von Missverständnissen.",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Risikomanagement",
+    "isoClause": "ISO 9001:2015 Kap. 10.2 / ISO 9000:2015",
+    "isoJustification": "Abweichungen müssen laut ISO 9001 dokumentiert werden (aufbewahrte dokumentierte Information), um Nachvollziehbarkeit zu gewährleisten und aus Fehlern zu lernen. Die Suche nach 'Schuldigen' widerspricht dem fehlerkulturellen Ansatz der ISO 9001.",
+    "infobox": "Im Qualitätsmanagement geht es um fehlerhafte Prozesse, nicht um die Schuldzuweisung an Personen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "8_2.PNG",
+    "question": "Welche Aspekte gehören laut DIN EN ISO 9001 zum Thema Verbesserung?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Innovation",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Ausgliederung von Prozessen",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Korrektur",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Umorganisation",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Risikomanagement",
+    "isoClause": "ISO 9001:2015 Kap. 10.1",
+    "isoJustification": "In der Anmerkung zu ISO 9001:2015 Kap. 10.1 wird explizit erwähnt: 'Beispiele für Verbesserung können Korrektur, Korrekturmaßnahme, fortlaufende Verbesserung, bahnbrechende Veränderung, Innovation und Umorganisation einschließen.'",
+    "infobox": "Verbesserung umfasst mehr als nur den klassischen KVP. Auch sprunghafte Innovationen oder Restrukturierungen gehören dazu.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "8_3.PNG",
+    "question": "Welche Maßnahmen muss ein Unternehmen ergreifen, um Chancen zur Verbesserung zu bestimmen und auszuwählen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Verbesserung von Produkten und Dienstleistungen",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Die Verbesserung der Ergebnisse des QM-Systems",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Vorbeugung oder Minderung unerwünschter Effekte",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Korrektur erwünschter Effekte",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Risikomanagement",
+    "isoClause": "ISO 9001:2015 Kap. 10.1",
+    "isoJustification": "Laut ISO 9001:2015 Kap. 10.1 muss die Organisation Chancen zur Verbesserung bestimmen. Dies umfasst: a) Verbesserung von Produkten/Dienstleistungen, b) Korrigieren/Vorbeugen unerwünschter Effekte, c) Verbesserung der Leistung/Wirksamkeit des QMS. Das Korrigieren 'erwünschter' Effekte (D) ergibt keinen Sinn.",
+    "infobox": "Die Norm fordert Verbesserungen sowohl auf Produkt-/Dienstleistungsebene als auch auf Ebene des gesamten Managementsystems.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "8_4.PNG",
+    "question": "Was sollte verbessert werden, wenn die DIN EN ISO 9001 den Begriff \"Fortlaufende Verbesserung\" verwendet?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Nur die Dokumentation des QMS",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Nur die Produkt- und Dienstleistungsqualität",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Die Gesamtleistung der Organisation",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Nur die Mitarbeiterzufriedenheit",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Risikomanagement",
+    "isoClause": "ISO 9001:2015 Kap. 10.3",
+    "isoJustification": "ISO 9001:2015 Kap. 10.3 fordert die fortlaufende Verbesserung der Eignung, Angemessenheit und Wirksamkeit des Qualitätsmanagementsystems, was letztlich der Gesamtleistung der Organisation zugutekommt. Einschränkungen mit 'Nur' (A, B, D) sind im Kontext von QMS immer falsch, da ganzheitliche Ansätze gefordert sind.",
+    "infobox": "Fortlaufende Verbesserung (KVP) bezieht sich auf die Leistungsfähigkeit der gesamten Organisation und aller ihrer Prozesse.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "8_5.PNG",
+    "question": "Welche Aussagen in Bezug auf Korrektur und Korrekturmaßnahme sind korrekt?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Korrektur ist die Fehlerbeseitigung, während Korrekturmaßnahme das Verhindern des erneuten Auftretens des Fehlers ist.",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Eine Korrektur kann in Verbindung mit einer Korrekturmaßnahme vorgenommen werden.",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Korrektur und Korrekturmaßnahme können synonym verwendet werden.",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Die DIN EN ISO 9001 spricht nur von Korrektur. Korrekturmaßnahmen kommen darin nicht vor.",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Risikomanagement",
+    "isoClause": "ISO 9000:2015 Kap. 3.12.2 / 3.12.3",
+    "isoJustification": "Gemäß den Definitionen der ISO 9000 ist eine 'Korrektur' (3.12.3) die Maßnahme zur Beseitigung eines erkannten Fehlers, während die 'Korrekturmaßnahme' (3.12.2) die Maßnahme zur Beseitigung der Ursache eines Fehlers ist, um dessen Wiederauftreten zu verhindern. Beide Begriffe werden in ISO 9001 (Kap. 10.2) verwendet und sind nicht synonym.",
+    "infobox": "Korrektur = Symptombekämpfung (Pflaster). Korrekturmaßnahme = Ursachenbekämpfung (Schuh austauschen, damit es keine Blasen mehr gibt).",
+    "isBroken": false
+  },
+  {
+    "imageFile": "8_6.PNG",
+    "question": "Welche Methoden zählen zum KVP?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Qualitätszirkel",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "FMEA",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Interne Audits",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "8D Report",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Risikomanagement",
+    "isoClause": "ISO 9001:2015 Kap. 10",
+    "isoJustification": "Alle genannten Methoden sind gängige und etablierte Werkzeuge im Qualitätsmanagement, die im Rahmen des Kontinuierlichen Verbesserungsprozesses (KVP) angewendet werden, um Schwachstellen aufzudecken, Ursachen zu analysieren und Verbesserungen herbeizuführen.",
+    "infobox": "Der KVP ist ein Prinzip. FMEA, 8D, Qualitätszirkel und Audits sind Werkzeuge, um dieses Prinzip im Alltag umzusetzen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "8_7.PNG",
+    "question": "Welche Organisationen können KVP nutzen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Jede Organisation, unabhängig von Größe, Typ und Art",
+        "isCorrect": true
+      },
+      {
+        "id": "B",
+        "text": "Nur Unternehmen, die in der Automobilindustrie tätig sind",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Organisationen, die eine ISO 9004-Zertifizierung anstreben",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Ausschließlich Organisationen mit einer ISO 9001-Zertifizierung",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Risikomanagement",
+    "isoClause": "ISO 9001:2015 Einführung",
+    "isoJustification": "Das Konzept der fortlaufenden Verbesserung (KVP) ist universell anwendbar. Weder Normen noch Branchenstandards schränken die Nutzung ein. ISO 9004 ist zudem eine Richtlinie (Guidance) und wird im Regelfall nicht zertifiziert.",
+    "infobox": "Gutes Management (und KVP) kennt keine Branchengrenzen oder Zertifikatspflichten.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "8_8.PNG",
+    "question": "Wie lauten die Phasen des kontinuierlichen Verbesserungsprozesses in der korrekten Reihenfolge?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Plan - Do - Check - Average",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Think - Plan - Correct - Act",
+        "isCorrect": false
+      },
+      {
+        "id": "C",
+        "text": "Act - Check - Plan - Do",
+        "isCorrect": false
+      },
+      {
+        "id": "D",
+        "text": "Plan - Do - Check - Act",
+        "isCorrect": true
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Risikomanagement",
+    "isoClause": "ISO 9001:2015 Kap. 0.3.2",
+    "isoJustification": "Der Deming-Kreis (PDCA-Zyklus) bildet die Grundlage für den KVP und das gesamte Qualitätsmanagementsystem der ISO 9001. Er besteht aus Plan (Planen), Do (Durchführen), Check (Prüfen) und Act (Handeln).",
+    "infobox": "PDCA ist das universelle Steuerungsprinzip in Managementsystemen.",
+    "isBroken": false
+  },
+  {
+    "imageFile": "8_9.PNG",
+    "question": "Was ist ein Qualitätszirkel?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Eine spezielle Form des PDCA-Zirkels",
+        "isCorrect": false
+      },
+      {
+        "id": "B",
+        "text": "Forum zur Diskussion von Qualitätsthemen",
+        "isCorrect": true
+      },
+      {
+        "id": "C",
+        "text": "Eine KVP-Methode",
+        "isCorrect": true
+      },
+      {
+        "id": "D",
+        "text": "Ein anderer Name für Qualitätsregelkreis",
+        "isCorrect": false
+      }
+    ],
+    "multipleChoice": true,
+    "category": "Risikomanagement",
+    "isoClause": "Qualitätsmanagement Grundlagen",
+    "isoJustification": "Ein Qualitätszirkel ist eine innerbetriebliche Arbeitsgruppe, in der Mitarbeiter (oft der gleichen Hierarchieebene) regelmäßig zusammenkommen, um Probleme und Qualitätsthemen zu diskutieren (B) und Lösungsansätze im Rahmen des KVP zu erarbeiten (C). Es ist kein Regelkreis und nicht mit dem PDCA-Zirkel identisch.",
+    "infobox": "Qualitätszirkel nutzen das Expertenwissen der Mitarbeiter vor Ort, um praxisnahe Verbesserungen zu erarbeiten.",
+    "isBroken": false
+  }
+]
