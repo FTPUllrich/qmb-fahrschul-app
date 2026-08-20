@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { initialQuestions } from './data/questionsData';
+import { maydellQuestions } from './data/maydellData';
 import Navbar from './components/Navbar';
 import StackProgress from './components/StackProgress';
 import QuestionCard from './components/QuestionCard';
@@ -49,6 +50,74 @@ export default function App() {
   });
 
   const [retryCount, setRetryCount] = useState(0);
+
+  // --- Maydell Stack State ---
+  const [maydellCategoryFilter, setMaydellCategoryFilter] = useState('ALL');
+  const [maydellStack, setMaydellStack] = useState(() => {
+    return [...maydellQuestions];
+  });
+  const [maydellMasteredIds, setMaydellMasteredIds] = useState(() => {
+    const saved = localStorage.getItem('qmb_maydell_mastered');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [maydellRetryCount, setMaydellRetryCount] = useState(0);
+
+  useEffect(() => {
+    localStorage.setItem('qmb_maydell_mastered', JSON.stringify(maydellMasteredIds));
+  }, [maydellMasteredIds]);
+
+  const maydellCategories = [...new Set(maydellQuestions.map(q => q.category))];
+  const maydellActiveDeck = maydellStack.filter(q => {
+    if (maydellCategoryFilter === 'ALL') return true;
+    return q.category === maydellCategoryFilter;
+  });
+
+  const handleMaydellAnswer = (questionId, isCorrect) => {
+    const currentQ = maydellQuestions.find(q => q.id === questionId);
+    if (!currentQ) return;
+
+    setStats(prev => {
+      const cat = currentQ.category || 'Allgemein';
+      const catPrev = prev.categoryStats[cat] || { total: 0, correct: 0 };
+      const newCat = {
+        total: catPrev.total + 1,
+        correct: catPrev.correct + (isCorrect ? 1 : 0)
+      };
+
+      return {
+        ...prev,
+        totalAnswered: prev.totalAnswered + 1,
+        correctCount: prev.correctCount + (isCorrect ? 1 : 0),
+        wrongCount: prev.wrongCount + (isCorrect ? 0 : 1),
+        categoryStats: { ...prev.categoryStats, [cat]: newCat },
+        history: [
+          ...prev.history,
+          {
+            questionId,
+            questionText: currentQ.question ? currentQ.question.substring(0, 60) + '...' : 'Bildfrage',
+            isoClause: currentQ.isoClause,
+            isCorrect,
+            timestamp: new Date().toISOString()
+          }
+        ]
+      };
+    });
+
+    if (isCorrect) {
+      setMaydellStack(prev => prev.filter(q => q.id !== questionId));
+      if (!maydellMasteredIds.includes(questionId)) {
+        setMaydellMasteredIds([...maydellMasteredIds, questionId]);
+      }
+    } else {
+      setMaydellRetryCount(prev => prev + 1);
+      setMaydellStack(prev => {
+        const remaining = prev.filter(q => q.id !== questionId);
+        return [...remaining, currentQ];
+      });
+    }
+  };
+  // --- End Maydell Stack State ---
+
 
   // Analytics & Stats
   const [stats, setStats] = useState(() => {
@@ -149,11 +218,8 @@ export default function App() {
       setRetryCount(prev => prev + 1);
       setQuestionsStack(prev => {
         const remaining = prev.filter(q => q.id !== questionId);
-        // Insert 2 slots after current position so it reappears quickly
-        const insertIndex = Math.min(2, remaining.length);
-        const newStack = [...remaining];
-        newStack.splice(insertIndex, 0, currentQ);
-        return newStack;
+        // An das Ende des Stapels anfügen
+        return [...remaining, currentQ];
       });
     }
   };
@@ -225,6 +291,30 @@ export default function App() {
             humorMode={humorMode}
             activeStackIndex={0}
             totalStackSize={activeDeck.length}
+          />
+        </>
+      )}
+
+
+      {activeTab === 'maydell' && (
+        <>
+          <StackProgress
+            activeCount={maydellActiveDeck.length}
+            retryCount={maydellRetryCount}
+            masteredCount={maydellMasteredIds.length}
+            totalCount={maydellQuestions.length}
+            accuracyRate={accuracyRate}
+            categoryFilter={maydellCategoryFilter}
+            setCategoryFilter={setMaydellCategoryFilter}
+            categories={maydellCategories}
+          />
+          <QuestionCard
+            question={maydellActiveDeck[0]}
+            onAnswer={handleMaydellAnswer}
+            dogMode={dogMode}
+            humorMode={humorMode}
+            activeStackIndex={0}
+            totalStackSize={maydellActiveDeck.length}
           />
         </>
       )}

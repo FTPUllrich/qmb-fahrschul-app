@@ -120,6 +120,16 @@ export default function QuestionCard({
         {question.question}
       </h2>
 
+      {question.imageFile && (
+        <div style={{ marginBottom: '24px', textAlign: 'center' }}>
+          <img 
+            src={`/images/maydell/QMB_MC_${question.imageFile.split('_')[0]}/${question.imageFile}`} 
+            alt="Frage Kontext" 
+            style={{ maxWidth: '100%', borderRadius: '8px', border: '1px solid var(--glass-border)' }} 
+          />
+        </div>
+      )}
+
       {/* Options List */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '28px' }}>
         {question.options.map((option) => {
