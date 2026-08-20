@@ -15,11 +15,11 @@ export default function Navbar({
 }) {
   const navItems = [
     { id: 'stack', label: 'Fahrschul-Stapel', icon: Layers },
-    { id: 'maydell', label: 'Maydells Fragen 100% legit', icon: Layers },
     { id: 'exam', label: 'TÜV-Prüfung', icon: Award },
     { id: 'glossary', label: 'QM-Sachbegriffe', icon: BookOpen },
     { id: 'importer', label: 'Bild-Scanner', icon: Image },
-    { id: 'stats', label: 'Statistik', icon: BarChart3 }
+    { id: 'stats', label: 'Statistik', icon: BarChart3 },
+    { id: 'maydell', label: 'Maydells Fragen 100% legit', icon: Layers }
   ];
 
   return (

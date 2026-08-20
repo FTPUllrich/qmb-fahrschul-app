@@ -9,7 +9,23 @@ import GlossaryView from './components/GlossaryView';
 import ImageImporterView from './components/ImageImporterView';
 import ExamModeView from './components/ExamModeView';
 
-export default function App() {
+
+  const getSortedCategories = (questions) => {
+    const rawCats = [...new Set(questions.map(q => q.category))];
+    const cleaned = rawCats.map(c => {
+      if (!c || c === 'undefined') return 'Allgemein';
+      return c;
+    });
+    const unique = [...new Set(cleaned)];
+    unique.sort((a, b) => {
+      const numA = parseInt(a.match(/^\d+/)?.[0] || '999', 10);
+      const numB = parseInt(b.match(/^\d+/)?.[0] || '999', 10);
+      if (numA !== numB) return numA - numB;
+      return a.localeCompare(b);
+    });
+    return unique;
+  };
+\nexport default function App() {
   const [activeTab, setActiveTab] = useState('stack');
 
   // Settings state
@@ -66,10 +82,11 @@ export default function App() {
     localStorage.setItem('qmb_maydell_mastered', JSON.stringify(maydellMasteredIds));
   }, [maydellMasteredIds]);
 
-  const maydellCategories = [...new Set(maydellQuestions.map(q => q.category))];
+  const maydellCategories = getSortedCategories(maydellQuestions);
   const maydellActiveDeck = maydellStack.filter(q => {
     if (maydellCategoryFilter === 'ALL') return true;
-    return q.category === maydellCategoryFilter;
+    const cat = (!q.category || q.category === 'undefined') ? 'Allgemein' : q.category;
+    return cat === maydellCategoryFilter;
   });
 
   const handleMaydellAnswer = (questionId, isCorrect) => {
@@ -159,12 +176,13 @@ export default function App() {
   }, [masteredIds]);
 
   // Categories list
-  const categories = [...new Set(allQuestions.map(q => q.category))];
+  const categories = getSortedCategories(allQuestions);
 
   // Filtered active stack based on category selection
   const activeDeck = questionsStack.filter(q => {
     if (categoryFilter === 'ALL') return true;
-    return q.category === categoryFilter;
+    const cat = (!q.category || q.category === 'undefined') ? 'Allgemein' : q.category;
+    return cat === categoryFilter;
   });
 
   // Driving school stack algorithm handler
