@@ -49,6 +49,21 @@ def generate_qmb_app():
       { "term": "Akkreditierung vs. Zertifizierung", "definition": "Akkreditierung (durch staatliche Stelle wie DAkkS) ist die Zulassung von Zertifizierungsstellen (z.B. TÜV). Zertifizierung ist die Prüfung unserer Fabrik.", "isoRef": "ISO/IEC 17021", "category": "QMB System", "beispiel": "🏛️ Industrie-Beispiel: Die DAkkS prüft den TÜV. Der TÜV kommt anschließend zu uns ins Werk und stellt das ISO 9001 Zertifikat aus." }
     ]
 
+    import glob
+    import os
+
+    maydell_q = []
+    for i in range(1, 10):
+        fpath = f"src/data/mc{i}_analyzed.json"
+        if os.path.exists(fpath):
+            with open(fpath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                for idx, q in enumerate(data):
+                    q['id'] = f"maydell-mc{i}-{idx}"
+                    q['category'] = q.get('category', 'Allgemein')
+                    maydell_q.append(q)
+    maydell_json = json.dumps(maydell_q, ensure_ascii=False, indent=2)
+
     questions_json = json.dumps(qmb_questions, ensure_ascii=False, indent=2)
     glossary_json = json.dumps(glossary, ensure_ascii=False, indent=2)
 
@@ -248,6 +263,7 @@ def generate_qmb_app():
           <button class="nav-btn" onclick="switchTab('exam')">🏆 TÜV-Prüfung</button>
           <button class="nav-btn" onclick="switchTab('glossary')">📖 Sachwörterbuch (QMF & QMB)</button>
           <button class="nav-btn" onclick="switchTab('stats')">📊 Statistik</button>
+          <button class="nav-btn" onclick="switchTab('maydell')">Maydell Fragen 100% legit</button>
         </nav>
 
         <div style="display: flex; gap: 8px;">
@@ -305,6 +321,54 @@ def generate_qmb_app():
       </div>
     </div>
 
+    <div id="tab-maydell" class="tab-content">
+
+      
+      <!-- Metrics Bar -->
+      <div class="glass-panel">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 14px;">
+          <div style="display: flex; gap: 24px; align-items: center;">
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Maydell Fragen Stapel</span>
+              <div id="maydell-remaining" style="font-size: 1.25rem; font-weight: 700; color: #fff;">0 Fragen</div>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Wiederholungen (Neugemischt)</span>
+              <div id="maydell-retries" style="font-size: 1.25rem; font-weight: 700; color: #fcd34d;">0 neu einsortiert</div>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Gemastert (Unten einsortiert)</span>
+              <div id="maydell-mastered" style="font-size: 1.25rem; font-weight: 700; color: #6ee7b7;">0 / 0</div>
+            </div>
+          </div>
+
+          <div>
+            <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 8px;">Thema:</span>
+            <select id="maydell-category-select" onchange="filterMaydellCategory()" style="padding: 8px 12px; border-radius: 10px; background: rgba(30, 41, 59, 0.8); color: #fff; border: 1px solid var(--border-color); outline: none;">
+              <!-- Populated dynamically via JS without duplicates -->
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;">
+            <span>💡 Fahrschulapp-Prinzip: Richtig = Nach unten | Falsch = Direkt neu untergemischt</span>
+            <span id="maydell-accuracy" style="font-weight: 700; color: #fff;">Richtig-Quote: 100%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="maydell-bar-mastered" class="progress-bar-fill" style="width: 0%;"></div>
+            <div id="maydell-bar-retry" class="progress-maydell-bar-retry" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question Card Container -->
+      <div id="maydell-question-card-container" class="glass-panel">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    </div>
     <!-- TAB 2: TÜV PRÜFUNGSSIMULATION -->
     <div id="tab-exam" class="tab-content">
       <div class="glass-panel" style="text-align: center; padding: 40px;">
@@ -341,7 +405,29 @@ def generate_qmb_app():
   </div>
 
   <script>
+
+    const maydellQuestionsData = {maydell_json};
+    let maydellStack = [...maydellQuestionsData];
+    let maydellMasteredIds = JSON.parse(localStorage.getItem('qmb_maydell_mastered_ids') || '[]');
+    let maydellRetryCount = 0;
+    let maydellSelectedOptions = [];
+    let maydellSubmitted = false;
+    let maydellActiveCategory = 'ALL';
+
+    function getSortedCategories(data) {{
+      const raw = [...new Set(data.map(q => q.category))];
+      const cleaned = raw.map(c => (!c || c === 'undefined') ? 'Allgemein' : c);
+      const unique = [...new Set(cleaned)];
+      return unique.sort((a,b) => {{
+         const nA = parseInt(a.match(/^\d+/) || '999', 10);
+         const nB = parseInt(b.match(/^\d+/) || '999', 10);
+         if (nA !== nB) return nA - nB;
+         return a.localeCompare(b);
+      }});
+    }}
+
     const allQuestionsData = {questions_json};
+
     const glossaryData = {glossary_json};
 
     let questionsStack = [...allQuestionsData];
@@ -355,7 +441,7 @@ def generate_qmb_app():
     let activeCategory = 'ALL';
 
     // Populate category dropdown cleanly without duplicates
-    const categories = ['ALL', ...new Set(allQuestionsData.map(q => q.category))];
+    const categories = ['ALL', ...getSortedCategories(allQuestionsData)];
     const catSelect = document.getElementById('category-select');
     catSelect.innerHTML = ''; // Clear default HTML options first!
     categories.forEach(c => {{
@@ -363,6 +449,16 @@ def generate_qmb_app():
       opt.value = c;
       opt.innerText = c === 'ALL' ? 'Alle QMB-Themen' : c;
       catSelect.appendChild(opt);
+    }});
+
+    const maydellCategories = ['ALL', ...getSortedCategories(maydellQuestionsData)];
+    const maydellCatSelect = document.getElementById('maydell-category-select');
+    maydellCatSelect.innerHTML = '';
+    maydellCategories.forEach(c => {{
+      const opt = document.createElement('option');
+      opt.value = c;
+      opt.innerText = c === 'ALL' ? 'Alle Maydell-Themen' : c;
+      maydellCatSelect.appendChild(opt);
     }});
 
     // Web Audio Synthesizer
@@ -425,6 +521,7 @@ def generate_qmb_app():
       event.target.classList.add('active');
       if (tabId === 'glossary') renderGlossary();
       if (tabId === 'stats') renderStats();
+      if (tabId === 'maydell') renderMaydellCard();
     }}
 
     function openDebateModal(draftText, isoText) {{
@@ -556,7 +653,7 @@ def generate_qmb_app():
       if (isCorrect) {{
         if (!masteredIds.includes(currentQ.id)) masteredIds.push(currentQ.id);
       }} else {{
-        questionsStack.splice(Math.min(2, questionsStack.length), 0, currentQ);
+        questionsStack.push(currentQ);
       }}
       localStorage.setItem('qmb_mastered_ids', JSON.stringify(masteredIds));
       renderQuestionCard();
@@ -624,6 +721,131 @@ def generate_qmb_app():
       renderQuestionCard();
     }}
 
+    
+    function filterMaydellCategory() {{
+      maydellActiveCategory = document.getElementById('maydell-category-select').value;
+      maydellStack = maydellQuestionsData.filter(q => {{
+        const cat = (!q.category || q.category === 'undefined') ? 'Allgemein' : q.category;
+        return maydellActiveCategory === 'ALL' || cat === maydellActiveCategory;
+      }});
+      maydellMasteredIds = JSON.parse(localStorage.getItem('qmb_maydell_mastered_ids') || '[]');
+      maydellRetryCount = 0;
+      renderMaydellCard();
+    }}
+
+    function renderMaydellCard() {{
+      const container = document.getElementById('maydell-question-card-container');
+      maydellSelectedOptions = [];
+      maydellSubmitted = false;
+
+      updateMaydellMetrics();
+
+      if (maydellStack.length === 0) {{
+        container.innerHTML = `
+          <div style="text-align: center; padding: 48px;">
+            <div style="font-size: 3rem; margin-bottom: 16px;">🎉</div>
+            <h2 style="color: #6ee7b7; margin-bottom: 8px;">Maydell Stapel komplett gemastert!</h2>
+            <button class="btn-primary" onclick="filterMaydellCategory()">Von vorne beginnen</button>
+          </div>
+        `;
+        return;
+      }}
+
+      const q = maydellStack[0];
+      const isMulti = q.options.filter(o => o.isCorrect).length > 1 || q.multipleChoice;
+
+      let imageHtml = '';
+      if (q.imageFile) {{
+        const mcDir = q.imageFile.split('_')[0];
+        imageHtml = `<div style="text-align: center; margin-bottom: 24px;"><img src="images/maydell/QMB_MC_${{mcDir}}/${{q.imageFile}}" alt="Frage Kontext" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border-color);"></div>`;
+      }}
+
+      container.innerHTML = `
+        <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
+          <span class="badge badge-purple">${{q.category || 'Allgemein'}}</span>
+        </div>
+        <h2 style="font-size: 1.3rem; margin-bottom: 24px;">${{q.question || 'Bildfrage'}}</h2>
+        ${{imageHtml}}
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+          ${{q.options.map(opt => `
+            <div id="m-opt-${{opt.id}}" class="option-item" onclick="toggleMaydellOption('${{opt.id}}', ${{isMulti}})">
+              <div class="opt-box">${{opt.id}}</div>
+              <div>${{opt.text}}</div>
+            </div>
+          `).join('')}}
+        </div>
+        <div id="maydell-feedback-area"></div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 16px;">
+          <button id="maydell-submit-btn" class="btn-primary" onclick="submitMaydellAnswer()">Antwort Prüfen</button>
+        </div>
+      `;
+    }}
+
+    function toggleMaydellOption(id, isMulti) {{
+      if (maydellSubmitted) return;
+      const el = document.getElementById('m-opt-' + id);
+      if (maydellSelectedOptions.includes(id)) {{
+        maydellSelectedOptions = maydellSelectedOptions.filter(x => x !== id);
+        el.classList.remove('selected');
+      }} else {{
+        if (!isMulti) {{
+          maydellSelectedOptions = [];
+          document.querySelectorAll('#maydell-question-card-container .option-item').forEach(e => e.classList.remove('selected'));
+        }}
+        maydellSelectedOptions.push(id);
+        el.classList.add('selected');
+      }}
+    }}
+
+    function submitMaydellAnswer() {{
+      if (maydellSelectedOptions.length === 0 || maydellSubmitted) return;
+      maydellSubmitted = true;
+
+      const q = maydellStack[0];
+      const correctIds = q.options.filter(o => o.isCorrect).map(o => o.id);
+      const isCorrect = maydellSelectedOptions.length === correctIds.length && maydellSelectedOptions.every(id => correctIds.includes(id));
+
+      q.options.forEach(opt => {{
+        const el = document.getElementById('m-opt-' + opt.id);
+        if (opt.isCorrect) el.classList.add('correct');
+        else if (maydellSelectedOptions.includes(opt.id)) el.classList.add('wrong');
+      }});
+
+      const feedback = document.getElementById('maydell-feedback-area');
+      if (isCorrect) {{
+        if (soundEnabled) playCorrectSound();
+        triggerConfetti();
+        feedback.innerHTML = `<div class="glass-card" style="background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.4);"><strong style="color: #6ee7b7;">✅ Richtig!</strong></div>`;
+      }} else {{
+        if (soundEnabled) playWrongSound();
+        maydellRetryCount++;
+        feedback.innerHTML = `<div class="glass-card" style="background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.4);"><strong style="color: #fcd34d;">🧐 Falsch! Ab ans Ende des Stapels!</strong></div>`;
+      }}
+
+      document.getElementById('maydell-submit-btn').outerHTML = `<button class="btn-primary" onclick="nextMaydellQuestion(${{isCorrect}})">Nächste Frage ➔</button>`;
+    }}
+
+    function nextMaydellQuestion(isCorrect) {{
+      const currentQ = maydellStack.shift();
+      if (isCorrect) {{
+        if (!maydellMasteredIds.includes(currentQ.id)) maydellMasteredIds.push(currentQ.id);
+      }} else {{
+        maydellStack.push(currentQ);
+      }}
+      localStorage.setItem('qmb_maydell_mastered_ids', JSON.stringify(maydellMasteredIds));
+      renderMaydellCard();
+    }}
+
+    function updateMaydellMetrics() {{
+      document.getElementById('maydell-remaining').innerText = maydellStack.length + " Fragen";
+      document.getElementById('maydell-retries').innerText = maydellRetryCount + " neu einsortiert";
+      document.getElementById('maydell-mastered').innerText = maydellMasteredIds.length + " / " + maydellQuestionsData.length;
+      const rate = (maydellMasteredIds.length + maydellRetryCount) > 0 ? Math.round((maydellMasteredIds.length / (maydellMasteredIds.length + maydellRetryCount)) * 100) : 100;
+      document.getElementById('maydell-accuracy').innerText = "Richtig-Quote: " + rate + "%";
+      const mPct = (maydellMasteredIds.length / maydellQuestionsData.length) * 100;
+      document.getElementById('maydell-bar-mastered').style.width = mPct + "%";
+    }}
+
     function resetStats() {{
       if (confirm("Möchtest du alle Lernstatistiken zurücksetzen?")) {{
         masteredIds = []; retryCount = 0;
@@ -634,6 +856,7 @@ def generate_qmb_app():
     }}
 
     renderQuestionCard();
+    renderMaydellCard();
   </script>
 </body>
 </html>
