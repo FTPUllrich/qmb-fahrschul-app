@@ -889,7 +889,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Freibrief, um unausgereifte Produkte ohne Tests auf den Markt zu werfen",
+        "text": "Die dauerhafte Befreiung von jeglicher Produktbeobachtungs- und Rückrufpflicht nach dem Inverkehrbringen",
         "isCorrect": false
       }
     ],
@@ -1385,7 +1385,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "7. Wann gibt es Urlaub? (Privatplanung)",
+        "text": "7. Wie hoch ist das Vertriebsbudget? (Marketingplanung)",
         "isCorrect": false
       }
     ],
@@ -3648,7 +3648,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Formblatt zur Urlaubsplanung der Schichtleiter",
+        "text": "Ein Formblatt zur Erfassung von Rohstoffpreisen im Einkauf",
         "isCorrect": false
       }
     ],
@@ -3834,7 +3834,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Formblatt zur Erfassung von Urlaubswünschen",
+        "text": "Ein Formblatt zur Abrechnung von Dienstreisen",
         "isCorrect": false
       }
     ],
@@ -10494,7 +10494,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Eine Pflichtprüfung durch die Polizei",
+        "text": "Ein formelles Ermittlungsverfahren durch staatliche Behörden",
         "isCorrect": false
       }
     ],
@@ -11114,7 +11114,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Damit zwei Personen gleichzeitig denselben Stuhl besetzen können",
+        "text": "Damit die Gesamtverantwortung für Prozessabweichungen auf den Stellvertreter abgewälzt werden kann",
         "isCorrect": false
       }
     ],
@@ -11145,7 +11145,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Lokale Blumenhändler für Bürodekoration",
+        "text": "C-Lieferanten für unkritischen Standard-Bürobedarf mit minimalem Einkaufsvolumen",
         "isCorrect": false
       }
     ],
@@ -11300,7 +11300,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Eine Kollektion von sieben mechanischen Schraubenschlüsseln",
+        "text": "Ein Set aus sieben mechanischen Prüflehren zur Endabnahme",
         "isCorrect": false
       }
     ],
