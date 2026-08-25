@@ -982,7 +982,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die gesetzliche Pflicht, jedes Produkt ausnahmslos mit einem aktiven RFID-Chip auszustatten",
+        "text": "Die ständige Überwachung von Mitarbeitern per GPS am Arbeitsplatz",
         "isCorrect": false
       }
     ],
@@ -1013,7 +1013,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Der vollständige Ausschluss aller zivilrechtlichen Schadensersatzansprüche geschädigter Kunden",
+        "text": "Ein automatisches Verbot, in Zukunft jemals wieder Produkte herzustellen",
         "isCorrect": false
       }
     ],
@@ -1044,7 +1044,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die vollständige Delegation der strafrechtlichen Gesamtverantwortung auf den externen Auditor",
+        "text": "Generelle persönliche Haftungsfreistellung für alle vorsätzlichen Straftaten im Betrieb",
         "isCorrect": false
       }
     ],
@@ -1075,7 +1075,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die Produktsicherheit wird allein durch das Unterzeichnen einer Konformitätserklärung ohne technische Prüfungen garantiert.",
+        "text": "Rechtliche Produktsicherheit ist eine reine Formalität ohne praktische Relevanz.",
         "isCorrect": false
       }
     ],
@@ -1261,7 +1261,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Zufallsprozesse ohne definierten Input und Output",
+        "text": "Kaffeepausenprozesse ohne betrieblichen Bezug",
         "isCorrect": false
       }
     ],
@@ -1292,7 +1292,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Einen reinen Verwaltungsprozess ohne jeden Bezug zum externen Kundennutzen",
+        "text": "Einen Prozess, der ausschließlich der internen Spesenabrechnung dient",
         "isCorrect": false
       }
     ],
@@ -1323,7 +1323,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Sie treten an die Stelle der Kernprozesse und wickeln den Kundenauftrag allein ab",
+        "text": "Sie dienen ausschließlich dazu, Kernprozesse zu verlangsamen",
         "isCorrect": false
       }
     ],
@@ -1354,7 +1354,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ausschließliche Bearbeitung von operativen Reklamationsfällen am Band",
+        "text": "Eigenhändige Verpackung aller Pakete im Versand durch den Geschäftsführer",
         "isCorrect": false
       }
     ],
@@ -1943,7 +1943,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die rein visuelle Überprüfung eines Bauteils ohne Messwerte",
+        "text": "Die Fähigkeit eines Mitarbeiters, schnell Kaffee zu kochen",
         "isCorrect": false
       }
     ],
@@ -2036,7 +2036,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die Ermittlung der Langzeitstreuung unter wechselnden Bedienern und Chargen",
+        "text": "Eine Prüfung, ob die Maschine hübsch lackiert ist",
         "isCorrect": false
       }
     ],
@@ -2067,7 +2067,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die reine Kalibrierung von Bürowerkzeugen ohne Prüfmittelbezug",
+        "text": "Eine Prüfung der Buchhaltungssoftware",
         "isCorrect": false
       }
     ],
@@ -2129,7 +2129,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die rein rechnerische Genauigkeit der CAQ-Software ohne Bedienereinfluss",
+        "text": "Die Farbe des Messschiebers",
         "isCorrect": false
       }
     ],
@@ -2284,7 +2284,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Reine Personalkostensteigerungen durch tarifliche Gehaltserhöhungen",
+        "text": "Kosten für Kaffeebohnen in der Kantine",
         "isCorrect": false
       }
     ],
@@ -2408,7 +2408,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die starre Fertigung auf Vorrat nach langfristigen Verkaufsprognosen (Push-Prinzip)",
+        "text": "Dass Mitarbeiter Teile mit Seilen über den Boden ziehen müssen",
         "isCorrect": false
       }
     ],
@@ -2439,7 +2439,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die Verlagerung aller Rüstaktivitäten in die Hauptbetriebszeit bei stehender Linie",
+        "text": "Ein Verbot, Werkzeuge jemals zu wechseln",
         "isCorrect": false
       }
     ],
@@ -2501,7 +2501,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Drei gesetzliche Prüfsiegel für den Export nach Asien",
+        "text": "Drei japanische Kampfsportarten für Führungskräfte",
         "isCorrect": false
       }
     ],
@@ -2532,7 +2532,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Diagramm zur reinen Erfassung von Kundenadressen",
+        "text": "Ein Strafzettel für Falschparker auf dem Werksgelände",
         "isCorrect": false
       }
     ],
@@ -2656,7 +2656,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Den zeitlichen Verlauf von Einzelmesswerten als Liniendiagramm",
+        "text": "Die Telefonnummern der Instandhalter",
         "isCorrect": false
       }
     ],
@@ -2687,7 +2687,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Einen Netzplan zur logistischen Reihenfolgeplanung von Fertigungsaufträgen",
+        "text": "Einen Dienstplan für Urlaubsvertretungen",
         "isCorrect": false
       }
     ],
@@ -2749,7 +2749,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Eine chronologische Zeitleiste zur Überwachung von Projektterminen",
+        "text": "Ein Menüplan für Fischgerichte in der Betriebskantine",
         "isCorrect": false
       }
     ],
@@ -2780,7 +2780,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die fünfmalige Wiederholung desselben Fertigungsschritts zur Fehlerprüfung",
+        "text": "Ein Verhör durch die Betriebspolizei",
         "isCorrect": false
       }
     ],
@@ -2811,7 +2811,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die nachträgliche Dokumentation von Kundenbeschwerden nach Serienauslauf",
+        "text": "Die Erstellung von Rechnungen an Kunden",
         "isCorrect": false
       }
     ],
@@ -2873,7 +2873,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein reiner Dienstplan für das Instandhaltungspersonal",
+        "text": "Ein Fahrplan für die Werksbahn",
         "isCorrect": false
       }
     ],
@@ -2904,7 +2904,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Eine mündliche Vorankündigung ohne Messprotokolle und Zeichnungen",
+        "text": "Ein formloses Telefongespräch ohne schriftliche Unterlagen",
         "isCorrect": false
       }
     ],
@@ -2997,7 +2997,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein CAD-Konstruktionsmodell zur FEM-Spannungsberechnung",
+        "text": "Eine Nudelanleitung für die Kantine",
         "isCorrect": false
       }
     ],
@@ -3028,7 +3028,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Eine getrennte Lagerhalle für reklamierte Bauteile",
+        "text": "Eine unterirdische Bunkerfertigung ohne Fenster",
         "isCorrect": false
       }
     ],
@@ -3059,7 +3059,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die Führung von Mitarbeitern ausschließlich über schriftliche Monatsberichte",
+        "text": "Einkaufen im Supermarkt während der Arbeitszeit",
         "isCorrect": false
       }
     ],
@@ -3085,7 +3085,7 @@ export const initialQuestions = [
       },
       {
         "id": "C",
-        "text": "Eine juristische Haftungsform für Werkleiter in Japan",
+        "text": "Ein japanisches Computer-Betriebssystem",
         "isCorrect": false
       },
       {
@@ -3121,7 +3121,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein digitales Zeiterfassungssystem für die Lohnbuchhaltung",
+        "text": "Eine Musikanlage für Werksfeste",
         "isCorrect": false
       }
     ],
@@ -3183,7 +3183,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die mittlere Dauer von QM-Schulungen der Mitarbeiter",
+        "text": "Die Dauer der Mittagspause",
         "isCorrect": false
       }
     ],
@@ -3214,7 +3214,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die durchschnittliche Zeitspanne von der Kundenanfrage bis zum Angebot",
+        "text": "Die Garantiezeit eines Neuwagens",
         "isCorrect": false
       }
     ],
@@ -3245,7 +3245,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die Vernichtung aller Prüfprotokolle nach der Endabnahme",
+        "text": "Das Entfernen aller Typenschilder vor dem Versand",
         "isCorrect": false
       }
     ],
@@ -3431,7 +3431,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein vollmanuelles Verfahren, bei dem der Werker Maschinen per Hand kurbelt",
+        "text": "Ein japanisches Heißgetränk",
         "isCorrect": false
       }
     ],
@@ -3493,7 +3493,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die ausschließliche Dokumentation von Kennzahlen in verschlossenen Ordnern",
+        "text": "Das Verdecken aller Bildschirme mit Vorhängen",
         "isCorrect": false
       }
     ],
@@ -3524,7 +3524,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die Produktion maximaler Losgrößen zur Minimierung der Stückkosten",
+        "text": "Die Anweisung, alle Maschinen auf halber Kraft laufen zu lassen",
         "isCorrect": false
       }
     ],
@@ -3555,7 +3555,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die Abnutzung von Förderbändern durch Überlastung",
+        "text": "Einen Defekt an einer mechanischen Antriebsfeder",
         "isCorrect": false
       }
     ],
@@ -3586,7 +3586,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Unkoordinierte Sonderfahrten bei akutem Materialmangel",
+        "text": "Den täglichen Einkauf von Frischmilch für die Cafeteria",
         "isCorrect": false
       }
     ],
@@ -3617,7 +3617,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein zentrales Hochregallager für unbegrenzte Jahresbestände",
+        "text": "Ein Lebensmittelladen auf dem Werksgelände",
         "isCorrect": false
       }
     ],
@@ -3648,7 +3648,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Formblatt zur Urlaubsplanung der Schichtleiter",
+        "text": "Ein Formular zur Beantragung von Überstunden",
         "isCorrect": false
       }
     ],
@@ -3710,7 +3710,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die schrittweise, kontinuierliche Verbesserung in kleinen Schritten (Kaizen)",
+        "text": "Das Verbot, Computer im Unternehmen zu nutzen",
         "isCorrect": false
       }
     ],
@@ -3772,7 +3772,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die gleichzeitige Überlastung aller Arbeitsstationen zur Scheinauslastung",
+        "text": "Die Anweisung, Engpässe geheim zu halten",
         "isCorrect": false
       }
     ],
@@ -3803,7 +3803,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Auditverfahren zur Überprüfung von Brandschutzvorschriften",
+        "text": "Eine Zubereitungsart für Meeresfrüchte",
         "isCorrect": false
       }
     ],
@@ -3834,7 +3834,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Formblatt zur Erfassung von Urlaubswünschen",
+        "text": "Ein Notizblock für private Einkaufslisten",
         "isCorrect": false
       }
     ],
@@ -3865,7 +3865,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Eine Methode zur Messung der elektrischen Stromstärke",
+        "text": "Ein Science-Fiction-Film",
         "isCorrect": false
       }
     ],
@@ -3896,7 +3896,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein rechtliches Vertragswerk zur Regelung von Lieferantenrabatten",
+        "text": "Ein juristischer Ehevertrag",
         "isCorrect": false
       }
     ],
@@ -3927,7 +3927,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Organigramm zur Darstellung von disziplinarischen Berichtswegen",
+        "text": "Ein botanischer Bestimmungsatlas für Laubbäume",
         "isCorrect": false
       }
     ],
@@ -3958,7 +3958,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Schaltdiagramm zur Messung der elektrischen Netzspannung",
+        "text": "Ein Parkplatzdiagramm für LKWs",
         "isCorrect": false
       }
     ],
@@ -3989,7 +3989,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Eine Kennzahl zur Bestimmung der maximalen Lagerauslastung",
+        "text": "Eine Formel zur Berechnung von Steuernachzahlungen",
         "isCorrect": false
       }
     ],
@@ -4020,7 +4020,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die Annahme, dass Produktfehler durch nachträgliche 100%-Sortierprüfungen wirtschaftlich beherrscht werden können",
+        "text": "Die Behauptung, dass Menschen Roboter sind, die niemals schlafen müssen",
         "isCorrect": false
       }
     ],
@@ -4082,7 +4082,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Dass Prüfkosten grundsätzlich das Zehnfache der Fehlerverhütungskosten betragen müssen",
+        "text": "Dass man Rechnungen immer mit zehn Nullen schreiben muss",
         "isCorrect": false
       }
     ],
@@ -4113,7 +4113,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ausschließlich die bilanziellen Abschreibungen auf Gebäude und Liegenschaften",
+        "text": "Den Verlust des Büroschlüssels",
         "isCorrect": false
       }
     ],
@@ -4144,7 +4144,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die vollständige Auslagerung aller Risiken auf Vorlieferanten ohne interne Prüfung",
+        "text": "Das Ausfüllen von Lottoscheinen auf Unternehmenskosten",
         "isCorrect": false
       }
     ],
@@ -4175,7 +4175,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Prüfplan zur Erfassung attributiver Stichproben an Maschinen",
+        "text": "Ein Kalender für Feiertage",
         "isCorrect": false
       }
     ],
@@ -4206,7 +4206,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Einen Standardarbeitsplan für den regulären Einschichtbetrieb",
+        "text": "Einen Fluchtplan für den Feierabendverkehr",
         "isCorrect": false
       }
     ],
@@ -4237,7 +4237,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Prozesslenkung dient ausschließlich der Erhöhung von Prozesskosten",
+        "text": "Beide Begriffe verbieten jegliche Dokumentation.",
         "isCorrect": false
       }
     ],
@@ -4268,7 +4268,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein redundantes Backup-Rechenzentrum ohne Verbindung zur Fertigung",
+        "text": "Ein Doppelgänger des Werksleiters für Pressefotos",
         "isCorrect": false
       }
     ],
@@ -4299,7 +4299,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die rein reaktive Schadensbehebung erst nach eingetretenem Maschinenausfall (korrektive Instandhaltung)",
+        "text": "Die Reparatur einer Maschine erst nachdem sie komplett zerstört ist",
         "isCorrect": false
       }
     ],
@@ -4330,7 +4330,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Qualitätsmanagement ersetzt vollständig die Notwendigkeit von qualifiziertem Fachpersonal.",
+        "text": "Qualitätsmanagement dient ausschließlich der Erzeugung von Aktenordnern für Audits.",
         "isCorrect": false
       }
     ],
@@ -5100,7 +5100,7 @@ export const initialQuestions = [
       },
       {
         "id": "C",
-        "text": "Eine unangekündigte Personalkontrolle zur disziplinarischen Rüge von Mitarbeitern",
+        "text": "Ein anonymer Spionageeinsatz zur heimlichen Überwachung",
         "isCorrect": false
       },
       {
@@ -5193,7 +5193,7 @@ export const initialQuestions = [
       },
       {
         "id": "C",
-        "text": "Ein unveränderliches Pflichtenheft mit starrem Fünfjahres-Horizont",
+        "text": "Ein Papierkorb für verworfene Ideen",
         "isCorrect": false
       },
       {
@@ -5446,7 +5446,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Marketing-FMEA zur Ermittlung von Werbebudgets",
+        "text": "Kaffee-FMEA zur Auswahl von Pausengetränken",
         "isCorrect": false
       }
     ],
@@ -5632,7 +5632,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Messprotokoll zur Erfassung von Werkstückabmessungen",
+        "text": "Eine geheimzuhaltende Liste ohne praktischen Nutzen",
         "isCorrect": false
       }
     ],
@@ -6211,7 +6211,7 @@ export const initialQuestions = [
       },
       {
         "id": "B",
-        "text": "Ein bloßer Kundenwunsch nach zusätzlichen, nicht vertraglich vereinbarten Leistungen",
+        "text": "Jede Meinungsverschiedenheit in der Kaffeepause",
         "isCorrect": false
       },
       {
@@ -6469,7 +6469,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die bloße Symptombeschreibung ohne systematische Suche nach der Wurzelursache",
+        "text": "Kaffeesatzlesen und Losentscheid",
         "isCorrect": false
       }
     ],
@@ -6810,7 +6810,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein reguläres Bereitstellungslager für sofort lieferbare Serienprodukte",
+        "text": "Einen beliebigen Abstellplatz für Kaffeetassen in der Werkstatt",
         "isCorrect": false
       }
     ],
@@ -8608,7 +8608,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Beliebige Bereichsausschlüsse zur Verschleierung bekannter Qualitätsmängel",
+        "text": "Private Urlaubszeiten der Vorstandsmitglieder",
         "isCorrect": false
       }
     ],
@@ -8794,7 +8794,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Sie muss ausschließlich für die Geschäftsleitung zugänglich sein und darf der Belegschaft nicht vermittelt werden.",
+        "text": "Sie muss streng geheim gehalten werden und darf Mitarbeitern nicht gezeigt werden.",
         "isCorrect": false
       }
     ],
@@ -9879,7 +9879,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die sofortige disziplinarische Rüge von Mitarbeitern bei festgestellten Abweichungen",
+        "text": "Geheime Absprachen hinter verschlossenen Türen ohne Erklärung",
         "isCorrect": false
       }
     ],
@@ -10003,7 +10003,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Audit, bei dem gleichzeitig mehrere unabhängige Organisationen gemeinsam zertifiziert werden",
+        "text": "Ein Audit, das mit einem privaten Urlaub kombiniert wird",
         "isCorrect": false
       }
     ],
@@ -10432,7 +10432,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Dass Prozesse ohne jegliche Nachweise und Dokumente nach reinem Bauchgefühl ablaufen",
+        "text": "Dass der Prozess geheim gehalten wird",
         "isCorrect": false
       }
     ],
@@ -10928,7 +10928,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein externer Berater, der die alleinige strafrechtliche Verantwortung für alle Risiken übernimmt",
+        "text": "Glücksspielbeauftragter zur Vorhersage von Lottozahlen",
         "isCorrect": false
       }
     ],
