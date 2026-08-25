@@ -1883,11 +1883,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Informed: Wer wird über das Ergebnis informiert?",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Remote: Wer darf dauerhaft ohne Rückmeldung im Homeoffice bleiben?",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -2165,8 +2160,8 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Alle Messwerte müssen immer exakt denselben Wert 0,000 haben.",
-        "isCorrect": false
+        "text": "Im Bereich Mittelwert ± 3 Sigma liegen ca. 99,73 % aller Werte.",
+        "isCorrect": true
       }
     ],
     "multipleChoice": true,
@@ -2477,11 +2472,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Ausschuss und Nacharbeit (Fehlerhafte Produkte)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Sorgfältige Qualitätsprüfungen als Verschwendung verbieten",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -3348,8 +3338,8 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Private Hobbys und Freizeitaktivitäten der Kunden erfassen",
-        "isCorrect": false
+        "text": "Kundenanforderungen und Kundenfeedbacks nach der Lieferung",
+        "isCorrect": true
       }
     ],
     "multipleChoice": true,
@@ -3691,11 +3681,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Level 4 (Quantitativ gemanagt) & Level 5 (Optimierend): Prozesse werden statistisch beherrscht und kontinuierlich innovativ verbessert.",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Level 6: Vollständige Abschaffung aller Unternehmensprozesse",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -4068,11 +4053,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Investitionen in Fehlerverhütung senken die teuren externen Fehlerkosten überproportional.",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "4. Kaffeepausenkosten der Geschäftsführung",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -4538,11 +4518,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Reagieren auf Veränderung ist wichtiger als das starre Befolgen eines Plans.",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Starres Beharren auf veralteten Plänen ohne jede Anpassung an neue Erkenntnisse",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -5380,11 +5355,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Überwachung, Überprüfung sowie Kommunikation und Konsultation",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Sofortiges Löschen aller Risikoberichte zur Vermeidung von Unruhe",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -5416,11 +5386,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Risikoakzeptanz / Risikobeibehaltung (bewusste Entscheidung, das Restrisiko zu tragen)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Risikoverharmlosung durch Vertuschen und Verschweigen von Gefahren",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -5574,8 +5539,8 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Das Lieblingsessen des Prüfers am Prüfungstag",
-        "isCorrect": false
+        "text": "Kaum wahrnehmbarer Mangel ohne Funktionseinschränkung (B = 1-3)",
+        "isCorrect": true
       }
     ],
     "multipleChoice": true,
@@ -6163,8 +6128,8 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Geheime Absprachen ohne schriftlichen Vertrag oder Spezifikation",
-        "isCorrect": false
+        "text": "Recht auf Überprüfung und Auditierung beim Lieferanten vor Ort",
+        "isCorrect": true
       }
     ],
     "multipleChoice": true,
@@ -6382,11 +6347,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Umwidmung / Einstufung für eine andere (unkritischere) Verwendung (Regrading)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Heimliches Weiterschicken an den Kunden in der Hoffnung, dass niemand etwas merkt",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -6943,8 +6903,8 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Kosten für private Urlaubsreisen der Geschäftsführung",
-        "isCorrect": false
+        "text": "Externe Fehlerkosten (z.B. Reklamationsbearbeitung, Garantie, Produktrückruf beim Kunden)",
+        "isCorrect": true
       }
     ],
     "multipleChoice": true,
@@ -7005,8 +6965,8 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Freie Selbsteichung mit dem Daumen ohne jedes Referenznormal",
-        "isCorrect": false
+        "text": "Prüfmittel müssen vor unzulässigen Justierungen und Beschädigung geschützt werden.",
+        "isCorrect": true
       }
     ],
     "multipleChoice": true,
@@ -7165,8 +7125,8 @@ export const initialQuestions = [
       },
       {
         "id": "E",
-        "text": "Kapitel 1: Allgemeine Vorworte ohne normative Nachweispflicht",
-        "isCorrect": false
+        "text": "Kapitel 9.2: Nachweise über die Durchführung von internen Audits und Auditergebnisse",
+        "isCorrect": true
       }
     ],
     "multipleChoice": true,
@@ -7229,11 +7189,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Aufbewahrung und termingerechte Aussonderung / Archivierung",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Öffentliche Verbrennung veralteter Festplatten im Werkshof",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -7389,11 +7344,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Ebene 4 (Basis): Nachweise, Protokolle, Aufzeichnungen (Ausgefüllte Belege)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Ebene 5: Private Kochrezepte der Belegschaft",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -7456,11 +7406,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Seitenzahl (z.B. Seite X von Y)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Horoskop des Tages für den Schichtleiter",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -8050,11 +7995,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "4. Seiketsu (Standardisieren) & 5. Shitsuke (Selbstdisziplin / Ständige Einhaltung)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Chaos walten lassen und alle Standards ignorieren",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -8179,11 +8119,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Matrixdiagramm, Portfoliodiagramm, Problementscheidungsplan und Netzplan",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Kaffeesatzleserei und Würfeln",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -8370,11 +8305,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Control (Verbesserung nachhaltig absichern und überwachen)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Destroy (Zerstörung des Arbeitsplatzes)",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -8592,11 +8522,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "4.4: Qualitätsmanagementsystem und seine Prozesse",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "4.5: Beliebige Wunschkonzerte",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -8721,11 +8646,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Sicherstellung der Aufrechterhaltung der Integrität des QMS bei geplanten Änderungen",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Festlegung der privaten Urlaubsziele aller Mitarbeiter",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -8757,11 +8677,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Eigentümer / Gesellschafter, Banken, Behörden und gesetzgebende Stellen",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Haustiere der Belegschaft",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -8824,11 +8739,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Ein Unternehmen darf die Funktion eines QMB in der Praxis weiterhin etablieren und benennen.",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Ein QMB ist ab Revision 2015 in allen Betrieben gesetzlich streng verboten.",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -8984,11 +8894,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Sie müssen überwacht, vermittelt und bei Bedarf aktualisiert werden.",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Sie müssen grundsätzlich geheim gehalten werden und dürfen Mitarbeitern nicht gezeigt werden.",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9020,11 +8925,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Wann die Maßnahme abgeschlossen sein wird und wie die Ergebnisse bewertet werden",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Wer am lautesten protestiert, bestimmt die Maßnahmen",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9056,11 +8956,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Die Verfügbarkeit von Ressourcen sowie die Neuzuweisung von Befugnissen müssen geregelt werden.",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Änderungen müssen heimlich über Nacht ohne Dokumentation eingeführt werden.",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9092,11 +8987,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Ressourcen zur Überwachung und Messung (Prüfmittel, Kap. 7.1.5) sowie Wissen der Organisation (Kap. 7.1.6)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Bereitstellung von Spielautomaten in der Werkstatt",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9159,11 +9049,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Angemessene dokumentierte Informationen als Nachweis der Kompetenz aufbewahren",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Vollständiger Verzicht auf jede Form von Ausbildung oder Einweisung",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9226,11 +9111,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Wie kommuniziert wird (Kanal/Medium) und wer kommuniziert (Verantwortlicher)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Wie viel Schokolade während der Besprechung gegessen werden darf",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9262,11 +9142,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Wirksamkeit der Maßnahmen zum Umgang mit Risiken und Chancen",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Horoskope und persönliche Gerüchte über Belegschaftsmitglieder",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9298,11 +9173,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Dokumentierte Informationen als Nachweis über die Ergebnisse müssen aufbewahrt werden",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Automatische Auszahlung von Lottogewinnen",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9675,11 +9545,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "7. Risikobasierter Ansatz (Berücksichtigung von Risiken und Chancen bei Planung und Durchführung)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Bestrafungsansatz (Mitarbeiter disziplinarisch rügen)",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9835,11 +9700,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "4. Abschlussgespräch (Präsentation der Ergebnisse, Abweichungen und nächsten Schritte)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Öffentliche Bloßstellung von Mitarbeitern im Werksfunk",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -9902,11 +9762,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Positive Aspekte / Stärken (hervorzuhebende Best Practices)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Persönliche Beleidigungen und subjektive Gerüchte",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -10093,11 +9948,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Jahr 3: Re-Zertifizierungsaudit (Wiederholaudit vor Ablauf der 3 Jahre)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Jahr 4: Automatische ewige Gültigkeit ohne weitere Audits",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -10465,11 +10315,6 @@ export const initialQuestions = [
         "id": "C",
         "text": "Zusammenfassung der Konformität, Feststellungen, Abweichungen und Schlussfolgerungen",
         "isCorrect": true
-      },
-      {
-        "id": "D",
-        "text": "Persönliche Beleidigungen und subjektive Gerüchte",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -10718,11 +10563,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "ISO 19011: Leitfaden zur Auditierung von Managementsystemen",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "ISO 9005: Gesetzliche Bußgeldtabelle für Schichtleiter",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -11033,11 +10873,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Gesetzliche und behördliche Vorschriften der Branche",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Anonyme Hassbriefe und Gerüchteküchen",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
@@ -11224,11 +11059,6 @@ export const initialQuestions = [
         "id": "D",
         "text": "Kapitel 6.2 (Festlegung der Qualitätsziele)",
         "isCorrect": true
-      },
-      {
-        "id": "E",
-        "text": "Kapitel 1: Vorwort ohne normative Anforderungen",
-        "isCorrect": false
       }
     ],
     "multipleChoice": true,
