@@ -889,7 +889,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Die dauerhafte Befreiung von jeglicher Produktbeobachtungs- und Rückrufpflicht nach dem Inverkehrbringen",
+        "text": "Ein Freibrief, um unausgereifte Produkte ohne Tests auf den Markt zu werfen",
         "isCorrect": false
       }
     ],
@@ -1385,7 +1385,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "7. Wie hoch ist das Vertriebsbudget? (Marketingplanung)",
+        "text": "7. Wann gibt es Urlaub? (Privatplanung)",
         "isCorrect": false
       }
     ],
@@ -3648,7 +3648,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Formblatt zur Erfassung von Rohstoffpreisen im Einkauf",
+        "text": "Ein Formblatt zur Urlaubsplanung der Schichtleiter",
         "isCorrect": false
       }
     ],
@@ -3834,7 +3834,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Formblatt zur Abrechnung von Dienstreisen",
+        "text": "Ein Formblatt zur Erfassung von Urlaubswünschen",
         "isCorrect": false
       }
     ],
@@ -10494,7 +10494,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein formelles Ermittlungsverfahren durch staatliche Behörden",
+        "text": "Eine Pflichtprüfung durch die Polizei",
         "isCorrect": false
       }
     ],
@@ -11114,7 +11114,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Damit die Gesamtverantwortung für Prozessabweichungen auf den Stellvertreter abgewälzt werden kann",
+        "text": "Damit zwei Personen gleichzeitig denselben Stuhl besetzen können",
         "isCorrect": false
       }
     ],
@@ -11145,7 +11145,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "C-Lieferanten für unkritischen Standard-Bürobedarf mit minimalem Einkaufsvolumen",
+        "text": "Lokale Blumenhändler für Bürodekoration",
         "isCorrect": false
       }
     ],
@@ -11300,7 +11300,7 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Ein Set aus sieben mechanischen Prüflehren zur Endabnahme",
+        "text": "Eine Kollektion von sieben mechanischen Schraubenschlüsseln",
         "isCorrect": false
       }
     ],
