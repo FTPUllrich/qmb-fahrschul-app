@@ -149,7 +149,7 @@ export const initialQuestions = [
         "isCorrect": false
       }
     ],
-    "multipleChoice": true,
+    "multipleChoice": false,
     "category": "Kundenzufriedenheit (Kap. 6.4)",
     "isoClause": "Akkreditierungsstellengesetz (AkkStelleG) / DAkkS",
     "infobox": "In Deutschland ist die DAkkS die einzige nationale Akkreditierungsstelle nach Verordnung (EG) Nr. 765/2008.",
@@ -211,7 +211,7 @@ export const initialQuestions = [
         "isCorrect": false
       }
     ],
-    "multipleChoice": true,
+    "multipleChoice": false,
     "category": "Kundenzufriedenheit (Kap. 6.4)",
     "isoClause": "VoC-Konzept / Lean Six Sigma / ISO 9001 Kap. 8.2",
     "infobox": "VoC bezeichnet die strukturierte Erfassung der Kundenstimme/Kundenanforderungen; die technische Übersetzung ist Aufgabe des QFD.",
@@ -428,7 +428,7 @@ export const initialQuestions = [
         "isCorrect": false
       }
     ],
-    "multipleChoice": true,
+    "multipleChoice": false,
     "category": "Kundenzufriedenheit (Kap. 6.4)",
     "isoClause": "ProdHaftG § 10 Abs. 1",
     "infobox": "Das ProdHaftG begrenzt die Haftung für Personenschäden auf maximal 85 Millionen Euro.",
@@ -459,7 +459,7 @@ export const initialQuestions = [
         "isCorrect": false
       }
     ],
-    "multipleChoice": true,
+    "multipleChoice": false,
     "category": "Kundenzufriedenheit (Kap. 6.4)",
     "isoClause": "ProdHaftG § 11 Satz 2",
     "infobox": "Bei Sachschäden an privat genutzten Sachen gilt ein gesetzlicher Selbstbehalt von 500 Euro.",
@@ -490,7 +490,7 @@ export const initialQuestions = [
         "isCorrect": false
       }
     ],
-    "multipleChoice": true,
+    "multipleChoice": false,
     "category": "Kundenzufriedenheit (Kap. 6.4)",
     "isoClause": "ProdHaftG § 13 Satz 1",
     "infobox": "Ausschlussfrist nach § 13 ProdHaftG: 10 Jahre nach Inverkehrbringen des schadensverursachenden Produkts.",
@@ -7120,11 +7120,6 @@ export const initialQuestions = [
       },
       {
         "id": "D",
-        "text": "Kapitel 9.2: Nachweise über die Durchführung von internen Audits und Auditergebnisse",
-        "isCorrect": true
-      },
-      {
-        "id": "E",
         "text": "Kapitel 9.2: Nachweise über die Durchführung von internen Audits und Auditergebnisse",
         "isCorrect": true
       }
