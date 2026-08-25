@@ -536,7 +536,7 @@ def generate_qmb_app():
       let optionsHtml = '';
       q.options.forEach(opt => {{
         optionsHtml += `
-          <div id="opt-${{opt.id}}" class="option-item" onclick="toggleOption('${{opt.id}}', ${{isMulti}})">
+          <div id="opt-${{opt.id}}" class="option-item" onclick="toggleOption('${{opt.id}}')">
             <div class="opt-box">${{opt.id}}</div>
             <div style="flex: 1; font-size: 0.95rem;">${{opt.text}}</div>
           </div>
@@ -547,7 +547,7 @@ def generate_qmb_app():
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
           <div>
             <span class="badge badge-purple">${{q.category || 'Allgemein'}}</span>
-            <span class="badge badge-amber">${{isMulti ? 'Mehrfachauswahl' : 'Einfachauswahl'}}</span>
+            <span class="badge badge-amber">TÜV-Prüfungsmodus</span>
           </div>
           <span style="font-size: 0.8rem; color: var(--text-muted); font-family: monospace;">${{q.id}}</span>
         </div>
@@ -560,13 +560,12 @@ def generate_qmb_app():
       `;
     }}
 
-    function toggleOption(id, isMulti) {{
+    function toggleOption(id) {{
       if (isSubmitted) return;
-      if (isMulti) {{
-        if (selectedOptions.includes(id)) selectedOptions = selectedOptions.filter(x => x !== id);
-        else selectedOptions.push(id);
+      if (selectedOptions.includes(id)) {{
+        selectedOptions = selectedOptions.filter(x => x !== id);
       }} else {{
-        selectedOptions = [id];
+        selectedOptions.push(id);
       }}
 
       document.querySelectorAll('#question-card-container .option-item').forEach(el => {{
@@ -674,7 +673,6 @@ def generate_qmb_app():
       }}
 
       const q = maydellStack[0];
-      const isMulti = q.multipleChoice || q.options.filter(o => o.isCorrect).length > 1;
 
       let imageHtml = '';
       if (q.imageFile) {{
@@ -686,7 +684,7 @@ def generate_qmb_app():
       let optionsHtml = '';
       q.options.forEach(opt => {{
         optionsHtml += `
-          <div id="m-opt-${{opt.id}}" class="option-item" onclick="toggleMaydellOption('${{opt.id}}', ${{isMulti}})">
+          <div id="m-opt-${{opt.id}}" class="option-item" onclick="toggleMaydellOption('${{opt.id}}')">
             <div class="opt-box">${{opt.id}}</div>
             <div style="flex: 1; font-size: 0.95rem;">${{opt.text}}</div>
           </div>
@@ -695,7 +693,10 @@ def generate_qmb_app():
 
       container.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-          <span class="badge badge-purple">${{q.category || 'Maydell'}}</span>
+          <div>
+            <span class="badge badge-purple">${{q.category || 'Maydell'}}</span>
+            <span class="badge badge-amber">TÜV-Prüfungsmodus</span>
+          </div>
           <span style="font-size: 0.8rem; color: var(--text-muted); font-family: monospace;">${{q.id}}</span>
         </div>
         ${{imageHtml}}
@@ -708,13 +709,12 @@ def generate_qmb_app():
       `;
     }}
 
-    function toggleMaydellOption(id, isMulti) {{
+    function toggleMaydellOption(id) {{
       if (maydellSubmitted) return;
-      if (isMulti) {{
-        if (maydellSelectedOptions.includes(id)) maydellSelectedOptions = maydellSelectedOptions.filter(x => x !== id);
-        else maydellSelectedOptions.push(id);
+      if (maydellSelectedOptions.includes(id)) {{
+        maydellSelectedOptions = maydellSelectedOptions.filter(x => x !== id);
       }} else {{
-        maydellSelectedOptions = [id];
+        maydellSelectedOptions.push(id);
       }}
 
       document.querySelectorAll('#maydell-question-card-container .option-item').forEach(e => {{
